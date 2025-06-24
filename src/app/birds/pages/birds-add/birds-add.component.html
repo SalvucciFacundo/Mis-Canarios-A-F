@@ -1,0 +1,72 @@
+<div class="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md">
+  <form class="space-y-4" [formGroup]="birdForm" (ngSubmit)="create()">
+    <div class="text-center">
+      <div class="text-3xl text-sky-600 mb-2">
+        <i class="icon icon-note"></i>
+      </div>
+      <h4 class="text-xl font-bold">Nuevo Registro</h4>
+    </div>
+    <input type="text" placeholder="Procedencia (ej. Criadero)" formControlName="origin"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+    <input type="text" placeholder="Temporada (ej.2024)" formControlName="season"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+
+    <select class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring focus:ring-sky-300"
+      formControlName="ringColor">
+      <option value="color">Color de anillo</option>
+      <option value="sinAnillo">Sin Anillo</option>
+      <option style="color: purple;" value="violeta">Violeta</option>
+      <option style="color: green;" value="verde">Verde</option>
+      <option style="color: black;" value="negro">Negro</option>
+      <option style="color: red;" value="rojo">Rojo</option>
+      <option style="color: blue;" value="azul">Azul</option>
+      <option style="color: orangered;" value="naranja">Naranja</option>
+    </select>
+
+    <input type="text" placeholder="Número de anillo" formControlName="ringNumber"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+
+    <select class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring focus:ring-sky-300"
+      formControlName="gender">
+      <option value="genero">Género</option>
+      <option value="macho">Macho</option>
+      <option value="hembra">Hembra</option>
+      <option value="desconocido">Desconocido</option>
+    </select>
+
+    <input type="text" placeholder="Línea" formControlName="line"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+
+    <select class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring focus:ring-sky-300"
+      formControlName="state">
+      <option value="seleccione">Seleccione un estado</option>
+      <option value="criadero">Criadero</option>
+      <option value="muerto">Muerto</option>
+      <option value="vendido">Vendido</option>
+    </select>
+
+    <textarea placeholder="Observación del estado" formControlName="stateObservation"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300"></textarea>
+
+    <input type="text" placeholder="Padre" formControlName="father"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+    <input type="text" placeholder="Madre" formControlName="mother"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+    <input type="text" placeholder="Postura" formControlName="posture"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+
+    <textarea placeholder="Observación del ejemplar" formArrayName="observations"
+      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300"></textarea>
+
+    <div class="flex justify-end gap-4 pt-2">
+      <button type="submit"
+        class="bg-green-600 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-md transition-colors">
+        Aceptar
+      </button>
+      <button type="button"
+        class="bg-red-600 hover:bg-red-800 text-white font-medium py-2 px-6 rounded-md transition-colors">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
