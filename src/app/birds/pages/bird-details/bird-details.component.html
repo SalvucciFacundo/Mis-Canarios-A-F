@@ -1,0 +1,82 @@
+<div class="max-w-4xl mx-auto p-6 bg-white border border-gray-300 shadow-md rounded-lg mt-8">
+  <!--<h2 class="text-2xl font-bold text-sky-800 mb-6 text-center">Detalle del Canario</h2>-->
+  <div class="flex items-center justify-between mb-6">
+    <div class="flex items-center gap-3">
+      <div class="text-sky-600 text-3xl">
+        <i class="icon icon-note"></i>
+      </div>
+      <h2 class="text-2xl font-bold text-sky-800">Detalle del Canario</h2>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800 text-sm">
+    <div>
+      <span class="font-semibold">Procedencia:</span>
+      <div class="text-base font-medium">{{ bird.origin }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Temporada:</span>
+      <div class="text-base font-medium">{{ bird.season }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Color de anillo:</span>
+      <div class="text-base font-medium">{{ bird.ringColor }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Número de anillo:</span>
+      <div class="text-base font-medium">{{ bird.ringNumber }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Género:</span>
+      <div class="text-base font-medium">{{ bird.gender }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Línea:</span>
+      <div class="text-base font-medium">{{ bird.line }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Estado:</span>
+      <div class="text-base font-medium">{{ bird.state }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Observación del estado:</span>
+      <div class="text-base font-medium whitespace-pre-wrap">{{ bird.stateObservation }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Padre:</span>
+      <div class="text-base font-medium">{{ bird.father }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Madre:</span>
+      <div class="text-base font-medium">{{ bird.mother }}</div>
+    </div>
+    <div>
+      <span class="font-semibold">Postura:</span>
+      <div class="text-base font-medium">{{ bird.posture }}</div>
+    </div>
+    <div class="md:col-span-2">
+      <span class="font-semibold">Observaciones:</span>
+      <div class="text-base font-medium whitespace-pre-wrap">{{ bird.observations }}</div>
+    </div>
+  </div>
+
+  <div class="flex gap-2">
+    <button [routerLink]="['/birds-edit', bird.id]"
+      class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-md transition">
+      Editar
+    </button>
+    <button routerLink="/birds-list"
+      class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-md font-medium transition">
+      Volver
+    </button>
+  </div>
+
+
+
+  <!--<div class="mt-6 flex justify-end gap-4">
+    <button routerLink="/birds-list"
+      class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-md font-medium transition">
+      Volver
+    </button>
+  </div>-->
+</div>

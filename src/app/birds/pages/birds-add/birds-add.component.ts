@@ -1,6 +1,6 @@
-import { firstValueFrom, Observable } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../auth/services/auth.service';
 import { BirdsRegisterService } from '../../services/birds-register.service';
 import { Birds } from '../../interface/birds.interface';
@@ -34,13 +34,12 @@ export class BirdsAddComponent {
 
 
   async create() {
-    console.log('intentando crear ave', this.birdForm.value);
+    //console.log('intentando crear ave', this.birdForm.value);
     if (this.birdForm.invalid) return;
     try {
       const user = await firstValueFrom(this._auth.authState$);
       if (!user?.email) {
         console.error('User not authenticated');
-        console.log('Usuario:', user.email);
         return;
       }
       const formValue = Object.fromEntries(
@@ -52,8 +51,8 @@ export class BirdsAddComponent {
         modificationDate: new Date()
       };
       await this._birdRegister.addBird(user.email, bird);
-      //this.birdForm.reset();
-      //this.birdForm.patchValue({ ringColor: 'color', gender: 'genero', state: 'seleccione' }); // Restaurar placeholders
+      this.birdForm.reset();
+      this.birdForm.patchValue({ ringColor: 'color', gender: 'genero', state: 'seleccione' }); // Restaurar placeholders
       console.log('Bird added successfully');
     } catch (error) {
       console.error('Error adding bird:', error);

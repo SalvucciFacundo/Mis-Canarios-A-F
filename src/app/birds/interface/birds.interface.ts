@@ -1,4 +1,5 @@
 export interface Birds {
+  id?: string;
   origin?: string;
   season?: number;
   ringColor?: string;
