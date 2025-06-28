@@ -26,7 +26,7 @@ export class LayoutComponent {
     this.mobileMenuOpen.set(false);
     this.userMenuOpen.set(false);
   }
-  links = ['Home', 'About', 'Services', 'Pricing', 'Contact'];
+  links = ['Canarios', 'Prejas', 'Estadisticas', 'Contactanos'];
 
 
   /*<button (click)="logOut()">Log Out</button>*/
