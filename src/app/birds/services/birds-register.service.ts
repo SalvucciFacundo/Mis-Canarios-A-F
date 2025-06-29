@@ -1,6 +1,6 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { Birds } from '../interface/birds.interface';
-import { addDoc, collection, CollectionReference, doc, Firestore, getDocs, getDoc } from '@angular/fire/firestore';
+import { addDoc, collection, CollectionReference, doc, Firestore, getDocs, getDoc, updateDoc } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
@@ -50,5 +50,12 @@ export class BirdsRegisterService {
     return snap.data() as Birds;
   }
 
+  async updateBird(email: string, id: string, bird: Partial<Birds>): Promise<void> {
+    const ref = doc(this._firestore, `bird-records/${email}/Birds/${id}`);
+    await updateDoc(ref, {
+      ...bird,
+      modificationDate: new Date()
+    });
+  }
 
 }

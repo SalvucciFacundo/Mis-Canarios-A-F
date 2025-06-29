@@ -1,72 +1,79 @@
-<div class="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md">
-  <form class="space-y-4" [formGroup]="birdForm" (ngSubmit)="onSubmit()">
-    <div class="text-center">
-      <div class="text-3xl text-sky-600 mb-2">
-        <i class="icon icon-note"></i>
+<!-- <app-bird-form (submitted)="crearBird($event)" (cancelled)="returnList()">
+</app-bird-form> -->
+
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <!-- Formulario -->
+  <div class="bg-white shadow-md rounded-lg">
+    <div class="p-6 border-b">
+      <h2 class="text-2xl font-bold text-gray-800">Agregar Canarios</h2>
+      <p class="text-gray-600 mt-1">Complete el formulario para agregar canarios, puede registrar de a uno o registrar
+        una lista</p>
+    </div>
+    <div class="p-6">
+      <app-bird-form (submitted)="agregarABorrador($event)" />
+    </div>
+  </div>
+
+  <!-- Lista de borradores -->
+  <div *ngIf="birdsDraft() as draftList; else noDraftMessage" class="bg-white shadow-md rounded-lg">
+    <div class="p-6 border-b bg-green-50">
+      <h3 class="text-xl font-semibold text-green-800">
+        Canarios listos para guardar ({{ draftList.length }})
+      </h3>
+      <p class="text-green-600 mt-1">Revise los canarios antes de guardarlos definitivamente</p>
+    </div>
+    <div class="p-6">
+      <div class="space-y-3 mb-6">
+        <div *ngFor="let bird of draftList; let i = index"
+          class="flex items-center justify-between p-4 bg-gray-50 rounded-lg border">
+          <div class="flex-1">
+            <div class="font-medium text-gray-900">
+              <span class="text-blue-600">N° {{ bird.ringNumber || 'Sin anillo' }}</span>
+              · {{ bird.season }}
+              · <span class="text-green-600">{{ bird.line || 'Sin línea' }}</span>
+            </div>
+            <div class="text-sm text-gray-600 mt-1">
+              {{ bird.gender }} · {{ bird.state }}
+              <span *ngIf="bird.origin"> · Origen: {{ bird.origin }}</span>
+            </div>
+          </div>
+          <button (click)="eliminarDelBorrador(i)"
+            class="ml-4 text-red-600 hover:text-red-800 p-2 rounded-md hover:bg-red-50 transition-colors"
+            title="Eliminar del borrador">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
       </div>
-      <h4 class="text-xl font-bold">Nuevo Registro</h4>
+
+      <div class="flex justify-between items-center">
+        <button (click)="limpiarBorrador()" class="text-gray-600 hover:text-gray-800 underline">
+          Limpiar todos
+        </button>
+        <button (click)="guardarTodos()"
+          class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          Guardar todos los canarios
+        </button>
+      </div>
     </div>
-    <input type="text" placeholder="Procedencia (ej. Criadero)" formControlName="origin"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
-    <input type="text" placeholder="Temporada (ej.2024)" formControlName="season"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
+  </div>
 
-    <select class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring focus:ring-sky-300"
-      formControlName="ringColor">
-      <option value="color">Color de anillo</option>
-      <option value="sinAnillo">Sin Anillo</option>
-      <option style="color: purple;" value="violeta">Violeta</option>
-      <option style="color: green;" value="verde">Verde</option>
-      <option style="color: black;" value="negro">Negro</option>
-      <option style="color: red;" value="rojo">Rojo</option>
-      <option style="color: blue;" value="azul">Azul</option>
-      <option style="color: orangered;" value="naranja">Naranja</option>
-    </select>
-
-    <input type="text" placeholder="Número de anillo" formControlName="ringNumber"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
-
-    <select class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring focus:ring-sky-300"
-      formControlName="gender">
-      <option value="genero">Género</option>
-      <option value="macho">Macho</option>
-      <option value="hembra">Hembra</option>
-      <option value="desconocido">Desconocido</option>
-    </select>
-
-    <input type="text" placeholder="Línea" formControlName="line"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
-
-    <select class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring focus:ring-sky-300"
-      formControlName="state">
-      <option value="seleccione">Seleccione un estado</option>
-      <option value="criadero">Criadero</option>
-      <option value="muerto">Muerto</option>
-      <option value="vendido">Vendido</option>
-    </select>
-
-    <textarea placeholder="Observación del estado" formControlName="stateObservation"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300"></textarea>
-
-    <input type="text" placeholder="Padre" formControlName="father"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
-    <input type="text" placeholder="Madre" formControlName="mother"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
-    <input type="text" placeholder="Postura" formControlName="posture"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300" />
-
-    <textarea placeholder="Observación del ejemplar" formArrayName="observations"
-      class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-sky-300"></textarea>
-
-    <div class="flex justify-end gap-4 pt-2">
-      <button type="submit"
-        class="bg-green-600 hover:bg-green-800 text-white font-medium py-2 px-6 rounded-md transition-colors">
-        Aceptar
-      </button>
-      <button type="button"
-        class="bg-red-600 hover:bg-red-800 text-white font-medium py-2 px-6 rounded-md transition-colors">
-        Cancelar
-      </button>
+  <!-- Mensaje cuando no hay borradores -->
+  <ng-template #noDraftMessage>
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+      <div class="text-blue-600 mb-2">
+        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+          </path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-medium text-blue-800 mb-1">No hay canarios en el borrador</h3>
+      <p class="text-blue-600">Complete el formulario de arriba para agregar canarios</p>
     </div>
-  </form>
+  </ng-template>
 </div>

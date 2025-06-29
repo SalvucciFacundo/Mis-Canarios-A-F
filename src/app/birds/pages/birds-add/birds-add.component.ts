@@ -1,50 +1,94 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
-
+import { BirdFormComponent } from '../../utils/bird-form.component';
+import { Birds } from '../../interface/birds.interface';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-birds-add',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, BirdFormComponent, CommonModule],
   templateUrl: './birds-add.component.html',
   styleUrl: './birds-add.component.css'
 })
 export class BirdsAddComponent {
 
-  birdForm: ReturnType<FormBuilder['group']>;
+  constructor(private birdsStore: BirdsStoreService, private router: Router) { }
 
-  constructor(private fb: FormBuilder, private birdsStore: BirdsStoreService, private router: Router) {
-    this.birdForm = this.fb.group({
-      origin: [''],
-      season: ['', Validators.required],
-      ringColor: ['color', Validators.required],
-      ringNumber: [''],
-      gender: ['genero'],
-      line: [''],
-      state: ['seleccione', Validators.required],
-      stateObservation: [''],
-      father: [''],
-      mother: [''],
-      posture: [''],
-      observations: [''],
-    });
-  }
-
-  async onSubmit() {
-    if (this.birdForm.invalid) return;
-    //const email = this.birdsStore['authService'].currentUserEmail();
+  crearBird(data: any) {
     const email = this.birdsStore.userEmail();
     if (!email) return;
-
-    const newBird = this.birdForm.value;
-    await this.birdsStore.agregarCanario(email, newBird);
-    this.birdForm.reset({
-      ringColor: 'color',
-      gender: 'genero',
-      state: 'seleccione',
-    });
+    this.birdsStore.agregarCanario(email, data);
     this.router.navigate(['/birds']);
   }
+
+  returnList() {
+    this.router.navigate(['/birds']);
+  }
+
+  birdsDraft = signal<Birds[]>([]);
+
+  agregarABorrador(data: Birds) {
+    this.birdsDraft.update(list => [...list, data]);
+    this.resetForm(); // si querés limpiar el form después
+  }
+
+  guardarTodos() {
+    const email = this.birdsStore.userEmail();
+    if (!email) return;
+    this.birdsDraft().forEach(bird => this.birdsStore.agregarCanario(email, bird));
+    this.birdsDraft.set([]); // Limpiar el borrador después de guardar
+    this.router.navigate(['/birds']);
+  }
+
+  eliminarDelBorrador(index: number) {
+    this.birdsDraft.update(list => list.filter((_, i) => i !== index));
+  }
+
+  limpiarBorrador() {
+    this.birdsDraft.set([]);
+  }
+
+  resetForm() {
+    const formComponent = document.querySelector('app-bird-form') as any;
+    formComponent?.birdForm?.reset?.();
+  }
+
+
+  // birdForm: ReturnType<FormBuilder['group']>;
+
+  // constructor(private fb: FormBuilder, private birdsStore: BirdsStoreService, private router: Router) {
+  //   this.birdForm = this.fb.group({
+  //     origin: [''],
+  //     season: ['', Validators.required],
+  //     ringColor: ['color', Validators.required],
+  //     ringNumber: [''],
+  //     gender: ['genero'],
+  //     line: [''],
+  //     state: ['seleccione', Validators.required],
+  //     stateObservation: [''],
+  //     father: [''],
+  //     mother: [''],
+  //     posture: [''],
+  //     observations: [''],
+  //   });
+  // }
+
+  // async onSubmit() {
+  //   if (this.birdForm.invalid) return;
+  //   //const email = this.birdsStore['authService'].currentUserEmail();
+  //   const email = this.birdsStore.userEmail();
+  //   if (!email) return;
+
+  //   const newBird = this.birdForm.value;
+  //   await this.birdsStore.agregarCanario(email, newBird);
+  //   this.birdForm.reset({
+  //     ringColor: 'color',
+  //     gender: 'genero',
+  //     state: 'seleccione',
+  //   });
+  //   this.router.navigate(['/birds']);
+  // }
 
 
 

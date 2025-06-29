@@ -2,6 +2,8 @@ import { computed, effect, Injectable, signal } from '@angular/core';
 import { BirdsRegisterService } from '../services/birds-register.service';
 import { AuthService } from '../../auth/services/auth.service';
 import { Birds } from '../interface/birds.interface';
+import { doc, updateDoc } from '@angular/fire/firestore';
+import { Firestore } from '@angular/fire/firestore';
 
 
 @Injectable({
@@ -29,7 +31,7 @@ export class BirdsStoreService {
 
 
 
-  constructor(private birdService: BirdsRegisterService, private authService: AuthService) {
+  constructor(private birdService: BirdsRegisterService, private authService: AuthService, private firestore: Firestore) {
     effect(() => {
       const email = this.authService.currentUserEmail();
       if (email && this.birds() === null) {
@@ -51,10 +53,7 @@ export class BirdsStoreService {
     }
   }
 
-  // refresh(email: string) {
-  //   this.birds.set(null); // invalidamos el cache para que el `effect()` lo vuelva a cargar
-  //   this.loadBirds(email);
-  // }
+
   refresh() {
     const email = this.authService.currentUserEmail();
     if (!email) return;
@@ -88,6 +87,26 @@ export class BirdsStoreService {
       console.error('Error al agregar el canario:', e);
       this.error.set('No se pudo agregar el canario');
     }
+  }
+
+  async actualizarCanario(email: string, birdId: string, bird: Partial<Birds>): Promise<void> {
+    try {
+      await this.birdService.updateBird(email, birdId, bird);
+
+      // Actualizar el store local
+      const current = this.birds() ?? [];
+      const updatedBirds = current.map(b =>
+        b.id === birdId ? { ...b, ...bird } : b
+      );
+      this.birds.set(updatedBirds);
+
+    } catch (e) {
+      console.error('Error al actualizar el canario:', e);
+      this.error.set('No se pudo actualizar el canario');
+    }
+  }
+  getCanarioSignalById(id: string) {
+    return computed(() => this.birds()?.find(b => b.id === id) ?? null);
   }
 
 }

@@ -26,10 +26,8 @@ export class LayoutComponent {
     this.mobileMenuOpen.set(false);
     this.userMenuOpen.set(false);
   }
-  links = ['Canarios', 'Prejas', 'Estadisticas', 'Contactanos'];
+  links = ['Canarios', 'Prejas', 'Estadisticas', 'Nomencladores', 'Contactanos'];
 
-
-  /*<button (click)="logOut()">Log Out</button>*/
 
   private _authState = inject(AuthService);
   private _router = inject(Router);

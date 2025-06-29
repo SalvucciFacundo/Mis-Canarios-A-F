@@ -87,6 +87,7 @@
 
     </div>
     <dl class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Campos básicos -->
       <div *ngFor="let field of [
           { label: 'Procedencia', value: bird()?.origin },
           { label: 'Temporada', value: bird()?.season },
@@ -96,8 +97,6 @@
           { label: 'Línea', value: bird()?.line },
           { label: 'Estado', value: bird()?.state },
           { label: 'Observación del estado', value: bird()?.stateObservation },
-          { label: 'Padre', value: bird()?.father },
-          { label: 'Madre', value: bird()?.mother },
           { label: 'Postura', value: bird()?.posture }
         ]" class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
         <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
@@ -105,6 +104,42 @@
         </dt>
         <dd class="text-base font-medium text-gray-900 dark:text-white whitespace-pre-wrap">
           {{ field.value || '—' }}
+        </dd>
+      </div>
+
+      <!-- Padre - campo especial -->
+      <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
+        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+          Padre
+        </dt>
+        <dd class="text-base font-medium text-gray-900 dark:text-white">
+          <span *ngIf="fatherInfo(); else noFather">
+            <div class="text-blue-600 font-semibold">{{ fatherInfo()?.ringNumber ? 'N° anillo: ' +
+              fatherInfo()?.ringNumber : 'Sin anillo' }}</div>
+            <div class="text-green-600 text-sm">{{ fatherInfo()?.line ? 'Línea: ' + fatherInfo()?.line : 'Sin línea' }}
+            </div>
+          </span>
+          <ng-template #noFather>
+            <span class="text-gray-500">—</span>
+          </ng-template>
+        </dd>
+      </div>
+
+      <!-- Madre - campo especial -->
+      <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
+        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+          Madre
+        </dt>
+        <dd class="text-base font-medium text-gray-900 dark:text-white">
+          <span *ngIf="motherInfo(); else noMother">
+            <div class="text-blue-600 font-semibold">{{ motherInfo()?.ringNumber ? 'N° anillo: ' +
+              motherInfo()?.ringNumber : 'Sin anillo' }}</div>
+            <div class="text-green-600 text-sm">{{ motherInfo()?.line ? 'Línea: ' + motherInfo()?.line : 'Sin línea' }}
+            </div>
+          </span>
+          <ng-template #noMother>
+            <span class="text-gray-500">—</span>
+          </ng-template>
         </dd>
       </div>
 

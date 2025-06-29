@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormFieldComponent } from './form-field.component';
+import { NomenclatorListComponent } from './nomenclator-list.component';
 
-describe('FormFieldComponent', () => {
-  let component: FormFieldComponent;
-  let fixture: ComponentFixture<FormFieldComponent>;
+describe('NomenclatorListComponent', () => {
+  let component: NomenclatorListComponent;
+  let fixture: ComponentFixture<NomenclatorListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormFieldComponent]
+      imports: [NomenclatorListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FormFieldComponent);
+    fixture = TestBed.createComponent(NomenclatorListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

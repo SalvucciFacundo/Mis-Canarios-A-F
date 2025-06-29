@@ -28,6 +28,35 @@ export class BirdDetailsComponent {
     return birds.find(b => b.id === id);
   });
 
+  // Métodos para obtener información de padre y madre
+  readonly fatherInfo = computed(() => {
+    const currentBird = this.bird();
+    if (!currentBird?.father) return null;
+
+    const birds = this.birdsStore.birdsList();
+    const father = birds.find(b => b.id === currentBird.father);
+    return father;
+  });
+
+  readonly motherInfo = computed(() => {
+    const currentBird = this.bird();
+    if (!currentBird?.mother) return null;
+
+    const birds = this.birdsStore.birdsList();
+    const mother = birds.find(b => b.id === currentBird.mother);
+    return mother;
+  });
+
+  // Método para formatear la información de padre/madre
+  formatParentInfo(parent: any): string {
+    if (!parent) return '—';
+
+    const ringInfo = parent.ringNumber ? `N° anillo: ${parent.ringNumber}` : 'Sin anillo';
+    const lineInfo = parent.line ? `Línea: ${parent.line}` : 'Sin línea';
+
+    return `${ringInfo} • ${lineInfo}`;
+  }
+
   //bird!: Birds;
   // async ngOnInit() {
   //   const id = this.route.snapshot.paramMap.get('id');

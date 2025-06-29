@@ -12,6 +12,11 @@ export const routes: Routes = [
     path: 'birds', loadChildren: () => import('./birds/birds.routes').then(m => m.routes)
   },
   {
+    canActivateChild: [privateGuard()],
+    loadComponent: () => import('./shared/layout.component').then(m => m.LayoutComponent),
+    path: 'nomenclator', loadChildren: () => import('./nomenclator/nomenclator.routes').then(m => m.routes)
+  },
+  {
     path: '**', redirectTo: '/birds'
   }
 ];

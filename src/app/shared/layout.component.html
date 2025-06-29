@@ -6,7 +6,7 @@
     <!-- Desktop Links -->
     <ul class="hidden md:flex space-x-6 text-sm font-medium">
       <li *ngFor="let link of links">
-        <a href="#" class="hover:text-blue-300">{{ link }}</a>
+        <a class="hover:text-blue-300">{{ link }}</a>
       </li>
     </ul>
 
@@ -24,9 +24,9 @@
           <img src="/assets/avatar.png" class="w-full h-full object-cover" />
         </button>
         <div *ngIf="userMenuOpen()" class="absolute right-0 mt-2 bg-white shadow rounded-md w-40 text-sm z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Perfil</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Configuración</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100" (click)="logOut()">Cerrar sesión</a>
+          <a class="block px-4 py-2 hover:bg-gray-100">Perfil</a>
+          <a class="block px-4 py-2 hover:bg-gray-100">Configuración</a>
+          <a class="block px-4 py-2 hover:bg-gray-100" (click)="logOut()">Cerrar sesión</a>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
   <div *ngIf="mobileMenuOpen()" class="md:hidden px-4 pb-3">
     <ul class="space-y-2 text-sm font-medium">
       <li *ngFor="let link of links">
-        <a href="#" class="block py-2 hover:text-blue-300">{{ link }}</a>
+        <a class="block py-2 hover:text-blue-300">{{ link }}</a>
       </li>
     </ul>
   </div>

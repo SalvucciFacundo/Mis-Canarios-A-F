@@ -1,0 +1,32 @@
+<div class="relative">
+  <label class="block text-sm font-semibold text-gray-800 mb-1">{{ label }}</label>
+  <input type="text" [value]="input()" (input)="onInput($event)" (blur)="hide()" placeholder="Ingrese N° anillo o Linea"
+    class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+    autocomplete="off" />
+  <ul *ngIf="showOptions() && filteredItems().length > 0"
+    class="absolute z-50 bg-white border rounded-md w-full shadow-lg max-h-60 overflow-y-auto">
+    <li *ngFor="let item of filteredItems()" (mousedown)="onSelect(item)"
+      class="px-4 py-2 hover:bg-sky-100 cursor-pointer">
+
+      <div class="flex items-center justify-between">
+        <div class="text-sm">
+          <div class="font-bold text-gray-800">N° anillo: {{ item.ringNumber }}</div>
+          <div class="text-xs text-gray-500">
+            Temporada: {{ item.season }} · Género: {{ item.gender }} . Línea: {{ item.line }}
+          </div>
+        </div>
+        <div *ngIf="item.state" class="text-xs font-medium px-2 py-0.5 rounded-full" [ngClass]="{
+             'bg-green-100 text-green-800': item.state === 'activo' || item.state === 'criadero',
+             'bg-yellow-100 text-yellow-800': item.state === 'enfermo',
+             'bg-gray-200 text-gray-700': item.state === 'vendido' || item.state === 'muerto'
+           }">
+          {{ item.state | titlecase }}
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div *ngIf="showOptions() && input().trim() !== '' && filteredItems().length === 0"
+    class="absolute z-50 w-full bg-white border border-gray-200 rounded-md px-4 py-2 text-sm text-gray-500 shadow-md">
+    No se encontraron coincidencias para “<strong>{{ input() }}</strong>”
+  </div>
+</div>

@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
 @Component({
   selector: 'app-birds-list',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterModule],
   templateUrl: './birds-list.component.html',
   styleUrl: './birds-list.component.css'
 })
@@ -14,14 +14,7 @@ export class BirdsListComponent {
 
   constructor(public birdsStore: BirdsStoreService) { }
 
-  // filteredBirds = computed(() => {
-  //   const term = this.search().toLowerCase().trim();
-  //   return this.birds()?.filter(bird =>
-  //     bird.line?.toLowerCase().includes(term) ||
-  //     bird.origin?.toLowerCase().includes(term) ||
-  //     bird.ringNumber?.toString().includes(term)
-  //   );
-  // });
+
   filteredBirds = computed(() => {
     const term = this.search().toLowerCase().trim();
     const mostrarTodos = this.mostrarInactivos();
