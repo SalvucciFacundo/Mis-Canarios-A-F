@@ -104,3 +104,4 @@ export class AuthService {
     this.currentUser.set(updatedUser);
   }
 }
+//probando el cambio de nombre de usuario y email de github
