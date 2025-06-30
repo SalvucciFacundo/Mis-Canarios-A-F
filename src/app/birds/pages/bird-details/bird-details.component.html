@@ -96,8 +96,7 @@
           { label: 'Género', value: bird()?.gender },
           { label: 'Línea', value: bird()?.line },
           { label: 'Estado', value: bird()?.state },
-          { label: 'Observación del estado', value: bird()?.stateObservation },
-          { label: 'Postura', value: bird()?.posture }
+          { label: 'Observación del estado', value: bird()?.stateObservation }
         ]" class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
         <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
           {{ field.label }}
@@ -140,6 +139,16 @@
           <ng-template #noMother>
             <span class="text-gray-500">—</span>
           </ng-template>
+        </dd>
+      </div>
+
+      <!-- Postura - campo independiente -->
+      <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
+        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+          Postura
+        </dt>
+        <dd class="text-base font-medium text-gray-900 dark:text-white">
+          {{ bird()?.posture || '—' }}
         </dd>
       </div>
 
