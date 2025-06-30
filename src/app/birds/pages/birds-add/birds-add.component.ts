@@ -1,10 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
 import { BirdFormComponent } from '../../utils/bird-form.component';
 import { Birds } from '../../interface/birds.interface';
 import { CommonModule } from '@angular/common';
+import { LoadingService } from '../../../shared/services/loading.service';
+import { UserLimitsService } from '../../../shared/services/user-limits.service';
+
 @Component({
   selector: 'app-birds-add',
   imports: [ReactiveFormsModule, BirdFormComponent, CommonModule],
@@ -13,16 +16,32 @@ import { CommonModule } from '@angular/common';
 })
 export class BirdsAddComponent {
 
+  private loadingService = inject(LoadingService);
+  private limitsService = inject(UserLimitsService);
+
   constructor(private birdsStore: BirdsStoreService, private router: Router) { }
 
-  crearBird(data: any) {
+  async crearBird(data: any) {
     const email = this.birdsStore.userEmail();
     if (!email) return;
-    this.birdsStore.agregarCanario(email, data);
+
+    // Verificar límites antes de crear
+    if (!this.limitsService.canPerformOperation('birds_create')) {
+      alert('Has alcanzado el límite diario de creación de canarios. Inténtalo mañana.');
+      return;
+    }
+
+    await this.birdsStore.agregarCanario(email, data);
+    
+    // Incrementar contador de uso
+    this.limitsService.incrementUsage('birds_create');
+    
+    // Navegación interna rápida, sin spinner
     this.router.navigate(['/birds']);
   }
 
-  returnList() {
+  async returnList() {
+    // Navegación interna rápida, sin spinner
     this.router.navigate(['/birds']);
   }
 
@@ -33,12 +52,16 @@ export class BirdsAddComponent {
     this.resetForm(); // si querés limpiar el form después
   }
 
-  guardarTodos() {
+  async guardarTodos() {
     const email = this.birdsStore.userEmail();
     if (!email) return;
+
+    // Mostrar spinner solo para operaciones de guardado múltiple (más pesadas)
+    await this.loadingService.showContentTransition('Guardando canarios...', 800);
     this.birdsDraft().forEach(bird => this.birdsStore.agregarCanario(email, bird));
-    this.birdsDraft.set([]); // Limpiar el borrador después de guardar
+    this.birdsDraft.set([]);
     this.router.navigate(['/birds']);
+    this.loadingService.hidePageTransition();
   }
 
   eliminarDelBorrador(index: number) {

@@ -4,6 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { toast } from 'ngx-sonner';
 import { Router, RouterLink } from '@angular/router';
+import { LoadingService } from '../../../shared/services/loading.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,6 +17,9 @@ export class SignUpComponent {
   private _formBuilder = inject(FormBuilder);
   private _authService = inject(AuthService);
   private _router = inject(Router);
+  private _loadingService = inject(LoadingService);
+
+  showPassword = false;
 
   isRequired(field: 'name' | 'email' | 'password') {
     return isRequired(field, this.formSignUp);
@@ -28,6 +32,10 @@ export class SignUpComponent {
   isPasswordTooShort() {
     const control = this.formSignUp.get('password');
     return control && control.touched && control.hasError('minlength');
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
   formSignUp = this._formBuilder.group({
@@ -45,8 +53,14 @@ export class SignUpComponent {
       if (!name || !email || !password) return;
 
       await this._authService.signUp({ name, email, password });
-      toast.success('¡Cuenta creada exitosamente! Bienvenido a Mis Canarios');
+      toast.success('¡Cuenta creada exitosamente!', {
+        description: 'Te hemos enviado un email de verificación. Puedes verificarlo más tarde desde tu perfil.'
+      });
+
+      // Mostrar loading de pantalla completa y navegar
+      await this._loadingService.showFullScreenTransition('Bienvenido a Mis Canarios...', 1000);
       this._router.navigate(['/birds/birds-list']);
+      this._loadingService.hidePageTransition();
     } catch (error: any) {
       console.error('Error al crear usuario:', error);
 

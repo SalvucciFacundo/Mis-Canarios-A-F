@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, HostListener } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
+
 @Component({
   selector: 'app-birds-list',
   imports: [CommonModule, RouterModule],
@@ -11,9 +12,14 @@ import { BirdsStoreService } from '../../services/birds-store.service';
 export class BirdsListComponent {
 
   mostrarInactivos = signal(false);
+  scrollY = signal(0);
 
   constructor(public birdsStore: BirdsStoreService) { }
 
+  @HostListener('window:scroll')
+  onScroll() {
+    this.scrollY.set(window.scrollY);
+  }
 
   filteredBirds = computed(() => {
     const term = this.search().toLowerCase().trim();
@@ -63,13 +69,19 @@ export class BirdsListComponent {
 
   onRefresh() {
     this.birdsStore.refresh();
-
   }
 
+  // Métodos para el botón scroll to top
+  showScrollToTop(): boolean {
+    return this.scrollY() > 300; // Mostrar después de scrollear 300px
+  }
 
-
-
-
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }
 
 /*async ngOnInit() {

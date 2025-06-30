@@ -6,13 +6,13 @@ import { map } from 'rxjs';
 
 export const privateGuard = (): CanActivateFn => {
   return () => {
-    const rouuter = inject(Router);
+    const router = inject(Router);
     const authState = inject(AuthService);
 
     return authState.authState$.pipe(
       map(state => {
         if (!state) {
-          rouuter.navigate(['/auth/sign-in']);
+          router.navigate(['/auth/sign-in']);
           return false;
         } else {
           return true;
@@ -24,13 +24,13 @@ export const privateGuard = (): CanActivateFn => {
 
 export const publicGuard = (): CanActivateFn => {
   return () => {
-    const rouuter = inject(Router);
+    const router = inject(Router);
     const authState = inject(AuthService);
 
     return authState.authState$.pipe(
       map(state => {
         if (state) {
-          rouuter.navigate(['/birds']);
+          router.navigate(['/birds']);
           return false;
         } else {
           return true;

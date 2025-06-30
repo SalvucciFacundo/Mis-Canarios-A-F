@@ -4,7 +4,7 @@ import { AuthService } from '../../auth/services/auth.service';
 import { Birds } from '../interface/birds.interface';
 import { doc, updateDoc } from '@angular/fire/firestore';
 import { Firestore } from '@angular/fire/firestore';
-
+import { LoadingService } from '../../shared/services/loading.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,13 @@ export class BirdsStoreService {
 
   private loading = signal(false);
   private error = signal<string | null>(null);
+  
+  // Optimización de caché
+  private readonly CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutos
+  private lastFetchTime = 0;
+  private currentUserEmail = '';
 
   readonly userEmail = computed(() => this.authService.currentUserEmail());
-
 
   readonly filteredBirds = computed(() => {
     const list = this.birds() ?? [];
@@ -29,27 +33,58 @@ export class BirdsStoreService {
     );
   });
 
-
-
-  constructor(private birdService: BirdsRegisterService, private authService: AuthService, private firestore: Firestore) {
+  constructor(
+    private birdService: BirdsRegisterService,
+    private authService: AuthService,
+    private firestore: Firestore,
+    private loadingService: LoadingService
+  ) {
     effect(() => {
       const email = this.authService.currentUserEmail();
-      if (email && this.birds() === null) {
+      if (email && this.shouldLoadBirds(email)) {
         this.loadBirds(email);
       }
     });
   }
 
-  async loadBirds(email: string) {
+  /**
+   * Determina si necesitamos cargar los birds (caché expirado o usuario diferente)
+   */
+  private shouldLoadBirds(email: string): boolean {
+    const now = Date.now();
+    const cacheExpired = (now - this.lastFetchTime) > this.CACHE_TIMEOUT;
+    const userChanged = this.currentUserEmail !== email;
+    const noData = this.birds() === null;
+    
+    return noData || cacheExpired || userChanged;
+  }
+
+  /**
+   * Carga los birds con gestión de caché mejorada
+   */
+  async loadBirds(email: string, forceRefresh = false) {
+    // Si no es forzado y el caché es válido, no hacer nada
+    if (!forceRefresh && !this.shouldLoadBirds(email)) {
+      return;
+    }
+
     try {
       this.loading.set(true);
+      await this.loadingService.showContentTransition('Cargando canarios...', 1000);
+
       const birds = await this.birdService.getBirds(email);
       this.birds.set(birds);
       this.error.set(null);
+
+      // Actualizar información de caché
+      this.lastFetchTime = Date.now();
+      this.currentUserEmail = email;
+      this.currentUserEmail = email;
     } catch (err) {
       this.error.set('Error al cargar los canarios');
     } finally {
       this.loading.set(false);
+      this.loadingService.hidePageTransition();
     }
   }
 

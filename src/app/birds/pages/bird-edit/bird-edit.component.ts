@@ -9,6 +9,7 @@ import { BirdFormComponent } from '../../utils/bird-form.component';
 import { BirdsStoreService } from '../../services/birds-store.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
+import { LoadingService } from '../../../shared/services/loading.service';
 @Component({
   selector: 'app-bird-edit',
   imports: [ReactiveFormsModule, BirdFormComponent, CommonModule],
@@ -19,6 +20,7 @@ export class BirdEditComponent {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private store = inject(BirdsStoreService);
+  private loadingService = inject(LoadingService);
   //birdData: any = null;
   //birdId: string | null = null;
 
@@ -46,14 +48,20 @@ export class BirdEditComponent {
 
     try {
       console.log('Actualizando canario:', { id, email, data });
+      // Mostrar spinner solo para la operación de guardado
+      await this.loadingService.showContentTransition('Guardando cambios...', 700);
       await this.store.actualizarCanario(email, id, data);
       console.log('Canario actualizado exitosamente');
       this.router.navigate(['/birds']);
+      this.loadingService.hidePageTransition();
     } catch (error) {
       console.error('Error al actualizar canario:', error);
+      this.loadingService.hidePageTransition();
     }
   }
+
   returnList() {
+    // Navegación interna rápida, sin spinner
     this.router.navigate(['/birds']);
   }
 

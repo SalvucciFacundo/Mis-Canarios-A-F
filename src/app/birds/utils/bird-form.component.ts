@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, computed, EventEmitter, Input, OnChanges, Output, SimpleChanges, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BirdsStoreService } from '../services/birds-store.service';
@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Birds } from '../interface/birds.interface';
 import { BirdsAutocompleteComponent } from '../../shared/birds-autocomplete.component';
 import { LineaAutocompleteComponent } from '../../shared/linea-autocomplete.component';
+import { LoadingService } from '../../shared/services/loading.service';
 
 @Component({
   selector: 'app-bird-form',
@@ -20,6 +21,8 @@ export class BirdFormComponent implements OnChanges {
   @Output() cancelled = new EventEmitter<void>();
 
   birdForm: FormGroup;
+  private loadingService = inject(LoadingService);
+
   constructor(private fb: FormBuilder, private store: BirdsStoreService, private router: Router) {
     this.birdForm = this.fb.group({
       origin: [''],
@@ -78,6 +81,7 @@ export class BirdFormComponent implements OnChanges {
 
   onCancel() {
     this.cancelled.emit();
+    // Navegación interna rápida, sin spinner
     this.router.navigate(['/birds']);
   }
   availableMales = computed(() =>

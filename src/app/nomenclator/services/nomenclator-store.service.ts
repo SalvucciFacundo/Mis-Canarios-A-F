@@ -2,6 +2,7 @@ import { computed, Injectable, signal } from '@angular/core';
 import { Nomenclator } from '../interface/nomenclator.interface';
 import { NomenclatorService } from './nomenclator.service';
 import { firstValueFrom } from 'rxjs';
+import { LoadingService } from '../../shared/services/loading.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,17 @@ export class NomenclatorStoreService {
   private readonly _lineas = signal<Nomenclator[]>([]);
   readonly lineas = computed(() => this._lineas()); // expuesta públicamente
 
-  constructor(private service: NomenclatorService) { }
+  constructor(private service: NomenclatorService, private loadingService: LoadingService) { }
 
   async loadAllOnce() {
     if (this._lineas().length === 0) {
-      const lineas = await firstValueFrom(this.service.getAll());
-      this._lineas.set(lineas);
+      await this.loadingService.showContentTransition('Cargando nomencladores...', 1000);
+      try {
+        const lineas = await firstValueFrom(this.service.getAll());
+        this._lineas.set(lineas);
+      } finally {
+        this.loadingService.hidePageTransition();
+      }
     }
   }
 

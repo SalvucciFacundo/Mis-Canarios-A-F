@@ -1,0 +1,56 @@
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6 mt-8">
+  <!-- Icon -->
+  <div class="mx-auto w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 animate-pulse">
+    <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 8l7.89 3.26a2 2 0 001.22 0L20 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+      </path>
+    </svg>
+  </div>
+
+  <div class="text-center space-y-4">
+    <h1 class="text-2xl font-bold text-gray-900">
+      Verifica tu correo electrónico
+    </h1>
+
+    <p class="text-sm text-gray-600">
+      Hemos enviado un enlace de verificación a:
+    </p>
+
+    <p class="text-sm font-medium text-sky-600 bg-sky-50 px-3 py-2 rounded-lg">
+      {{ currentUserEmail() }}
+    </p>
+
+    <p class="text-sm text-gray-600">
+      Revisa tu bandeja de entrada y haz clic en el enlace para verificar tu cuenta.
+    </p>
+
+    <!-- Actions -->
+    <div class="space-y-3">
+      <button (click)="checkVerification()"
+        class="w-full text-white bg-sky-600 hover:bg-sky-700 hover:shadow-lg hover:-translate-y-0.5 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all duration-200">
+        Ya verifiqué mi email
+      </button>
+
+      <button (click)="resendVerificationEmail()" [disabled]="isResending"
+        class="w-full text-sky-600 bg-white border border-sky-600 hover:bg-sky-50 hover:shadow-md hover:-translate-y-0.5 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200">
+        @if (!isResending) {
+        <span>Reenviar email de verificación</span>
+        } @else {
+        <span>Enviando...</span>
+        }
+      </button>
+    </div>
+
+    <!-- Help Text -->
+    <div class="text-xs text-gray-500 mt-4 space-y-2">
+      <p>¿No encuentras el email? Revisa tu carpeta de spam.</p>
+      <p>
+        ¿Problemas con la verificación?
+        <button (click)="logout()" class="text-sky-600 hover:underline">
+          Cerrar sesión
+        </button>
+      </p>
+    </div>
+  </div>
+</div>

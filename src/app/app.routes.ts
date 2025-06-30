@@ -1,10 +1,28 @@
 import { Routes } from '@angular/router';
 import { privateGuard, publicGuard } from './core/auth.guard';
+import { emailVerifiedGuard } from './core/email-verified.guard';
 
 export const routes: Routes = [
   {
-    canActivateChild: [publicGuard()],
-    path: 'auth', loadChildren: () => import('./auth/auth.routes').then(m => m.routes)
+    path: 'auth/sign-in',
+    canActivate: [publicGuard()],
+    loadComponent: () => import('./auth/pages/sign-in/sign-in.component').then(m => m.SignInComponent)
+  },
+  {
+    path: 'auth/sign-up',
+    canActivate: [publicGuard()],
+    loadComponent: () => import('./auth/pages/sign-up/sign-up.component').then(m => m.SignUpComponent)
+  },
+  {
+    path: 'auth/email-verification',
+    canActivate: [privateGuard()],
+    loadComponent: () => import('./shared/layout.component').then(m => m.LayoutComponent),
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./auth/pages/email-verification/email-verification.component').then(m => m.EmailVerificationComponent)
+      }
+    ]
   },
   {
     canActivateChild: [privateGuard()],

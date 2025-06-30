@@ -1,5 +1,5 @@
 import { effect, Injectable, signal } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, authState, signInWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, authState, signInWithEmailAndPassword, updateProfile, sendEmailVerification, reload } from '@angular/fire/auth';
 import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
 import { User } from '../interface/user.interface';
 import { Observable } from 'rxjs';
@@ -11,11 +11,12 @@ export class AuthService {
 
   readonly currentUserEmail = signal<string | null>(null);
   readonly currentUser = signal<User | null>(null);
-
+  readonly isEmailVerified = signal<boolean>(false);
   constructor(private _auth: Auth, private _firestore: Firestore) {
     effect(() => {
       authState(this._auth).subscribe(async (firebaseUser) => {
         this.currentUserEmail.set(firebaseUser?.email ?? null);
+        this.isEmailVerified.set(firebaseUser?.emailVerified ?? false);
 
         if (firebaseUser) {
           // Cargar datos adicionales del usuario desde Firestore
@@ -40,6 +41,9 @@ export class AuthService {
       await updateProfile(firebaseUser, { displayName: name });
     }
 
+    // Enviar email de verificación
+    await sendEmailVerification(firebaseUser);
+
     // Crear documento del usuario en Firestore
     const user: User = {
       uid: firebaseUser.uid,
@@ -60,6 +64,28 @@ export class AuthService {
 
   async signOut() {
     return this._auth.signOut();
+  }
+
+  async sendEmailVerification(): Promise<void> {
+    const user = this._auth.currentUser;
+    if (user && !user.emailVerified) {
+      await sendEmailVerification(user);
+    } else {
+      throw new Error('No user logged in or email already verified');
+    }
+  }
+
+  async reloadUser(): Promise<void> {
+    const user = this._auth.currentUser;
+    if (user) {
+      await reload(user);
+      this.isEmailVerified.set(user.emailVerified);
+    }
+  }
+
+  async checkEmailVerification(): Promise<boolean> {
+    await this.reloadUser();
+    return this.isEmailVerified();
   }
 
   get authState$(): Observable<any> {
@@ -104,4 +130,3 @@ export class AuthService {
     this.currentUser.set(updatedUser);
   }
 }
-//probando el cambio de nombre de usuario y email de github

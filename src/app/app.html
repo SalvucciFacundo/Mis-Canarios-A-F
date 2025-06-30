@@ -1,1 +1,4 @@
-<router-outlet /><ngx-sonner-toaster />
+<router-outlet />
+<ngx-sonner-toaster />
+<app-custom-spinner [isVisible]="isLoading()" [message]="loadingMessage()" [fullScreen]="isFullScreen()">
+</app-custom-spinner>
