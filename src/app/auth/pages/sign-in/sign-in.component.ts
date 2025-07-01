@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { isEmailError, isRequired } from './../../utils/validators';
-import { toast } from 'ngx-sonner';
 import { Router, RouterLink } from '@angular/router';
 import { LoadingService } from '../../../shared/services/loading.service';
+import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -18,6 +18,7 @@ export class SignInComponent {
   private _authService = inject(AuthService);
   private _router = inject(Router);
   private _loadingService = inject(LoadingService);
+  private _toastService = inject(ToastService);
 
   showPassword = false;
 
@@ -48,14 +49,15 @@ export class SignInComponent {
 
       await this._authService.signIn({ email, password });
 
-      // Verificar si el email está verificado (solo informativo)
-      if (!this._authService.isEmailVerified()) {
-        toast.info('Email no verificado', {
-          description: 'Considera verificar tu email para acceder a funciones premium en el futuro.'
-        });
-      }
+      // Mostrar toast de bienvenida
+      this._toastService.success('¡Bienvenido de vuelta!');
 
-      toast.success('Bienvenido');
+      // Verificar si el email está verificado (solo informativo, sin bloquear el toast de bienvenida)
+      setTimeout(() => {
+        if (!this._authService.isEmailVerified()) {
+          this._toastService.info('Email no verificado', 'Considera verificar tu email para acceder a funciones premium en el futuro.');
+        }
+      }, 1500); // Mostrar después de 1.5 segundos para evitar superposición
 
       // Mostrar loading de pantalla completa y navegar
       await this._loadingService.showFullScreenTransition('Cargando lista de canarios...', 1000);
@@ -63,30 +65,8 @@ export class SignInComponent {
       this._loadingService.hidePageTransition();
 
     } catch (error: any) {
+      // El toast de error ya se maneja en el AuthService
       console.error('Error al iniciar sesión:', error);
-
-      let errorMessage = 'Error al iniciar sesión';
-      if (error?.code) {
-        switch (error.code) {
-          case 'auth/user-not-found':
-          case 'auth/wrong-password':
-            errorMessage = 'Email o contraseña incorrectos';
-            break;
-          case 'auth/invalid-email':
-            errorMessage = 'El correo electrónico no es válido';
-            break;
-          case 'auth/user-disabled':
-            errorMessage = 'Esta cuenta ha sido deshabilitada';
-            break;
-          case 'auth/too-many-requests':
-            errorMessage = 'Demasiados intentos. Intenta más tarde';
-            break;
-          default:
-            errorMessage = `Error: ${error.message}`;
-        }
-      }
-
-      toast.error(errorMessage);
     }
   }
 

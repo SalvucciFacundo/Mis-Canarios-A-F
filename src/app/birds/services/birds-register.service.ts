@@ -1,6 +1,6 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { Birds } from '../interface/birds.interface';
-import { addDoc, collection, CollectionReference, doc, Firestore, getDocs, getDoc, updateDoc } from '@angular/fire/firestore';
+import { addDoc, collection, CollectionReference, doc, Firestore, getDocs, getDoc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
@@ -56,6 +56,11 @@ export class BirdsRegisterService {
       ...bird,
       modificationDate: new Date()
     });
+  }
+
+  async deleteBird(email: string, id: string): Promise<void> {
+    const ref = doc(this._firestore, `bird-records/${email}/Birds/${id}`);
+    await deleteDoc(ref);
   }
 
 }

@@ -10,6 +10,7 @@ import { BirdsStoreService } from '../../services/birds-store.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from '../../../shared/services/loading.service';
+import { ToastService } from '../../../shared/services/toast.service';
 @Component({
   selector: 'app-bird-edit',
   imports: [ReactiveFormsModule, BirdFormComponent, CommonModule],
@@ -21,6 +22,7 @@ export class BirdEditComponent {
   private router = inject(Router);
   private store = inject(BirdsStoreService);
   private loadingService = inject(LoadingService);
+  private toastService = inject(ToastService);
   //birdData: any = null;
   //birdId: string | null = null;
 
@@ -43,6 +45,7 @@ export class BirdEditComponent {
     const email = this.store.userEmail();
     if (!id || !email) {
       console.error('Faltan datos para actualizar: ID o email');
+      this.toastService.error('Error: faltan datos para actualizar el canario');
       return;
     }
 
@@ -57,6 +60,7 @@ export class BirdEditComponent {
     } catch (error) {
       console.error('Error al actualizar canario:', error);
       this.loadingService.hidePageTransition();
+      // El toast de error ya se maneja en el store
     }
   }
 

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, signal, HostListener } from '@angular/core';
+import { Component, computed, signal, HostListener, inject } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
+import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-birds-list',
@@ -13,6 +14,7 @@ export class BirdsListComponent {
 
   mostrarInactivos = signal(false);
   scrollY = signal(0);
+  private toastService = inject(ToastService);
 
   constructor(public birdsStore: BirdsStoreService) { }
 
@@ -81,6 +83,21 @@ export class BirdsListComponent {
       top: 0,
       behavior: 'smooth'
     });
+  }
+
+  async eliminarCanario(bird: any) {
+    const email = this.birdsStore.userEmail();
+    if (!email || !bird.id) return;
+
+    // Mostrar confirmación
+    this.toastService.confirm(
+      `¿Estás seguro de que deseas eliminar el canario ${bird.ringNumber || 'sin anillo'}? Esta acción no se puede deshacer.`,
+      async () => {
+        await this.birdsStore.eliminarCanario(email, bird.id);
+      },
+      undefined,
+      'Confirmar eliminación'
+    );
   }
 }
 

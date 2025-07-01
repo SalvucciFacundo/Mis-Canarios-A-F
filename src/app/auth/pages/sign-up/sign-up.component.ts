@@ -2,9 +2,9 @@ import { isEmailError, isRequired } from './../../utils/validators';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { toast } from 'ngx-sonner';
 import { Router, RouterLink } from '@angular/router';
 import { LoadingService } from '../../../shared/services/loading.service';
+import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,6 +18,7 @@ export class SignUpComponent {
   private _authService = inject(AuthService);
   private _router = inject(Router);
   private _loadingService = inject(LoadingService);
+  private _toastService = inject(ToastService);
 
   showPassword = false;
 
@@ -53,36 +54,15 @@ export class SignUpComponent {
       if (!name || !email || !password) return;
 
       await this._authService.signUp({ name, email, password });
-      toast.success('¡Cuenta creada exitosamente!', {
-        description: 'Te hemos enviado un email de verificación. Puedes verificarlo más tarde desde tu perfil.'
-      });
+      this._toastService.success('¡Cuenta creada exitosamente!', 'Te hemos enviado un email de verificación. Puedes verificarlo más tarde desde tu perfil.');
 
       // Mostrar loading de pantalla completa y navegar
       await this._loadingService.showFullScreenTransition('Bienvenido a Mis Canarios...', 1000);
       this._router.navigate(['/birds/birds-list']);
       this._loadingService.hidePageTransition();
     } catch (error: any) {
+      // El toast de error ya se maneja en el AuthService
       console.error('Error al crear usuario:', error);
-
-      // Mensajes de error más específicos
-      let errorMessage = 'Error al crear el usuario';
-      if (error?.code) {
-        switch (error.code) {
-          case 'auth/email-already-in-use':
-            errorMessage = 'Este correo electrónico ya está registrado';
-            break;
-          case 'auth/weak-password':
-            errorMessage = 'La contraseña debe tener al menos 6 caracteres';
-            break;
-          case 'auth/invalid-email':
-            errorMessage = 'El correo electrónico no es válido';
-            break;
-          default:
-            errorMessage = `Error: ${error.message}`;
-        }
-      }
-
-      toast.error(errorMessage);
     }
   }
 }

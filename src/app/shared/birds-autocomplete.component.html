@@ -1,8 +1,8 @@
 <div class="relative">
   <label class="block text-sm font-semibold text-gray-800 mb-1">{{ label }}</label>
   <input type="text" [value]="input()" (input)="onInput($event)" (blur)="hide()" placeholder="Ingrese N° anillo o Linea"
-    class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
-    autocomplete="off" />
+    class="w-full border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+    [ngClass]="hasError ? 'border-red-500' : 'border-gray-300'" autocomplete="off" />
   <ul *ngIf="showOptions() && filteredItems().length > 0"
     class="absolute z-50 bg-white border rounded-md w-full shadow-lg max-h-60 overflow-y-auto">
     <li *ngFor="let item of filteredItems()" (mousedown)="onSelect(item)"

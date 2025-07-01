@@ -5,6 +5,8 @@ import { Birds } from '../interface/birds.interface';
 import { doc, updateDoc } from '@angular/fire/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { LoadingService } from '../../shared/services/loading.service';
+import { ToastService } from '../../shared/services/toast.service';
+import { UserLimitsService } from '../../shared/services/user-limits.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class BirdsStoreService {
 
   private loading = signal(false);
   private error = signal<string | null>(null);
-  
+
   // Optimización de caché
   private readonly CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutos
   private lastFetchTime = 0;
@@ -37,7 +39,9 @@ export class BirdsStoreService {
     private birdService: BirdsRegisterService,
     private authService: AuthService,
     private firestore: Firestore,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private toastService: ToastService,
+    private limitsService: UserLimitsService
   ) {
     effect(() => {
       const email = this.authService.currentUserEmail();
@@ -55,7 +59,7 @@ export class BirdsStoreService {
     const cacheExpired = (now - this.lastFetchTime) > this.CACHE_TIMEOUT;
     const userChanged = this.currentUserEmail !== email;
     const noData = this.birds() === null;
-    
+
     return noData || cacheExpired || userChanged;
   }
 
@@ -82,6 +86,7 @@ export class BirdsStoreService {
       this.currentUserEmail = email;
     } catch (err) {
       this.error.set('Error al cargar los canarios');
+      this.toastService.error('Error al cargar los canarios');
     } finally {
       this.loading.set(false);
       this.loadingService.hidePageTransition();
@@ -112,15 +117,28 @@ export class BirdsStoreService {
 
   async agregarCanario(email: string, birdData: Partial<Birds>) {
     try {
+      // Verificar límites antes de crear
+      if (!this.limitsService.canPerformOperation('birds_create')) {
+        this.toastService.warning('Has alcanzado el límite diario de creación de canarios. Inténtalo mañana.');
+        return false;
+      }
+
       await this.birdService.addBird(email, birdData as Birds);
 
       // Actualizamos el store local sin hacer nueva lectura 🔥
       const actual = this.birds() ?? [];
       this.birds.set([...actual, { ...birdData, id: 'nuevo' }]); // ⚠️ podés ignorar el id real si querés evitar leer
 
+      // Incrementar contador de uso
+      this.limitsService.incrementUsage('birds_create');
+      this.toastService.success('Canario creado exitosamente');
+      return true;
+
     } catch (e) {
       console.error('Error al agregar el canario:', e);
       this.error.set('No se pudo agregar el canario');
+      this.toastService.error('Error al crear el canario. Inténtalo nuevamente.');
+      return false;
     }
   }
 
@@ -135,11 +153,35 @@ export class BirdsStoreService {
       );
       this.birds.set(updatedBirds);
 
+      this.toastService.success('Canario actualizado exitosamente');
+
     } catch (e) {
       console.error('Error al actualizar el canario:', e);
       this.error.set('No se pudo actualizar el canario');
+      this.toastService.error('Error al actualizar el canario. Inténtalo nuevamente.');
     }
   }
+
+  async eliminarCanario(email: string, birdId: string): Promise<boolean> {
+    try {
+      await this.birdService.deleteBird(email, birdId);
+
+      // Actualizar el store local
+      const current = this.birds() ?? [];
+      const updatedBirds = current.filter(b => b.id !== birdId);
+      this.birds.set(updatedBirds);
+
+      this.toastService.success('Canario eliminado exitosamente');
+      return true;
+
+    } catch (e) {
+      console.error('Error al eliminar el canario:', e);
+      this.error.set('No se pudo eliminar el canario');
+      this.toastService.error('Error al eliminar el canario. Inténtalo nuevamente.');
+      return false;
+    }
+  }
+
   getCanarioSignalById(id: string) {
     return computed(() => this.birds()?.find(b => b.id === id) ?? null);
   }

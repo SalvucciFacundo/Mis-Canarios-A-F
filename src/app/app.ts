@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NgxSonnerToaster } from 'ngx-sonner';
 import { CustomSpinnerComponent } from './shared/components/custom-spinner/custom-spinner.component';
 import { LoadingService } from './shared/services/loading.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgxSonnerToaster, CustomSpinnerComponent],
+  imports: [RouterOutlet, CustomSpinnerComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { toast } from 'ngx-sonner';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from '../../../shared/services/loading.service';
+import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-email-verification',
@@ -17,6 +17,7 @@ export class EmailVerificationComponent implements OnInit {
   private _authService = inject(AuthService);
   private _router = inject(Router);
   private _loadingService = inject(LoadingService);
+  private _toastService = inject(ToastService);
 
   isEmailVerified = this._authService.isEmailVerified;
   currentUserEmail = this._authService.currentUserEmail;
@@ -33,9 +34,7 @@ export class EmailVerificationComponent implements OnInit {
 
     // Si el email ya está verificado, mostrar mensaje y redirigir después de un momento
     if (this.isEmailVerified()) {
-      toast.success('Tu email ya está verificado', {
-        description: 'Serás redirigido a la lista de canarios.'
-      });
+      this._toastService.success('Tu email ya está verificado', 'Serás redirigido a la lista de canarios.');
       setTimeout(async () => {
         await this._loadingService.showFullScreenTransition('Accediendo a tus canarios...', 1000);
         this._router.navigate(['/birds/birds-list']);
@@ -50,13 +49,10 @@ export class EmailVerificationComponent implements OnInit {
     this.isResending = true;
     try {
       await this._authService.sendEmailVerification();
-      toast.success('Email de verificación enviado', {
-        description: 'Revisa tu bandeja de entrada y spam.'
-      });
+      // El toast de éxito ya se maneja en el AuthService
     } catch (error: any) {
-      toast.error('Error al enviar email de verificación', {
-        description: error.message
-      });
+      // El toast de error ya se maneja en el AuthService
+      console.error('Error al enviar email de verificación:', error);
     } finally {
       this.isResending = false;
     }
@@ -66,15 +62,13 @@ export class EmailVerificationComponent implements OnInit {
     try {
       const isVerified = await this._authService.checkEmailVerification();
       if (isVerified) {
-        toast.success('¡Email verificado exitosamente!');
+        this._toastService.success('¡Email verificado exitosamente!');
         this._router.navigate(['/birds/birds-list']);
       } else {
-        toast.info('El email aún no ha sido verificado', {
-          description: 'Por favor, revisa tu correo y haz clic en el enlace de verificación.'
-        });
+        this._toastService.info('El email aún no ha sido verificado', 'Por favor, revisa tu correo y haz clic en el enlace de verificación.');
       }
     } catch (error) {
-      toast.error('Error al verificar el estado del email');
+      this._toastService.error('Error al verificar el estado del email');
     }
   }
 

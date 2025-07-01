@@ -5,12 +5,13 @@ import { CommonModule } from '@angular/common';
 import { LoadingService } from './services/loading.service';
 import { UserLimitsIndicatorComponent } from './components/user-limits-indicator/user-limits-indicator.component';
 import { LimitsAlertComponent } from './components/limits-alert/limits-alert.component';
+import { ToastContainerComponent } from './toast-container.component';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterModule, CommonModule, UserLimitsIndicatorComponent, LimitsAlertComponent],
+  imports: [RouterModule, CommonModule, UserLimitsIndicatorComponent, LimitsAlertComponent, ToastContainerComponent],
   templateUrl: './layout.component.html',
   styles: [`
     /* Efectos de brillo para los menús */

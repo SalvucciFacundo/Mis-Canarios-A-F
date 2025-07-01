@@ -25,7 +25,7 @@ export class BirdFormComponent implements OnChanges {
 
   constructor(private fb: FormBuilder, private store: BirdsStoreService, private router: Router) {
     this.birdForm = this.fb.group({
-      origin: [''],
+      origin: ['', Validators.required], // Procedencia del canario (apellido del vendedor, criador, etc.) - requerido
       season: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
       ringColor: ['color', [Validators.required, Validators.pattern(/^(?!color$).+/)]],
       ringNumber: ['', Validators.pattern(/^\d{1,4}$/)],
@@ -75,7 +75,11 @@ export class BirdFormComponent implements OnChanges {
 
   onSubmit() {
     if (this.birdForm.valid) {
-      this.submitted.emit(this.birdForm.value);
+      const formData = {
+        ...this.birdForm.value,
+        registrationSource: 'manual' as const // Siempre 'manual' cuando se usa el formulario directamente
+      };
+      this.submitted.emit(formData);
     }
   }
 

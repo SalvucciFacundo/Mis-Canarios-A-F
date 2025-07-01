@@ -1,85 +1,171 @@
-import { effect, Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal, inject, Injector, runInInjectionContext } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, authState, signInWithEmailAndPassword, updateProfile, sendEmailVerification, reload } from '@angular/fire/auth';
 import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
 import { User } from '../interface/user.interface';
 import { Observable } from 'rxjs';
+import { ToastService } from '../../shared/services/toast.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  private toastService = inject(ToastService);
+  private injector = inject(Injector);
   readonly currentUserEmail = signal<string | null>(null);
   readonly currentUser = signal<User | null>(null);
   readonly isEmailVerified = signal<boolean>(false);
-  constructor(private _auth: Auth, private _firestore: Firestore) {
-    effect(() => {
-      authState(this._auth).subscribe(async (firebaseUser) => {
-        this.currentUserEmail.set(firebaseUser?.email ?? null);
-        this.isEmailVerified.set(firebaseUser?.emailVerified ?? false);
 
-        if (firebaseUser) {
-          // Cargar datos adicionales del usuario desde Firestore
-          const userDoc = await this.getUserFromFirestore(firebaseUser.uid);
-          this.currentUser.set(userDoc);
-        } else {
-          this.currentUser.set(null);
-        }
-      });
+  constructor(private _auth: Auth, private _firestore: Firestore) {
+    // Usar runInInjectionContext para ejecutar authState en el contexto adecuado
+    runInInjectionContext(this.injector, () => {
+      this.initAuthStateListener();
+    });
+  }
+
+  private initAuthStateListener() {
+    authState(this._auth).subscribe(async (firebaseUser) => {
+      this.currentUserEmail.set(firebaseUser?.email ?? null);
+      this.isEmailVerified.set(firebaseUser?.emailVerified ?? false);
+
+      if (firebaseUser) {
+        // Cargar datos adicionales del usuario desde Firestore
+        const userDoc = await this.getUserFromFirestore(firebaseUser.uid);
+        this.currentUser.set(userDoc);
+      } else {
+        this.currentUser.set(null);
+      }
     });
   }
 
   async signUp(userData: { email: string; password: string; name?: string }) {
-    const { email, password, name } = userData;
+    try {
+      const { email, password, name } = userData;
 
-    // Crear usuario en Firebase Auth
-    const userCredential = await createUserWithEmailAndPassword(this._auth, email, password);
-    const firebaseUser = userCredential.user;
+      // Crear usuario en Firebase Auth
+      const userCredential = await createUserWithEmailAndPassword(this._auth, email, password);
+      const firebaseUser = userCredential.user;
 
-    // Actualizar el perfil con el nombre si se proporciona
-    if (name) {
-      await updateProfile(firebaseUser, { displayName: name });
+      // Actualizar el perfil con el nombre si se proporciona
+      if (name) {
+        await updateProfile(firebaseUser, { displayName: name });
+      }
+
+      // Enviar email de verificación
+      await sendEmailVerification(firebaseUser);
+
+      // Crear documento del usuario en Firestore
+      const user: User = {
+        uid: firebaseUser.uid,
+        name: name || email.split('@')[0], // Usar nombre o parte del email
+        email: email,
+        rol: 'user', // Rol por defecto
+        createdAt: new Date(),
+        updatedAt: new Date()
+      };
+
+      await this.saveUserToFirestore(user);
+      return userCredential;
+    } catch (error: any) {
+      console.error('Error al crear usuario:', error);
+
+      // Mensajes de error más específicos
+      let errorMessage = 'Error al crear el usuario';
+      if (error?.code) {
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            errorMessage = 'Este correo electrónico ya está registrado';
+            break;
+          case 'auth/weak-password':
+            errorMessage = 'La contraseña debe tener al menos 6 caracteres';
+            break;
+          case 'auth/invalid-email':
+            errorMessage = 'El correo electrónico no es válido';
+            break;
+          default:
+            errorMessage = `Error: ${error.message}`;
+        }
+      }
+
+      this.toastService.error(errorMessage);
+      throw error;
     }
-
-    // Enviar email de verificación
-    await sendEmailVerification(firebaseUser);
-
-    // Crear documento del usuario en Firestore
-    const user: User = {
-      uid: firebaseUser.uid,
-      name: name || email.split('@')[0], // Usar nombre o parte del email
-      email: email,
-      rol: 'user', // Rol por defecto
-      createdAt: new Date(),
-      updatedAt: new Date()
-    };
-
-    await this.saveUserToFirestore(user);
-    return userCredential;
   }
 
   async signIn(userData: { email: string; password: string }) {
-    return signInWithEmailAndPassword(this._auth, userData.email, userData.password);
+    try {
+      const result = await signInWithEmailAndPassword(this._auth, userData.email, userData.password);
+      return result;
+    } catch (error: any) {
+      console.error('Error al iniciar sesión:', error);
+
+      let errorMessage = 'Error al iniciar sesión';
+      if (error?.code) {
+        switch (error.code) {
+          case 'auth/user-not-found':
+          case 'auth/wrong-password':
+          case 'auth/invalid-credential':
+            errorMessage = 'Email o contraseña incorrectos';
+            break;
+          case 'auth/invalid-email':
+            errorMessage = 'El correo electrónico no es válido';
+            break;
+          case 'auth/user-disabled':
+            errorMessage = 'Esta cuenta ha sido deshabilitada';
+            break;
+          case 'auth/too-many-requests':
+            errorMessage = 'Demasiados intentos. Intenta más tarde';
+            break;
+          default:
+            errorMessage = `Error: ${error.message}`;
+        }
+      }
+
+      this.toastService.error(errorMessage);
+      throw error;
+    }
   }
 
   async signOut() {
-    return this._auth.signOut();
+    try {
+      const result = await this._auth.signOut();
+      this.toastService.success('Sesión cerrada exitosamente');
+      return result;
+    } catch (error: any) {
+      console.error('Error al cerrar sesión:', error);
+      this.toastService.error('Error al cerrar sesión');
+      throw error;
+    }
   }
 
   async sendEmailVerification(): Promise<void> {
-    const user = this._auth.currentUser;
-    if (user && !user.emailVerified) {
-      await sendEmailVerification(user);
-    } else {
-      throw new Error('No user logged in or email already verified');
+    try {
+      const user = this._auth.currentUser;
+      if (user && !user.emailVerified) {
+        await sendEmailVerification(user);
+        this.toastService.success('Email de verificación enviado', 'Revisa tu bandeja de entrada');
+      } else if (user?.emailVerified) {
+        this.toastService.info('Tu email ya está verificado');
+      } else {
+        throw new Error('No user logged in');
+      }
+    } catch (error: any) {
+      console.error('Error al enviar email de verificación:', error);
+      this.toastService.error('Error al enviar el email de verificación');
+      throw error;
     }
   }
 
   async reloadUser(): Promise<void> {
-    const user = this._auth.currentUser;
-    if (user) {
-      await reload(user);
-      this.isEmailVerified.set(user.emailVerified);
+    try {
+      const user = this._auth.currentUser;
+      if (user) {
+        await reload(user);
+        this.isEmailVerified.set(user.emailVerified);
+      }
+    } catch (error: any) {
+      console.error('Error al recargar usuario:', error);
+      this.toastService.error('Error al actualizar información del usuario');
+      throw error;
     }
   }
 
@@ -93,40 +179,59 @@ export class AuthService {
   }
 
   private async saveUserToFirestore(user: User): Promise<void> {
-    const userRef = doc(this._firestore, 'users', user.uid);
-    await setDoc(userRef, user);
+    try {
+      const userRef = doc(this._firestore, 'users', user.uid);
+      await setDoc(userRef, user);
+    } catch (error: any) {
+      console.error('Error al guardar usuario en Firestore:', error);
+      this.toastService.error('Error al guardar información del usuario');
+      throw error;
+    }
   }
 
   private async getUserFromFirestore(uid: string): Promise<User | null> {
-    const userRef = doc(this._firestore, 'users', uid);
-    const userSnap = await getDoc(userRef);
+    try {
+      const userRef = doc(this._firestore, 'users', uid);
+      const userSnap = await getDoc(userRef);
 
-    if (userSnap.exists()) {
-      const data = userSnap.data();
-      return {
-        uid: data['uid'],
-        name: data['name'],
-        email: data['email'],
-        rol: data['rol'],
-        createdAt: data['createdAt']?.toDate(),
-        updatedAt: data['updatedAt']?.toDate()
-      } as User;
+      if (userSnap.exists()) {
+        const data = userSnap.data();
+        return {
+          uid: data['uid'],
+          name: data['name'],
+          email: data['email'],
+          rol: data['rol'],
+          createdAt: data['createdAt']?.toDate(),
+          updatedAt: data['updatedAt']?.toDate()
+        } as User;
+      }
+
+      return null;
+    } catch (error: any) {
+      console.error('Error al obtener usuario de Firestore:', error);
+      // No mostrar toast aquí para evitar spam de notificaciones
+      return null;
     }
-
-    return null;
   }
 
   async updateUserProfile(userData: Partial<User>): Promise<void> {
-    const currentUser = this.currentUser();
-    if (!currentUser) throw new Error('No user logged in');
+    try {
+      const currentUser = this.currentUser();
+      if (!currentUser) throw new Error('No user logged in');
 
-    const updatedUser: User = {
-      ...currentUser,
-      ...userData,
-      updatedAt: new Date()
-    };
+      const updatedUser: User = {
+        ...currentUser,
+        ...userData,
+        updatedAt: new Date()
+      };
 
-    await this.saveUserToFirestore(updatedUser);
-    this.currentUser.set(updatedUser);
+      await this.saveUserToFirestore(updatedUser);
+      this.currentUser.set(updatedUser);
+      this.toastService.success('Perfil actualizado exitosamente');
+    } catch (error: any) {
+      console.error('Error al actualizar perfil:', error);
+      this.toastService.error('Error al actualizar el perfil');
+      throw error;
+    }
   }
 }

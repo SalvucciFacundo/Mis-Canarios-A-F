@@ -7,6 +7,7 @@ import { Birds } from '../../interface/birds.interface';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from '../../../shared/services/loading.service';
 import { UserLimitsService } from '../../../shared/services/user-limits.service';
+import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-birds-add',
@@ -18,6 +19,7 @@ export class BirdsAddComponent {
 
   private loadingService = inject(LoadingService);
   private limitsService = inject(UserLimitsService);
+  private toastService = inject(ToastService);
 
   constructor(private birdsStore: BirdsStoreService, private router: Router) { }
 
@@ -25,19 +27,12 @@ export class BirdsAddComponent {
     const email = this.birdsStore.userEmail();
     if (!email) return;
 
-    // Verificar límites antes de crear
-    if (!this.limitsService.canPerformOperation('birds_create')) {
-      alert('Has alcanzado el límite diario de creación de canarios. Inténtalo mañana.');
-      return;
-    }
+    const success = await this.birdsStore.agregarCanario(email, data);
 
-    await this.birdsStore.agregarCanario(email, data);
-    
-    // Incrementar contador de uso
-    this.limitsService.incrementUsage('birds_create');
-    
-    // Navegación interna rápida, sin spinner
-    this.router.navigate(['/birds']);
+    if (success) {
+      // Navegación interna rápida, sin spinner
+      this.router.navigate(['/birds']);
+    }
   }
 
   async returnList() {
@@ -56,10 +51,29 @@ export class BirdsAddComponent {
     const email = this.birdsStore.userEmail();
     if (!email) return;
 
+    const birds = this.birdsDraft();
+    if (birds.length === 0) {
+      this.toastService.warning('No hay canarios en la lista para guardar');
+      return;
+    }
+
     // Mostrar spinner solo para operaciones de guardado múltiple (más pesadas)
     await this.loadingService.showContentTransition('Guardando canarios...', 800);
-    this.birdsDraft().forEach(bird => this.birdsStore.agregarCanario(email, bird));
+
+    let successCount = 0;
+    for (const bird of birds) {
+      const success = await this.birdsStore.agregarCanario(email, bird);
+      if (success) successCount++;
+    }
+
     this.birdsDraft.set([]);
+
+    if (successCount === birds.length) {
+      this.toastService.success(`${successCount} canarios guardados exitosamente`);
+    } else if (successCount > 0) {
+      this.toastService.warning(`${successCount} de ${birds.length} canarios guardados. Algunos presentaron errores.`);
+    }
+
     this.router.navigate(['/birds']);
     this.loadingService.hidePageTransition();
   }

@@ -1,0 +1,301 @@
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <!-- Header -->
+  <div class="bg-white shadow-md rounded-lg">
+    <div class="p-6 border-b">
+      <h2 class="text-2xl font-bold text-gray-800">Nueva Pareja</h2>
+      <p class="text-gray-600 mt-1">Complete los datos básicos para registrar una nueva pareja de cría</p>
+    </div>
+
+    <!-- Formulario -->
+    <form [formGroup]="coupleForm" (ngSubmit)="onSubmit()" class="p-6 space-y-6">
+
+      <!-- Primera fila: Temporada y Nido -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Temporada -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-800 mb-1">Temporada <span
+              class="text-red-500">*</span></label>
+          <select formControlName="season"
+            class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+            [class.border-red-500]="coupleForm.get('season')?.invalid && coupleForm.get('season')?.touched">
+            <option value="">Seleccionar temporada</option>
+            <option *ngFor="let year of availableSeasons()" [value]="year">{{ year }}</option>
+          </select>
+          <div *ngIf="coupleForm.get('season')?.invalid && coupleForm.get('season')?.touched"
+            class="text-red-600 text-xs mt-1">
+            La temporada es requerida
+          </div>
+        </div>
+
+        <!-- Código de Nido -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-800 mb-1">Código de Nido <span
+              class="text-red-500">*</span></label>
+          <input type="text" formControlName="nestCode" placeholder="Ej: N001, NIDO-A, etc."
+            class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+            [class.border-red-500]="coupleForm.get('nestCode')?.invalid && coupleForm.get('nestCode')?.touched">
+          <div *ngIf="coupleForm.get('nestCode')?.invalid && coupleForm.get('nestCode')?.touched"
+            class="text-red-600 text-xs mt-1">
+            El código de nido es requerido
+          </div>
+          <!-- Advertencia si el nido está ocupado -->
+          <div *ngIf="nestOccupiedWarning()" class="text-orange-600 text-xs mt-1 flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z">
+              </path>
+            </svg>
+            Este nido ya está ocupado en esta temporada
+          </div>
+        </div>
+      </div>
+
+      <!-- Segunda fila: Selección de Padre y Madre -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Selección de Macho -->
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-sm font-semibold text-gray-800">Padre (Macho) <span
+                class="text-red-500">*</span></label>
+            <button type="button" (click)="openNewBirdModal('male')"
+              class="text-xs text-sky-600 hover:text-sky-700 font-medium flex items-center">
+              <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                </path>
+              </svg>
+              Agregar nuevo
+            </button>
+          </div> <app-birds-autocomplete [items]="availableMales()" label="" [displayFn]="displayBirdFn"
+            [hasError]="(coupleForm.get('maleId')?.invalid && coupleForm.get('maleId')?.touched) ?? false"
+            (selectedChange)="onMaleSelected($event)" (blurChange)="onMaleBlur()">
+          </app-birds-autocomplete>
+
+          <div *ngIf="coupleForm.get('maleId')?.invalid && coupleForm.get('maleId')?.touched"
+            class="text-red-600 text-xs mt-1">
+            Debe seleccionar un padre
+          </div>
+
+          <!-- Advertencia si el macho ya está activo -->
+          <div *ngIf="maleActiveWarning()" class="text-orange-600 text-xs mt-1 flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Este macho ya está activo en otra pareja
+          </div>
+        </div>
+
+        <!-- Selección de Hembra -->
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-sm font-semibold text-gray-800">Madre (Hembra) <span
+                class="text-red-500">*</span></label>
+            <button type="button" (click)="openNewBirdModal('female')"
+              class="text-xs text-sky-600 hover:text-sky-700 font-medium flex items-center">
+              <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                </path>
+              </svg>
+              Agregar nuevo
+            </button>
+          </div> <app-birds-autocomplete [items]="availableFemales()" label="" [displayFn]="displayBirdFn"
+            [hasError]="(coupleForm.get('femaleId')?.invalid && coupleForm.get('femaleId')?.touched) ?? false"
+            (selectedChange)="onFemaleSelected($event)" (blurChange)="onFemaleBlur()">
+          </app-birds-autocomplete>
+
+          <div *ngIf="coupleForm.get('femaleId')?.invalid && coupleForm.get('femaleId')?.touched"
+            class="text-red-600 text-xs mt-1">
+            Debe seleccionar una madre
+          </div>
+
+          <!-- Error si la hembra ya está activa -->
+          <div *ngIf="femaleActiveError()" class="text-red-600 text-xs mt-1 flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z">
+              </path>
+            </svg>
+            Esta hembra ya está activa en otra pareja
+          </div>
+        </div>
+      </div>
+
+      <!-- Información seleccionada -->
+      <div *ngIf="selectedMale() || selectedFemale()" class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <h3 class="text-sm font-semibold text-blue-800 mb-3">Pareja Seleccionada</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Info del Macho -->
+          <div *ngIf="selectedMale()" class="flex items-center space-x-3 p-3 bg-white rounded-lg border">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold text-lg">♂</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900">N° {{ selectedMale()?.ringNumber || 'Sin anillo' }}</p>
+              <p class="text-sm text-gray-600">{{ selectedMale()?.line || 'Sin línea' }}</p>
+              <p class="text-xs text-gray-500">{{ selectedMale()?.season }} · {{ selectedMale()?.gender |
+                titlecase }}</p>
+            </div>
+          </div>
+
+          <!-- Info de la Hembra -->
+          <div *ngIf="selectedFemale()" class="flex items-center space-x-3 p-3 bg-white rounded-lg border">
+            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+              <span class="text-pink-600 font-bold text-lg">♀</span>
+            </div>
+            <div>
+              <p class="font-medium text-gray-900">N° {{ selectedFemale()?.ringNumber || 'Sin anillo' }}
+              </p>
+              <p class="text-sm text-gray-600">{{ selectedFemale()?.line || 'Sin línea' }}</p>
+              <p class="text-xs text-gray-500">{{ selectedFemale()?.season }} · {{
+                selectedFemale()?.gender | titlecase }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Observaciones opcionales -->
+      <div>
+        <label class="block text-sm font-semibold text-gray-800 mb-1">Observaciones</label>
+        <textarea formControlName="observations" rows="3"
+          placeholder="Observaciones adicionales sobre la pareja (opcional)"
+          class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400 resize-none">
+        </textarea>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-4 border-t gap-4">
+        <button type="button" (click)="goBack()"
+          class="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 font-medium transition-colors">
+          Cancelar
+        </button>
+
+        <div class="flex flex-col sm:flex-row gap-2">
+          <!-- Botón para agregar al borrador -->
+          <button type="button" (click)="addToDraft()" [disabled]="coupleForm.invalid"
+            class="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white rounded-md font-medium transition-colors flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Agregar a la lista
+            <span *ngIf="couplesDraft().length > 0" class="ml-2 bg-green-800 text-xs px-2 py-0.5 rounded-full">
+              {{ couplesDraft().length }}
+            </span>
+          </button>
+
+          <!-- Botón para crear pareja individual -->
+          <button type="submit" [disabled]="coupleForm.invalid || isSubmitting()"
+            class="px-6 py-2 bg-sky-600 hover:bg-sky-700 disabled:bg-gray-400 text-white rounded-md font-medium transition-colors flex items-center">
+            <svg *ngIf="isSubmitting()" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none"
+              viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+              </circle>
+              <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            {{ isSubmitting() ? 'Guardando...' : 'Guardar Pareja' }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Sección del Borrador -->
+  <div *ngIf="couplesDraft().length > 0" class="bg-white shadow-md rounded-lg">
+    <div class="p-6 border-b">
+      <div class="flex justify-between items-center">
+        <div>
+          <h3 class="text-lg font-bold text-gray-800">Listado de Parejas</h3>
+          <p class="text-sm text-gray-600">{{ couplesDraft().length }} pareja(s) pendiente(s) de guardar</p>
+        </div>
+        <div class="flex gap-2">
+          <button type="button" (click)="clearDraft()"
+            class="px-3 py-1 text-sm border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+            Limpiar
+          </button>
+          <button type="button" (click)="saveAllDraft()" [disabled]="isSubmitting()"
+            class="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white rounded-md font-medium flex items-center">
+            <svg *ngIf="isSubmitting()" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none"
+              viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+              </circle>
+              <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            {{ isSubmitting() ? 'Guardando...' : 'Guardar Todas' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-6">
+      <div class="space-y-3">
+        <div *ngFor="let couple of couplesDraft(); let i = index"
+          class="flex items-center justify-between p-4 bg-gray-50 rounded-lg border">
+          <div class="flex-1">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+              <div>
+                <span class="font-medium text-gray-600">Nido:</span>
+                <span class="ml-1 text-gray-900 font-semibold">{{ couple.nestCode }}</span>
+              </div>
+              <div>
+                <span class="font-medium text-gray-600">Temporada:</span>
+                <span class="ml-1 text-gray-900">{{ couple.season }}</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 text-lg mr-1">♂</span>
+                <span class="font-medium text-gray-600">Macho:</span>
+                <span class="ml-1 text-gray-900">{{ getCoupleDisplayInfo(couple).male.ring }}</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-pink-600 text-lg mr-1">♀</span>
+                <span class="font-medium text-gray-600">Hembra:</span>
+                <span class="ml-1 text-gray-900">{{ getCoupleDisplayInfo(couple).female.ring }}</span>
+              </div>
+            </div>
+            <div *ngIf="couple.observations" class="mt-3 text-xs text-gray-600 bg-gray-100 p-2 rounded">
+              <span class="font-medium">Observaciones:</span> {{ couple.observations }}
+            </div>
+          </div>
+          <button type="button" (click)="confirmRemoveFromDraft(i)"
+            class="ml-4 p-2 text-red-600 hover:bg-red-50 rounded-md transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para agregar nuevo canario -->
+<div *ngIf="showNewBirdModal()" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg max-w-md w-full max-h-screen overflow-y-auto">
+    <div class="p-6 border-b">
+      <h3 class="text-lg font-semibold text-gray-900">Agregar Nuevo Canario</h3>
+      <p class="text-sm text-gray-600 mt-1">
+        {{ modalType() === 'male' ? 'Agregue un nuevo macho' : 'Agregue una nueva hembra' }}
+      </p>
+    </div>
+    <div class="p-6">
+      <p class="text-center text-gray-600">
+        Esta funcionalidad redirigirá al formulario de agregar canarios.
+      </p>
+      <div class="mt-6 flex justify-end space-x-3">
+        <button type="button" (click)="closeNewBirdModal()"
+          class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+          Cancelar
+        </button>
+        <button type="button" (click)="redirectToNewBird()"
+          class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md">
+          Ir a Agregar Canario
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
