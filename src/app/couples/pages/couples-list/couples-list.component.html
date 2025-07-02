@@ -221,54 +221,34 @@
         </div>
       </div>
 
-      <!-- Estadísticas de huevos -->
-      <div *ngIf="couple.hatchedEggs || couple.unhatchedEggs || couple.fertiliceEggs || couple.unFertiliceEggs"
-        class="grid grid-cols-2 gap-3 text-sm">
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">Eclosionados:</span>
-          <span class="font-medium text-green-600">{{ couple.hatchedEggs || 0 }}</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">No eclosionados:</span>
-          <span class="font-medium text-red-600">{{ couple.unhatchedEggs || 0 }}</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">Fértiles:</span>
-          <span class="font-medium text-blue-600">{{ couple.fertiliceEggs || 0 }}</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">Infértiles:</span>
-          <span class="font-medium text-gray-600">{{ couple.unFertiliceEggs || 0 }}</span>
-        </div>
-      </div>
-
-      <!-- Pichones -->
+      <!-- Estado de postura y pichones - Información básica -->
       <div class="pt-3 border-t border-gray-100">
-        <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-600">Pichones registrados:</span>
-          <span class="font-semibold text-lg text-purple-600">
-            {{ getCoupleDetails(couple)().offspring.length }}
+        <!-- Estado simple de la postura -->
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-sm text-gray-600">Estado:</span>
+          <span class="px-2 py-1 text-xs rounded-full font-medium" [ngClass]="{
+            'bg-gray-100 text-gray-700': !couple.postureStartDate,
+            'bg-blue-100 text-blue-700': couple.postureStartDate && !couple.postureEndDate,
+            'bg-green-100 text-green-700': couple.postureStartDate && couple.postureEndDate
+          }">
+            {{ !couple.postureStartDate ? 'Sin iniciar' :
+            couple.postureStartDate && !couple.postureEndDate ? 'En curso' : 'Finalizada' }}
           </span>
         </div>
-        <div *ngIf="couple.deathPiichons && couple.deathPiichons > 0" class="flex items-center justify-between mt-1">
-          <span class="text-sm text-gray-600">Bajas de pichones:</span>
-          <span class="font-medium text-red-600">{{ couple.deathPiichons }}</span>
+
+        <!-- Solo contador de pichones -->
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-600">Pichones:</span>
+          <span class="font-semibold text-purple-600">
+            {{ getCoupleDetails(couple)().offspring.length }}
+            <span *ngIf="couple.deathPiichons && couple.deathPiichons > 0" class="text-red-600 ml-1">
+              ({{ couple.deathPiichons }} bajas)
+            </span>
+          </span>
         </div>
       </div>
 
-      <!-- Fechas -->
-      <div *ngIf="couple.postureStartDate || couple.postureEndDate" class="text-xs text-gray-500 space-y-1">
-        <div *ngIf="couple.postureStartDate" class="flex items-center justify-between">
-          <span>Inicio postura:</span>
-          <span>{{ couple.postureStartDate | date:'dd/MM/yyyy' }}</span>
-        </div>
-        <div *ngIf="couple.postureEndDate" class="flex items-center justify-between">
-          <span>Fin postura:</span>
-          <span>{{ couple.postureEndDate | date:'dd/MM/yyyy' }}</span>
-        </div>
-      </div>
-
-      <!-- Observaciones -->
+      <!-- Solo observaciones si existen -->
       <div *ngIf="couple.observations" class="pt-3 border-t border-gray-100">
         <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Observaciones</p>
         <p class="text-sm text-gray-700 line-clamp-2" [title]="couple.observations">

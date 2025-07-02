@@ -1,0 +1,824 @@
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <!-- Loading State -->
+  <div *ngIf="isLoading()" class="text-center py-12">
+    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-600 mx-auto"></div>
+    <p class="mt-4 text-gray-600">Cargando detalles de la pareja...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="!isLoading() && !couple()" class="text-center py-12">
+    <div class="text-6xl text-gray-400 mb-4">🚫</div>
+    <h3 class="text-lg font-semibold text-gray-800 mb-2">Pareja no encontrada</h3>
+    <p class="text-gray-600 mb-6">La pareja que busca no existe o fue eliminada.</p>
+    <button (click)="goBack()" class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors">
+      Volver a la lista
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="!isLoading() && couple() && coupleDetails()" class="space-y-6">
+    <!-- Header -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6 border-b border-gray-200">
+        <!-- Desktop Layout: Title left, Actions right -->
+        <div class="hidden md:flex items-center justify-between mb-4">
+          <div class="flex items-center space-x-3">
+            <div class="text-4xl">🪶</div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                Nido {{ couple()?.nestCode }}
+              </h1>
+              <p class="text-gray-600">Temporada {{ couple()?.season }}</p>
+            </div>
+          </div>
+
+          <!-- Actions for Desktop -->
+          <div class="flex items-center space-x-3">
+            <button (click)="goBack()"
+              class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+              ← Volver
+            </button>
+            <button (click)="editCouple()"
+              class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors">
+              ✏️ Editar
+            </button>
+            <button (click)="deleteCouple()"
+              class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors">
+              🗑️ Eliminar
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Layout: Title on top, Actions at bottom -->
+        <div class="md:hidden">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="text-4xl">🪶</div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                Nido {{ couple()?.nestCode }}
+              </h1>
+              <p class="text-gray-600">Temporada {{ couple()?.season }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status and dates -->
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div *ngIf="couple()?.creationDate" class="flex items-center space-x-2">
+            <span class="text-gray-500">📅 Creado:</span>
+            <span class="font-medium">{{ convertFirestoreDate(couple()?.creationDate) | date:'dd/MM/yyyy HH:mm'
+              }}</span>
+          </div>
+          <div *ngIf="couple()?.postureStartDate" class="flex items-center space-x-2">
+            <span class="text-gray-500">🥚 Inicio postura:</span>
+            <span class="font-medium">{{ convertFirestoreDate(couple()?.postureStartDate) | date:'dd/MM/yyyy' }}</span>
+          </div>
+          <div *ngIf="couple()?.postureEndDate" class="flex items-center space-x-2">
+            <span class="text-gray-500">🔚 Fin postura:</span>
+            <span class="font-medium">{{ convertFirestoreDate(couple()?.postureEndDate) | date:'dd/MM/yyyy' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parents Information -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Male -->
+      <div class="bg-white shadow-sm rounded-lg border">
+        <div class="p-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-2xl">♂</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Macho</h3>
+              <p class="text-sm text-gray-600">Información del reproductor</p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="text-gray-600">N° Anillo:</span>
+              <span class="font-semibold">{{ coupleDetails()?.male?.ringNumber || 'Sin anillo' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Línea:</span>
+              <span class="font-medium">{{ coupleDetails()?.male?.line || 'Sin línea' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Temporada:</span>
+              <span class="font-medium">{{ coupleDetails()?.male?.season || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Estado:</span>
+              <span class="px-2 py-1 text-xs rounded-full" [ngClass]="{
+                  'bg-green-100 text-green-800': coupleDetails()?.male?.state === 'criadero',
+                  'bg-blue-100 text-blue-800': coupleDetails()?.male?.state === 'activo',
+                  'bg-gray-100 text-gray-800': coupleDetails()?.male?.state === 'vendido',
+                  'bg-red-100 text-red-800': coupleDetails()?.male?.state === 'muerto'
+                }">
+                {{ coupleDetails()?.male?.state || 'N/A' }}
+              </span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Procedencia:</span>
+              <span class="font-medium">{{ coupleDetails()?.male?.origin || 'N/A' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Female -->
+      <div class="bg-white shadow-sm rounded-lg border">
+        <div class="p-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+              <span class="text-2xl">♀</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Hembra</h3>
+              <p class="text-sm text-gray-600">Información de la reproductora</p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="text-gray-600">N° Anillo:</span>
+              <span class="font-semibold">{{ coupleDetails()?.female?.ringNumber || 'Sin anillo' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Línea:</span>
+              <span class="font-medium">{{ coupleDetails()?.female?.line || 'Sin línea' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Temporada:</span>
+              <span class="font-medium">{{ coupleDetails()?.female?.season || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Estado:</span>
+              <span class="px-2 py-1 text-xs rounded-full" [ngClass]="{
+                  'bg-green-100 text-green-800': coupleDetails()?.female?.state === 'criadero',
+                  'bg-blue-100 text-blue-800': coupleDetails()?.female?.state === 'activo',
+                  'bg-gray-100 text-gray-800': coupleDetails()?.female?.state === 'vendido',
+                  'bg-red-100 text-red-800': coupleDetails()?.female?.state === 'muerto'
+                }">
+                {{ coupleDetails()?.female?.state || 'N/A' }}
+              </span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Procedencia:</span>
+              <span class="font-medium">{{ coupleDetails()?.female?.origin || 'N/A' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gestión de Posturas -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center space-x-3">
+            <div class="text-3xl">🪺</div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Gestión de Posturas</h3>
+              <p class="text-sm text-gray-600">Control del ciclo de cría y resultados</p>
+            </div>
+          </div>
+          <button (click)="togglePostureForm()"
+            class="inline-flex items-center px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+              </path>
+            </svg>
+            {{ showPostureForm() ? 'Cancelar' : 'Editar Postura' }}
+          </button>
+        </div>
+
+        <!-- Timeline de Estado -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-semibold text-gray-800">Estado del Ciclo</h4>
+            <span class="px-3 py-1 rounded-full text-sm font-medium" [ngClass]="getPostureStatusColor()">
+              {{ getPostureStatusText() }}
+            </span>
+          </div>
+
+          <!-- Timeline visual -->
+          <div class="flex items-center space-x-4 overflow-x-auto">
+            <!-- No iniciado -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': postureStatus() !== 'not-started',
+                'bg-gray-200 border-gray-300 text-gray-500': postureStatus() === 'not-started'
+              }">
+                <span class="text-sm">🏠</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Sin iniciar</span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+              'bg-green-500': postureStatus() !== 'not-started',
+              'bg-gray-300': postureStatus() === 'not-started'
+            }"></div>
+
+            <!-- En postura -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': ['laying', 'incubating', 'completed'].includes(postureStatus()),
+                'bg-yellow-500 border-yellow-500 text-white': postureStatus() === 'laying',
+                'bg-gray-200 border-gray-300 text-gray-500': postureStatus() === 'not-started'
+              }">
+                <span class="text-sm">🥚</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Postura</span>
+              <span *ngIf="couple()?.postureStartDate && daysFromStart() > 0" class="text-xs text-blue-600">
+                Día {{ daysFromStart() }}
+              </span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+              'bg-green-500': ['incubating', 'completed'].includes(postureStatus()),
+              'bg-gray-300': !['incubating', 'completed'].includes(postureStatus())
+            }"></div>
+
+            <!-- Incubando -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': ['incubating', 'completed'].includes(postureStatus()),
+                'bg-blue-500 border-blue-500 text-white': postureStatus() === 'incubating',
+                'bg-gray-200 border-gray-300 text-gray-500': !['incubating', 'completed'].includes(postureStatus())
+              }">
+                <span class="text-sm">🐣</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Incubación</span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+              'bg-green-500': postureStatus() === 'completed',
+              'bg-gray-300': postureStatus() !== 'completed'
+            }"></div>
+
+            <!-- Completado -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': postureStatus() === 'completed',
+                'bg-gray-200 border-gray-300 text-gray-500': postureStatus() !== 'completed'
+              }">
+                <span class="text-sm">🐦</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones de Acción Rápida -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button *ngIf="postureStatus() === 'not-started'" (click)="startPosture()"
+            class="inline-flex items-center px-3 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Iniciar Postura
+          </button>
+
+          <button *ngIf="['laying', 'incubating'].includes(postureStatus())" (click)="endPosture()"
+            class="inline-flex items-center px-3 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Finalizar Postura
+          </button>
+
+          <button (click)="addOffspring()"
+            class="inline-flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Registrar Pichón
+          </button>
+        </div>
+
+        <!-- Formulario de Edición de Postura -->
+        <div *ngIf="showPostureForm()" class="border-t pt-6">
+          <form [formGroup]="postureForm" (ngSubmit)="savePostureChanges()" class="space-y-6">
+            <!-- Fechas de Postura -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="postureStartDate" class="block text-sm font-medium text-gray-700 mb-2">
+                  Fecha de Inicio de Postura
+                </label>
+                <input id="postureStartDate" type="date" formControlName="postureStartDate"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+              </div>
+              <div>
+                <label for="postureEndDate" class="block text-sm font-medium text-gray-700 mb-2">
+                  Fecha de Fin de Postura
+                </label>
+                <input id="postureEndDate" type="date" formControlName="postureEndDate"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+              </div>
+            </div>
+
+            <!-- Estadísticas de Huevos -->
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-3">Estadísticas de Huevos</h5>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div>
+                  <label for="hatchedEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Eclosionados
+                  </label>
+                  <input id="hatchedEggs" type="number" min="0" formControlName="hatchedEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="unhatchedEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    No Eclosionados
+                  </label>
+                  <input id="unhatchedEggs" type="number" min="0" formControlName="unhatchedEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="fertiliceEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Fértiles
+                  </label>
+                  <input id="fertiliceEggs" type="number" min="0" formControlName="fertiliceEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="unFertiliceEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Infértiles
+                  </label>
+                  <input id="unFertiliceEggs" type="number" min="0" formControlName="unFertiliceEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="brokenEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Rotos
+                  </label>
+                  <input id="brokenEggs" type="number" min="0" formControlName="brokenEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+              </div>
+            </div>
+
+            <!-- Pichones -->
+            <div>
+              <label for="deathPiichons" class="block text-sm font-medium text-gray-700 mb-2">
+                Pichones Fallecidos
+              </label>
+              <input id="deathPiichons" type="number" min="0" formControlName="deathPiichons"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+            </div>
+
+            <!-- Observaciones -->
+            <div>
+              <label for="observations" class="block text-sm font-medium text-gray-700 mb-2">
+                Observaciones
+              </label>
+              <textarea id="observations" formControlName="observations" rows="3"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                placeholder="Observaciones sobre el proceso de cría..."></textarea>
+            </div>
+
+            <!-- Botones del Formulario -->
+            <div class="flex justify-end space-x-3 pt-4 border-t">
+              <button type="button" (click)="togglePostureForm()"
+                class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+                Cancelar
+              </button>
+              <button type="submit" [disabled]="postureForm.invalid || isUpdatingPosture()"
+                class="px-4 py-2 bg-sky-600 hover:bg-sky-700 disabled:bg-gray-400 text-white rounded-md transition-colors flex items-center">
+                <svg *ngIf="isUpdatingPosture()" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none"
+                  viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+                {{ isUpdatingPosture() ? 'Guardando...' : 'Guardar Cambios' }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pichones Section (Moved after Posture Management) -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center space-x-3">
+            <div class="text-3xl">🐤</div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Pichones</h3>
+              <p class="text-sm text-gray-600">
+                {{ (coupleDetails()?.offspring?.length || 0) }} pichón(es) registrado(s)
+                <span *ngIf="(couple()?.deathPiichons ?? 0) > 0" class="text-red-600">
+                  ({{ couple()?.deathPiichons }} baja(s))
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offspring List -->
+        <div *ngIf="coupleDetails()?.offspring && (coupleDetails()?.offspring?.length ?? 0) > 0; else noOffspring"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div *ngFor="let bird of coupleDetails()?.offspring; trackBy: trackByBirdId"
+            class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+            (click)="viewBirdDetails(bird.id!)">
+
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium" [ngClass]="{
+                      'bg-blue-100 text-blue-600': bird.gender === 'macho',
+                      'bg-pink-100 text-pink-600': bird.gender === 'hembra',
+                      'bg-gray-100 text-gray-600': !bird.gender || bird.gender === 'no_determinado'
+                    }">
+                  <span>
+                    {{ bird.gender === 'macho' ? '♂' : bird.gender === 'hembra' ? '♀' : '?' }}
+                  </span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800">{{ bird.ringNumber || 'Sin anillo' }}</h4>
+                  <p class="text-sm text-gray-600">{{ bird.line || 'Sin línea' }}</p>
+                </div>
+              </div>
+
+              <span class="px-2 py-1 text-xs rounded-full font-medium" [ngClass]="{
+                  'bg-green-100 text-green-800': bird.state === 'criadero',
+                  'bg-blue-100 text-blue-800': bird.state === 'activo',
+                  'bg-gray-100 text-gray-800': bird.state === 'vendido',
+                  'bg-red-100 text-red-800': bird.state === 'muerto'
+                }">
+                {{ bird.state || 'N/A' }}
+              </span>
+            </div>
+
+            <div class="space-y-1 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Temporada:</span>
+                <span class="font-medium">{{ bird.season || 'N/A' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Procedencia:</span>
+                <span class="font-medium">{{ bird.origin || 'N/A' }}</span>
+              </div>
+            </div>
+
+            <div *ngIf="bird.observations" class="mt-3 pt-3 border-t border-gray-100">
+              <p class="text-sm text-gray-600 line-clamp-2">{{ bird.observations }}</p>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #noOffspring>
+          <div class="text-center py-8 text-gray-500">
+            <div class="text-4xl mb-3">🐣</div>
+            <p>No hay pichones registrados para esta pareja</p>
+            <p class="text-sm mt-2">Los pichones aparecerán aquí cuando sean creados con los padres correctos</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <!-- Egg Statistics -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">🥚</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Estadísticas de Huevos</h3>
+            <p class="text-sm text-gray-600">Registro de postura y eclosión</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center p-4 bg-green-50 rounded-lg">
+            <div class="text-2xl font-bold text-green-600">{{ couple()?.hatchedEggs || 0 }}</div>
+            <div class="text-sm text-green-800">Eclosionados</div>
+          </div>
+          <div class="text-center p-4 bg-red-50 rounded-lg">
+            <div class="text-2xl font-bold text-red-600">{{ couple()?.unhatchedEggs || 0 }}</div>
+            <div class="text-sm text-red-800">No eclosionados</div>
+          </div>
+          <div class="text-center p-4 bg-blue-50 rounded-lg">
+            <div class="text-2xl font-bold text-blue-600">{{ couple()?.fertiliceEggs || 0 }}</div>
+            <div class="text-sm text-blue-800">Fértiles</div>
+          </div>
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <div class="text-2xl font-bold text-gray-600">{{ couple()?.unFertiliceEggs || 0 }}</div>
+            <div class="text-sm text-gray-800">Infértiles</div>
+          </div>
+        </div>
+
+        <!-- Total eggs and success rate -->
+        <div class="mt-6 pt-6 border-t border-gray-200">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-lg font-semibold text-gray-800">
+                {{ (couple()?.hatchedEggs || 0) + (couple()?.unhatchedEggs || 0) }}
+              </div>
+              <div class="text-sm text-gray-600">Total huevos</div>
+            </div>
+            <div>
+              <div class="text-lg font-semibold text-gray-800">
+                {{ (couple()?.fertiliceEggs || 0) + (couple()?.unFertiliceEggs || 0) }}
+              </div>
+              <div class="text-sm text-gray-600">Total examinados</div>
+            </div>
+            <div>
+              <div class="text-lg font-semibold text-green-600">
+                {{ ((couple()?.hatchedEggs || 0) > 0 && ((couple()?.hatchedEggs || 0) + (couple()?.unhatchedEggs || 0))
+                > 0)
+                ? (((couple()?.hatchedEggs || 0) / ((couple()?.hatchedEggs || 0) + (couple()?.unhatchedEggs || 0))) *
+                100).toFixed(1)
+                : 0 }}%
+              </div>
+              <div class="text-sm text-gray-600">Tasa de eclosión</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center space-x-3">
+            <div class="text-3xl">�</div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Gestión de Posturas</h3>
+              <p class="text-sm text-gray-600">Control del ciclo de cría y resultados</p>
+            </div>
+          </div>
+          <button (click)="togglePostureForm()"
+            class="inline-flex items-center px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+              </path>
+            </svg>
+            {{ showPostureForm() ? 'Cancelar' : 'Editar Postura' }}
+          </button>
+        </div>
+
+        <!-- Timeline de Estado -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-semibold text-gray-800">Estado del Ciclo</h4>
+            <span class="px-3 py-1 rounded-full text-sm font-medium" [ngClass]="getPostureStatusColor()">
+              {{ getPostureStatusText() }}
+            </span>
+          </div>
+
+          <!-- Timeline visual -->
+          <div class="flex items-center space-x-4 overflow-x-auto">
+            <!-- No iniciado -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': postureStatus() !== 'not-started',
+                'bg-gray-200 border-gray-300 text-gray-500': postureStatus() === 'not-started'
+              }">
+                <span class="text-sm">🏠</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Sin iniciar</span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+              'bg-green-500': postureStatus() !== 'not-started',
+              'bg-gray-300': postureStatus() === 'not-started'
+            }"></div>
+
+            <!-- En postura -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': ['laying', 'incubating', 'completed'].includes(postureStatus()),
+                'bg-yellow-500 border-yellow-500 text-white': postureStatus() === 'laying',
+                'bg-gray-200 border-gray-300 text-gray-500': postureStatus() === 'not-started'
+              }">
+                <span class="text-sm">🥚</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Postura</span>
+              <span *ngIf="couple()?.postureStartDate && daysFromStart() > 0" class="text-xs text-blue-600">
+                Día {{ daysFromStart() }}
+              </span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+              'bg-green-500': ['incubating', 'completed'].includes(postureStatus()),
+              'bg-gray-300': !['incubating', 'completed'].includes(postureStatus())
+            }"></div>
+
+            <!-- Incubando -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': ['incubating', 'completed'].includes(postureStatus()),
+                'bg-blue-500 border-blue-500 text-white': postureStatus() === 'incubating',
+                'bg-gray-200 border-gray-300 text-gray-500': !['incubating', 'completed'].includes(postureStatus())
+              }">
+                <span class="text-sm">🐣</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Incubación</span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+              'bg-green-500': postureStatus() === 'completed',
+              'bg-gray-300': postureStatus() !== 'completed'
+            }"></div>
+
+            <!-- Completado -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+                'bg-green-500 border-green-500 text-white': postureStatus() === 'completed',
+                'bg-gray-200 border-gray-300 text-gray-500': postureStatus() !== 'completed'
+              }">
+                <span class="text-sm">🐦</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones de Acción Rápida -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button *ngIf="postureStatus() === 'not-started'" (click)="startPosture()"
+            class="inline-flex items-center px-3 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Iniciar Postura
+          </button>
+
+          <button *ngIf="['laying', 'incubating'].includes(postureStatus())" (click)="endPosture()"
+            class="inline-flex items-center px-3 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Finalizar Postura
+          </button>
+
+          <button (click)="addOffspring()"
+            class="inline-flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Registrar Pichón
+          </button>
+        </div>
+
+        <!-- Formulario de Edición de Postura -->
+        <div *ngIf="showPostureForm()" class="border-t pt-6">
+          <form [formGroup]="postureForm" (ngSubmit)="savePostureChanges()" class="space-y-6">
+            <!-- Fechas de Postura -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="postureStartDate" class="block text-sm font-medium text-gray-700 mb-2">
+                  Fecha de Inicio de Postura
+                </label>
+                <input id="postureStartDate" type="date" formControlName="postureStartDate"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+              </div>
+              <div>
+                <label for="postureEndDate" class="block text-sm font-medium text-gray-700 mb-2">
+                  Fecha de Fin de Postura
+                </label>
+                <input id="postureEndDate" type="date" formControlName="postureEndDate"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+              </div>
+            </div>
+
+            <!-- Estadísticas de Huevos -->
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-3">Estadísticas de Huevos</h5>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div>
+                  <label for="hatchedEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Eclosionados
+                  </label>
+                  <input id="hatchedEggs" type="number" min="0" formControlName="hatchedEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="unhatchedEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    No Eclosionados
+                  </label>
+                  <input id="unhatchedEggs" type="number" min="0" formControlName="unhatchedEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="fertiliceEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Fértiles
+                  </label>
+                  <input id="fertiliceEggs" type="number" min="0" formControlName="fertiliceEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="unFertiliceEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Infértiles
+                  </label>
+                  <input id="unFertiliceEggs" type="number" min="0" formControlName="unFertiliceEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+                <div>
+                  <label for="brokenEggs" class="block text-sm font-medium text-gray-700 mb-1">
+                    Rotos
+                  </label>
+                  <input id="brokenEggs" type="number" min="0" formControlName="brokenEggs"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                </div>
+              </div>
+            </div>
+
+            <!-- Pichones -->
+            <div>
+              <label for="deathPiichons" class="block text-sm font-medium text-gray-700 mb-2">
+                Pichones Fallecidos
+              </label>
+              <input id="deathPiichons" type="number" min="0" formControlName="deathPiichons"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+            </div>
+
+            <!-- Observaciones -->
+            <div>
+              <label for="observations" class="block text-sm font-medium text-gray-700 mb-2">
+                Observaciones
+              </label>
+              <textarea id="observations" formControlName="observations" rows="3"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                placeholder="Observaciones sobre el proceso de cría..."></textarea>
+            </div>
+
+            <!-- Botones del Formulario -->
+            <div class="flex justify-end space-x-3 pt-4 border-t">
+              <button type="button" (click)="togglePostureForm()"
+                class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+                Cancelar
+              </button>
+              <button type="submit" [disabled]="postureForm.invalid || isUpdatingPosture()"
+                class="px-4 py-2 bg-sky-600 hover:bg-sky-700 disabled:bg-gray-400 text-white rounded-md transition-colors flex items-center">
+                <svg *ngIf="isUpdatingPosture()" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none"
+                  viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+                {{ isUpdatingPosture() ? 'Guardando...' : 'Guardar Cambios' }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Observations -->
+    <div *ngIf="couple()?.observations" class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="text-3xl">📝</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Observaciones</h3>
+            <p class="text-sm text-gray-600">Notas adicionales sobre la pareja</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-4">
+          <p class="text-gray-700 whitespace-pre-wrap">{{ couple()?.observations }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Actions at Bottom -->
+    <div class="md:hidden bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Acciones</h3>
+        <div class="flex flex-col space-y-3">
+          <button (click)="goBack()"
+            class="px-4 py-3 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors text-center font-medium">
+            ← Volver a la lista
+          </button>
+          <button (click)="editCouple()"
+            class="px-4 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors text-center font-medium">
+            ✏️ Editar pareja
+          </button>
+          <button (click)="deleteCouple()"
+            class="px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors text-center font-medium">
+            🗑️ Eliminar pareja
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

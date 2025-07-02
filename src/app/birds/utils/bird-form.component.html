@@ -1,225 +1,332 @@
-<div class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-200">
-  <form class="space-y-6" [formGroup]="birdForm" (ngSubmit)="onSubmit()">
-    <!-- Header -->
-    <div class="text-center border-b border-gray-200 pb-4">
-      <div class="text-4xl text-sky-600 mb-3">
-        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-          </path>
-        </svg>
-      </div>
-      <h4 class="text-2xl font-bold text-gray-800">
-        {{ initialData ? 'Editar Canario' : 'Nuevo Registro' }}
-      </h4>
-      <p class="text-gray-600 mt-2">
-        {{ initialData ? 'Modifique los datos del canario' : 'Complete la información del nuevo canario' }}
-      </p>
-    </div>
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <!-- Form Container -->
+  <form [formGroup]="birdForm" (ngSubmit)="onSubmit()" class="space-y-6">
 
-    <!-- Form Fields Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <!-- Procedencia -->
-      <div class="col-span-full">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Procedencia <span
-            class="text-red-500">*</span></label>
-        <input type="text" placeholder="Procedencia (ej. Apellido)" formControlName="origin"
-          class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
-          [ngClass]="{ 'border-red-500 ring-red-500': birdForm.get('origin')?.invalid && (birdForm.get('origin')?.touched || birdForm.get('origin')?.dirty) }" />
-        <div
-          *ngIf="birdForm.get('origin')?.invalid && (birdForm.get('origin')?.touched || birdForm.get('origin')?.dirty)"
-          class="text-sm text-red-600 mt-1 flex items-center">
-          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Este campo es requerido
+    <!-- Header with Avatar and Summary -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center" [ngClass]="{
+            'bg-blue-100 text-blue-600': birdForm.get('gender')?.value === 'macho',
+            'bg-pink-100 text-pink-600': birdForm.get('gender')?.value === 'hembra',
+            'bg-gray-100 text-gray-600': birdForm.get('gender')?.value === 'desconocido' || birdForm.get('gender')?.value === 'genero'
+          }">
+            <span class="text-3xl">
+              {{
+              birdForm.get('gender')?.value === 'macho' ? '♂' :
+              birdForm.get('gender')?.value === 'hembra' ? '♀' : '🐦'
+              }}
+            </span>
+          </div>
+          <div class="flex-1">
+            <h1 class="text-2xl font-bold text-gray-800">
+              {{ initialData ? 'Editar Canario' : 'Nuevo Canario' }}
+            </h1>
+            <div class="text-sm text-gray-600 space-y-1">
+              <p *ngIf="birdForm.get('ringNumber')?.value">
+                <strong>N° Anillo:</strong> {{ birdForm.get('ringNumber')?.value }}
+              </p>
+              <p *ngIf="birdForm.get('line')?.value">
+                <strong>Línea:</strong> {{ birdForm.get('line')?.value }}
+              </p>
+              <p *ngIf="birdForm.get('season')?.value">
+                <strong>Temporada:</strong> {{ birdForm.get('season')?.value }}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Temporada -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Temporada <span
-            class="text-red-500">*</span></label>
-        <input type="number" placeholder="Temporada (ej.2024)" formControlName="season" maxlength="4"
-          (input)="limitarLongitud($event,4)"
-          class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
-          [ngClass]="{ 'border-red-500 ring-red-500': birdForm.get('season')?.invalid && (birdForm.get('season')?.touched || birdForm.get('season')?.dirty) }" />
-        <div
-          *ngIf="birdForm.get('season')?.invalid && (birdForm.get('season')?.touched || birdForm.get('season')?.dirty)"
-          class="text-sm text-red-600 mt-1 flex items-center">
-          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Debe ingresar el año completo (4 dígitos, ej: 2024)
-        </div>
-      </div>
-
-      <!-- Color de anillo -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Color de anillo <span
-            class="text-red-500">*</span></label>
-        <select
-          class="w-full px-4 py-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
-          formControlName="ringColor"
-          [ngClass]="{ 'border-red-500 ring-red-500': birdForm.get('ringColor')?.invalid && (birdForm.get('ringColor')?.touched || birdForm.get('ringColor')?.dirty) }">
-          <option value="color">Color de anillo</option>
-          <option value="Sin Anillo">Sin Anillo</option>
-          <option style="color: purple;" value="violeta">Violeta</option>
-          <option style="color: green;" value="verde">Verde</option>
-          <option style="color: black;" value="negro">Negro</option>
-          <option style="color: red;" value="rojo">Rojo</option>
-          <option style="color: blue;" value="azul">Azul</option>
-          <option style="color: orangered;" value="naranja">Naranja</option>
-        </select>
-        <div
-          *ngIf="birdForm.get('ringColor')?.invalid && (birdForm.get('ringColor')?.touched || birdForm.get('ringColor')?.dirty)"
-          class="text-sm text-red-600 mt-1 flex items-center">
-          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Debe seleccionar un color de anillo válido
-        </div>
-      </div>
-
-      <!-- Número de anillo -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Número de anillo</label>
-        <input type="number" placeholder="Número de anillo" formControlName="ringNumber" maxlength="4"
-          (input)="limitarLongitud($event,4)"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors" />
-      </div>
-
-      <!-- Género -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Género <span class="text-red-500">*</span></label>
-        <select
-          class="w-full px-4 py-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
-          formControlName="gender"
-          [ngClass]="{ 'border-red-500 ring-red-500': birdForm.get('gender')?.invalid && (birdForm.get('gender')?.touched || birdForm.get('gender')?.dirty) }">
-          <option value="genero">Género</option>
-          <option value="macho">Macho</option>
-          <option value="hembra">Hembra</option>
-          <option value="desconocido">Desconocido</option>
-        </select>
-        <div
-          *ngIf="birdForm.get('gender')?.invalid && (birdForm.get('gender')?.touched || birdForm.get('gender')?.dirty)"
-          class="text-sm text-red-600 mt-1 flex items-center">
-          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Debe seleccionar un género válido
-        </div>
-      </div>
-
-      <!-- Línea -->
-      <div class="col-span-full">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Línea</label>
-        <app-linea-autocomplete [initialValue]="birdForm.get('line')?.value"
-          (selected)="birdForm.get('line')?.setValue($event.name)">
-        </app-linea-autocomplete>
-      </div>
-
-      <!-- Estado -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Estado <span class="text-red-500">*</span></label>
-        <select
-          class="w-full px-4 py-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
-          formControlName="state"
-          [ngClass]="{ 'border-red-500 ring-red-500': birdForm.get('state')?.invalid && (birdForm.get('state')?.touched || birdForm.get('state')?.dirty) }">
-          <option value="seleccione">Seleccione un estado</option>
-          <option value="criadero">Criadero</option>
-          <option value="muerto">Muerto</option>
-          <option value="vendido">Vendido</option>
-        </select>
-        <div *ngIf="birdForm.get('state')?.invalid && (birdForm.get('state')?.touched || birdForm.get('state')?.dirty)"
-          class="text-sm text-red-600 mt-1 flex items-center">
-          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          Debe seleccionar un estado válido
-        </div>
-      </div>
-
-      <!-- Observación del estado -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Observación del estado</label>
-        <textarea placeholder="Observación del estado" formControlName="stateObservation"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors resize-none"
-          rows="3"></textarea>
-      </div>
-
-      <!-- Padre y Madre -->
-      <div class="col-span-full">
-        <!-- <label class="block text-sm font-medium text-gray-700 mb-1">Padre</label> -->
-        <app-birds-autocomplete [label]="'Padre'" [items]="availableMales()" [displayFn]="formatBird" [valueKey]="'id'"
-          (selectedChange)="birdForm.get('father')?.setValue($event)"></app-birds-autocomplete>
-      </div>
-
-      <div class="col-span-full">
-        <!-- <label class="block text-sm font-medium text-gray-700 mb-1">Madre</label> -->
-        <app-birds-autocomplete [label]="'Madre'" [items]="availableFemales()" [displayFn]="formatBird"
-          [valueKey]="'id'" (selectedChange)="birdForm.get('mother')?.setValue($event)"></app-birds-autocomplete>
-      </div>
-
-      <!-- Número de postura -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Número de postura</label>
-        <input type="number" placeholder="Ingrese el N° de postura (ej.2)" formControlName="posture" maxlength="4"
-          (input)="limitarLongitud($event,4)"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors" />
-      </div>
-
-      <!-- Observaciones -->
-      <div class="col-span-full">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Observaciones del ejemplar</label>
-        <textarea placeholder="Observación del ejemplar" formControlName="observations"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors resize-none"
-          rows="3"></textarea>
       </div>
     </div>
 
-    <!-- Debug info -->
-    <div *ngIf="birdForm.invalid" class="bg-red-50 border border-red-200 rounded-lg p-4">
-      <div class="flex items-center mb-3">
-        <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd"
-            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-            clip-rule="evenodd"></path>
-        </svg>
-        <h5 class="text-red-800 font-semibold">Errores del formulario:</h5>
+    <!-- Error Summary -->
+    <div *ngIf="birdForm.invalid && birdForm.touched" class="bg-red-50 border border-red-200 rounded-lg p-4">
+      <div class="flex items-center space-x-2 mb-2">
+        <span class="text-red-600">⚠️</span>
+        <h4 class="text-red-800 font-semibold">Errores en el formulario:</h4>
       </div>
-      <ul class="text-red-700 text-sm space-y-1">
-        <li *ngFor="let control of getFormErrors()" class="flex items-start">
-          <span class="block w-2 h-2 bg-red-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-          <span><strong>{{ control.field }}:</strong> {{ control.error }}</span>
+      <ul class="text-sm text-red-700 space-y-1">
+        <li *ngFor="let error of getFormErrors()" class="flex items-center space-x-2">
+          <span>•</span>
+          <span>{{ error.error }}</span>
         </li>
       </ul>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="flex justify-end gap-4 pt-6 border-t border-gray-200">
-      <button type="button" (click)="onCancel()"
-        class="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors">
-        Cancelar
-      </button>
+    <!-- Información Básica -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">📋</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Información Básica</h3>
+            <p class="text-sm text-gray-600">Datos fundamentales del canario</p>
+          </div>
+        </div>
 
-      <button type="submit" [disabled]="birdForm.invalid"
-        class="px-8 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors flex items-center">
-        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-        </svg>
-        {{ initialData ? 'Guardar cambios' : 'Aceptar' }}
-      </button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Procedencia -->
+          <div class="space-y-2">
+            <label for="origin" class="block text-sm font-medium text-gray-700">
+              Procedencia *
+            </label>
+            <input id="origin" type="text" formControlName="origin"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              [class.border-red-300]="birdForm.get('origin')?.invalid && birdForm.get('origin')?.touched"
+              placeholder="Ej: Criador López, Tienda ABC..." />
+          </div>
+
+          <!-- Temporada -->
+          <div class="space-y-2">
+            <label for="season" class="block text-sm font-medium text-gray-700">
+              Temporada *
+            </label>
+            <input id="season" type="number" formControlName="season"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              [class.border-red-300]="birdForm.get('season')?.invalid && birdForm.get('season')?.touched"
+              placeholder="Ej. 2025" (input)="limitarLongitud($event, 4)" />
+          </div>
+
+          <!-- Color de anillo -->
+          <div class="space-y-2">
+            <label for="ringColor" class="block text-sm font-medium text-gray-700">
+              Color de anillo *
+            </label>
+            <select id="ringColor" formControlName="ringColor"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              [class.border-red-300]="birdForm.get('ringColor')?.invalid && birdForm.get('ringColor')?.touched">
+              <option value="color" disabled>Seleccionar color</option>
+              <option value="sin anillo">Sin anillo</option>
+              <option value="violeta">Violeta</option>
+              <option value="verde">Verde</option>
+              <option value="negro">Negro</option>
+              <option value="rojo">Rojo</option>
+              <option value="azul">Azul</option>
+              <option value="naranja">Naranja</option>
+            </select>
+          </div>
+
+          <!-- Número de anillo -->
+          <div class="space-y-2">
+            <label for="ringNumber" class="block text-sm font-medium text-gray-700">
+              Número de anillo
+            </label>
+            <input id="ringNumber" type="number" formControlName="ringNumber"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              [class.border-red-300]="birdForm.get('ringNumber')?.invalid && birdForm.get('ringNumber')?.touched"
+              placeholder="Ej.123" (input)="limitarLongitud($event, 4)" />
+          </div>
+
+          <!-- Línea -->
+          <div class="space-y-2">
+            <label for="line" class="block text-sm font-medium text-gray-700">
+              Línea
+            </label>
+            <app-linea-autocomplete [initialValue]="birdForm.get('line')?.value"
+              (selected)="onLineSelected($event)"></app-linea-autocomplete>
+          </div>
+
+          <!-- Número de postura -->
+          <div class="space-y-2">
+            <label for="posture" class="block text-sm font-medium text-gray-700">
+              Número de postura
+            </label>
+            <input id="posture" type="number" formControlName="posture"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              [class.border-red-300]="birdForm.get('posture')?.invalid && birdForm.get('posture')?.touched"
+              placeholder="Ej. 1" (input)="limitarLongitud($event, 4)" />
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Estado y Características -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">⚕️</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Estado y Características</h3>
+            <p class="text-sm text-gray-600">Condición y características físicas</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Género -->
+          <div class="space-y-2">
+            <label for="gender" class="block text-sm font-medium text-gray-700">
+              Género *
+            </label>
+            <select id="gender" formControlName="gender"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              [class.border-red-300]="birdForm.get('gender')?.invalid && birdForm.get('gender')?.touched">
+              <option value="genero" disabled>Seleccionar género</option>
+              <option value="macho">Macho</option>
+              <option value="hembra">Hembra</option>
+              <option value="desconocido">Desconocido</option>
+            </select>
+          </div>
+
+          <!-- Estado -->
+          <div class="space-y-2">
+            <label for="state" class="block text-sm font-medium text-gray-700">
+              Estado *
+            </label>
+            <select id="state" formControlName="state"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              [class.border-red-300]="birdForm.get('state')?.invalid && birdForm.get('state')?.touched">
+              <option value="seleccione" disabled>Seleccionar estado</option>
+              <option value="criadero">En criadero</option>
+              <option value="activo">Activo</option>
+              <option value="enfermo">Enfermo</option>
+              <option value="vendido">Vendido</option>
+              <option value="muerto">Muerto</option>
+            </select>
+          </div>
+
+          <!-- Observación del estado -->
+          <div class="space-y-2 md:col-span-2">
+            <label for="stateObservation" class="block text-sm font-medium text-gray-700">
+              Observación del estado
+            </label>
+            <textarea id="stateObservation" formControlName="stateObservation" rows="3"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              placeholder="Descripción detallada del estado actual..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progenitores -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">🕊️</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Progenitores</h3>
+            <p class="text-sm text-gray-600">Información de linaje</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Padre -->
+          <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl">♂</span>
+              <h4 class="font-semibold text-blue-800">Padre</h4>
+            </div>
+            <app-birds-autocomplete [items]="availableMales()" [displayFn]="displayBirdFn"
+              [selectedValue]="birdForm.get('father')?.value"
+              [hasError]="(birdForm.get('father')?.invalid && birdForm.get('father')?.touched) ?? false"
+              (selectedChange)="onFatherSelected($event)" (blurChange)="onFatherBlur()">
+            </app-birds-autocomplete>
+
+            <!-- Información adicional del padre -->
+            <div *ngIf="getSelectedFather() as father" class="mt-3 p-3 bg-blue-100 rounded-md">
+              <div class="text-xs text-blue-700 space-y-1">
+                <div class="flex justify-between">
+                  <span class="font-medium">N° Anillo:</span>
+                  <span>{{ father.ringNumber || 'Sin anillo' }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-medium">Línea:</span>
+                  <span>{{ father.line || 'Sin línea' }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-medium">Temporada:</span>
+                  <span>{{ father.season || 'Sin temporada' }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Madre -->
+          <div class="p-4 bg-pink-50 rounded-lg border border-pink-200">
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl">♀</span>
+              <h4 class="font-semibold text-pink-800">Madre</h4>
+            </div>
+            <app-birds-autocomplete [items]="availableFemales()" [displayFn]="displayBirdFn"
+              [selectedValue]="birdForm.get('mother')?.value"
+              [hasError]="(birdForm.get('mother')?.invalid && birdForm.get('mother')?.touched) ?? false"
+              (selectedChange)="onMotherSelected($event)" (blurChange)="onMotherBlur()">
+            </app-birds-autocomplete>
+
+            <!-- Información adicional de la madre -->
+            <div *ngIf="getSelectedMother() as mother" class="mt-3 p-3 bg-pink-100 rounded-md">
+              <div class="text-xs text-pink-700 space-y-1">
+                <div class="flex justify-between">
+                  <span class="font-medium">N° Anillo:</span>
+                  <span>{{ mother.ringNumber || 'Sin anillo' }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-medium">Línea:</span>
+                  <span>{{ mother.line || 'Sin línea' }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-medium">Temporada:</span>
+                  <span>{{ mother.season || 'Sin temporada' }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Observaciones Generales -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">📝</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Observaciones Generales</h3>
+            <p class="text-sm text-gray-600">Información adicional y notas</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label for="observations" class="block text-sm font-medium text-gray-700 mb-2">
+              Notas y observaciones
+            </label>
+            <textarea id="observations" formControlName="observations" rows="4"
+              class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+              placeholder="Cualquier información adicional sobre el canario..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <!-- Desktop Actions -->
+          <div class="hidden sm:flex justify-end space-x-4 w-full">
+            <button type="button" (click)="onCancel()"
+              class="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+              Cancelar
+            </button>
+            <button type="submit" [disabled]="birdForm.invalid"
+              class="px-6 py-2 bg-sky-600 hover:bg-sky-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-md transition-colors">
+              {{ initialData ? 'Actualizar Canario' : 'Crear Registro' }}
+            </button>
+          </div>
+
+          <!-- Mobile Actions -->
+          <div class="sm:hidden space-y-3">
+            <button type="submit" [disabled]="birdForm.invalid"
+              class="w-full px-6 py-3 bg-sky-600 hover:bg-sky-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-md transition-colors text-lg font-medium">
+              {{ initialData ? 'Actualizar Canario' : 'Crear Registro' }}
+            </button>
+            <button type="button" (click)="onCancel()"
+              class="w-full px-6 py-3 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors text-lg font-medium">
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </form>
 </div>

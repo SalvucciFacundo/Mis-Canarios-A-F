@@ -6,6 +6,7 @@ import { AuthService } from '../../../auth/services/auth.service';
 import { ToastService } from '../../../shared/services/toast.service';
 import { Couples } from '../../interface/couples.interface';
 import { firstValueFrom, take, map } from 'rxjs';
+import { convertFirestoreDate } from '../../../shared/utils/date.utils';
 
 @Component({
   selector: 'app-couples-list',
@@ -101,4 +102,7 @@ export class CouplesListComponent implements OnInit {
       // El store ya maneja el toast de error
     }
   }
+
+  // Usar función de utilidad importada
+  convertFirestoreDate = convertFirestoreDate;
 }

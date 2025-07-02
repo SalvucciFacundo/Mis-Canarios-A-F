@@ -1,8 +1,14 @@
-<ng-container *ngIf="birdData() as bird; else cargando">
+<ng-container *ngIf="birdDataSignal() as bird; else cargando">
   <app-bird-form [initialData]="bird" (submitted)="actualizarBird($event)" (cancelled)="returnList()" />
 </ng-container>
+
 <ng-template #cargando>
-  <div class="text-center text-gray-500 p-4">Cargando canario...</div>
+  <div class="flex items-center justify-center min-h-64">
+    <div class="text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-600 mx-auto mb-4"></div>
+      <p class="text-gray-500">Cargando canario...</p>
+    </div>
+  </div>
 </ng-template>
 
 

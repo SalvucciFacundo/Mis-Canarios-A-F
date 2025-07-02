@@ -1,1 +1,654 @@
-<p>couples-details works!</p>
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <!-- Loading State -->
+  <div *ngIf="isLoading()" class="text-center py-12">
+    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-600 mx-auto"></div>
+    <p class="mt-4 text-gray-600">Cargando detalles de la pareja...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="!isLoading() && !couple()" class="text-center py-12">
+    <div class="text-6xl text-gray-400 mb-4">🚫</div>
+    <h3 class="text-lg font-semibold text-gray-800 mb-2">Pareja no encontrada</h3>
+    <p class="text-gray-600 mb-6">La pareja que busca no existe o fue eliminada.</p>
+    <button (click)="goBack()" class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors">
+      Volver a la lista
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="!isLoading() && couple() && coupleDetails()" class="space-y-6">
+    <!-- Header -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6 border-b border-gray-200">
+        <!-- Desktop Layout: Title left, Actions right -->
+        <div class="hidden md:flex items-center justify-between mb-4">
+          <div class="flex items-center space-x-3">
+            <div class="text-4xl">🪶</div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                Nido {{ couple()?.nestCode }}
+              </h1>
+              <p class="text-gray-600">Temporada {{ couple()?.season }}</p>
+            </div>
+          </div>
+
+          <!-- Actions for Desktop -->
+          <div class="flex items-center space-x-3">
+            <button (click)="goBack()"
+              class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+              ← Volver
+            </button>
+            <button (click)="editCouple()"
+              class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors">
+              ✏️ Editar
+            </button>
+            <button (click)="deleteCouple()"
+              class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors">
+              🗑️ Eliminar
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Layout: Title on top, Actions at bottom -->
+        <div class="md:hidden">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="text-4xl">🪶</div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                Nido {{ couple()?.nestCode }}
+              </h1>
+              <p class="text-gray-600">Temporada {{ couple()?.season }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status and dates -->
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div *ngIf="couple()?.creationDate" class="flex items-center space-x-2">
+            <span class="text-gray-500">📅 Creado:</span>
+            <span class="font-medium">{{ convertFirestoreDate(couple()?.creationDate) | date:'dd/MM/yyyy HH:mm'
+              }}</span>
+          </div>
+          <div *ngIf="couple()?.postureStartDate" class="flex items-center space-x-2">
+            <span class="text-gray-500">🥚 Inicio postura:</span>
+            <span class="font-medium">{{ convertFirestoreDate(couple()?.postureStartDate) | date:'dd/MM/yyyy' }}</span>
+          </div>
+          <div *ngIf="couple()?.postureEndDate" class="flex items-center space-x-2">
+            <span class="text-gray-500">🔚 Fin postura:</span>
+            <span class="font-medium">{{ convertFirestoreDate(couple()?.postureEndDate) | date:'dd/MM/yyyy' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parents Information -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Male -->
+      <div class="bg-white shadow-sm rounded-lg border">
+        <div class="p-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-2xl">♂</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Macho</h3>
+              <p class="text-sm text-gray-600">Información del reproductor</p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="text-gray-600">N° Anillo:</span>
+              <span class="font-semibold">{{ coupleDetails()?.male?.ringNumber || 'Sin anillo' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Línea:</span>
+              <span class="font-medium">{{ coupleDetails()?.male?.line || 'Sin línea' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Temporada:</span>
+              <span class="font-medium">{{ coupleDetails()?.male?.season || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Estado:</span>
+              <span class="px-2 py-1 text-xs rounded-full" [ngClass]="{
+                  'bg-green-100 text-green-800': coupleDetails()?.male?.state === 'criadero',
+                  'bg-blue-100 text-blue-800': coupleDetails()?.male?.state === 'activo',
+                  'bg-gray-100 text-gray-800': coupleDetails()?.male?.state === 'vendido',
+                  'bg-red-100 text-red-800': coupleDetails()?.male?.state === 'muerto'
+                }">
+                {{ coupleDetails()?.male?.state || 'N/A' }}
+              </span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Procedencia:</span>
+              <span class="font-medium">{{ coupleDetails()?.male?.origin || 'N/A' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Female -->
+      <div class="bg-white shadow-sm rounded-lg border">
+        <div class="p-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+              <span class="text-2xl">♀</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Hembra</h3>
+              <p class="text-sm text-gray-600">Información de la reproductora</p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="text-gray-600">N° Anillo:</span>
+              <span class="font-semibold">{{ coupleDetails()?.female?.ringNumber || 'Sin anillo' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Línea:</span>
+              <span class="font-medium">{{ coupleDetails()?.female?.line || 'Sin línea' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Temporada:</span>
+              <span class="font-medium">{{ coupleDetails()?.female?.season || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Estado:</span>
+              <span class="px-2 py-1 text-xs rounded-full" [ngClass]="{
+                  'bg-green-100 text-green-800': coupleDetails()?.female?.state === 'criadero',
+                  'bg-blue-100 text-blue-800': coupleDetails()?.female?.state === 'activo',
+                  'bg-gray-100 text-gray-800': coupleDetails()?.female?.state === 'vendido',
+                  'bg-red-100 text-red-800': coupleDetails()?.female?.state === 'muerto'
+                }">
+                {{ coupleDetails()?.female?.state || 'N/A' }}
+              </span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Procedencia:</span>
+              <span class="font-medium">{{ coupleDetails()?.female?.origin || 'N/A' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gestión de Posturas -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center space-x-3">
+            <div class="text-3xl">🪺</div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">
+                Gestión de Posturas - Ciclo #{{ currentPostureNumber() }}
+              </h3>
+              <p class="text-sm text-gray-600">Control del ciclo de cría y resultados</p>
+            </div>
+          </div>
+
+          <!-- Botón dinámico: Iniciar/Finalizar postura -->
+          <button *ngIf="postureStatus() === 'not-started'" (click)="startPosture()"
+            class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Iniciar Postura
+          </button>
+
+          <button *ngIf="postureStatus() === 'started'" (click)="endPosture()"
+            class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Finalizar Postura
+          </button>
+
+          <span *ngIf="postureStatus() === 'completed'"
+            class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-md text-sm font-medium">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Postura Finalizada
+          </span>
+        </div>
+
+        <!-- Timeline de Estado -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-semibold text-gray-800">Estado del Ciclo</h4>
+            <span class="px-3 py-1 rounded-full text-sm font-medium" [ngClass]="getPostureStatusColor()">
+              {{ getPostureStatusText() }}
+            </span>
+          </div> <!-- Timeline visual (3 estados) -->
+          <div class="flex items-center space-x-4 overflow-x-auto">
+            <!-- Sin iniciar -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+              'bg-green-500 border-green-500 text-white': postureStatus() !== 'not-started',
+              'bg-gray-200 border-gray-300 text-gray-500': postureStatus() === 'not-started'
+            }">
+                <span class="text-sm">🏠</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Sin iniciar</span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+            'bg-green-500': postureStatus() !== 'not-started',
+            'bg-gray-300': postureStatus() === 'not-started'
+          }"></div>
+
+            <!-- Iniciada -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+              'bg-green-500 border-green-500 text-white': postureStatus() === 'completed',
+              'bg-blue-500 border-blue-500 text-white': postureStatus() === 'started',
+              'bg-gray-200 border-gray-300 text-gray-500': postureStatus() === 'not-started'
+            }">
+                <span class="text-sm">🥚</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Iniciada</span>
+              <span *ngIf="couple()?.postureStartDate && daysFromStart() > 0" class="text-xs text-blue-600">
+                Día {{ daysFromStart() }}
+              </span>
+            </div>
+
+            <!-- Línea de conexión -->
+            <div class="h-0.5 flex-1 min-w-8" [ngClass]="{
+            'bg-green-500': postureStatus() === 'completed',
+            'bg-gray-300': postureStatus() !== 'completed'
+          }"></div>
+
+            <!-- Finalizada -->
+            <div class="flex flex-col items-center min-w-0 flex-1">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center border-2 transition-colors" [ngClass]="{
+              'bg-green-500 border-green-500 text-white': postureStatus() === 'completed',
+              'bg-gray-200 border-gray-300 text-gray-500': postureStatus() !== 'completed'
+            }">
+                <span class="text-sm">🐦</span>
+              </div>
+              <span class="text-xs text-gray-600 mt-1 text-center">Finalizada</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones adicionales -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button (click)="addMultipleOffspring()"
+            class="inline-flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Agregar Pichón
+          </button>
+        </div>
+
+        <!-- Formulario de Gestión de Postura (Siempre visible cuando está iniciada) -->
+        <div *ngIf="postureStatus() === 'started'" class="border-t pt-6">
+          <form [formGroup]="postureForm" class="space-y-6">
+            <div class="flex items-center justify-between">
+              <h4 class="text-lg font-semibold text-gray-800">Control de Datos de Postura</h4>
+              <!-- Indicador de guardado automático -->
+              <div class="flex items-center space-x-2 text-sm">
+                <div *ngIf="isUpdatingPosture()" class="flex items-center space-x-2 text-blue-600">
+                  <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                  </svg>
+                  <span>Guardando...</span>
+                </div>
+                <div *ngIf="justSaved()" class="flex items-center space-x-2 text-green-600">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Guardado</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Estadísticas de Huevos con botones +/- -->
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-4">Estadísticas de Huevos</h5>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Eclosionados -->
+                <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                  <label class="block text-sm font-medium text-green-700 mb-2">
+                    Eclosionados
+                  </label>
+                  <div class="flex items-center justify-between">
+                    <button type="button" (click)="decrementValue('hatchedEggs')"
+                      class="w-8 h-8 bg-green-200 hover:bg-green-300 text-green-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">−</span>
+                    </button>
+                    <span class="text-2xl font-bold text-green-700 mx-4">{{ postureForm.get('hatchedEggs')?.value || 0
+                      }}</span>
+                    <button type="button" (click)="incrementValue('hatchedEggs')"
+                      class="w-8 h-8 bg-green-200 hover:bg-green-300 text-green-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">+</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- No Eclosionados -->
+                <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                  <label class="block text-sm font-medium text-red-700 mb-2">
+                    No Eclosionados
+                  </label>
+                  <div class="flex items-center justify-between">
+                    <button type="button" (click)="decrementValue('unhatchedEggs')"
+                      class="w-8 h-8 bg-red-200 hover:bg-red-300 text-red-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">−</span>
+                    </button>
+                    <span class="text-2xl font-bold text-red-700 mx-4">{{ postureForm.get('unhatchedEggs')?.value || 0
+                      }}</span>
+                    <button type="button" (click)="incrementValue('unhatchedEggs')"
+                      class="w-8 h-8 bg-red-200 hover:bg-red-300 text-red-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">+</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Fértiles -->
+                <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <label class="block text-sm font-medium text-blue-700 mb-2">
+                    Fértiles
+                  </label>
+                  <div class="flex items-center justify-between">
+                    <button type="button" (click)="decrementValue('fertiliceEggs')"
+                      class="w-8 h-8 bg-blue-200 hover:bg-blue-300 text-blue-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">−</span>
+                    </button>
+                    <span class="text-2xl font-bold text-blue-700 mx-4">{{ postureForm.get('fertiliceEggs')?.value || 0
+                      }}</span>
+                    <button type="button" (click)="incrementValue('fertiliceEggs')"
+                      class="w-8 h-8 bg-blue-200 hover:bg-blue-300 text-blue-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">+</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Infértiles -->
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Infértiles
+                  </label>
+                  <div class="flex items-center justify-between">
+                    <button type="button" (click)="decrementValue('unFertiliceEggs')"
+                      class="w-8 h-8 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">−</span>
+                    </button>
+                    <span class="text-2xl font-bold text-gray-700 mx-4">{{ postureForm.get('unFertiliceEggs')?.value ||
+                      0 }}</span>
+                    <button type="button" (click)="incrementValue('unFertiliceEggs')"
+                      class="w-8 h-8 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">+</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Rotos -->
+                <div class="p-4 bg-orange-50 rounded-lg border border-orange-200">
+                  <label class="block text-sm font-medium text-orange-700 mb-2">
+                    Rotos
+                  </label>
+                  <div class="flex items-center justify-between">
+                    <button type="button" (click)="decrementValue('brokenEggs')"
+                      class="w-8 h-8 bg-orange-200 hover:bg-orange-300 text-orange-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">−</span>
+                    </button>
+                    <span class="text-2xl font-bold text-orange-700 mx-4">{{ postureForm.get('brokenEggs')?.value || 0
+                      }}</span>
+                    <button type="button" (click)="incrementValue('brokenEggs')"
+                      class="w-8 h-8 bg-orange-200 hover:bg-orange-300 text-orange-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">+</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Pichones Fallecidos -->
+                <div class="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                  <label class="block text-sm font-medium text-purple-700 mb-2">
+                    Pichones Fallecidos
+                  </label>
+                  <div class="flex items-center justify-between">
+                    <button type="button" (click)="decrementValue('deathPiichons')"
+                      class="w-8 h-8 bg-purple-200 hover:bg-purple-300 text-purple-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">−</span>
+                    </button>
+                    <span class="text-2xl font-bold text-purple-700 mx-4">{{ postureForm.get('deathPiichons')?.value ||
+                      0 }}</span>
+                    <button type="button" (click)="incrementValue('deathPiichons')"
+                      class="w-8 h-8 bg-purple-200 hover:bg-purple-300 text-purple-700 rounded-full flex items-center justify-center transition-colors">
+                      <span class="text-lg font-bold">+</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Observaciones de Postura -->
+            <div>
+              <label for="postureObservations" class="block text-sm font-medium text-gray-700 mb-2">
+                Observaciones de Postura
+              </label>
+              <textarea id="postureObservations" formControlName="postureObservations" rows="3"
+                (blur)="savePostureChanges()"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                placeholder="Observaciones específicas sobre esta postura..."></textarea>
+              <p class="text-xs text-gray-500 mt-1">Los cambios se guardan automáticamente</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pichones Section (Moved after Posture Management) -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center space-x-3">
+            <div class="text-3xl">🐤</div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Pichones</h3>
+              <p class="text-sm text-gray-600">
+                {{ (coupleDetails()?.offspring?.length || 0) }} pichón(es) registrado(s)
+                <span *ngIf="(couple()?.deathPiichons ?? 0) > 0" class="text-red-600">
+                  ({{ couple()?.deathPiichons }} baja(s))
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offspring List -->
+        <div *ngIf="coupleDetails()?.offspring && (coupleDetails()?.offspring?.length ?? 0) > 0; else noOffspring"
+          class="space-y-3">
+          <div *ngFor="let bird of coupleDetails()?.offspring; trackBy: trackByBirdId"
+            class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow cursor-pointer"
+            (click)="viewBirdDetails(bird.id!)">
+
+            <!-- Información principal del pichón -->
+            <div class="flex items-center space-x-4">
+              <!-- Género con icono -->
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-lg font-medium" [ngClass]="{
+                'bg-blue-100 text-blue-600': bird.gender === 'macho',
+                'bg-pink-100 text-pink-600': bird.gender === 'hembra',
+                'bg-gray-100 text-gray-600': !bird.gender || bird.gender === 'no_determinado'
+              }">
+                {{ bird.gender === 'macho' ? '♂' : bird.gender === 'hembra' ? '♀' : '?' }}
+              </div>
+
+              <!-- Datos del pichón -->
+              <div class="flex-1">
+                <div class="flex items-center space-x-4">
+                  <div>
+                    <p class="font-semibold text-gray-800">
+                      {{ bird.ringNumber ? 'Anillo: ' + bird.ringNumber : 'Sin anillo' }}
+                    </p>
+                    <p class="text-sm text-gray-600">
+                      Temporada {{ bird.season || 'N/A' }}
+                      <span *ngIf="bird.posture" class="ml-2">• Postura #{{ bird.posture }}</span>
+                    </p>
+                  </div>
+
+                  <!-- Estado -->
+                  <div class="ml-4">
+                    <span class="px-3 py-1 text-sm rounded-full font-medium" [ngClass]="{
+                      'bg-green-100 text-green-800': bird.state === 'criadero',
+                      'bg-blue-100 text-blue-800': bird.state === 'activo',
+                      'bg-gray-100 text-gray-800': bird.state === 'vendido',
+                      'bg-red-100 text-red-800': bird.state === 'muerto'
+                    }">
+                      {{ bird.state || 'N/A' | titlecase }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Procedencia -->
+                <p class="text-xs text-gray-500 mt-1">
+                  Procedencia: {{ bird.origin || 'N/A' }}
+                </p>
+              </div>
+            </div>
+
+            <!-- Flecha para indicar que es clickeable -->
+            <div class="text-gray-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #noOffspring>
+          <div class="text-center py-8 text-gray-500">
+            <div class="text-4xl mb-3">🐣</div>
+            <p>No hay pichones registrados para esta pareja</p>
+            <p class="text-sm mt-2">Los pichones aparecerán aquí cuando sean creados con los padres correctos</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <!-- Egg Statistics -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">🥚</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Estadísticas de Huevos</h3>
+            <p class="text-sm text-gray-600">Registro de postura y eclosión</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center p-4 bg-green-50 rounded-lg">
+            <div class="text-2xl font-bold text-green-600">{{ couple()?.hatchedEggs || 0 }}</div>
+            <div class="text-sm text-green-800">Eclosionados</div>
+          </div>
+          <div class="text-center p-4 bg-red-50 rounded-lg">
+            <div class="text-2xl font-bold text-red-600">{{ couple()?.unhatchedEggs || 0 }}</div>
+            <div class="text-sm text-red-800">No eclosionados</div>
+          </div>
+          <div class="text-center p-4 bg-blue-50 rounded-lg">
+            <div class="text-2xl font-bold text-blue-600">{{ couple()?.fertiliceEggs || 0 }}</div>
+            <div class="text-sm text-blue-800">Fértiles</div>
+          </div>
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <div class="text-2xl font-bold text-gray-600">{{ couple()?.unFertiliceEggs || 0 }}</div>
+            <div class="text-sm text-gray-800">Infértiles</div>
+          </div>
+        </div>
+
+        <!-- Total eggs and success rate -->
+        <div class="mt-6 pt-6 border-t border-gray-200">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-lg font-semibold text-gray-800">
+                {{ (couple()?.hatchedEggs || 0) + (couple()?.unhatchedEggs || 0) }}
+              </div>
+              <div class="text-sm text-gray-600">Total huevos</div>
+            </div>
+            <div>
+              <div class="text-lg font-semibold text-gray-800">
+                {{ (couple()?.fertiliceEggs || 0) + (couple()?.unFertiliceEggs || 0) }}
+              </div>
+              <div class="text-sm text-gray-600">Total examinados</div>
+            </div>
+            <div>
+              <div class="text-lg font-semibold text-green-600">
+                {{ ((couple()?.hatchedEggs || 0) > 0 && ((couple()?.hatchedEggs || 0) + (couple()?.unhatchedEggs || 0))
+                > 0)
+                ? (((couple()?.hatchedEggs || 0) / ((couple()?.hatchedEggs || 0) + (couple()?.unhatchedEggs || 0))) *
+                100).toFixed(1)
+                : 0 }}%
+              </div>
+              <div class="text-sm text-gray-600">Tasa de eclosión</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Observations (Solo observaciones generales de la pareja) -->
+    <div *ngIf="couple()?.observations" class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="text-3xl">📝</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Observaciones Generales</h3>
+            <p class="text-sm text-gray-600">Notas generales sobre la pareja</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-4">
+          <p class="text-gray-700 whitespace-pre-wrap">{{ couple()?.observations }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Observaciones de Postura (si existen) -->
+    <div *ngIf="couple()?.postureObservations" class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="text-3xl">🪺</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Observaciones de Postura</h3>
+            <p class="text-sm text-gray-600">Notas específicas sobre el ciclo de cría actual</p>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 rounded-lg p-4">
+          <p class="text-gray-700 whitespace-pre-wrap">{{ couple()?.postureObservations }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Actions at Bottom -->
+    <div class="md:hidden bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Acciones</h3>
+        <div class="flex flex-col space-y-3">
+          <button (click)="goBack()"
+            class="px-4 py-3 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors text-center font-medium">
+            ← Volver a la lista
+          </button>
+          <button (click)="editCouple()"
+            class="px-4 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors text-center font-medium">
+            ✏️ Editar pareja
+          </button>
+          <button (click)="deleteCouple()"
+            class="px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors text-center font-medium">
+            🗑️ Eliminar pareja
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

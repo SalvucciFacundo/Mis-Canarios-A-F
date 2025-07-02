@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, Input, OnChanges, Output, SimpleChanges, inject } from '@angular/core';
+import { Component, computed, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BirdsStoreService } from '../services/birds-store.service';
@@ -14,9 +14,10 @@ import { LoadingService } from '../../shared/services/loading.service';
   templateUrl: './bird-form.component.html',
   styleUrl: './bird-form.component.css'
 })
-export class BirdFormComponent implements OnChanges {
+export class BirdFormComponent implements OnInit, OnChanges {
 
   @Input() initialData: any | null = null;
+  @Input() preloadedData: Partial<Birds> | null = null;
   @Output() submitted = new EventEmitter<any>();
   @Output() cancelled = new EventEmitter<void>();
 
@@ -51,25 +52,51 @@ export class BirdFormComponent implements OnChanges {
 
   ngOnInit() {
     this.loadInitialData();
+    this.loadPreloadedData();
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['initialData'] && changes['initialData'].currentValue) {
       this.loadInitialData();
     }
+    if (changes['preloadedData'] && changes['preloadedData'].currentValue) {
+      this.loadPreloadedData();
+    }
   }
 
   private loadInitialData() {
     if (this.initialData) {
-      console.log('Cargando datos iniciales:', this.initialData);
       this.birdForm.patchValue(this.initialData);
 
-      // Forzar la detección de cambios para el componente de autocompletar
+      // Forzar la detección de cambios para los componentes de autocompletar
       setTimeout(() => {
         if (this.initialData.line) {
           this.birdForm.get('line')?.setValue(this.initialData.line);
         }
+        // Forzar actualización para padre y madre
+        if (this.initialData.father) {
+          this.birdForm.get('father')?.setValue(this.initialData.father);
+        }
+        if (this.initialData.mother) {
+          this.birdForm.get('mother')?.setValue(this.initialData.mother);
+        }
       }, 100);
+    }
+  }
+
+  private loadPreloadedData() {
+    if (this.preloadedData) {
+      console.log('Cargando datos pre-cargados:', this.preloadedData);
+
+      // Solo cargar los campos que tienen valor
+      const preloadedFields: any = {};
+
+      if (this.preloadedData.father) preloadedFields.father = this.preloadedData.father;
+      if (this.preloadedData.mother) preloadedFields.mother = this.preloadedData.mother;
+      if (this.preloadedData.season) preloadedFields.season = this.preloadedData.season.toString();
+      if (this.preloadedData.posture) preloadedFields.posture = this.preloadedData.posture.toString();
+
+      this.birdForm.patchValue(preloadedFields);
     }
   }
 
@@ -85,8 +112,6 @@ export class BirdFormComponent implements OnChanges {
 
   onCancel() {
     this.cancelled.emit();
-    // Navegación interna rápida, sin spinner
-    this.router.navigate(['/birds']);
   }
   availableMales = computed(() =>
     this.store.birdsList().filter(b =>
@@ -107,6 +132,42 @@ export class BirdFormComponent implements OnChanges {
 
   formatBird(bird: Birds): string {
     return `N° anillo: ${bird.ringNumber} · Temporada: ${bird.season} · Género: ${bird.gender} · Línea: ${bird.line}`;
+  }
+
+  // Función para mostrar información del ave en el autocomplete
+  displayBirdFn = (bird: Birds): string => {
+    if (!bird) return '';
+    const ring = bird.ringNumber ? `N° ${bird.ringNumber}` : 'Sin anillo';
+    const line = bird.line ? ` - ${bird.line}` : '';
+    const gender = bird.gender ? ` (${bird.gender})` : '';
+    return `${ring}${line}${gender}`;
+  };
+
+  // Seleccionar padre
+  onFatherSelected(birdId: string) {
+    this.birdForm.patchValue({ father: birdId });
+    this.birdForm.get('father')?.markAsTouched();
+  }
+
+  // Seleccionar madre
+  onMotherSelected(birdId: string) {
+    this.birdForm.patchValue({ mother: birdId });
+    this.birdForm.get('mother')?.markAsTouched();
+  }
+
+  // Manejar blur del campo padre
+  onFatherBlur() {
+    this.birdForm.get('father')?.markAsTouched();
+  }
+
+  // Manejar blur del campo madre
+  onMotherBlur() {
+    this.birdForm.get('mother')?.markAsTouched();
+  }
+
+  // Seleccionar línea
+  onLineSelected(linea: any) {
+    this.birdForm.patchValue({ line: linea.name || linea });
   }
 
   getFormErrors(): { field: string; error: string }[] {
@@ -172,6 +233,46 @@ export class BirdFormComponent implements OnChanges {
       'observations': 'Observaciones'
     };
     return fieldNames[fieldKey] || fieldKey;
+  }
+
+  // Obtener datos del padre seleccionado
+  getSelectedFather(): Birds | null {
+    const fatherId = this.birdForm.get('father')?.value;
+    if (!fatherId) return null;
+    return this.availableMales().find(bird => bird.id === fatherId) || null;
+  }
+
+  // Obtener datos de la madre seleccionada
+  getSelectedMother(): Birds | null {
+    const motherId = this.birdForm.get('mother')?.value;
+    if (!motherId) return null;
+    return this.availableFemales().find(bird => bird.id === motherId) || null;
+  }
+
+  // Método público para resetear solo los campos no esenciales
+  resetFormPartial() {
+    console.log('Reseteando formulario parcialmente...');
+    // Resetear solo los campos no esenciales, manteniendo padre, madre, temporada y postura
+    this.birdForm.patchValue({
+      origin: '',
+      ringColor: 'color',
+      ringNumber: '',
+      gender: 'genero',
+      line: '',
+      state: 'seleccione',
+      stateObservation: '',
+      observations: ''
+    });
+
+    // Marcar como intocado para limpiar errores de validación
+    this.birdForm.get('origin')?.markAsUntouched();
+    this.birdForm.get('ringColor')?.markAsUntouched();
+    this.birdForm.get('ringNumber')?.markAsUntouched();
+    this.birdForm.get('gender')?.markAsUntouched();
+    this.birdForm.get('line')?.markAsUntouched();
+    this.birdForm.get('state')?.markAsUntouched();
+    this.birdForm.get('stateObservation')?.markAsUntouched();
+    this.birdForm.get('observations')?.markAsUntouched();
   }
 
 }

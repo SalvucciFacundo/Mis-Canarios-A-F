@@ -6,7 +6,7 @@ import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-birds-list',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, RouterLink],
   templateUrl: './birds-list.component.html',
   styleUrl: './birds-list.component.css'
 })
@@ -15,6 +15,7 @@ export class BirdsListComponent {
   mostrarInactivos = signal(false);
   scrollY = signal(0);
   private toastService = inject(ToastService);
+  private router = inject(Router);
 
   constructor(public birdsStore: BirdsStoreService) { }
 
@@ -98,6 +99,11 @@ export class BirdsListComponent {
       undefined,
       'Confirmar eliminación'
     );
+  }
+
+  // Navegar a agregar nuevo canario
+  navigateToAddBird() {
+    this.router.navigate(['/birds/birds-add']);
   }
 }
 

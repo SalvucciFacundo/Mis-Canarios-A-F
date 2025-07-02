@@ -28,11 +28,30 @@ export class BirdsStoreService {
   readonly filteredBirds = computed(() => {
     const list = this.birds() ?? [];
     const term = this.search().toLowerCase().trim();
-    return list.filter(b =>
+
+    // Filtrar por término de búsqueda
+    const filtered = list.filter(b =>
       b.line?.toLowerCase().includes(term) ||
       b.origin?.toLowerCase().includes(term) ||
       b.ringNumber?.toString().includes(term)
     );
+
+    // Ordenar por temporada (más nuevos primero) y luego por número de anillo
+    return filtered.sort((a, b) => {
+      // Primero ordenar por temporada (descendente - más nuevos primero)
+      const seasonA = a.season ? parseInt(a.season.toString()) : 0;
+      const seasonB = b.season ? parseInt(b.season.toString()) : 0;
+
+      if (seasonA !== seasonB) {
+        return seasonB - seasonA; // Descendente
+      }
+
+      // Si las temporadas son iguales, ordenar por número de anillo (ascendente)
+      const ringA = a.ringNumber ? parseInt(a.ringNumber.toString()) : 0;
+      const ringB = b.ringNumber ? parseInt(b.ringNumber.toString()) : 0;
+
+      return ringA - ringB; // Ascendente
+    });
   });
 
   constructor(
@@ -182,8 +201,18 @@ export class BirdsStoreService {
     }
   }
 
+  // Obtener un canario específico por ID como signal
   getCanarioSignalById(id: string) {
-    return computed(() => this.birds()?.find(b => b.id === id) ?? null);
+    return computed(() => {
+      const birds = this.birds();
+      if (!birds) return null;
+      return birds.find(bird => bird.id === id) || null;
+    });
+  }
+
+  // Obtener todos los canarios sin filtro (para debugging)
+  getAllBirds() {
+    return this.birds() || [];
   }
 
 }

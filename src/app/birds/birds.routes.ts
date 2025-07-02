@@ -6,7 +6,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/birds-list/birds-list.component').then(m => m.BirdsListComponent)
   },
   {
-    path: 'birds-create',
+    path: 'birds-add',
     loadComponent: () => import('./pages/birds-add/birds-add.component').then(m => m.BirdsAddComponent)
   },
   {

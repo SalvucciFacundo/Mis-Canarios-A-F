@@ -1,7 +1,8 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal, inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
+import { CouplesStoreService } from '../../../couples/services/couples-store.service';
 import { BirdFormComponent } from '../../utils/bird-form.component';
 import { Birds } from '../../interface/birds.interface';
 import { CommonModule } from '@angular/common';
@@ -15,34 +16,110 @@ import { ToastService } from '../../../shared/services/toast.service';
   templateUrl: './birds-add.component.html',
   styleUrl: './birds-add.component.css'
 })
-export class BirdsAddComponent {
-
+export class BirdsAddComponent implements OnInit {
   private loadingService = inject(LoadingService);
   private limitsService = inject(UserLimitsService);
   private toastService = inject(ToastService);
+  private route = inject(ActivatedRoute);
+  private couplesStore = inject(CouplesStoreService);
 
-  constructor(private birdsStore: BirdsStoreService, private router: Router) { }
+  @ViewChild('birdFormRef') birdFormRef!: BirdFormComponent;
+
+  // Signals para datos pre-cargados
+  preloadedData = signal<Partial<Birds> | null>(null);
+  isFromCouple = signal<boolean>(false);
+
+  constructor(private birdsStore: BirdsStoreService, private router: Router) { } ngOnInit() {
+    // Verificar si hay parámetros de URL para pre-cargar datos
+    this.route.queryParams.subscribe(params => {
+      if (params['fatherId'] || params['motherId']) {
+        const preloaded: Partial<Birds> = {
+          father: params['fatherId'] || '',
+          mother: params['motherId'] || '',
+          season: params['season'] ? parseInt(params['season']) : undefined,
+          posture: params['posture'] ? parseInt(params['posture']) : undefined,
+          registrationSource: params['registrationSource'] || 'manual'
+        };
+
+        this.preloadedData.set(preloaded);
+
+        // Marcar si viene de una pareja
+        if (params['returnTo'] === 'couple') {
+          this.isFromCouple.set(true);
+        }
+
+        // Si viene del registro de cría, mostrar mensaje informativo
+        if (params['registrationSource'] === 'breeding') {
+          this.toastService.info('Formulario pre-cargado con datos de los padres de la pareja');
+        }
+      }
+    });
+  }
+
+  // Manejar envío del formulario
+  handleFormSubmit(data: Birds) {
+    const params = this.route.snapshot.queryParams;
+
+    // Si es modo batch-add, siempre usar borrador
+    if (params['mode'] === 'batch-add') {
+      this.agregarABorrador(data);
+    } else if (this.isFromCouple()) {
+      // Si viene de una pareja pero no es batch-add, crear directamente
+      this.crearBird(data);
+    } else {
+      // Flujo normal: agregar al borrador
+      this.agregarABorrador(data);
+    }
+  }
 
   async crearBird(data: any) {
     const email = this.birdsStore.userEmail();
     if (!email) return;
 
+    // Agregar coupleId si viene de una pareja
+    const params = this.route.snapshot.queryParams;
+    if (params['returnTo'] === 'couple' && params['coupleId']) {
+      data.coupleId = params['coupleId'];
+    }
+
     const success = await this.birdsStore.agregarCanario(email, data);
 
     if (success) {
-      // Navegación interna rápida, sin spinner
-      this.router.navigate(['/birds']);
+      // Verificar si debe volver a una pareja específica
+      if (params['returnTo'] === 'couple' && params['coupleId']) {
+        this.toastService.success('Pichón agregado exitosamente');
+        this.router.navigate(['/couples/couples-details', params['coupleId']]);
+      } else {
+        // Navegación normal a lista de pájaros
+        this.toastService.success('Pájaro agregado exitosamente');
+        this.router.navigate(['/birds/birds-list']);
+      }
     }
   }
 
   async returnList() {
-    // Navegación interna rápida, sin spinner
-    this.router.navigate(['/birds']);
+    // Verificar si debe volver a una pareja específica
+    const params = this.route.snapshot.queryParams;
+    if (params['returnTo'] === 'couple' && params['coupleId']) {
+      this.router.navigate(['/couples/couples-details', params['coupleId']]);
+    } else {
+      // Navegación normal a lista de pájaros
+      this.router.navigate(['/birds']);
+    }
   }
 
   birdsDraft = signal<Birds[]>([]);
 
   agregarABorrador(data: Birds) {
+    // Agregar datos adicionales si viene de una pareja
+    const params = this.route.snapshot.queryParams;
+    if (params['returnTo'] === 'couple' && params['coupleId']) {
+      data.coupleId = params['coupleId'];
+    }
+    if (params['posture']) {
+      data.posture = parseInt(params['posture']);
+    }
+
     this.birdsDraft.update(list => [...list, data]);
     this.resetForm(); // si querés limpiar el form después
   }
@@ -74,7 +151,14 @@ export class BirdsAddComponent {
       this.toastService.warning(`${successCount} de ${birds.length} canarios guardados. Algunos presentaron errores.`);
     }
 
-    this.router.navigate(['/birds']);
+    // Verificar si debe volver a una pareja específica
+    const params = this.route.snapshot.queryParams;
+    if (params['returnTo'] === 'couple' && params['coupleId']) {
+      this.router.navigate(['/couples/couples-details', params['coupleId']]);
+    } else {
+      this.router.navigate(['/birds']);
+    }
+
     this.loadingService.hidePageTransition();
   }
 
@@ -87,8 +171,13 @@ export class BirdsAddComponent {
   }
 
   resetForm() {
-    const formComponent = document.querySelector('app-bird-form') as any;
-    formComponent?.birdForm?.reset?.();
+    // Usar la referencia del componente para ejecutar el reset
+    if (this.birdFormRef) {
+      console.log('Ejecutando resetForm usando la referencia del componente');
+      this.birdFormRef.resetFormPartial();
+    } else {
+      console.warn('No se pudo acceder a la referencia del componente bird-form');
+    }
   }
 
 

@@ -176,7 +176,7 @@ export class CouplesStoreService {
         : 0
     };
   });
-  // Obtener pichones de una pareja específica con validación de origen
+  // Obtener pichones de una pareja específica with validación de origen
   getOffspringByCouple(couple: Couples) {
     return computed(() => {
       const birds = this.birdsStore.birdsList();
@@ -236,66 +236,19 @@ export class CouplesStoreService {
       });
     });
   }
-  // Obtener información del macho y hembra
+  // Método para obtener detalles completos de una pareja específica
   getCoupleDetails(couple: Couples) {
     return computed(() => {
       const birds = this.birdsStore.birdsList();
+
+      // Obtener información del macho
       const male = birds.find(bird => bird.id === couple.maleId);
+
+      // Obtener información de la hembra
       const female = birds.find(bird => bird.id === couple.femaleId);
 
-      // Usar el método mejorado para obtener pichones
-      const offspring = birds.filter(bird => {
-        // Método 1: Si el pichón tiene coupleId, debe coincidir exactamente
-        if (bird.coupleId) {
-          return bird.coupleId === couple.id;
-        }
-
-        // Método 2: Si el pichón fue creado desde cría (registrationSource: 'breeding') y tiene los padres correctos
-        if (bird.registrationSource === 'breeding') {
-          const hasCorrectParents = bird.father === couple.maleId && bird.mother === couple.femaleId;
-
-          if (!hasCorrectParents) return false;
-
-          // Validación temporal: el pichón debe ser creado después de la pareja
-          if (couple.creationDate && bird.creationDate) {
-            const coupleDate = new Date(couple.creationDate);
-            const birdDate = new Date(bird.creationDate);
-
-            // Permitir un margen de error de 1 día hacia atrás
-            const oneDayBefore = new Date(coupleDate.getTime() - (24 * 60 * 60 * 1000));
-
-            return birdDate >= oneDayBefore;
-          }
-
-          return true; // Si no hay fechas, aceptar el pichón
-        }
-
-        // Método 3: Para compatibilidad con datos existentes sin origin
-        // Solo si no tiene origin definido Y tiene los padres correctos Y validación temporal
-        if (!bird.origin) {
-          const hasCorrectParents = bird.father === couple.maleId && bird.mother === couple.femaleId;
-
-          if (!hasCorrectParents) return false;
-
-          // Si la pareja no tiene fecha de creación, incluir todos los pichones con esos padres
-          if (!couple.creationDate) return true;
-
-          // Si el pichón no tiene fecha de creación, incluirlo (para compatibilidad)
-          if (!bird.creationDate) return true;
-
-          // Verificar que el pichón fue creado después de la pareja
-          const coupleDate = new Date(couple.creationDate);
-          const birdDate = new Date(bird.creationDate);
-
-          // Permitir un margen de error de 1 día hacia atrás
-          const oneDayBefore = new Date(coupleDate.getTime() - (24 * 60 * 60 * 1000));
-
-          return birdDate >= oneDayBefore;
-        }
-
-        // Si el pichón tiene origin: 'manual', nunca contarlo como descendencia automática
-        return false;
-      });
+      // Obtener pichones de esta pareja
+      const offspring = this.getOffspringByCouple(couple)();
 
       return {
         male,

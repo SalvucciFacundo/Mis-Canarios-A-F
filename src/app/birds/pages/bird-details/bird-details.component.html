@@ -1,192 +1,308 @@
-<!-- <ng-container *ngIf="bird(); else loading">
-  <div class="max-w-4xl mx-auto p-6 bg-white border border-gray-300 shadow-md rounded-lg mt-8">
-    <div class="flex items-center justify-between mb-6">
-      <div class="flex items-center gap-3">
-        <div class="text-sky-600 text-3xl">
-          <i class="icon icon-note"></i>
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <!-- Loading State -->
+  <div *ngIf="!bird()" class="text-center py-12">
+    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-600 mx-auto"></div>
+    <p class="mt-4 text-gray-600">Cargando detalles del canario...</p>
+  </div>
+
+  <!-- Content -->
+  <ng-container *ngIf="bird()">
+    <!-- Header -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6 border-b border-gray-200">
+        <!-- Desktop Layout: Title left, Actions right -->
+        <div class="hidden md:flex items-center justify-between mb-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" [ngClass]="{
+                'bg-blue-100 text-blue-600': bird()?.gender === 'macho',
+                'bg-pink-100 text-pink-600': bird()?.gender === 'hembra',
+                'bg-gray-100 text-gray-600': bird()?.gender === 'desconocido' || !bird()?.gender
+              }">
+              <span class="text-3xl">
+                {{ bird()?.gender === 'macho' ? '♂' : bird()?.gender === 'hembra' ? '♀' : '🐦' }}
+              </span>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                {{ bird()?.ringNumber ? 'N° Anillo: ' + bird()?.ringNumber : 'N° Anillo: N/A' }}
+              </h1>
+              <p class="text-gray-600">{{ bird()?.line || 'Sin línea' }}</p>
+              <p class="text-sm text-gray-500">Temporada {{ bird()?.season }}</p>
+            </div>
+          </div>
+
+          <!-- Actions for Desktop -->
+          <div class="flex items-center space-x-3">
+            <button (click)="goBack()"
+              class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+              ← Volver
+            </button>
+            <button (click)="editBird()"
+              class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors">
+              ✏️ Editar
+            </button>
+            <button (click)="deleteBird()"
+              class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors">
+              🗑️ Eliminar
+            </button>
+          </div>
         </div>
-        <h2 class="text-2xl font-bold text-sky-800">Detalle del Canario</h2>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800 text-sm">
-      <div>
-        <span class="font-semibold">Procedencia:</span>
-        <div class="text-base font-medium">{{ bird()?.origin }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Temporada:</span>
-        <div class="text-base font-medium">{{ bird()?.season }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Color de anillo:</span>
-        <div class="text-base font-medium">{{ bird()?.ringColor }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Número de anillo:</span>
-        <div class="text-base font-medium">{{ bird()?.ringNumber }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Género:</span>
-        <div class="text-base font-medium">{{ bird()?.gender }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Línea:</span>
-        <div class="text-base font-medium">{{ bird()?.line }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Estado:</span>
-        <div class="text-base font-medium">{{ bird()?.state }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Observación del estado:</span>
-        <div class="text-base font-medium whitespace-pre-wrap">{{ bird()?.stateObservation }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Padre:</span>
-        <div class="text-base font-medium">{{ bird()?.father }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Madre:</span>
-        <div class="text-base font-medium">{{ bird()?.mother }}</div>
-      </div>
-      <div>
-        <span class="font-semibold">Postura:</span>
-        <div class="text-base font-medium">{{ bird()?.posture }}</div>
-      </div>
-      <div class="md:col-span-2">
-        <span class="font-semibold">Observaciones:</span>
-        <div class="text-base font-medium whitespace-pre-wrap">{{ bird()?.observations }}</div>
-      </div>
-    </div>
 
-    <div class="flex gap-2">
-      <a [routerLink]="['birds/birds-edit', bird()?.id]"
-        class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-md transition">
-        Editar
-      </a>
-      <a [routerLink]="['birds/birds-list']"
-        class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-md font-medium transition">
-        Volver
-      </a>
-    </div>
-  </div>
-</ng-container>
-<ng-template #loading>
-  <p class="text-gray-500">Cargando detalles del canario...</p>
-</ng-template> -->
-
-<ng-container *ngIf="bird(); else loading">
-  <div class="max-w-4xl mx-auto p-6 bg-white border border-gray-300 shadow-md rounded-lg mt-8">
-    <div class="flex flex-col items-center mb-6 text-center">
-      <div class="text-sky-600 text-4xl mb-2">
-        <i class="icon icon-note"></i>
-      </div>
-      <h2 class="text-2xl font-bold text-sky-800 tracking-tight border-b border-sky-200 pb-2">
-        Detalle del Canario
-      </h2>
-
-    </div>
-    <dl class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Campos básicos -->
-      <div *ngFor="let field of [
-          { label: 'Procedencia', value: bird()?.origin },
-          { label: 'Temporada', value: bird()?.season },
-          { label: 'Color de anillo', value: bird()?.ringColor },
-          { label: 'Número de anillo', value: bird()?.ringNumber },
-          { label: 'Género', value: bird()?.gender },
-          { label: 'Línea', value: bird()?.line },
-          { label: 'Estado', value: bird()?.state },
-          { label: 'Observación del estado', value: bird()?.stateObservation }
-        ]" class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
-        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
-          {{ field.label }}
-        </dt>
-        <dd class="text-base font-medium text-gray-900 dark:text-white whitespace-pre-wrap">
-          {{ field.value || '—' }}
-        </dd>
-      </div>
-
-      <!-- Padre - campo especial -->
-      <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
-        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
-          Padre
-        </dt>
-        <dd class="text-base font-medium text-gray-900 dark:text-white">
-          <span *ngIf="fatherInfo(); else noFather">
-            <div class="text-blue-600 font-semibold">{{ fatherInfo()?.ringNumber ? 'N° anillo: ' +
-              fatherInfo()?.ringNumber : 'Sin anillo' }}</div>
-            <div class="text-green-600 text-sm">{{ fatherInfo()?.line ? 'Línea: ' + fatherInfo()?.line : 'Sin línea' }}
+        <!-- Mobile Layout: Title on top, Actions at bottom -->
+        <div class="md:hidden">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" [ngClass]="{
+                'bg-blue-100 text-blue-600': bird()?.gender === 'macho',
+                'bg-pink-100 text-pink-600': bird()?.gender === 'hembra',
+                'bg-gray-100 text-gray-600': bird()?.gender === 'desconocido' || !bird()?.gender
+              }">
+              <span class="text-3xl">
+                {{ bird()?.gender === 'macho' ? '♂' : bird()?.gender === 'hembra' ? '♀' : '🐦' }}
+              </span>
             </div>
-          </span>
-          <ng-template #noFather>
-            <span class="text-gray-500">—</span>
-          </ng-template>
-        </dd>
-      </div>
-
-      <!-- Madre - campo especial -->
-      <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
-        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
-          Madre
-        </dt>
-        <dd class="text-base font-medium text-gray-900 dark:text-white">
-          <span *ngIf="motherInfo(); else noMother">
-            <div class="text-blue-600 font-semibold">{{ motherInfo()?.ringNumber ? 'N° anillo: ' +
-              motherInfo()?.ringNumber : 'Sin anillo' }}</div>
-            <div class="text-green-600 text-sm">{{ motherInfo()?.line ? 'Línea: ' + motherInfo()?.line : 'Sin línea' }}
+            <div>
+              <h1 class="text-2xl font-bold text-gray-800">
+                {{ bird()?.ringNumber ? 'N° Anillo: ' + bird()?.ringNumber : 'N° Anillo: N/A' }}
+              </h1>
+              <p class="text-gray-600">{{ bird()?.line || 'Sin línea' }}</p>
+              <p class="text-sm text-gray-500">Temporada {{ bird()?.season }}</p>
             </div>
-          </span>
-          <ng-template #noMother>
-            <span class="text-gray-500">—</span>
-          </ng-template>
-        </dd>
-      </div>
+          </div>
+        </div>
 
-      <!-- Postura - campo independiente -->
-      <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
-        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
-          Postura
-        </dt>
-        <dd class="text-base font-medium text-gray-900 dark:text-white">
-          {{ bird()?.posture || '—' }}
-        </dd>
+        <!-- Status -->
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="flex items-center space-x-2">
+            <span class="text-gray-500">📊 Estado:</span>
+            <span class="px-2 py-1 text-xs rounded-full font-medium" [ngClass]="{
+                'bg-green-100 text-green-800': bird()?.state === 'criadero' || bird()?.state === 'activo',
+                'bg-yellow-100 text-yellow-800': bird()?.state === 'enfermo',
+                'bg-gray-100 text-gray-800': bird()?.state === 'vendido',
+                'bg-red-100 text-red-800': bird()?.state === 'muerto'
+              }">
+              {{ bird()?.state || 'N/A' }}
+            </span>
+          </div>
+        </div>
       </div>
-
-      <div
-        class="md:col-span-2 bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm">
-        <dt class="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
-          Observaciones
-        </dt>
-        <dd class="text-base font-medium text-gray-900 dark:text-white whitespace-pre-wrap">
-          {{ bird()?.observations || '—' }}
-        </dd>
-      </div>
-    </dl>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-      <a [routerLink]="['/birds/birds-edit', bird()?.id]"
-        class="w-full sm:w-auto text-center bg-yellow-500 hover:bg-yellow-600 text-white text-lg font-semibold px-6 py-3 rounded-md shadow-md transition">
-        ✏️ Editar
-      </a>
-      <a [routerLink]="['/birds/birds-list']"
-        class="w-full sm:w-auto text-center bg-sky-600 hover:bg-sky-700 text-white text-lg font-medium px-6 py-3 rounded-md shadow-md transition">
-        🔙 Volver
-      </a>
     </div>
 
+    <!-- Basic Information -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">📋</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Información Básica</h3>
+            <p class="text-sm text-gray-600">Datos generales del canario</p>
+          </div>
+        </div>
 
-    <!-- <div class="flex gap-2 mt-8">
-      <a [routerLink]="['/birds/birds-edit', bird()?.id]"
-        class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-md transition">
-        Editar
-      </a>
-      <a [routerLink]="['/birds/birds-list']"
-        class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-md font-medium transition">
-        Volver
-      </a>
-    </div> -->
-  </div>
-</ng-container>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Procedencia:</span>
+              <span class="font-medium">{{ bird()?.origin || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Temporada:</span>
+              <span class="font-medium">{{ bird()?.season || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">N° de Postura:</span>
+              <span class="font-medium">{{ bird()?.posture || 'N/A' }}</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Color de anillo:</span>
+              <span class="font-medium">{{ bird()?.ringColor || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Género:</span>
+              <span class="font-medium">{{ bird()?.gender || 'N/A' }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Línea:</span>
+              <span class="font-medium">{{ bird()?.line || 'N/A' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<ng-template #loading>
-  <p class="text-gray-500">Cargando detalles del canario...</p>
-</ng-template>
+    <!-- Parents Information -->
+    <div class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="text-3xl">🕊️</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Información de Progenitores</h3>
+            <p class="text-sm text-gray-600">Linaje del canario</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Padre -->
+          <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center space-x-2">
+                <span class="text-2xl">♂</span>
+                <span class="font-semibold text-gray-800">Padre</span>
+              </div>
+              <button *ngIf="fatherInfo()" (click)="viewFatherDetails()"
+                class="text-blue-600 hover:text-blue-800 text-sm font-medium px-2 py-1 rounded hover:bg-blue-100 transition-colors">
+                Ver detalles →
+              </button>
+            </div>
+
+            <div *ngIf="fatherInfo(); else noFatherData" class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">N° Anillo:</span>
+                <span class="font-medium">{{ fatherInfo()?.ringNumber || 'N/A' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Línea:</span>
+                <span class="font-medium">{{ fatherInfo()?.line || 'Sin línea' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Temporada:</span>
+                <span class="font-medium">{{ fatherInfo()?.season || 'N/A' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Procedencia:</span>
+                <span class="font-medium">{{ fatherInfo()?.origin || 'N/A' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Color anillo:</span>
+                <span class="font-medium">{{ fatherInfo()?.ringColor || 'N/A' }}</span>
+              </div>
+            </div>
+
+            <ng-template #noFatherData>
+              <p class="text-gray-500 text-sm italic">No se encuentran datos del padre</p>
+            </ng-template>
+          </div>
+
+          <!-- Madre -->
+          <div class="p-4 bg-pink-50 rounded-lg border border-pink-200">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center space-x-2">
+                <span class="text-2xl">♀</span>
+                <span class="font-semibold text-gray-800">Madre</span>
+              </div>
+              <button *ngIf="motherInfo()" (click)="viewMotherDetails()"
+                class="text-pink-600 hover:text-pink-800 text-sm font-medium px-2 py-1 rounded hover:bg-pink-100 transition-colors">
+                Ver detalles →
+              </button>
+            </div>
+
+            <div *ngIf="motherInfo(); else noMotherData" class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">N° Anillo:</span>
+                <span class="font-medium">{{ motherInfo()?.ringNumber || 'N/A' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Línea:</span>
+                <span class="font-medium">{{ motherInfo()?.line || 'Sin línea' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Temporada:</span>
+                <span class="font-medium">{{ motherInfo()?.season || 'N/A' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Procedencia:</span>
+                <span class="font-medium">{{ motherInfo()?.origin || 'N/A' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Color anillo:</span>
+                <span class="font-medium">{{ motherInfo()?.ringColor || 'N/A' }}</span>
+              </div>
+            </div>
+
+            <ng-template #noMotherData>
+              <p class="text-gray-500 text-sm italic">No se encuentran datos de la madre</p>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Mensaje cuando no hay datos de ningún padre -->
+        <div *ngIf="!fatherInfo() && !motherInfo() && (bird()?.father || bird()?.mother)"
+          class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <div class="flex items-center space-x-2">
+            <span class="text-yellow-600">⚠️</span>
+            <p class="text-yellow-700 text-sm">
+              No se encuentran datos de los progenitores.
+              Es posible que hayan sido eliminados o no estén disponibles.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mensaje cuando no hay padres registrados -->
+        <div *ngIf="!bird()?.father && !bird()?.mother" class="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+          <div class="flex items-center space-x-2">
+            <span class="text-gray-500">ℹ️</span>
+            <p class="text-gray-600 text-sm">
+              No se han registrado progenitores para este canario.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- State Information -->
+    <div *ngIf="bird()?.stateObservation" class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="text-3xl">⚕️</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Observaciones del Estado</h3>
+            <p class="text-sm text-gray-600">Notas sobre el estado actual</p>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <p class="text-gray-700 whitespace-pre-wrap">{{ bird()?.stateObservation }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- General Observations -->
+    <div *ngIf="bird()?.observations" class="bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="text-3xl">📝</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800">Observaciones Generales</h3>
+            <p class="text-sm text-gray-600">Notas adicionales sobre el canario</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-4">
+          <p class="text-gray-700 whitespace-pre-wrap">{{ bird()?.observations }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Actions at Bottom -->
+    <div class="md:hidden bg-white shadow-sm rounded-lg border">
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Acciones</h3>
+        <div class="flex flex-col space-y-3">
+          <button (click)="goBack()"
+            class="px-4 py-3 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors text-center font-medium">
+            ← Volver a la lista
+          </button>
+          <button (click)="editBird()"
+            class="px-4 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-md transition-colors text-center font-medium">
+            ✏️ Editar canario
+          </button>
+          <button (click)="deleteBird()"
+            class="px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors text-center font-medium">
+            🗑️ Eliminar canario
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

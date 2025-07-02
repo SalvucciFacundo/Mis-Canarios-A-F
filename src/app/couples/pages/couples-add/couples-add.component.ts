@@ -243,7 +243,7 @@ export class CouplesAddComponent implements OnInit {
 
   // Redirigir a formulario de nuevo canario
   redirectToNewBird() {
-    this.router.navigate(['/birds/birds-create']);
+    this.router.navigate(['/birds/birds-add']);
   }
 
   // Enviar formulario

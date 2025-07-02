@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../auth/services/auth.service';
@@ -7,7 +7,6 @@ import { firstValueFrom, map } from 'rxjs';
 import { doc, Firestore, updateDoc } from '@angular/fire/firestore';
 import { BirdFormComponent } from '../../utils/bird-form.component';
 import { BirdsStoreService } from '../../services/birds-store.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from '../../../shared/services/loading.service';
 import { ToastService } from '../../../shared/services/toast.service';
@@ -17,28 +16,29 @@ import { ToastService } from '../../../shared/services/toast.service';
   templateUrl: './bird-edit.component.html',
   styleUrl: './bird-edit.component.css'
 })
-export class BirdEditComponent {
+export class BirdEditComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private store = inject(BirdsStoreService);
   private loadingService = inject(LoadingService);
   private toastService = inject(ToastService);
-  //birdData: any = null;
-  //birdId: string | null = null;
 
-  readonly birdId = toSignal(this.route.paramMap.pipe(
-    // extraemos el parámetro ":id" al vuelo
-    // y lo guardamos como Signal reactivo
-    // ejemplo: /birds/edit/ABC123 ➜ 'ABC123'
-    map(params => params.get('id'))
-  ));
-
-  readonly birdData = computed(() => {
+  birdId = signal<string | null>(null);
+  birdDataSignal = computed(() => {
     const id = this.birdId();
     if (!id) return null;
     const birdSignal = this.store.getCanarioSignalById(id);
-    return birdSignal(); // Ejecutar el computed para obtener el valor
+    const bird = birdSignal();
+    return bird;
   });
+
+  ngOnInit() {
+    // Obtener el ID del canario desde los parámetros de la ruta
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      this.birdId.set(id);
+    });
+  }
 
   async actualizarBird(data: any) {
     const id = this.birdId();
@@ -55,7 +55,7 @@ export class BirdEditComponent {
       await this.loadingService.showContentTransition('Guardando cambios...', 700);
       await this.store.actualizarCanario(email, id, data);
       console.log('Canario actualizado exitosamente');
-      this.router.navigate(['/birds']);
+      this.router.navigate(['/birds/birds-list']);
       this.loadingService.hidePageTransition();
     } catch (error) {
       console.error('Error al actualizar canario:', error);
@@ -66,7 +66,7 @@ export class BirdEditComponent {
 
   returnList() {
     // Navegación interna rápida, sin spinner
-    this.router.navigate(['/birds']);
+    this.router.navigate(['/birds/birds-list']);
   }
 
 

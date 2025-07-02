@@ -20,6 +20,7 @@ export interface Couples {
   //bajas de pichones
   deathPiichons?: number;
   observations?: string;
+  postureObservations?: string;  // Observaciones específicas de postura
   creationDate: Date;
   modificationDate?: Date;
 }

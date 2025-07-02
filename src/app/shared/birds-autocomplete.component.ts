@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, computed, EventEmitter, Input, Output, signal, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-birds-autocomplete',
@@ -7,14 +7,15 @@ import { Component, computed, EventEmitter, Input, Output, signal } from '@angul
   templateUrl: './birds-autocomplete.component.html',
 
 })
-export class BirdsAutocompleteComponent {
+export class BirdsAutocompleteComponent implements OnInit, OnChanges {
   @Input() items: any[] = [];
   @Input() label = 'Seleccionar';
   @Input() valueKey = 'id';
   @Input() displayFn: (item: any) => string = (item) => item?.[this.valueKey] ?? '';
-  @Input() hasError = false; // Nuevos input para manejar el estado de error
+  @Input() hasError = false;
+  @Input() selectedValue: string | null = null; // Nuevo input para valor inicial
   @Output() selectedChange = new EventEmitter<string>();
-  @Output() blurChange = new EventEmitter<void>(); // Nuevo evento para manejar blur
+  @Output() blurChange = new EventEmitter<void>();
 
   input = signal('');
   showOptions = signal(false);
@@ -73,6 +74,27 @@ export class BirdsAutocompleteComponent {
       // Emitir evento de blur para que el componente padre pueda manejar validaciones
       this.blurChange.emit();
     }, 150);
+  }
+
+  ngOnInit() {
+    this.setInitialValue();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['selectedValue'] || changes['items']) {
+      this.setInitialValue();
+    }
+  }
+
+  private setInitialValue() {
+    if (this.selectedValue && this.items.length > 0) {
+      const selectedItem = this.items.find(item => item[this.valueKey] === this.selectedValue);
+      if (selectedItem) {
+        this.selected.set(this.selectedValue);
+        this.input.set(this.displayFn(selectedItem));
+        this.lastValidSelection.set(this.displayFn(selectedItem));
+      }
+    }
   }
 
 }

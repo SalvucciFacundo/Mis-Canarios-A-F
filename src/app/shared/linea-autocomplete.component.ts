@@ -3,7 +3,6 @@ import { Component, computed, EventEmitter, inject, Input, OnChanges, OnInit, Ou
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Nomenclator } from '../nomenclator/interface/nomenclator.interface';
 import { NomenclatorStoreService } from '../nomenclator/services/nomenclator-store.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-linea-autocomplete',
@@ -18,24 +17,14 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
   private store = inject(NomenclatorStoreService);
   private fb = inject(FormBuilder);
 
-
   form = this.fb.group({
     federacion: this.fb.nonNullable.control<'FOCI' | 'FAC' | 'FOA'>('FOCI'),
     search: ''
   });
 
-
-
-  federacionSeleccionada = toSignal(this.form.get('federacion')!.valueChanges, {
-    initialValue: 'FOCI'
-  });
-
-
-
-  searchTerm = toSignal(this.form.get('search')!.valueChanges, {
-    initialValue: ''
-  });
-
+  // Señales para manejo de estado
+  federacionSeleccionada = signal<'FOCI' | 'FAC' | 'FOA'>('FOCI');
+  searchTerm = signal('');
 
   lineasFiltradas = computed(() =>
     this.store.searchByCodigoONombre(
@@ -46,8 +35,15 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
 
   async ngOnInit() {
     await this.store.loadAllOnce(); // ⏳ esperá que termine
-    this.form.get('search')!.valueChanges.subscribe(() => {
+
+    // Suscribirse a cambios en el formulario
+    this.form.get('search')!.valueChanges.subscribe(value => {
+      this.searchTerm.set(value || '');
       this.showOptions.set(true);
+    });
+
+    this.form.get('federacion')!.valueChanges.subscribe(value => {
+      this.federacionSeleccionada.set(value);
     });
 
     // Cargar valor inicial si existe
@@ -70,7 +66,6 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
     this.selected.emit(linea);
     this.form.get('search')?.setValue(linea.name ?? '');
     this.showOptions.set(false); // 👈 cerrar el listado
-
   }
 
   onFederacionChange(event: Event, fed: string) {
@@ -84,7 +79,4 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
   cerrarConDelay() {
     setTimeout(() => this.showOptions.set(false), 200);
   }
-
-
-
 }
