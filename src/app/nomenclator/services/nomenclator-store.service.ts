@@ -54,7 +54,12 @@ export class NomenclatorStoreService {
 
   searchByCodigoONombre(term: string, federaciones: string[]): Nomenclator[] {
     const searchTerm = this.clean(term.trim());
-    if (!searchTerm) return this.getByFederaciones(federaciones);
+    if (!searchTerm) {
+      // Si no hay término de búsqueda, ordenar por código ascendente
+      return this.getByFederaciones(federaciones)
+        .slice()
+        .sort((a, b) => (a.code ?? '').localeCompare(b.code ?? ''));
+    }
 
     // Dividir el término de búsqueda en palabras individuales
     const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
@@ -120,7 +125,9 @@ export class NomenclatorStoreService {
       })
       .filter(item => item.score > 0)
       .sort((a, b) => b.score - a.score) // Ordenar por relevancia (mayor a menor)
-      .map(item => item.linea);
+      .map(item => item.linea)
+      // Ordenar por código ascendente después de la relevancia
+      .sort((a, b) => (a.code ?? '').localeCompare(b.code ?? ''));
   }
 
 
