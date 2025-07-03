@@ -11,11 +11,11 @@ export const routes: Routes = [
   },
   {
     path: 'birds-details/:id',
-    loadComponent: () => import('./pages/bird-details/bird-details.component').then(m => m.BirdDetailsComponent)
+    loadComponent: () => import('./pages/birds-details/birds-details.component').then(m => m.BirdsDetailsComponent)
   },
   {
     path: 'birds-edit/:id',
-    loadComponent: () => import('./pages/bird-edit/bird-edit.component').then(m => m.BirdEditComponent)
+    loadComponent: () => import('./pages/birds-edit/birds-edit.component').then(m => m.BirdsEditComponent)
   },
   {
     path: '**', redirectTo: 'birds-list'

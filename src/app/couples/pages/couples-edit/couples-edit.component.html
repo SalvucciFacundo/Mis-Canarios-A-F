@@ -1,1 +1,145 @@
-<p>couples-edit works!</p>
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <!-- Resumen visual de la pareja con título de nido -->
+  <div class="bg-white shadow-sm rounded-lg border">
+    <div class="p-6 flex flex-col space-y-4">
+      <h2 class="text-2xl font-bold text-gray-800 text-center">
+        <span class="inline-block align-middle mr-2 text-sky-700">🪺</span>
+        Nido: <span class="text-sky-700">{{ coupleForm.get('nestCode')?.value || 'Sin código' }}</span>
+      </h2>
+      <div class="flex flex-col md:flex-row md:items-center md:space-x-8 space-y-4 md:space-y-0">
+        <!-- Macho -->
+        <div class="flex items-center space-x-4 flex-1">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center" [ngClass]="{
+              'bg-blue-100 text-blue-600': selectedMale?.gender === 'macho' || selectedMale?.gender === 'M',
+              'bg-gray-100 text-gray-600': !selectedMale
+            }">
+            <span class="text-3xl">
+              {{ selectedMale ? '♂' : '🐦' }}
+            </span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-800" *ngIf="selectedMale">Macho</h3>
+            <h3 class="text-lg font-bold text-gray-400" *ngIf="!selectedMale">Sin macho</h3>
+            <div class="text-sm text-gray-600 space-y-1" *ngIf="selectedMale">
+              <p><strong>N° Anillo:</strong> {{ selectedMale.ringNumber }}</p>
+              <p><strong>Línea:</strong> {{ selectedMale.line }}</p>
+              <p><strong>Temporada:</strong> {{ selectedMale.season }}</p>
+            </div>
+          </div>
+        </div>
+        <!-- Hembra -->
+        <div class="flex items-center space-x-4 flex-1">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center" [ngClass]="{
+              'bg-pink-100 text-pink-600': selectedFemale?.gender === 'hembra' || selectedFemale?.gender === 'F',
+              'bg-gray-100 text-gray-600': !selectedFemale
+            }">
+            <span class="text-3xl">
+              {{ selectedFemale ? '♀' : '🐦' }}
+            </span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-800" *ngIf="selectedFemale">Hembra</h3>
+            <h3 class="text-lg font-bold text-gray-400" *ngIf="!selectedFemale">Sin hembra</h3>
+            <div class="text-sm text-gray-600 space-y-1" *ngIf="selectedFemale">
+              <p><strong>N° Anillo:</strong> {{ selectedFemale.ringNumber }}</p>
+              <p><strong>Línea:</strong> {{ selectedFemale.line }}</p>
+              <p><strong>Temporada:</strong> {{ selectedFemale.season }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card de edición con contorno -->
+  <div class="bg-white shadow-md rounded-lg border">
+    <div class="p-6 border-b">
+      <h2 class="text-2xl font-bold text-gray-800">Editar Pareja</h2>
+      <p class="text-gray-600 mt-1">Modifique los datos de la pareja seleccionada</p>
+    </div>
+
+    <!-- Formulario -->
+    <form [formGroup]="coupleForm" (ngSubmit)="onSubmit()" class="p-6 space-y-6">
+      <!-- Primera fila: Temporada y Nido -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Temporada -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-800 mb-1">Temporada <span
+              class="text-red-500">*</span></label>
+          <select formControlName="season"
+            class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+            [class.border-red-500]="coupleForm.get('season')?.invalid && coupleForm.get('season')?.touched">
+            <option value="">Seleccionar temporada</option>
+            <option *ngFor="let year of availableSeasons()" [value]="year">{{ year }}</option>
+          </select>
+          <div *ngIf="coupleForm.get('season')?.invalid && coupleForm.get('season')?.touched"
+            class="text-red-600 text-xs mt-1">
+            La temporada es requerida
+          </div>
+        </div>
+        <!-- Código de Nido -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-800 mb-1">Código de Nido <span
+              class="text-red-500">*</span></label>
+          <input type="text" formControlName="nestCode" placeholder="Ej: N001, NIDO-A, etc."
+            class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+            [class.border-red-500]="coupleForm.get('nestCode')?.invalid && coupleForm.get('nestCode')?.touched">
+          <div *ngIf="coupleForm.get('nestCode')?.invalid && coupleForm.get('nestCode')?.touched"
+            class="text-red-600 text-xs mt-1">
+            El código de nido es requerido
+          </div>
+        </div>
+      </div>
+      <!-- Segunda fila: Selección de Padre y Madre -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Selección de Macho -->
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-sm font-semibold text-gray-800">Padre (Macho) <span
+                class="text-red-500">*</span></label>
+          </div>
+          <app-birds-autocomplete [items]="availableMales()" label="" [displayFn]="displayBirdFn"
+            [hasError]="(coupleForm.get('maleId')?.invalid && coupleForm.get('maleId')?.touched) ?? false"
+            (selectedChange)="onMaleSelected($event)" (blurChange)="onMaleBlur()">
+          </app-birds-autocomplete>
+          <div *ngIf="coupleForm.get('maleId')?.invalid && coupleForm.get('maleId')?.touched"
+            class="text-red-600 text-xs mt-1">
+            Debe seleccionar un padre
+          </div>
+        </div>
+        <!-- Selección de Hembra -->
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-sm font-semibold text-gray-800">Madre (Hembra) <span
+                class="text-red-500">*</span></label>
+          </div>
+          <app-birds-autocomplete [items]="availableFemales()" label="" [displayFn]="displayBirdFn"
+            [hasError]="(coupleForm.get('femaleId')?.invalid && coupleForm.get('femaleId')?.touched) ?? false"
+            (selectedChange)="onFemaleSelected($event)" (blurChange)="onFemaleBlur()">
+          </app-birds-autocomplete>
+          <div *ngIf="coupleForm.get('femaleId')?.invalid && coupleForm.get('femaleId')?.touched"
+            class="text-red-600 text-xs mt-1">
+            Debe seleccionar una madre
+          </div>
+        </div>
+      </div>
+      <!-- Observaciones -->
+      <div>
+        <label class="block text-sm font-semibold text-gray-800 mb-1">Observaciones</label>
+        <textarea formControlName="observations" rows="2" placeholder="Notas adicionales sobre la pareja"
+          class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
+      </div>
+      <!-- Botón Guardar -->
+      <div class="flex justify-end gap-4">
+        <button type="button" (click)="onCancel()"
+          class="px-6 py-2 bg-white hover:bg-gray-100 text-gray-700 font-medium rounded-md shadow border border-gray-300 transition-all">
+          Cancelar
+        </button>
+        <button type="submit" [disabled]="coupleForm.invalid || loading"
+          class="px-6 py-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-md shadow disabled:opacity-60 disabled:cursor-not-allowed transition-all">
+          Guardar Cambios
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

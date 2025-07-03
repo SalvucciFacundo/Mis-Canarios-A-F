@@ -6,12 +6,13 @@ import { LoadingService } from './services/loading.service';
 import { UserLimitsIndicatorComponent } from './components/user-limits-indicator/user-limits-indicator.component';
 import { LimitsAlertComponent } from './components/limits-alert/limits-alert.component';
 import { ToastContainerComponent } from './toast-container.component';
+import { CustomSpinnerComponent } from './components/custom-spinner/custom-spinner.component';
 import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterModule, CommonModule, UserLimitsIndicatorComponent, LimitsAlertComponent, ToastContainerComponent],
+  imports: [RouterModule, CommonModule, UserLimitsIndicatorComponent, LimitsAlertComponent, ToastContainerComponent, CustomSpinnerComponent],
   templateUrl: './layout.component.html',
   styles: [`
     /* Efectos de brillo para los menús */
@@ -70,8 +71,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
   private _authState = inject(AuthService);
   public _router = inject(Router);
   private _loadingService = inject(LoadingService);
+  public loadingService = this._loadingService;
 
-  // Acceso al usuario actual
+  // Acceso al usuario currentUser
   currentUser = this._authState.currentUser;
   currentUserEmail = this._authState.currentUserEmail;
   isEmailVerified = this._authState.isEmailVerified;

@@ -9,12 +9,12 @@ import { CommonModule } from '@angular/common';
 import { BirdsStoreService } from '../../services/birds-store.service';
 
 @Component({
-  selector: 'app-bird-details',
+  selector: 'app-birds-details',
   imports: [CommonModule],
-  templateUrl: './bird-details.component.html',
-  styleUrl: './bird-details.component.css'
+  templateUrl: './birds-details.component.html',
+  styleUrl: './birds-details.component.css'
 })
-export class BirdDetailsComponent implements OnInit, OnDestroy {
+export class BirdsDetailsComponent implements OnInit, OnDestroy {
   private id = signal<string | null>(null);
   private router = inject(Router);
   private authService = inject(AuthService);
@@ -103,8 +103,8 @@ Esta acción no se puede deshacer.`;
             this.toastService.error('Usuario no autenticado');
             return;
           }
-          await this.birdsStore.eliminarCanario(currentBird.id!, userEmail);
-          this.router.navigate(['/birds/birds-list']);
+          await this.birdsStore.eliminarCanario(userEmail, currentBird.id!);
+          this.goBack(); // Usar goBack() para respetar la navegación
         } catch (error) {
           // El error ya se maneja en el store
         }
@@ -142,17 +142,4 @@ Esta acción no se puede deshacer.`;
       this.router.navigate(['/birds/birds-details', mother.id]);
     }
   }
-
-  //bird!: Birds;
-  // async ngOnInit() {
-  //   const id = this.route.snapshot.paramMap.get('id');
-  //   const user = await firstValueFrom(this._auth.authState$);
-
-  //   if (!id || !user?.email) return;
-  //   try {
-  //     this.bird = await this._birdsService.getBirdById(user.email, id);
-  //   } catch (error) {
-  //     console.error('Error fetching bird details:', error);
-  //   }
-  // }
 }

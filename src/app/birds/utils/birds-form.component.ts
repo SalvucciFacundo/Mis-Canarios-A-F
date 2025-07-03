@@ -9,12 +9,12 @@ import { LineaAutocompleteComponent } from '../../shared/linea-autocomplete.comp
 import { LoadingService } from '../../shared/services/loading.service';
 
 @Component({
-  selector: 'app-bird-form',
+  selector: 'app-birds-form',
   imports: [ReactiveFormsModule, CommonModule, BirdsAutocompleteComponent, LineaAutocompleteComponent],
-  templateUrl: './bird-form.component.html',
-  styleUrl: './bird-form.component.css'
+  templateUrl: './birds-form.component.html',
+  styleUrl: './birds-form.component.css'
 })
-export class BirdFormComponent implements OnInit, OnChanges {
+export class BirdsFormComponent implements OnInit, OnChanges {
 
   @Input() initialData: any | null = null;
   @Input() preloadedData: Partial<Birds> | null = null;

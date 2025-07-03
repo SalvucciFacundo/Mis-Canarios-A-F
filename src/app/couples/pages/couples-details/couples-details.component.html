@@ -63,19 +63,11 @@
         </div>
 
         <!-- Status and dates -->
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-1 gap-4 text-sm">
           <div *ngIf="couple()?.creationDate" class="flex items-center space-x-2">
             <span class="text-gray-500">📅 Creado:</span>
             <span class="font-medium">{{ convertFirestoreDate(couple()?.creationDate) | date:'dd/MM/yyyy HH:mm'
               }}</span>
-          </div>
-          <div *ngIf="couple()?.postureStartDate" class="flex items-center space-x-2">
-            <span class="text-gray-500">🥚 Inicio postura:</span>
-            <span class="font-medium">{{ convertFirestoreDate(couple()?.postureStartDate) | date:'dd/MM/yyyy' }}</span>
-          </div>
-          <div *ngIf="couple()?.postureEndDate" class="flex items-center space-x-2">
-            <span class="text-gray-500">🔚 Fin postura:</span>
-            <span class="font-medium">{{ convertFirestoreDate(couple()?.postureEndDate) | date:'dd/MM/yyyy' }}</span>
           </div>
         </div>
       </div>
@@ -206,7 +198,16 @@
             Finalizar Postura
           </button>
 
-          <span *ngIf="postureStatus() === 'completed'"
+          <button *ngIf="postureStatus() === 'completed'" (click)="startPosture()"
+            class="inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-md text-sm font-medium transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Iniciar Nueva Postura
+          </button>
+
+          <span *ngIf="postureStatus() === 'completed' && false"
             class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-md text-sm font-medium">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -277,13 +278,16 @@
 
         <!-- Botones adicionales -->
         <div class="flex flex-wrap gap-3 mb-6">
-          <button (click)="addMultipleOffspring()"
-            class="inline-flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium transition-colors">
+          <button (click)="addMultipleOffspring()" [disabled]="!canAddOffspring()" [ngClass]="{
+              'bg-blue-600 hover:bg-blue-700 text-white': canAddOffspring(),
+              'bg-gray-300 text-gray-500 cursor-not-allowed': !canAddOffspring()
+            }" class="inline-flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors">
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
               </path>
             </svg>
             Agregar Pichón
+            <span *ngIf="!canAddOffspring()" class="ml-2 text-xs">(Solo durante postura activa)</span>
           </button>
         </div>
 
@@ -448,7 +452,7 @@
       </div>
     </div>
 
-    <!-- Pichones Section (Moved after Posture Management) -->
+    <!-- Pichones Section con Acordeones por Postura -->
     <div class="bg-white shadow-sm rounded-lg border">
       <div class="p-6">
         <div class="flex items-center justify-between mb-6">
@@ -457,7 +461,7 @@
             <div>
               <h3 class="text-lg font-semibold text-gray-800">Pichones</h3>
               <p class="text-sm text-gray-600">
-                {{ (coupleDetails()?.offspring?.length || 0) }} pichón(es) registrado(s)
+                {{ (coupleDetails()?.offspring?.length || 0) }} pichón(es) registrado(s) total
                 <span *ngIf="(couple()?.deathPiichons ?? 0) > 0" class="text-red-600">
                   ({{ couple()?.deathPiichons }} baja(s))
                 </span>
@@ -466,62 +470,133 @@
           </div>
         </div>
 
-        <!-- Offspring List -->
-        <div *ngIf="coupleDetails()?.offspring && (coupleDetails()?.offspring?.length ?? 0) > 0; else noOffspring"
-          class="space-y-3">
-          <div *ngFor="let bird of coupleDetails()?.offspring; trackBy: trackByBirdId"
-            class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow cursor-pointer"
-            (click)="viewBirdDetails(bird.id!)">
+        <!-- Lista de Pichones agrupados por Postura -->
+        <div *ngIf="offspringByPosture().length > 0; else noOffspring" class="space-y-4">
+          <!-- Acordeón por cada postura -->
+          <div *ngFor="let postureGroup of offspringByPosture(); trackBy: trackByPostureNumber"
+            class="border border-gray-200 rounded-lg overflow-hidden">
 
-            <!-- Información principal del pichón -->
-            <div class="flex items-center space-x-4">
-              <!-- Género con icono -->
-              <div class="w-10 h-10 rounded-full flex items-center justify-center text-lg font-medium" [ngClass]="{
-                'bg-blue-100 text-blue-600': bird.gender === 'macho',
-                'bg-pink-100 text-pink-600': bird.gender === 'hembra',
-                'bg-gray-100 text-gray-600': !bird.gender || bird.gender === 'no_determinado'
-              }">
-                {{ bird.gender === 'macho' ? '♂' : bird.gender === 'hembra' ? '♀' : '?' }}
-              </div>
-
-              <!-- Datos del pichón -->
-              <div class="flex-1">
-                <div class="flex items-center space-x-4">
-                  <div>
-                    <p class="font-semibold text-gray-800">
-                      {{ bird.ringNumber ? 'Anillo: ' + bird.ringNumber : 'Sin anillo' }}
-                    </p>
-                    <p class="text-sm text-gray-600">
-                      Temporada {{ bird.season || 'N/A' }}
-                      <span *ngIf="bird.posture" class="ml-2">• Postura #{{ bird.posture }}</span>
-                    </p>
+            <!-- Header del acordeón -->
+            <button (click)="toggleAccordion(postureGroup.postureNumber)"
+              class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 transition-colors text-left focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-sm font-bold text-blue-600">#{{ postureGroup.postureNumber }}</span>
                   </div>
-
-                  <!-- Estado -->
-                  <div class="ml-4">
-                    <span class="px-3 py-1 text-sm rounded-full font-medium" [ngClass]="{
-                      'bg-green-100 text-green-800': bird.state === 'criadero',
-                      'bg-blue-100 text-blue-800': bird.state === 'activo',
-                      'bg-gray-100 text-gray-800': bird.state === 'vendido',
-                      'bg-red-100 text-red-800': bird.state === 'muerto'
-                    }">
-                      {{ bird.state || 'N/A' | titlecase }}
-                    </span>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 flex items-center space-x-2">
+                      <span>Postura #{{ postureGroup.postureNumber }}</span>
+                      <span *ngIf="isCurrentPosture(postureGroup.postureNumber)"
+                        class="px-2 py-1 text-xs font-medium rounded-full" [ngClass]="{
+                              'bg-blue-100 text-blue-800': getPostureStatus(postureGroup.postureNumber) === 'started',
+                              'bg-green-100 text-green-800': getPostureStatus(postureGroup.postureNumber) === 'completed'
+                            }">
+                        {{ getPostureStatus(postureGroup.postureNumber) === 'started' ? 'Activa' : 'Finalizada' }}
+                      </span>
+                    </h4>
+                    <div class="space-y-1">
+                      <p class="text-sm text-gray-600">{{ postureGroup.count }} pichón(es)</p>
+                      <!-- Debug info (temporal) -->
+                      {{ debugPostureInfo(postureGroup.postureNumber) }}
+                      <!-- Mostrar fechas para todas las posturas, pero destacar la actual -->
+                      <div class="text-xs text-gray-500 space-y-1">
+                        <div class="flex items-center space-x-4">
+                          <span>📅 Inicio: {{ formatDateForDisplay(getPostureDates(postureGroup.postureNumber).start)
+                            }}</span>
+                          <span *ngIf="getPostureDates(postureGroup.postureNumber).end">
+                            🏁 Fin: {{ formatDateForDisplay(getPostureDates(postureGroup.postureNumber).end) }}
+                          </span>
+                          <span *ngIf="!getPostureDates(postureGroup.postureNumber).start" class="text-gray-400">
+                            (Fechas basadas en registros de pichones)
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Procedencia -->
-                <p class="text-xs text-gray-500 mt-1">
-                  Procedencia: {{ bird.origin || 'N/A' }}
-                </p>
+                <!-- Icono de expandir/contraer -->
+                <div class="flex items-center space-x-2">
+                  <span class="text-xs text-gray-500">
+                    {{ isAccordionOpen(postureGroup.postureNumber) ? 'Contraer' : 'Expandir' }}
+                  </span>
+                  <svg class="w-5 h-5 text-gray-400 transition-transform"
+                    [ngClass]="{ 'rotate-180': isAccordionOpen(postureGroup.postureNumber) }" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
               </div>
-            </div>
+            </button>
 
-            <!-- Flecha para indicar que es clickeable -->
-            <div class="text-gray-400">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
+            <!-- Contenido del acordeón -->
+            <div *ngIf="isAccordionOpen(postureGroup.postureNumber)" class="border-t border-gray-200">
+              <div class="p-4 space-y-3">
+                <!-- Lista de pichones de esta postura -->
+                <div *ngFor="let bird of postureGroup.birds; trackBy: trackByBirdId"
+                  class="flex items-center justify-between p-3 border border-gray-100 rounded-lg hover:shadow-md transition-all cursor-pointer hover:border-sky-300"
+                  (click)="viewBirdDetails(bird.id!)">
+
+                  <!-- Información principal del pichón -->
+                  <div class="flex items-center space-x-4 flex-1">
+                    <!-- Género con icono -->
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-lg font-medium" [ngClass]="{
+                      'bg-blue-100 text-blue-600': bird.gender === 'macho',
+                      'bg-pink-100 text-pink-600': bird.gender === 'hembra',
+                      'bg-gray-100 text-gray-600': !bird.gender || bird.gender === 'no_determinado'
+                    }">
+                      {{ bird.gender === 'macho' ? '♂' : bird.gender === 'hembra' ? '♀' : '?' }}
+                    </div>
+
+                    <!-- Datos del pichón -->
+                    <div class="flex-1">
+                      <div class="flex items-center space-x-4">
+                        <div>
+                          <p class="font-semibold text-gray-800">
+                            {{ bird.ringNumber ? 'Anillo: ' + bird.ringNumber : 'Sin anillo' }}
+                          </p>
+                          <p class="text-sm text-gray-600">
+                            Temporada {{ bird.season || 'N/A' }}
+                          </p>
+                        </div>
+
+                        <!-- Estado -->
+                        <div class="ml-4">
+                          <span class="px-3 py-1 text-sm rounded-full font-medium" [ngClass]="{
+                            'bg-green-100 text-green-800': bird.state === 'criadero',
+                            'bg-blue-100 text-blue-800': bird.state === 'activo',
+                            'bg-gray-100 text-gray-800': bird.state === 'vendido',
+                            'bg-red-100 text-red-800': bird.state === 'muerto'
+                          }">
+                            {{ bird.state || 'N/A' | titlecase }}
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Procedencia -->
+                      <p class="text-xs text-gray-500 mt-1">
+                        Procedencia: {{ bird.origin || 'N/A' }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Botón de ver detalles más visible -->
+                  <div class="flex items-center space-x-2 text-sky-600 hover:text-sky-700">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                      </path>
+                    </svg>
+                    <span class="text-sm font-medium">Ver detalles</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

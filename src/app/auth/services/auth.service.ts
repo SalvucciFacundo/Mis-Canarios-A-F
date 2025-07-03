@@ -28,13 +28,31 @@ export class AuthService {
       this.isEmailVerified.set(firebaseUser?.emailVerified ?? false);
 
       if (firebaseUser) {
-        // Cargar datos adicionales del usuario desde Firestore
+        await this.syncUserInFirestore(firebaseUser); // Sincroniza el usuario si no existe
         const userDoc = await this.getUserFromFirestore(firebaseUser.uid);
         this.currentUser.set(userDoc);
       } else {
         this.currentUser.set(null);
       }
     });
+  }
+
+  private async syncUserInFirestore(firebaseUser: { uid: string, email: string | null, displayName?: string | null }) {
+    if (!firebaseUser.email) return; // No sincronizar si no hay email
+    const userRef = doc(this._firestore, 'users', firebaseUser.uid);
+    const userSnap = await getDoc(userRef);
+    if (!userSnap.exists()) {
+      const userData: User = {
+        uid: firebaseUser.uid,
+        email: firebaseUser.email,
+        name: firebaseUser.displayName || firebaseUser.email.split('@')[0],
+        rol: 'user',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      };
+      await setDoc(userRef, userData);
+      console.log('[AuthService] Usuario sincronizado en Firestore:', userData);
+    }
   }
 
   async signUp(userData: { email: string; password: string; name?: string }) {

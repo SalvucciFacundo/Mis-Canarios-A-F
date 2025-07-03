@@ -10,7 +10,7 @@
         una lista</p>
     </div>
     <div class="p-6">
-      <app-bird-form #birdFormRef (submitted)="handleFormSubmit($event)" (cancelled)="returnList()"
+      <app-birds-form #birdFormRef (submitted)="handleFormSubmit($event)" (cancelled)="returnList()"
         [preloadedData]="preloadedData()" />
     </div>
   </div>

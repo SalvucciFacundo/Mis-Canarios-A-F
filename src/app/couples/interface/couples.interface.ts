@@ -9,6 +9,7 @@ export interface Couples {
   femaleId: string;
   //datos de la nidada
   posture?: string;
+  currentPostureNumber?: number;  // Número de la postura actual
   postureStartDate?: Date;
   postureEndDate?: Date;
   //datos de los huevos

@@ -273,6 +273,10 @@
 <!-- Contenedor de toasts -->
 <app-toast-container></app-toast-container>
 
+<app-custom-spinner [isVisible]="loadingService.isLoading()" [message]="loadingService.loadingMessage()"
+  [fullScreen]="loadingService.isFullScreen()">
+</app-custom-spinner>
+
 <main class="pt-20 min-h-screen bg-gray-50">
   <router-outlet></router-outlet>
 </main>

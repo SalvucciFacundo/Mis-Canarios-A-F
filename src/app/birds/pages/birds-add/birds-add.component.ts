@@ -3,7 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
 import { CouplesStoreService } from '../../../couples/services/couples-store.service';
-import { BirdFormComponent } from '../../utils/bird-form.component';
+import { BirdsFormComponent } from '../../utils/birds-form.component';
 import { Birds } from '../../interface/birds.interface';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from '../../../shared/services/loading.service';
@@ -12,7 +12,7 @@ import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-birds-add',
-  imports: [ReactiveFormsModule, BirdFormComponent, CommonModule],
+  imports: [ReactiveFormsModule, BirdsFormComponent, CommonModule],
   templateUrl: './birds-add.component.html',
   styleUrl: './birds-add.component.css'
 })
@@ -23,7 +23,7 @@ export class BirdsAddComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private couplesStore = inject(CouplesStoreService);
 
-  @ViewChild('birdFormRef') birdFormRef!: BirdFormComponent;
+  @ViewChild('birdFormRef') birdFormRef!: BirdsFormComponent;
 
   // Signals para datos pre-cargados
   preloadedData = signal<Partial<Birds> | null>(null);
@@ -88,7 +88,9 @@ export class BirdsAddComponent implements OnInit {
       // Verificar si debe volver a una pareja específica
       if (params['returnTo'] === 'couple' && params['coupleId']) {
         this.toastService.success('Pichón agregado exitosamente');
-        this.router.navigate(['/couples/couples-details', params['coupleId']]);
+        this.router.navigate(['/couples/couples-details', params['coupleId']], {
+          queryParams: { refreshAccordions: 'true' }
+        });
       } else {
         // Navegación normal a lista de pájaros
         this.toastService.success('Pájaro agregado exitosamente');
@@ -101,7 +103,9 @@ export class BirdsAddComponent implements OnInit {
     // Verificar si debe volver a una pareja específica
     const params = this.route.snapshot.queryParams;
     if (params['returnTo'] === 'couple' && params['coupleId']) {
-      this.router.navigate(['/couples/couples-details', params['coupleId']]);
+      this.router.navigate(['/couples/couples-details', params['coupleId']], {
+        queryParams: { refreshAccordions: 'true' }
+      });
     } else {
       // Navegación normal a lista de pájaros
       this.router.navigate(['/birds']);
@@ -154,7 +158,9 @@ export class BirdsAddComponent implements OnInit {
     // Verificar si debe volver a una pareja específica
     const params = this.route.snapshot.queryParams;
     if (params['returnTo'] === 'couple' && params['coupleId']) {
-      this.router.navigate(['/couples/couples-details', params['coupleId']]);
+      this.router.navigate(['/couples/couples-details', params['coupleId']], {
+        queryParams: { refreshAccordions: 'true' }
+      });
     } else {
       this.router.navigate(['/birds']);
     }
@@ -176,7 +182,7 @@ export class BirdsAddComponent implements OnInit {
       console.log('Ejecutando resetForm usando la referencia del componente');
       this.birdFormRef.resetFormPartial();
     } else {
-      console.warn('No se pudo acceder a la referencia del componente bird-form');
+      console.warn('No se pudo acceder a la referencia del componente birds-form');
     }
   }
 
