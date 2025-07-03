@@ -54,11 +54,25 @@ export class NomenclatorStoreService {
 
   searchByCodigoONombre(term: string, federaciones: string[]): Nomenclator[] {
     const searchTerm = this.clean(term.trim());
+    // Ordenar por código ascendente, partiendo desde D001 en adelante
+    const sortByCodigoDesdeD001 = (a: Nomenclator, b: Nomenclator) => {
+      const codeA = a.code ?? '';
+      const codeB = b.code ?? '';
+      // Si ambos empiezan por D, comparar normalmente
+      if (codeA.startsWith('D') && codeB.startsWith('D')) {
+        return codeA.localeCompare(codeB);
+      }
+      // Si solo uno empieza por D, ese va primero
+      if (codeA.startsWith('D')) return -1;
+      if (codeB.startsWith('D')) return 1;
+      // Si ninguno empieza por D, comparar normalmente
+      return codeA.localeCompare(codeB);
+    };
+
     if (!searchTerm) {
-      // Si no hay término de búsqueda, ordenar por código ascendente
       return this.getByFederaciones(federaciones)
         .slice()
-        .sort((a, b) => (a.code ?? '').localeCompare(b.code ?? ''));
+        .sort(sortByCodigoDesdeD001);
     }
 
     // Dividir el término de búsqueda en palabras individuales
@@ -126,8 +140,7 @@ export class NomenclatorStoreService {
       .filter(item => item.score > 0)
       .sort((a, b) => b.score - a.score) // Ordenar por relevancia (mayor a menor)
       .map(item => item.linea)
-      // Ordenar por código ascendente después de la relevancia
-      .sort((a, b) => (a.code ?? '').localeCompare(b.code ?? ''));
+      .sort(sortByCodigoDesdeD001);
   }
 
 
