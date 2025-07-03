@@ -1,0 +1,20 @@
+<div class="min-h-screen flex flex-col">
+  <nav class="bg-gray-900 text-white p-4 flex justify-between">
+    <span class="font-bold">Panel de Administración</span>
+    <a routerLink="/" class="hover:underline">Volver al sitio</a>
+  </nav>
+  <div class="flex flex-1">
+    <aside class="w-64 bg-gray-100 p-4">
+      <ul class="space-y-2">
+        <li><a routerLink="/admin" routerLinkActive="font-bold">Dashboard</a></li>
+        <li><a routerLink="/admin/users" routerLinkActive="font-bold">Usuarios</a></li>
+        <li><a routerLink="/admin/nomenclators" routerLinkActive="font-bold">Nomencladores</a></li>
+        <li><a routerLink="/admin/birds" routerLinkActive="font-bold">Canarios</a></li>
+        <li><a routerLink="/admin/couples" routerLinkActive="font-bold">Parejas</a></li>
+      </ul>
+    </aside>
+    <main class="flex-1 p-6">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

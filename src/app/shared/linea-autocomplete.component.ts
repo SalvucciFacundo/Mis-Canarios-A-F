@@ -26,12 +26,23 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
   federacionSeleccionada = signal<'FOCI' | 'FAC' | 'FOA'>('FOCI');
   searchTerm = signal('');
 
-  lineasFiltradas = computed(() =>
-    this.store.searchByCodigoONombre(
+  lineasFiltradas = computed(() => {
+    // Ordenar por código ascendente, priorizando los que empiezan por D
+    const sortByCodigoDesdeD001 = (a: Nomenclator, b: Nomenclator) => {
+      const codeA = a.code ?? '';
+      const codeB = b.code ?? '';
+      if (codeA.startsWith('D') && codeB.startsWith('D')) {
+        return codeA.localeCompare(codeB);
+      }
+      if (codeA.startsWith('D')) return -1;
+      if (codeB.startsWith('D')) return 1;
+      return codeA.localeCompare(codeB);
+    };
+    return this.store.searchByCodigoONombre(
       this.searchTerm()?.trim() ?? '',
-      [this.federacionSeleccionada()] // 👈 pasa como array
-    )
-  );
+      [this.federacionSeleccionada()]
+    ).slice().sort(sortByCodigoDesdeD001);
+  });
 
   async ngOnInit() {
     await this.store.loadAllOnce(); // ⏳ esperá que termine

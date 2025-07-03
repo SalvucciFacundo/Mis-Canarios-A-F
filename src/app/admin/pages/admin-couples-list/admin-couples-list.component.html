@@ -1,0 +1,31 @@
+<div class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Parejas (Admin)</h2>
+    @if (loading()) {
+    <div class="text-center text-gray-500">Cargando...</div>
+    } @else if (error()) {
+    <div class="text-center text-red-500">{{ error() }}</div>
+    } @else {
+    <table class="min-w-full bg-white shadow rounded">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">ID</th>
+                <th class="px-4 py-2">Macho</th>
+                <th class="px-4 py-2">Hembra</th>
+                <th class="px-4 py-2">Temporada</th>
+                <th class="px-4 py-2">Creación</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (couple of couples(); track couple.id) {
+            <tr>
+                <td class="px-4 py-2">{{ couple.id }}</td>
+                <td class="px-4 py-2">{{ couple.maleId }}</td>
+                <td class="px-4 py-2">{{ couple.femaleId }}</td>
+                <td class="px-4 py-2">{{ couple.season }}</td>
+                <td class="px-4 py-2">{{ couple.creationDate ? (couple.creationDate | date:'short') : '-' }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>

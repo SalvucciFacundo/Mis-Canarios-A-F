@@ -1,0 +1,31 @@
+<div class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Usuarios (Admin)</h2>
+    @if (loading()) {
+    <div class="text-center text-gray-500">Cargando...</div>
+    } @else if (error()) {
+    <div class="text-center text-red-500">{{ error() }}</div>
+    } @else {
+    <table class="min-w-full bg-white shadow rounded">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">UID</th>
+                <th class="px-4 py-2">Nombre</th>
+                <th class="px-4 py-2">Email</th>
+                <th class="px-4 py-2">Rol</th>
+                <th class="px-4 py-2">Creado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (user of users(); track user.uid) {
+            <tr>
+                <td class="px-4 py-2">{{ user.uid }}</td>
+                <td class="px-4 py-2">{{ user.name }}</td>
+                <td class="px-4 py-2">{{ user.email }}</td>
+                <td class="px-4 py-2">{{ user.role }}</td>
+                <td class="px-4 py-2">{{ user.createdAt ? (user.createdAt | date:'short') : '-' }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>
