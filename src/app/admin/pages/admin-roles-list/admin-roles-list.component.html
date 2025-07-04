@@ -1,0 +1,72 @@
+<div class="p-4">
+    <h2 class="text-2xl font-bold mb-4">Gestión de Roles</h2>
+    <div *ngIf="loading" class="text-center text-gray-500">Cargando...</div>
+    <div *ngIf="error" class="text-center text-red-500">{{ error }}</div>
+
+    <!-- Tabla de roles -->
+    <table class="min-w-full bg-white rounded mb-6">
+        <thead>
+            <tr class="bg-sky-50">
+                <th class="px-4 py-2">Nombre</th>
+                <th class="px-4 py-2">Permisos</th>
+                <th class="px-4 py-2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let role of roles">
+                <td class="px-4 py-2 font-semibold">{{ role.name }}</td>
+                <td class="px-4 py-2">
+                    <div class="flex flex-wrap gap-1">
+                        <span *ngFor="let permiso of role.permisos"
+                            class="bg-sky-100 text-sky-700 rounded px-2 py-0.5 text-xs">{{ permiso }}</span>
+                    </div>
+                </td>
+                <td class="px-4 py-2 flex gap-2">
+                    <button (click)="setEditRole(role)" class="text-sky-600 hover:text-sky-800" title="Editar"><span
+                            class="material-icons text-base">edit</span></button>
+                    <button (click)="deleteRole(role)" class="text-red-500 hover:text-red-700" title="Eliminar"><span
+                            class="material-icons text-base">delete</span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Botón para poblar roles base -->
+    <button (click)="poblarRolesBase()" class="bg-sky-700 text-white px-4 py-1 rounded mb-4">Poblar roles base</button>
+
+    <!-- Formulario de edición -->
+    <div *ngIf="editRole" class="mb-6 border rounded p-4 bg-sky-50">
+        <h3 class="font-bold mb-2">Editar rol</h3>
+        <label class="block mb-2">Nombre:
+            <input [(ngModel)]="editRole.name" class="border rounded px-2 py-1 w-full" />
+        </label>
+        <div class="mb-2">Permisos:</div>
+        <div class="flex flex-wrap gap-2 mb-4">
+            <label *ngFor="let permiso of allPermisos" class="flex items-center gap-1">
+                <input type="checkbox" [checked]="editRole.permisos.includes(permiso)"
+                    (change)="togglePermiso(editRole, permiso)" />
+                <span class="text-xs">{{ permiso }}</span>
+            </label>
+        </div>
+        <button (click)="saveEditRole()" class="bg-green-600 text-white px-4 py-1 rounded mr-2">Guardar</button>
+        <button (click)="setEditRole(null)" class="bg-gray-300 px-4 py-1 rounded">Cancelar</button>
+    </div>
+
+    <!-- Formulario de nuevo rol -->
+    <div class="border rounded p-4 bg-gray-50">
+        <h3 class="font-bold mb-2">Nuevo rol</h3>
+        <label class="block mb-2">Nombre:
+            <input [(ngModel)]="newRole.name" class="border rounded px-2 py-1 w-full" />
+        </label>
+        <div class="mb-2">Permisos:</div>
+        <div class="flex flex-wrap gap-2 mb-4">
+            <label *ngFor="let permiso of allPermisos" class="flex items-center gap-1">
+                <input type="checkbox" [checked]="newRole.permisos?.includes(permiso)"
+                    (change)="togglePermiso(newRole, permiso)" />
+                <span class="text-xs">{{ permiso }}</span>
+            </label>
+        </div>
+        <button (click)="addRole()" class="bg-sky-600 text-white px-4 py-1 rounded">Agregar rol</button>
+    </div>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

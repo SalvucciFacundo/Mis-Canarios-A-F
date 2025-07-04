@@ -1,9 +1,9 @@
-import { effect, Injectable, signal, inject, Injector, runInInjectionContext } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, authState, signInWithEmailAndPassword, updateProfile, sendEmailVerification, reload } from '@angular/fire/auth';
-import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
-import { User } from '../interface/user.interface';
+import { inject, Injectable, Injector, runInInjectionContext, signal } from '@angular/core';
+import { Auth, authState, createUserWithEmailAndPassword, reload, sendEmailVerification, signInWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
+import { doc, Firestore, getDoc, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ToastService } from '../../shared/services/toast.service';
+import { User } from '../interface/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +46,7 @@ export class AuthService {
         uid: firebaseUser.uid,
         email: firebaseUser.email,
         name: firebaseUser.displayName || firebaseUser.email.split('@')[0],
-        rol: 'user',
+        role: 'user',
         createdAt: new Date(),
         updatedAt: new Date()
       };
@@ -76,7 +76,7 @@ export class AuthService {
         uid: firebaseUser.uid,
         name: name || email.split('@')[0], // Usar nombre o parte del email
         email: email,
-        rol: 'user', // Rol por defecto
+        role: 'user', // Rol por defecto
         createdAt: new Date(),
         updatedAt: new Date()
       };
@@ -218,9 +218,9 @@ export class AuthService {
           uid: data['uid'],
           name: data['name'],
           email: data['email'],
-          rol: data['rol'],
+          role: data['role'],
           createdAt: data['createdAt']?.toDate(),
-          updatedAt: data['updatedAt']?.toDate()
+          updatedAt: data['updatedAt']?.toDate(),
         } as User;
       }
 

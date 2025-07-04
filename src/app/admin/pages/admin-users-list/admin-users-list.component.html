@@ -1,31 +1,129 @@
-<div class="p-6">
-    <h2 class="text-2xl font-bold mb-4">Usuarios (Admin)</h2>
-    @if (loading()) {
-    <div class="text-center text-gray-500">Cargando...</div>
-    } @else if (error()) {
-    <div class="text-center text-red-500">{{ error() }}</div>
-    } @else {
-    <table class="min-w-full bg-white shadow rounded">
+<div class="p-2 sm:p-6">
+  <h2 class="text-2xl font-bold mb-4">Usuarios (Admin)</h2>
+  <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
+    <input type="text" placeholder="Buscar por nombre o email" [(ngModel)]="search"
+      class="border rounded px-3 py-2 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-sky-400" />
+    <span class="text-xs text-gray-400 ml-auto">Total: {{ filteredUsers.length }}</span>
+  </div>
+  @if (loading()) {
+  <div class="text-center text-gray-500">Cargando...</div>
+  } @else if (error()) {
+  <div class="text-center text-red-500">{{ error() }}</div>
+  } @else {
+  <div class="overflow-x-auto rounded shadow">
+    <!-- Vista tabla solo en sm+ -->
+    <div class="hidden sm:block">
+      <table class="min-w-[900px] w-full bg-white rounded text-base">
         <thead>
-            <tr>
-                <th class="px-4 py-2">UID</th>
-                <th class="px-4 py-2">Nombre</th>
-                <th class="px-4 py-2">Email</th>
-                <th class="px-4 py-2">Rol</th>
-                <th class="px-4 py-2">Creado</th>
-            </tr>
+          <tr class="bg-sky-50">
+            <th class="px-6 py-3">UID</th>
+            <th class="px-6 py-3">Nombre</th>
+            <th class="px-6 py-3">Email</th>
+            <th class="px-6 py-3">Rol</th>
+            <th class="px-6 py-3">Creado</th>
+            <th class="px-6 py-3">Acciones</th>
+          </tr>
         </thead>
         <tbody>
-            @for (user of users(); track user.uid) {
-            <tr>
-                <td class="px-4 py-2">{{ user.uid }}</td>
-                <td class="px-4 py-2">{{ user.name }}</td>
-                <td class="px-4 py-2">{{ user.email }}</td>
-                <td class="px-4 py-2">{{ user.role }}</td>
-                <td class="px-4 py-2">{{ user.createdAt ? (user.createdAt | date:'short') : '-' }}</td>
-            </tr>
-            }
+          @for (user of pagedUsers; track user.uid) {
+          <tr class="hover:bg-sky-50 transition border-b border-gray-100">
+            <td class="px-6 py-3 text-xs text-gray-400">{{ user.uid }}</td>
+            <td class="px-6 py-3">
+              <input [(ngModel)]="user.name" [readonly]="!isEditing(user)"
+                class="border-2 border-sky-400 rounded bg-transparent focus:border-sky-600 focus:outline-none px-1 py-0.5 w-full transition-colors duration-150" />
+            </td>
+            <td class="px-6 py-3">
+              <input [(ngModel)]="user.email" [readonly]="!isEditing(user)"
+                class="border-2 border-sky-400 rounded bg-transparent focus:border-sky-600 focus:outline-none px-1 py-0.5 w-full transition-colors duration-150" />
+            </td>
+            <td class="px-6 py-3">
+              <ng-container *ngIf="isEditing(user); else showRole">
+                <select [(ngModel)]="user.role" [disabled]="!isEditing(user)"
+                  class="border-2 border-sky-400 rounded px-2 py-1 focus:ring-sky-400 focus:border-sky-600">
+                  <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+                </select>
+              </ng-container>
+              <ng-template #showRole>
+                <span class="font-semibold text-sky-700">{{ getRoleName(user.role) }}</span>
+              </ng-template>
+            </td>
+            <td class="px-6 py-3 text-xs text-gray-500">{{ user.createdAt ? (user.createdAt | date:'short') : '-' }}
+            </td>
+            <td class="px-6 py-3 flex gap-2 items-center">
+              <button *ngIf="!isEditing(user)" (click)="setEdit(user, true)" class="text-sky-600 hover:text-sky-800"
+                title="Editar"><span class="material-icons text-base">edit</span></button>
+              <button *ngIf="isEditing(user)" (click)="saveUser(user)" class="text-green-600 hover:text-green-800"
+                title="Guardar"><span class="material-icons text-base">save</span></button>
+              <button *ngIf="isEditing(user)" (click)="setEdit(user, false)" class="text-gray-400 hover:text-gray-600"
+                title="Cancelar cambios"><span class="material-icons text-base">undo</span></button>
+              <button (click)="resetPassword(user)" class="text-sky-500 hover:text-sky-700"
+                title="Resetear contraseña"><span class="material-icons text-base">lock_reset</span></button>
+              <button (click)="toggleActive(user)" [ngClass]="user.active ? 'text-green-500' : 'text-gray-400'"
+                title="Activar/Desactivar"><span class="material-icons text-base">{{ user.active ? 'toggle_on' :
+                  'toggle_off' }}</span></button>
+              <button (click)="deleteUser(user)" class="text-red-500 hover:text-red-700" title="Eliminar"><span
+                  class="material-icons text-base">delete</span></button>
+            </td>
+          </tr>
+          }
         </tbody>
-    </table>
-    }
+      </table>
+    </div>
+    <!-- Vista tarjetas solo en móvil -->
+    <div class="block sm:hidden">
+      <div *ngFor="let user of pagedUsers; trackBy: trackByUid" class="bg-white rounded-lg shadow p-4 mb-4">
+        <div class="flex flex-col gap-2 mb-2">
+          <input [(ngModel)]="user.name" [readonly]="!isEditing(user)"
+            class="border-2 border-sky-400 rounded bg-transparent focus:border-sky-600 focus:outline-none px-2 py-1 w-full text-base font-bold text-sky-700 transition-colors duration-150"
+            placeholder="Nombre" />
+          <input [(ngModel)]="user.email" [readonly]="!isEditing(user)"
+            class="border-2 border-sky-400 rounded bg-transparent focus:border-sky-600 focus:outline-none px-2 py-1 w-full text-base text-gray-700 transition-colors duration-150"
+            placeholder="Email" />
+          <div *ngIf="isEditing(user)">
+            <label class="block text-xs text-gray-500 mb-1">Rol:</label>
+            <select [(ngModel)]="user.role" [disabled]="!isEditing(user)"
+              class="border-2 border-sky-400 rounded px-2 py-1 w-full focus:ring-sky-400 focus:border-sky-600">
+              <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="text-xs text-gray-500 mb-1">UID: {{ user.uid }}</div>
+        <div class="text-xs text-gray-500 mb-1">Rol: <span class="font-semibold">{{ getRoleName(user.role) }}</span>
+        </div>
+        <div class="text-xs text-gray-500 mb-1">Creado: {{ user.createdAt ? (user.createdAt | date:'short') : '-' }}
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <button *ngIf="!isEditing(user)" (click)="setEdit(user, true)" class="text-sky-600 hover:text-sky-800"
+            title="Editar"><span class="material-icons text-base">edit</span></button>
+          <button *ngIf="isEditing(user)" (click)="saveUser(user)" class="text-green-600 hover:text-green-800"
+            title="Guardar"><span class="material-icons text-base">save</span></button>
+          <button *ngIf="isEditing(user)" (click)="setEdit(user, false)" class="text-gray-400 hover:text-gray-600"
+            title="Cancelar cambios"><span class="material-icons text-base">undo</span></button>
+          <button (click)="resetPassword(user)" class="text-sky-500 hover:text-sky-700"
+            title="Resetear contraseña"><span class="material-icons text-base">lock_reset</span></button>
+          <button (click)="toggleActive(user)" [ngClass]="user.active ? 'text-green-500' : 'text-gray-400'"
+            title="Activar/Desactivar"><span class="material-icons text-base">{{ user.active ? 'toggle_on' :
+              'toggle_off' }}</span></button>
+          <button (click)="deleteUser(user)" class="text-red-500 hover:text-red-700" title="Eliminar"><span
+              class="material-icons text-base">delete</span></button>
+        </div>
+      </div>
+    </div>
+    <!-- Paginador -->
+    <div class="flex justify-between items-center py-4 px-2 border-t bg-white">
+      <div class="text-xs text-gray-400">Mostrando {{ pagedUsers.length }} de {{ filteredUsers.length }} usuario(s)
+      </div>
+      <nav class="flex gap-1 items-center">
+        <button (click)="prevPage()"
+          class="px-3 py-1 rounded bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-100 disabled:opacity-50"
+          [disabled]="page === 1">&lt;</button>
+        <span class="px-2 py-1 text-gray-600">{{ page }} / {{ totalPages }}</span>
+        <button (click)="nextPage()"
+          class="px-3 py-1 rounded bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-100 disabled:opacity-50"
+          [disabled]="page === totalPages">&gt;</button>
+      </nav>
+    </div>
+  </div>
+  }
 </div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

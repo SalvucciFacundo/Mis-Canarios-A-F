@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { privateGuard, publicGuard } from './core/auth.guard';
-import { emailVerifiedGuard } from './core/email-verified.guard';
 
 export const routes: Routes = [
   {
@@ -41,8 +40,8 @@ export const routes: Routes = [
   },
   {
     canActivateChild: [privateGuard()],
-    path: 'contact',
     loadComponent: () => import('./shared/layout.component').then(m => m.LayoutComponent),
+    path: 'contact',
     children: [
       {
         path: '',
@@ -52,7 +51,7 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.routes').then(m => m.adminRoutes)
+    loadChildren: () => import('./admin/admin.routes').then(m => m.default)
   },
   {
     path: '**', redirectTo: '/birds'

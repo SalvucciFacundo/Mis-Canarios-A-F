@@ -1,27 +1,131 @@
-<div class="p-6">
-    <h2 class="text-2xl font-bold mb-4">Nomencladores (Admin)</h2>
-    @if (loading()) {
-    <div class="text-center text-gray-500">Cargando...</div>
-    } @else if (error()) {
-    <div class="text-center text-red-500">{{ error() }}</div>
-    } @else {
-    <table class="min-w-full bg-white shadow rounded">
-        <thead>
-            <tr>
-                <th class="px-4 py-2">Código</th>
-                <th class="px-4 py-2">Nombre</th>
-                <th class="px-4 py-2">Federación</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (nomenclator of nomenclators(); track nomenclator.code) {
-            <tr>
-                <td class="px-4 py-2">{{ nomenclator.code }}</td>
-                <td class="px-4 py-2">{{ nomenclator.name }}</td>
-                <td class="px-4 py-2">{{ nomenclator.federation }}</td>
-            </tr>
-            }
-        </tbody>
-    </table>
+<div class="max-w-4xl mx-auto p-6 space-y-6">
+  <div class="bg-white shadow-md rounded-lg">
+    <div class="p-6 border-b flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-gray-800">Nomencladores de Líneas (Admin)</h2>
+        <p class="text-gray-600 mt-1">Filtra por federación, código o nombre para encontrar la línea que buscas.</p>
+      </div>
+      <button type="button" (click)="openAddModal()"
+        class="mt-2 sm:mt-0 px-4 py-2 rounded bg-sky-600 text-white hover:bg-sky-700 font-semibold shadow transition">
+        + Agregar línea
+      </button>
+    </div>
+    <div class="p-6">
+      <form class="space-y-4">
+        <div class="flex gap-4 mb-4 flex-wrap">
+          @for (fed of ['FOCI', 'FAC', 'FOA']; track fed) {
+          <label
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-300 shadow-sm cursor-pointer transition text-sm font-medium bg-white text-gray-800 hover:bg-sky-100 hover:border-sky-400"
+            [ngClass]="{'ring-2 ring-sky-400 bg-sky-50 border-sky-400 text-sky-800': federacionSeleccionada() === fed}">
+            <input type="radio" [value]="fed" [ngModel]="federacionSeleccionada()"
+              (ngModelChange)="setFederacionSeleccionada($event)" name="federacion" class="hidden" />
+            <span class="text-base font-semibold tracking-wide">{{ fed }}</span>
+          </label>
+          }
+        </div>
+        <div class="relative">
+          <input type="text" [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)" name="search"
+            placeholder="Buscar por código o nombre" class="w-full px-4 py-2 border rounded-md focus:ring-sky-400" />
+          @if (searchTerm()) {
+          <button type="button" (click)="clearSearchTerm()"
+            class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 text-lg"
+            aria-label="Borrar selección">&times;</button>
+          }
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg">
+    <div class="p-6">
+      <ul class="divide-y divide-gray-200">
+        @for (linea of paginatedLineas(); track linea.code) {
+        <li class="py-4 flex items-center justify-between">
+          <div>
+            <div class="font-semibold text-gray-800 text-lg">{{ linea.name }}</div>
+            <div class="text-sm text-gray-500">Código: <span class="font-mono">{{ linea.code }}</span> · Federación:
+              <span class="font-semibold">{{ linea.federation }}</span>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <button type="button"
+              class="px-3 py-1 rounded bg-yellow-100 text-yellow-800 hover:bg-yellow-200 font-medium text-sm"
+              (click)="onEdit(linea)">
+              Editar
+            </button>
+            <button type="button" class="px-3 py-1 rounded bg-red-100 text-red-800 hover:bg-red-200 font-medium text-sm"
+              (click)="onDelete(linea)">
+              Eliminar
+            </button>
+          </div>
+        </li>
+        }
+      </ul>
+      @if (lineasFiltradas().length === 0) {
+      <div class="text-center text-gray-500 italic py-8">
+        No se encontraron líneas para los filtros seleccionados.
+      </div>
+      }
+    </div>
+  </div>
+
+  @if (totalPages() > 1) {
+  <div class="flex justify-center mt-6 gap-2">
+    <button type="button" (click)="goToPrevPage()" [disabled]="page() === 1"
+      class="px-2 py-1 rounded border border-gray-300 text-sm font-medium transition bg-white text-gray-700 disabled:opacity-50">
+      &#8592;
+    </button>
+    @for (p of getPaginatorPages(); track p) {
+    <button type="button" (click)="goToPage(p)"
+      class="px-3 py-1 rounded border border-gray-300 text-sm font-medium transition"
+      [ngClass]="{'bg-sky-100 border-sky-400 text-sky-800': page() === p, 'bg-white text-gray-700': page() !== p}">
+      {{ p }}
+    </button>
     }
+    <button type="button" (click)="goToNextPage()" [disabled]="page() === totalPages()"
+      class="px-2 py-1 rounded border border-gray-300 text-sm font-medium transition bg-white text-gray-700 disabled:opacity-50">
+      &#8594;
+    </button>
+  </div>
+  }
+
+  <!-- Modal para agregar/editar línea -->
+  @if (showModal()) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative animate-fade-in">
+      <button (click)="closeModal()"
+        class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+      <h3 class="text-xl font-bold mb-4">{{ modalEditLinea() ? 'Editar línea' : 'Agregar línea' }}</h3>
+      <form (ngSubmit)="submitModal()" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Código</label>
+          <input type="text" [(ngModel)]="modalLinea.code" name="code" required maxlength="10"
+            class="w-full px-3 py-2 border rounded focus:ring-sky-400" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Nombre</label>
+          <input type="text" [(ngModel)]="modalLinea.name" name="name" required maxlength="50"
+            class="w-full px-3 py-2 border rounded focus:ring-sky-400" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Federación</label>
+          <select [(ngModel)]="modalLinea.federation" name="federation" required
+            class="w-full px-3 py-2 border rounded focus:ring-sky-400">
+            <option value="FOCI">FOCI</option>
+            <option value="FAC">FAC</option>
+            <option value="FOA">FOA</option>
+          </select>
+        </div>
+        <div class="flex justify-end gap-2 mt-4">
+          <button type="button" (click)="closeModal()"
+            class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium">Cancelar</button>
+          <button type="submit"
+            class="px-4 py-2 rounded bg-sky-600 text-white hover:bg-sky-700 font-semibold shadow transition">
+            {{ modalEditLinea() ? 'Guardar cambios' : 'Agregar' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  }
 </div>

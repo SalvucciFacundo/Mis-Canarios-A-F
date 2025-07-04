@@ -1,0 +1,32 @@
+{
+  // Excluye carpetas pesadas del indexado y búsqueda
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.firebase": true,
+    "**/.git": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.firebase": true
+  },
+  // Formato y linting
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always"
+  },
+  "eslint.validate": ["typescript", "html"],
+  "prettier.requireConfig": true,
+  // Tailwind CSS
+  "tailwindCSS.includeLanguages": {
+    "typescript": "html",
+    "typescriptreact": "html"
+  },
+  // Angular
+  "angular.enable-strict-mode-prompt": false,
+  // Mejoras de rendimiento
+  "typescript.tsserver.maxTsServerMemory": 4096,
+  "typescript.tsserver.log": "off"
+}
