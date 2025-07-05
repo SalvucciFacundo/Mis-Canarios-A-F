@@ -37,6 +37,20 @@ export class RolesStoreService {
         }
     }
 
+    /**
+     * Añade un rol solo si no existe uno con el mismo nombre (case-insensitive).
+     */
+    async addRoleIfNotExists(role: Omit<Role, 'id'>): Promise<boolean> {
+        await this.getAllRoles();
+        const exists = this.roles().some(r => r.name.trim().toLowerCase() === role.name.trim().toLowerCase());
+        if (exists) {
+            this.error.set('Ya existe un rol con ese nombre');
+            return false;
+        }
+        await this.addRole(role);
+        return true;
+    }
+
     async updateRole(role: Role): Promise<void> {
         this.loading.set(true);
         try {
@@ -62,7 +76,7 @@ export class RolesStoreService {
     }
 
     /**
-     * Método temporal para poblar la colección roles con los roles base.
+     * Método temporal para poblar la colección roles con los roles base, evitando duplicados por nombre.
      */
     async createDefaultRoles(): Promise<void> {
         const baseRoles = [
@@ -102,10 +116,8 @@ export class RolesStoreService {
                 ]
             }
         ];
-        const db = getFirestore();
         for (const role of baseRoles) {
-            const ref = doc(collection(db, 'roles'));
-            await setDoc(ref, role);
+            await this.addRoleIfNotExists(role);
         }
         await this.getAllRoles();
     }

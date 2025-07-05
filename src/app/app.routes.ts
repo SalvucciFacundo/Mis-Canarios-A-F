@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { privateGuard, publicGuard } from './core/auth.guard';
+import { SUBSCRIPTION_ROUTES } from './subscription/subscription.routes';
 
 export const routes: Routes = [
   {
@@ -50,8 +51,27 @@ export const routes: Routes = [
     ]
   },
   {
+    canActivateChild: [privateGuard()],
+    loadComponent: () => import('./shared/layout.component').then(m => m.LayoutComponent),
+    path: 'subscription-test',
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./subscription-test.component').then(m => m.SubscriptionTestComponent)
+      }
+    ]
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.routes').then(m => m.default)
+  },
+  {
+    path: 'subscription',
+    children: SUBSCRIPTION_ROUTES,
+  },
+  {
+    path: 'test-subscription',
+    loadComponent: () => import('./subscription-simple.component').then(m => m.SubscriptionSimpleComponent)
   },
   {
     path: '**', redirectTo: '/birds'

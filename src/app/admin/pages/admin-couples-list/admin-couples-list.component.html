@@ -1,31 +1,644 @@
-<div class="p-6">
-    <h2 class="text-2xl font-bold mb-4">Parejas (Admin)</h2>
-    @if (loading()) {
-    <div class="text-center text-gray-500">Cargando...</div>
-    } @else if (error()) {
-    <div class="text-center text-red-500">{{ error() }}</div>
-    } @else {
-    <table class="min-w-full bg-white shadow rounded">
-        <thead>
-            <tr>
-                <th class="px-4 py-2">ID</th>
-                <th class="px-4 py-2">Macho</th>
-                <th class="px-4 py-2">Hembra</th>
-                <th class="px-4 py-2">Temporada</th>
-                <th class="px-4 py-2">Creación</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (couple of couples(); track couple.id) {
-            <tr>
-                <td class="px-4 py-2">{{ couple.id }}</td>
-                <td class="px-4 py-2">{{ couple.maleId }}</td>
-                <td class="px-4 py-2">{{ couple.femaleId }}</td>
-                <td class="px-4 py-2">{{ couple.season }}</td>
-                <td class="px-4 py-2">{{ couple.creationDate ? (couple.creationDate | date:'short') : '-' }}</td>
-            </tr>
-            }
-        </tbody>
-    </table>
-    }
+<!-- Notificación Toast -->
+@if (notification()) {
+<div class="fixed top-4 right-4 z-50 max-w-sm animate-in slide-in-from-right duration-300">
+  <div class="rounded-lg shadow-lg p-4 transition-all duration-300"
+    [class]="notification()!.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'">
+    <div class="flex items-center justify-between">
+      <span class="flex-1">{{ notification()!.message }}</span>
+      <button (click)="hideNotification()"
+        class="ml-2 text-white hover:text-gray-200 transition-colors focus-visible:focus">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>
+}
+
+<div class="min-h-screen bg-gray-50 p-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="bg-white rounded-lg shadow-sm border p-6 mb-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900">Administración de Parejas</h1>
+          <p class="text-gray-600 mt-1">Gestiona las parejas de todos los usuarios</p>
+        </div>
+        @if (selectedUser()) {
+        <button (click)="clearSelection()"
+          class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
+            </path>
+          </svg>
+          Volver a usuarios
+        </button>
+        }
+      </div>
+    </div>
+
+    @if (!selectedUser()) {
+    <!-- Vista de selección de usuarios -->
+    <div class="bg-white rounded-lg shadow-sm border p-6">
+      <div class="mb-6">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Seleccionar Usuario</h2>
+
+        <!-- Buscador de usuarios -->
+        <div class="relative max-w-md">
+          <input type="text" [(ngModel)]="searchUser" (ngModelChange)="searchUser.set($event)"
+            placeholder="Buscar por email o nombre..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      @if (loadingUsers()) {
+      <div class="flex items-center justify-center py-12">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <span class="ml-3 text-gray-600">Cargando usuarios...</span>
+      </div>
+      } @else if (error()) {
+      <div class="text-center py-12">
+        <div class="text-red-600 mb-2">{{ error() }}</div>
+        <button (click)="loadUsers()"
+          class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          Reintentar
+        </button>
+      </div>
+      } @else {
+      <!-- Grid de usuarios -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (user of filteredUsers(); track user.email) {
+        <div
+          class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md hover:-translate-y-1 hover:border-blue-400 transition-all duration-200 cursor-pointer transform group"
+          (click)="selectUser(user)">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-900 truncate">{{ user.name }}</h3>
+              <p class="text-sm text-gray-600 truncate">{{ user.email }}</p>
+
+              <!-- Información de parejas -->
+              <div class="mt-3 flex items-center text-sm">
+                @if (loadingCoupleCounts()) {
+                <div class="flex items-center text-gray-500">
+                  <div class="loading-spinner rounded-full h-3 w-3 border-b border-gray-400 mr-2"></div>
+                  Contando...
+                </div>
+                } @else {
+                <div class="flex items-center text-gray-700">
+                  <svg class="w-4 h-4 mr-1 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="font-medium">{{ getCoupleCountForUser(user.email) }}</span>
+                  <span class="ml-1">{{ getCoupleCountForUser(user.email) === 1 ? 'pareja' : 'parejas' }}</span>
+                </div>
+                }
+              </div>
+            </div>
+            <div class="ml-4">
+              <svg
+                class="w-5 h-5 text-gray-400 transition-all duration-200 group-hover:translate-x-1 group-hover:text-blue-500"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        } @empty {
+        <div class="col-span-full text-center py-12 text-gray-500">
+          @if (searchUser()) {
+          <p>No se encontraron usuarios que coincidan con "{{ searchUser() }}"</p>
+          } @else {
+          <p>No hay usuarios disponibles</p>
+          }
+        </div>
+        }
+      </div>
+      }
+    </div>
+    } @else {
+    <!-- Vista de parejas del usuario seleccionado -->
+    <div class="space-y-6">
+      <!-- Header del usuario seleccionado -->
+      <div class="bg-white rounded-lg shadow-sm border p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-xl font-semibold text-gray-900">{{ selectedUser()!.name }}</h2>
+            <p class="text-gray-600">{{ selectedUser()!.email }}</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            @if (loadingCouples()) {
+            <div class="flex items-center text-blue-600">
+              <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 mr-2"></div>
+              Cargando parejas...
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-blue-50 rounded-lg p-4">
+            <div class="flex items-center">
+              <div class="p-2 bg-blue-100 rounded-lg">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-blue-600">Total Parejas</p>
+                <p class="text-2xl font-bold text-blue-900">{{ totalCouples() }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-green-50 rounded-lg p-4">
+            <div class="flex items-center">
+              <div class="p-2 bg-green-100 rounded-lg">
+                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-green-600">Con Postura</p>
+                <p class="text-2xl font-bold text-green-900">{{ couplesWithPosture() }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-orange-50 rounded-lg p-4">
+            <div class="flex items-center">
+              <div class="p-2 bg-orange-100 rounded-lg">
+                <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z">
+                  </path>
+                </svg>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-orange-600">Con Huevos</p>
+                <p class="text-2xl font-bold text-orange-900">{{ couplesWithEggs() }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtros y búsqueda -->
+      <div class="bg-white rounded-lg shadow-sm border p-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Búsqueda -->
+          <div class="relative">
+            <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="searchTerm.set($event)"
+              placeholder="Buscar parejas..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Filtro por temporada -->
+          <select [(ngModel)]="selectedSeason" (ngModelChange)="selectedSeason.set($event)"
+            class="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="all">Todas las temporadas</option>
+            @for (season of availableSeasons(); track season) {
+            <option [value]="season">{{ season }}</option>
+            }
+          </select>
+
+          <!-- Botón limpiar filtros -->
+          <button (click)="clearFilters()"
+            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+            <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1-1H7a1 1 0 00-1 1v3M4 7h16">
+              </path>
+            </svg>
+            Limpiar
+          </button>
+        </div>
+      </div>
+
+      @if (loadingCouples()) {
+      <div class="bg-white rounded-lg shadow-sm border p-12">
+        <div class="flex items-center justify-center">
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+          <span class="ml-3 text-gray-600">Cargando parejas...</span>
+        </div>
+      </div>
+      } @else if (error()) {
+      <div class="bg-white rounded-lg shadow-sm border p-12">
+        <div class="text-center">
+          <div class="text-red-600 mb-4">{{ error() }}</div>
+          <button (click)="loadCouplesForUser(selectedUser()!.email)"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            Reintentar
+          </button>
+        </div>
+      </div>
+      } @else {
+      <!-- Tabla de parejas -->
+      <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
+        @if (filteredCouples().length > 0) {
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th (click)="setSortBy('nestCode')"
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100">
+                  <div class="flex items-center">
+                    Código Nido
+                    @if (sortBy() === 'nestCode') {
+                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      @if (sortDirection() === 'asc') {
+                      <path fill-rule="evenodd"
+                        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                        clip-rule="evenodd"></path>
+                      } @else {
+                      <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                      }
+                    </svg>
+                    }
+                  </div>
+                </th>
+                <th (click)="setSortBy('season')"
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100">
+                  <div class="flex items-center">
+                    Temporada
+                    @if (sortBy() === 'season') {
+                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      @if (sortDirection() === 'asc') {
+                      <path fill-rule="evenodd"
+                        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                        clip-rule="evenodd"></path>
+                      } @else {
+                      <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                      }
+                    </svg>
+                    }
+                  </div>
+                </th>
+                <th (click)="setSortBy('maleId')"
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100">
+                  <div class="flex items-center">
+                    Macho
+                    @if (sortBy() === 'maleId') {
+                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      @if (sortDirection() === 'asc') {
+                      <path fill-rule="evenodd"
+                        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                        clip-rule="evenodd"></path>
+                      } @else {
+                      <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                      }
+                    </svg>
+                    }
+                  </div>
+                </th>
+                <th (click)="setSortBy('femaleId')"
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100">
+                  <div class="flex items-center">
+                    Hembra
+                    @if (sortBy() === 'femaleId') {
+                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      @if (sortDirection() === 'asc') {
+                      <path fill-rule="evenodd"
+                        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                        clip-rule="evenodd"></path>
+                      } @else {
+                      <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                      }
+                    </svg>
+                    }
+                  </div>
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha
+                  Creación</th>
+                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              @for (couple of filteredCouples(); track trackById($index, couple)) {
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {{ couple.nestCode }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {{ couple.season }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {{ couple.maleId }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {{ couple.femaleId }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  @if (couple.posture) {
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    Con Postura
+                  </span>
+                  } @else {
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                    Sin Postura
+                  </span>
+                  }
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {{ formatDate(couple.creationDate) }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                  <div class="flex items-center justify-center space-x-2">
+                    <button (click)="openModal('view', couple)"
+                      class="p-2 text-blue-600 hover:text-blue-900 hover:bg-blue-50 rounded-lg transition-all duration-200 transform hover:scale-110 focus-visible:focus"
+                      title="Ver detalles">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                        </path>
+                      </svg>
+                    </button>
+                    <button (click)="openModal('edit', couple)"
+                      class="p-2 text-green-600 hover:text-green-900 hover:bg-green-50 rounded-lg transition-all duration-200 transform hover:scale-110 focus-visible:focus"
+                      title="Editar">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                        </path>
+                      </svg>
+                    </button>
+                    <button (click)="openModal('delete', couple)"
+                      class="p-2 text-red-600 hover:text-red-900 hover:bg-red-50 rounded-lg transition-all duration-200 transform hover:scale-110 focus-visible:focus"
+                      title="Eliminar">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1-1H7a1 1 0 00-1 1v3M4 7h16">
+                        </path>
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        } @else {
+        <div class="text-center py-12">
+          <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.5-.5-6.26-1.414m2.26 1.414L5.172 16.172a4 4 0 01-5.656-5.656L1.844 8.344a4 4 0 015.656 0L9.172 10.172a4 4 0 015.656 0">
+            </path>
+          </svg>
+          <h3 class="mt-4 text-lg font-medium text-gray-900">No hay parejas</h3>
+          <p class="mt-2 text-gray-500">
+            @if (searchTerm() || selectedSeason() !== 'all') {
+            No se encontraron parejas que coincidan con los filtros aplicados.
+            } @else {
+            Este usuario aún no tiene parejas registradas.
+            }
+          </p>
+        </div>
+        }
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>
+
+<!-- Modal -->
+@if (showModal()) {
+<div class="fixed inset-0 z-50 overflow-y-auto animate-in fade-in duration-300" (click)="closeModal()">
+  <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <!-- Overlay -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 backdrop-blur-sm transition-opacity"></div>
+
+    <!-- Modal -->
+    <div
+      class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all animate-in zoom-in-95 duration-300 sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+      (click)="$event.stopPropagation()">
+
+      <!-- Header -->
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            {{ getModalTitle() }}
+          </h3>
+          <button (click)="closeModal()"
+            class="p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-all duration-200 focus-visible:focus">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        @if (selectedCouple(); as couple) {
+
+        @if (modalType() === 'view') {
+        <!-- Vista de detalles -->
+        <div class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Código Nido</label>
+              <p class="mt-1 text-sm text-gray-900">{{ couple.nestCode }}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Temporada</label>
+              <p class="mt-1 text-sm text-gray-900">{{ couple.season }}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Macho ID</label>
+              <p class="mt-1 text-sm text-gray-900">{{ couple.maleId }}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Hembra ID</label>
+              <p class="mt-1 text-sm text-gray-900">{{ couple.femaleId }}</p>
+            </div>
+          </div>
+
+          @if (couple.posture) {
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Postura</label>
+            <p class="mt-1 text-sm text-gray-900">{{ couple.posture }}</p>
+          </div>
+          }
+
+          @if (couple.hatchedEggs || couple.unhatchedEggs) {
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Huevos Eclosionados</label>
+              <p class="mt-1 text-sm text-gray-900">{{ couple.hatchedEggs || 0 }}</p>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Huevos No Eclosionados</label>
+              <p class="mt-1 text-sm text-gray-900">{{ couple.unhatchedEggs || 0 }}</p>
+            </div>
+          </div>
+          }
+
+          @if (couple.observations) {
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Observaciones</label>
+            <p class="mt-1 text-sm text-gray-900">{{ couple.observations }}</p>
+          </div>
+          }
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Fecha de Creación</label>
+            <p class="mt-1 text-sm text-gray-900">{{ formatDate(couple.creationDate) }}</p>
+          </div>
+        </div>
+        } @else if (modalType() === 'edit') {
+        <!-- Formulario de edición -->
+        <form class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Código Nido</label>
+              <input type="text" [(ngModel)]="editForm().nestCode" (ngModelChange)="updateEditForm('nestCode', $event)"
+                name="nestCode"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Temporada</label>
+              <input type="text" [(ngModel)]="editForm().season" (ngModelChange)="updateEditForm('season', $event)"
+                name="season"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Macho ID</label>
+              <input type="text" [(ngModel)]="editForm().maleId" (ngModelChange)="updateEditForm('maleId', $event)"
+                name="maleId"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Hembra ID</label>
+              <input type="text" [(ngModel)]="editForm().femaleId" (ngModelChange)="updateEditForm('femaleId', $event)"
+                name="femaleId"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Postura</label>
+            <input type="text" [(ngModel)]="editForm().posture" (ngModelChange)="updateEditForm('posture', $event)"
+              name="posture"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Huevos Eclosionados</label>
+              <input type="number" [(ngModel)]="editForm().hatchedEggs"
+                (ngModelChange)="updateEditForm('hatchedEggs', $event)" name="hatchedEggs"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Huevos No Eclosionados</label>
+              <input type="number" [(ngModel)]="editForm().unhatchedEggs"
+                (ngModelChange)="updateEditForm('unhatchedEggs', $event)" name="unhatchedEggs"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Huevos Fértiles</label>
+              <input type="number" [(ngModel)]="editForm().fertiliceEggs"
+                (ngModelChange)="updateEditForm('fertiliceEggs', $event)" name="fertiliceEggs"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Huevos No Fértiles</label>
+              <input type="number" [(ngModel)]="editForm().unFertiliceEggs"
+                (ngModelChange)="updateEditForm('unFertiliceEggs', $event)" name="unFertiliceEggs"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Observaciones</label>
+            <textarea [(ngModel)]="editForm().observations" (ngModelChange)="updateEditForm('observations', $event)"
+              name="observations" rows="3"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+          </div>
+        </form>
+        } @else if (modalType() === 'delete') {
+        <!-- Confirmación de eliminación -->
+        <div class="text-center">
+          <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+            <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 15.5c-.77.833.192 2.5 1.732 2.5z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">¿Eliminar pareja?</h3>
+          <p class="text-sm text-gray-500 mb-4">
+            ¿Estás seguro de que quieres eliminar la pareja {{ couple.nestCode }}? Esta acción no se puede deshacer.
+          </p>
+        </div>
+        }
+        }
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        @if (modalType() === 'view') {
+        <button (click)="closeModal()"
+          class="w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto sm:text-sm">
+          Cerrar
+        </button>
+        } @else if (modalType() === 'edit') {
+        <button (click)="saveCouple()" [disabled]="savingCouple()"
+          class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50">
+          @if (savingCouple()) {
+          <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+          }
+          {{ savingCouple() ? 'Guardando...' : 'Guardar cambios' }}
+        </button>
+        <button (click)="closeModal()" [disabled]="savingCouple()"
+          class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:w-auto sm:text-sm">
+          Cancelar
+        </button>
+        } @else if (modalType() === 'delete') {
+        <button (click)="deleteCouple()" [disabled]="deletingCouple()"
+          class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50">
+          @if (deletingCouple()) {
+          <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+          }
+          {{ deletingCouple() ? 'Eliminando...' : 'Eliminar' }}
+        </button>
+        <button (click)="closeModal()" [disabled]="deletingCouple()"
+          class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:w-auto sm:text-sm">
+          Cancelar
+        </button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+}

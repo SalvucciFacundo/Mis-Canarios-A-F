@@ -286,34 +286,4 @@ export class UserLimitsService {
     localStorage.setItem(storageKey, JSON.stringify(usage));
     return true;
   }
-
-  /**
-   * Verifica si se puede realizar una operación específica
-   */
-  canPerformOperation(operation: keyof DailyUsage): Observable<boolean> {
-    return this.getDetailedLimits().pipe(
-      map(limits => {
-        const usage = this.getDailyUsage();
-
-        // Verificar límite diario
-        const dailyLimit = limits.daily[operation as keyof typeof limits.daily];
-        const dailyUsage = usage[operation];
-
-        if (dailyLimit !== -1 && typeof dailyUsage === 'number' && dailyUsage >= dailyLimit) {
-          return false;
-        }
-
-        // Verificar límite permanente para operaciones de creación
-        if (operation === 'birds_create' || operation === 'couples_create') {
-          const permanentUsage = this.getPermanentUsage();
-          const permanentLimit = limits.permanent[operation];
-          if (permanentLimit !== -1 && permanentUsage[operation] >= permanentLimit) {
-            return false;
-          }
-        }
-
-        return true;
-      })
-    );
-  }
 }

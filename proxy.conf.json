@@ -1,0 +1,11 @@
+{
+  "/api/*": {
+    "target": "http://localhost:5010/mis-canarios-579c4/us-central1",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

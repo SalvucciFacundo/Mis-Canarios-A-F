@@ -3,13 +3,14 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,14 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideRouter(routes),
     provideFirebaseApp(() =>
-      initializeApp({
-        projectId: 'mis-canarios-579c4',
-        appId: '1:926970099974:web:3200f39f7b932b40074687',
-        storageBucket: 'mis-canarios-579c4.firebasestorage.app',
-        apiKey: 'AIzaSyC89Pkzj6J9-_Obn6c7uXQeFo43gPP0uVo',
-        authDomain: 'mis-canarios-579c4.firebaseapp.com',
-        messagingSenderId: '926970099974',
-      })
+      initializeApp(environment.firebase)
     ),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

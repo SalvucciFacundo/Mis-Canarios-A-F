@@ -65,7 +65,8 @@
               "buildTarget": "mis-canarios:build:production"
             },
             "development": {
-              "buildTarget": "mis-canarios:build:development"
+              "buildTarget": "mis-canarios:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

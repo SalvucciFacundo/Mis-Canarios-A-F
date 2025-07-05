@@ -1,0 +1,22 @@
+/* Solo mantener estilos que no se pueden replicar fácilmente con Tailwind */
+
+/* Animación personalizada para el loading spinner */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Transiciones suaves para elementos interactivos */
+.smooth-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus visible para accesibilidad */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

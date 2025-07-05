@@ -1,18 +1,18 @@
-import { Component, inject, signal, HostListener, OnInit, OnDestroy } from '@angular/core';
-import { Router, RouterModule, NavigationEnd } from '@angular/router';
-import { AuthService } from '../auth/services/auth.service';
 import { CommonModule } from '@angular/common';
-import { LoadingService } from './services/loading.service';
-import { UserLimitsIndicatorComponent } from './components/user-limits-indicator/user-limits-indicator.component';
-import { LimitsAlertComponent } from './components/limits-alert/limits-alert.component';
-import { ToastContainerComponent } from './toast-container.component';
-import { CustomSpinnerComponent } from './components/custom-spinner/custom-spinner.component';
-import { filter, takeUntil } from 'rxjs/operators';
+import { Component, HostListener, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
+import { AuthService } from '../auth/services/auth.service';
+import { CustomSpinnerComponent } from './components/custom-spinner/custom-spinner.component';
+import { LimitsAlertComponent } from './components/limits-alert/limits-alert.component';
+import { UserLimitsIndicatorComponent } from './components/user-limits-indicator/user-limits-indicator.component';
+import { LoadingService } from './services/loading.service';
+import { ToastContainerComponent } from './toast-container.component';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterModule, CommonModule, UserLimitsIndicatorComponent, LimitsAlertComponent, ToastContainerComponent, CustomSpinnerComponent],
+  imports: [RouterModule, CommonModule, ToastContainerComponent, CustomSpinnerComponent, UserLimitsIndicatorComponent, LimitsAlertComponent],
   templateUrl: './layout.component.html',
   styles: [`
     /* Efectos de brillo para los menús */
@@ -66,7 +66,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   // Componentes requeridos para evitar warning de compilación
-  LimitsAlertComponent = LimitsAlertComponent;
+  // LimitsAlertComponent = LimitsAlertComponent;
 
   private _authState = inject(AuthService);
   public _router = inject(Router);
@@ -103,7 +103,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
       route: '/contact',
       icon: 'M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
       exact: true
-    }
+    },
+
   ];
 
   ngOnInit() {
@@ -199,5 +200,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
     await this._loadingService.showContentTransition('Cargando verificación de email...', 600);
     this._router.navigate(['/auth/email-verification']);
     this._loadingService.hidePageTransition();
+  }
+
+  // Devuelve true si el usuario tiene el rol 'subscriber'
+  isSubscriber(): boolean {
+    const user = this.currentUser();
+    return !!user && user.role === 'subscriber';
   }
 }

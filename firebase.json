@@ -4,5 +4,20 @@
     "location": "nam5",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5010
+    },
+    "firestore": {
+      "port": 8082
+    },
+    "singleProjectMode": true,
+    "ui": {
+      "enabled": true
+    }
   }
 }

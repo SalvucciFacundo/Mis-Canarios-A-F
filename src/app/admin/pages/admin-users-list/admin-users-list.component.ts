@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, effect } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../../auth/interface/user.interface';
 import { AuthService } from '../../../auth/services/auth.service';
@@ -22,46 +22,56 @@ export class AdminUsersListComponent {
   loading = computed(() => this.usersStore.loading());
   error = computed(() => this.usersStore.error());
 
-  search = '';
+  // Signals para estado local
+  search = signal('');
   originalUsers: Record<string, User> = {};
   currentUser: User | null = null;
   editing: Record<string, boolean> = {};
 
   // Paginación
-  page = 1;
-  pageSize = 10;
+  page = signal(1);
+  pageSize = signal(10);
   pageSizes = [5, 10, 15, 20];
 
-  roles: { id: string, name: string }[] = [];
+  // Computed property para roles desde el store
+  availableRoles = computed(() => this.rolesStore.roles());
 
-  get filteredUsers(): User[] {
-    const term = this.search.toLowerCase();
+  // Computed property para roles válidos (solo los que tienen id, name y permisos)
+  validRoles = computed(() =>
+    this.rolesStore.roles().filter(r => !!r.id && !!r.name && Array.isArray(r.permisos))
+  );
+
+  // Computed properties para filtros y estadísticas
+  filteredUsers = computed(() => {
+    const term = this.search().toLowerCase();
     return this.users().filter(u =>
       u.name.toLowerCase().includes(term) ||
       u.email.toLowerCase().includes(term)
     );
-  }
+  });
 
-  get pagedUsers(): User[] {
-    const start = (this.page - 1) * this.pageSize;
-    return this.filteredUsers.slice(start, start + this.pageSize);
-  }
+  activeUsers = computed(() => this.filteredUsers().filter(u => u.active));
 
-  get totalPages(): number {
-    return Math.max(1, Math.ceil(this.filteredUsers.length / this.pageSize));
-  }
+  pagedUsers = computed(() => {
+    const start = (this.page() - 1) * this.pageSize();
+    return this.filteredUsers().slice(start, start + this.pageSize());
+  });
+
+  totalPages = computed(() => {
+    return Math.max(1, Math.ceil(this.filteredUsers().length / this.pageSize()));
+  });
 
   setPageSize(size: number) {
-    this.pageSize = size;
-    this.page = 1;
+    this.pageSize.set(size);
+    this.page.set(1);
   }
 
   prevPage() {
-    if (this.page > 1) this.page--;
+    if (this.page() > 1) this.page.set(this.page() - 1);
   }
 
   nextPage() {
-    if (this.page < this.totalPages) this.page++;
+    if (this.page() < this.totalPages()) this.page.set(this.page() + 1);
   }
 
   constructor(
@@ -81,8 +91,8 @@ export class AdminUsersListComponent {
   }
 
   async loadRoles() {
-    const roles = await this.rolesStore.getAllRoles();
-    this.roles = roles.map(r => ({ id: r.id, name: r.name }));
+    // El store ya maneja la carga de roles con su signal reactivo
+    await this.rolesStore.getAllRoles();
   }
 
   async poblarRolesBase() {

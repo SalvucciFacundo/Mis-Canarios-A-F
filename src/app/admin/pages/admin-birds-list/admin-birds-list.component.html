@@ -1,31 +1,629 @@
-<div class="p-6">
-  <h2 class="text-2xl font-bold mb-4">Canarios (Admin)</h2>
-  @if (loading) {
-  <div class="text-center text-gray-500">Cargando...</div>
-  } @else if (error) {
-  <div class="text-center text-red-500">{{ error }}</div>
-  } @else {
-  <table class="min-w-full bg-white shadow rounded">
-    <thead>
-      <tr>
-        <th class="px-4 py-2">Anillo</th>
-        <th class="px-4 py-2">Línea</th>
-        <th class="px-4 py-2">Temporada</th>
-        <th class="px-4 py-2">Origen</th>
-        <th class="px-4 py-2">Usuario</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (bird of birds; track trackById($index, bird)) {
-      <tr>
-        <td class="px-4 py-2">{{ bird.ringNumber }}</td>
-        <td class="px-4 py-2">{{ bird.line }}</td>
-        <td class="px-4 py-2">{{ bird.season }}</td>
-        <td class="px-4 py-2">{{ bird.origin }}</td>
-        <td class="px-4 py-2">{{ bird.userEmail || '—' }}</td>
-      </tr>
+<div class="min-h-screen bg-gray-50">
+  <!-- Header principal -->
+  <section class="bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <!-- Título y descripción -->
+        <div class="flex-shrink-0">
+          <h1 class="text-3xl font-bold text-gray-900">Administración de Canarios</h1>
+          <p class="text-sm text-gray-600 mt-1">
+            Gestiona los registros de canarios de todos los usuarios
+          </p>
+        </div>
+
+        <!-- Estadísticas cuando hay datos cargados -->
+        @if (selectedUser()) {
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600">{{ totalBirds() }}</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide">Total</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-600">{{ activeBirds() }}</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide">Activos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-orange-600">{{ soldBirds() }}</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide">Vendidos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-red-600">{{ deadBirds() }}</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide">Muertos</div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 py-6">
+    <!-- Selección de usuario -->
+    @if (!selectedUser()) {
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+      <h2 class="text-xl font-semibold text-gray-900 mb-4">Seleccionar Usuario</h2>
+
+      @if (loadingUsers()) {
+      <div class="text-center py-8">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-sky-600 mx-auto"></div>
+        <p class="text-gray-500 mt-2">Cargando usuarios...</p>
+      </div>
+      } @else if (error()) {
+      <div class="text-center py-8">
+        <div class="text-red-500 mb-2">❌ {{ error() }}</div>
+        <button (click)="loadUsers()"
+          class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+          Reintentar
+        </button>
+      </div>
+      } @else {
+      <!-- Buscador de usuarios -->
+      <div class="relative mb-4">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 1 0 3 10a7.5 7.5 0 0 0 13.65 6.65Z"></path>
+          </svg>
+        </div>
+        <input type="search" placeholder="Buscar usuario por email o nombre..." [(ngModel)]="searchUser"
+          class="w-full pl-10 pr-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors" />
+      </div>
+
+      <!-- Lista de usuarios -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
+        @for (user of filteredUsers(); track user.uid) {
+        <div (click)="selectUser(user)"
+          class="p-4 border border-gray-200 rounded-lg hover:border-sky-300 hover:shadow-md hover:-translate-y-1 cursor-pointer transition-all duration-200 transform group">
+          <div class="flex items-start justify-between">
+            <!-- Info del usuario -->
+            <div class="flex items-center space-x-3 flex-1 min-w-0">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center group-hover:bg-sky-200 transition-colors duration-200">
+                  <span class="text-sky-600 font-medium">{{ user.name.charAt(0).toUpperCase() }}</span>
+                </div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-gray-900 truncate">{{ user.name }}</p>
+                <p class="text-sm text-gray-500 truncate">{{ user.email }}</p>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium mt-1"
+                  [ngClass]="user.role === 'admin' ? 'bg-purple-100 text-purple-800' : 'bg-gray-100 text-gray-800'">
+                  {{ user.role }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Conteo de canarios -->
+            <div class="flex flex-col items-center ml-3">
+              @if (loadingBirdCounts()) {
+              <div class="w-6 h-6 border-2 border-sky-200 border-t-sky-600 rounded-full loading-spinner"></div>
+              } @else {
+              <div class="text-center">
+                <div class="text-lg font-bold" [ngClass]="{
+                       'text-green-600': getBirdCountForUser(user.email) > 0,
+                       'text-gray-400': getBirdCountForUser(user.email) === 0
+                     }">
+                  {{ getBirdCountForUser(user.email) }}
+                </div>
+                <div class="text-xs text-gray-500 uppercase tracking-wide font-medium">
+                  {{ getBirdCountForUser(user.email) === 1 ? 'Canario' : 'Canarios' }}
+                </div>
+              </div>
+              }
+            </div>
+          </div>
+
+          <!-- Indicador visual si tiene canarios -->
+          @if (getBirdCountForUser(user.email) > 0) {
+          <div class="mt-3 pt-3 border-t border-gray-100">
+            <div class="flex items-center text-xs text-gray-600">
+              <svg class="w-3 h-3 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Tiene registros disponibles
+            </div>
+          </div>
+          } @else {
+          <div class="mt-3 pt-3 border-t border-gray-100">
+            <div class="flex items-center text-xs text-gray-400">
+              <svg class="w-3 h-3 text-gray-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Sin registros
+            </div>
+          </div>
+          }
+        </div>
+        }
+      </div>
+
+      @if (filteredUsers().length === 0 && searchUser()) {
+      <div class="text-center py-8 text-gray-500">
+        No se encontraron usuarios que coincidan con "{{ searchUser() }}"
+      </div>
       }
-    </tbody>
-  </table>
+      }
+    </div>
+    } @else {
+    <!-- Usuario seleccionado y filtros -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+      <!-- Header con usuario seleccionado -->
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center">
+            <span class="text-sky-600 font-medium text-lg">{{ selectedUser()!.name.charAt(0).toUpperCase() }}</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">{{ selectedUser()!.name }}</h3>
+            <p class="text-sm text-gray-500">{{ selectedUser()!.email }}</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button (click)="clearFilters()"
+            class="text-gray-500 hover:text-gray-700 px-3 py-1 text-sm transition-colors">
+            Limpiar filtros
+          </button>
+          <button (click)="clearSelection()"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
+            Cambiar usuario
+          </button>
+        </div>
+      </div>
+
+      <!-- Filtros y búsqueda -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Buscador -->
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 1 0 3 10a7.5 7.5 0 0 0 13.65 6.65Z"></path>
+            </svg>
+          </div>
+          <input type="search" placeholder="Buscar canarios..." [(ngModel)]="searchTerm"
+            class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors" />
+        </div>
+
+        <!-- Filtro por estado -->
+        <select [(ngModel)]="selectedState"
+          class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors">
+          <option value="all">Todos los estados</option>
+          @for (state of states.slice(1); track state) {
+          <option [value]="state">{{ state | titlecase }}</option>
+          }
+        </select>
+
+        <!-- Filtro por temporada -->
+        <select [(ngModel)]="selectedSeason"
+          class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors">
+          <option value="all">Todas las temporadas</option>
+          @for (season of availableSeasons(); track season) {
+          <option [value]="season">{{ season }}</option>
+          }
+        </select>
+
+        <!-- Información de resultados -->
+        <div class="flex items-center text-sm text-gray-500">
+          Mostrando {{ filteredBirds().length }} de {{ totalBirds() }} canarios
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido de datos -->
+    @if (loadingBirds()) {
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-600 mx-auto"></div>
+      <p class="text-gray-500 mt-4">Cargando canarios...</p>
+    </div>
+    } @else if (error()) {
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+      <div class="text-red-500 mb-4">❌ {{ error() }}</div>
+      <button (click)="loadBirdsForUser(selectedUser()!.email)"
+        class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        Reintentar
+      </button>
+    </div>
+    } @else if (filteredBirds().length === 0 && totalBirds() === 0) {
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+      <div class="text-gray-400 text-6xl mb-4">🐦</div>
+      <h3 class="text-lg font-medium text-gray-900 mb-2">No hay canarios registrados</h3>
+      <p class="text-gray-500">Este usuario aún no ha registrado ningún canario.</p>
+    </div>
+    } @else if (filteredBirds().length === 0) {
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+      <div class="text-gray-400 text-6xl mb-4">🔍</div>
+      <h3 class="text-lg font-medium text-gray-900 mb-2">No se encontraron resultados</h3>
+      <p class="text-gray-500">Intenta ajustar tus filtros de búsqueda.</p>
+    </div>
+    } @else {
+    <!-- Tabla de canarios -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th (click)="setSortBy('ringNumber')"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors">
+                <div class="flex items-center space-x-1">
+                  <span>Anillo</span>
+                  @if (sortBy() === 'ringNumber') {
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    [ngClass]="sortDirection() === 'asc' ? 'transform rotate-0' : 'transform rotate-180'">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                  </svg>
+                  }
+                </div>
+              </th>
+              <th (click)="setSortBy('line')"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors">
+                <div class="flex items-center space-x-1">
+                  <span>Línea</span>
+                  @if (sortBy() === 'line') {
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    [ngClass]="sortDirection() === 'asc' ? 'transform rotate-0' : 'transform rotate-180'">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                  </svg>
+                  }
+                </div>
+              </th>
+              <th (click)="setSortBy('season')"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors">
+                <div class="flex items-center space-x-1">
+                  <span>Temporada</span>
+                  @if (sortBy() === 'season') {
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    [ngClass]="sortDirection() === 'asc' ? 'transform rotate-0' : 'transform rotate-180'">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                  </svg>
+                  }
+                </div>
+              </th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Origen
+              </th>
+              <th (click)="setSortBy('state')"
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors">
+                <div class="flex items-center space-x-1">
+                  <span>Estado</span>
+                  @if (sortBy() === 'state') {
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    [ngClass]="sortDirection() === 'asc' ? 'transform rotate-0' : 'transform rotate-180'">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                  </svg>
+                  }
+                </div>
+              </th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            @for (bird of filteredBirds(); track trackById($index, bird)) {
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div class="text-sm font-medium text-gray-900">
+                    {{ bird.ringNumber || '—' }}
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">{{ bird.line || '—' }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">{{ bird.season || '—' }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">{{ bird.origin || '—' }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                  [ngClass]="getStateColor(bird.state)">
+                  <span class="mr-1">{{ getStateIcon(bird.state) }}</span>
+                  {{ bird.state | titlecase }}
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <div class="flex items-center space-x-2">
+                  <button (click)="openModal('view', bird)"
+                    class="p-2 text-sky-600 hover:text-sky-900 hover:bg-sky-50 rounded-lg transition-all duration-200 transform hover:scale-110 focus-visible:focus"
+                    title="Ver detalles">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                      </path>
+                    </svg>
+                  </button>
+                  <button (click)="openModal('edit', bird)"
+                    class="p-2 text-indigo-600 hover:text-indigo-900 hover:bg-indigo-50 rounded-lg transition-all duration-200 transform hover:scale-110 focus-visible:focus"
+                    title="Editar">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                      </path>
+                    </svg>
+                  </button>
+                  <button (click)="openModal('delete', bird)"
+                    class="p-2 text-red-600 hover:text-red-900 hover:bg-red-50 rounded-lg transition-all duration-200 transform hover:scale-110 focus-visible:focus"
+                    title="Eliminar">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                      </path>
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    }
+    }
+  </div>
+
+  <!-- Modal overlay -->
+  @if (showModal()) {
+  <div
+    class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center p-4 modal-overlay"
+    (click)="closeModal()">
+    <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-content modal-body"
+      (click)="$event.stopPropagation()">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+        <h3 class="text-lg font-semibold text-gray-900">{{ getModalTitle() }}</h3>
+        <button (click)="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors interactive-element">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="px-6 py-4">
+        @if (modalType() === 'view' && selectedBird()) {
+        <!-- Vista de detalles -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Número de Anillo</label>
+            <div class="text-lg font-semibold text-gray-900">{{ selectedBird()!.ringNumber || '—' }}</div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Línea</label>
+            <div class="text-lg text-gray-900">{{ selectedBird()!.line || '—' }}</div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Temporada</label>
+            <div class="text-lg text-gray-900">{{ selectedBird()!.season || '—' }}</div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Género</label>
+            <div class="text-lg text-gray-900">{{ selectedBird()!.gender || '—' }}</div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Color del Anillo</label>
+            <div class="text-lg text-gray-900">{{ selectedBird()!.ringColor || '—' }}</div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Estado</label>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium"
+              [ngClass]="getStateColor(selectedBird()!.state)">
+              <span class="mr-1">{{ getStateIcon(selectedBird()!.state) }}</span>
+              {{ selectedBird()!.state | titlecase }}
+            </span>
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Origen</label>
+            <div class="text-lg text-gray-900">{{ selectedBird()!.origin || '—' }}</div>
+          </div>
+          @if (selectedBird()!.stateObservation) {
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Observación del Estado</label>
+            <div class="text-gray-900 bg-gray-50 p-3 rounded-lg">{{ selectedBird()!.stateObservation }}</div>
+          </div>
+          }
+          @if (selectedBird()!.observations) {
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Observaciones</label>
+            <div class="text-gray-900 bg-gray-50 p-3 rounded-lg">{{ selectedBird()!.observations }}</div>
+          </div>
+          }
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Usuario Propietario</label>
+            <div class="text-lg text-gray-900">{{ selectedBird()!.userEmail }}</div>
+          </div>
+        </div>
+        } @else if (modalType() === 'edit' && selectedBird()) {
+        <!-- Formulario de edición -->
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Número de Anillo *</label>
+              <input type="number" [value]="editForm().ringNumber"
+                (input)="updateEditForm('ringNumber', +$any($event.target).value)"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Línea *</label>
+              <input type="text" [value]="editForm().line" (input)="updateEditForm('line', $any($event.target).value)"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Temporada *</label>
+              <input type="number" [value]="editForm().season"
+                (input)="updateEditForm('season', +$any($event.target).value)"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Género</label>
+              <select [value]="editForm().gender" (change)="updateEditForm('gender', $any($event.target).value)"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                <option value="">Seleccionar...</option>
+                <option value="macho">Macho</option>
+                <option value="hembra">Hembra</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Color del Anillo</label>
+              <input type="text" [value]="editForm().ringColor"
+                (input)="updateEditForm('ringColor', $any($event.target).value)"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Estado *</label>
+              <select [value]="editForm().state" (change)="updateEditForm('state', $any($event.target).value)"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                required>
+                <option value="">Seleccionar...</option>
+                <option value="criadero">Criadero</option>
+                <option value="vendido">Vendido</option>
+                <option value="muerto">Muerto</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 mb-1">Origen</label>
+              <input type="text" [value]="editForm().origin"
+                (input)="updateEditForm('origin', $any($event.target).value)"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 mb-1">Observación del Estado</label>
+              <textarea [value]="editForm().stateObservation"
+                (input)="updateEditForm('stateObservation', $any($event.target).value)" rows="2"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"></textarea>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 mb-1">Observaciones</label>
+              <textarea [value]="editForm().observations"
+                (input)="updateEditForm('observations', $any($event.target).value)" rows="3"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500"></textarea>
+            </div>
+          </div>
+        </form>
+        } @else if (modalType() === 'delete' && selectedBird()) {
+        <!-- Confirmación de eliminación -->
+        <div class="text-center">
+          <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+            <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-medium text-gray-900 mb-2">¿Estás seguro?</h3>
+          <p class="text-sm text-gray-500 mb-6">
+            Esta acción eliminará permanentemente el canario <strong>{{ selectedBird()!.ringNumber }}</strong>
+            de <strong>{{ selectedBird()!.userEmail }}</strong>. Esta acción no se puede deshacer.
+          </p>
+
+          <!-- Información del canario a eliminar -->
+          <div class="bg-gray-50 rounded-lg p-4 mb-6 text-left">
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <span class="font-medium text-gray-700">Anillo:</span>
+                <span class="text-gray-900">{{ selectedBird()!.ringNumber }}</span>
+              </div>
+              <div>
+                <span class="font-medium text-gray-700">Línea:</span>
+                <span class="text-gray-900">{{ selectedBird()!.line || '—' }}</span>
+              </div>
+              <div>
+                <span class="font-medium text-gray-700">Temporada:</span>
+                <span class="text-gray-900">{{ selectedBird()!.season }}</span>
+              </div>
+              <div>
+                <span class="font-medium text-gray-700">Estado:</span>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium"
+                  [ngClass]="getStateColor(selectedBird()!.state)">
+                  {{ selectedBird()!.state | titlecase }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3">
+        @if (modalType() === 'view') {
+        <button (click)="closeModal()"
+          class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors modal-button">
+          Cerrar
+        </button>
+        } @else if (modalType() === 'edit') {
+        <button (click)="closeModal()"
+          class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors modal-button">
+          Cancelar
+        </button>
+        <button (click)="saveBird()" [disabled]="savingBird()"
+          class="bg-sky-600 hover:bg-sky-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center modal-button">
+          @if (savingBird()) {
+          <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+          }
+          {{ savingBird() ? 'Guardando...' : 'Guardar Cambios' }}
+        </button>
+        } @else if (modalType() === 'delete') {
+        <button (click)="closeModal()"
+          class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors modal-button">
+          Cancelar
+        </button>
+        <button (click)="deleteBird()" [disabled]="deletingBird()"
+          class="bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center modal-button">
+          @if (deletingBird()) {
+          <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+          }
+          {{ deletingBird() ? 'Eliminando...' : 'Eliminar' }}
+        </button>
+        }
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- Notification Toast -->
+  @if (notification()) {
+  <div class="fixed top-4 right-4 z-50 max-w-sm w-full">
+    <div
+      class="bg-white rounded-lg shadow-lg border-l-4 p-4 notification-toast transition-all duration-300 transform translate-x-0"
+      [ngClass]="{
+           'border-green-500 success': notification()!.type === 'success',
+           'border-red-500 error': notification()!.type === 'error'
+         }">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          @if (notification()!.type === 'success') {
+          <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          } @else {
+          <svg class="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+          }
+          <p class="text-sm font-medium text-gray-900">{{ notification()!.message }}</p>
+        </div>
+        <button (click)="hideNotification()" class="text-gray-400 hover:text-gray-600 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
   }
 </div>

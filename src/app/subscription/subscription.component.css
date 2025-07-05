@@ -1,0 +1,4 @@
+/* Estilos base para el componente de suscripción */
+:host {
+  display: block;
+}

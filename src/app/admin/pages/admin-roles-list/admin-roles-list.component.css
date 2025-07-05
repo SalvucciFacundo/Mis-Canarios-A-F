@@ -1,29 +1,22 @@
-.bg-sky-50 { background-color: #f0f9ff; }
-.bg-sky-100 { background-color: #e0f2fe; }
-.text-sky-700 { color: #0369a1; }
-.text-sky-600 { color: #0284c7; }
-.text-red-500 { color: #ef4444; }
-.text-red-700 { color: #b91c1c; }
-.bg-green-600 { background-color: #16a34a; }
-.bg-sky-600 { background-color: #0284c7; }
-.bg-gray-50 { background-color: #f9fafb; }
-.bg-gray-300 { background-color: #d1d5db; }
-.rounded { border-radius: 0.375rem; }
-.p-4 { padding: 1rem; }
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-4 { margin-bottom: 1rem; }
-.mb-6 { margin-bottom: 1.5rem; }
-.font-bold { font-weight: bold; }
-.font-semibold { font-weight: 600; }
-.flex { display: flex; }
-.flex-wrap { flex-wrap: wrap; }
-.gap-1 { gap: 0.25rem; }
-.gap-2 { gap: 0.5rem; }
-.items-center { align-items: center; }
-.text-xs { font-size: 0.75rem; }
-.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
-.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-.w-full { width: 100%; }
+/* Solo mantener estilos que no se pueden replicar fácilmente con Tailwind */
+
+/* Animación personalizada para el loading spinner */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Transiciones suaves para elementos interactivos */
+.smooth-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus visible para accesibilidad */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
