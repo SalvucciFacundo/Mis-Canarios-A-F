@@ -50,17 +50,7 @@ export const routes: Routes = [
       }
     ]
   },
-  {
-    canActivateChild: [privateGuard()],
-    loadComponent: () => import('./shared/layout.component').then(m => m.LayoutComponent),
-    path: 'subscription-test',
-    children: [
-      {
-        path: '',
-        loadComponent: () => import('./subscription-test.component').then(m => m.SubscriptionTestComponent)
-      }
-    ]
-  },
+
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.routes').then(m => m.default)
@@ -69,10 +59,7 @@ export const routes: Routes = [
     path: 'subscription',
     children: SUBSCRIPTION_ROUTES,
   },
-  {
-    path: 'test-subscription',
-    loadComponent: () => import('./subscription-simple.component').then(m => m.SubscriptionSimpleComponent)
-  },
+
   {
     path: '**', redirectTo: '/birds'
   }

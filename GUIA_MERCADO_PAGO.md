@@ -336,13 +336,13 @@ ngrok http 5010
 ```
 
 3. **Obtener la URL pública**:
-   - ngrok mostrará algo como: `https://abc123.ngrok.io`
-   - Tu webhook URL será: `https://abc123.ngrok.io/mis-canarios-579c4/us-central1/subscriptionWebhook`
+   - ngrok mostrará algo como: `https://0287-2803-6602-1abe-2300-43e-6e67-f842-b804.ngrok-free.app`
+   - Tu webhook URL será: `https://0287-2803-6602-1abe-2300-43e-6e67-f842-b804.ngrok-free.app/mis-canarios-579c4/us-central1/subscriptionWebhook`
 
 4. **Configurar en Mercado Pago**:
    - Ve a tu aplicación en [Mercado Pago Developers](https://www.mercadopago.com.ar/developers)
    - En "Webhooks" → "Configurar notificaciones"
-   - Agregar URL: `https://abc123.ngrok.io/mis-canarios-579c4/us-central1/subscriptionWebhook`
+   - Agregar URL: `https://0287-2803-6602-1abe-2300-43e-6e67-f842-b804.ngrok-free.app/mis-canarios-579c4/us-central1/subscriptionWebhook`
    - Eventos: Seleccionar "Pagos"
 
 ### Opción 2: Deploy temporal a Firebase
@@ -370,7 +370,7 @@ firebase deploy --only functions
 1. **Validar el endpoint manualmente**:
 ```bash
 # Probar que el webhook responde
-curl -X POST https://tu-url-ngrok.ngrok.io/mis-canarios-579c4/us-central1/subscriptionWebhook \
+curl -X POST https://0287-2803-6602-1abe-2300-43e-6e67-f842-b804.ngrok-free.app/mis-canarios-579c4/us-central1/subscriptionWebhook \
   -H "Content-Type: application/json" \
   -d '{"test": true}'
 ```

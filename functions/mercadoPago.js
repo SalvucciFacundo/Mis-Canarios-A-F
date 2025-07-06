@@ -12,9 +12,9 @@ mercadopago.configure({
 });
 
 const plans = {
-  monthly: { price: 3000, months: 1, title: 'Suscripción Mensual' }, // $3000 ARS
-  semiannual: { price: 15300, months: 6, title: 'Suscripción Semestral' }, // $15300 ARS (15% descuento)
-  annual: { price: 27000, months: 12, title: 'Suscripción Anual' }, // $27000 ARS (25% descuento)
+  monthly: { price: 5000, months: 1, title: 'Plan Mensual Premium' }, // $5000 ARS
+  semiannual: { price: 9000, months: 6, title: 'Plan Ilimitado' }, // $9000 ARS - Acceso completo
+  trial: { price: 0, months: 0, title: 'Prueba 7 Días Gratuita' }, // Gratis - Para referencia
 };
 
 exports.createPreference = async (req, res) => {
