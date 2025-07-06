@@ -1,0 +1,413 @@
+<!-- Header/Navegación -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="assets/img/gorrioniconoamarillo.png" alt="Mis Canarios Logo" class="h-10 w-10">
+        <span class="text-2xl font-bold text-gray-900">Mis Canarios</span>
+      </div>
+
+      <!-- Navegación Desktop -->
+      <div class="hidden md:flex items-center space-x-8">
+        <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-sky-600 transition-colors">
+          Funcionalidades
+        </button>
+        <button (click)="scrollToSection('plans')" class="text-gray-700 hover:text-sky-600 transition-colors">
+          Planes
+        </button>
+        <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-sky-600 transition-colors">
+          Testimonios
+        </button>
+        <a routerLink="/auth/sign-in" class="text-gray-700 hover:text-sky-600 transition-colors">
+          Iniciar Sesión
+        </a>
+        <a routerLink="/auth/sign-up"
+          class="bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-700 transition-colors">
+          Registrarse
+        </a>
+      </div>
+
+      <!-- Menú móvil botón -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()" type="button" class="text-gray-700 hover:text-sky-600 transition-colors">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path *ngIf="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path *ngIf="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <div *ngIf="mobileMenuOpen" class="md:hidden border-t border-gray-200 bg-white">
+      <div class="px-4 py-2 space-y-2">
+        <button (click)="scrollToSection('features'); closeMobileMenu()"
+          class="block w-full text-left px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 rounded transition-colors">
+          Funcionalidades
+        </button>
+        <button (click)="scrollToSection('plans'); closeMobileMenu()"
+          class="block w-full text-left px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 rounded transition-colors">
+          Planes
+        </button>
+        <button (click)="scrollToSection('testimonials'); closeMobileMenu()"
+          class="block w-full text-left px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 rounded transition-colors">
+          Testimonios
+        </button>
+        <a routerLink="/auth/sign-in" (click)="closeMobileMenu()"
+          class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 rounded transition-colors">
+          Iniciar Sesión
+        </a>
+        <a routerLink="/auth/sign-up" (click)="closeMobileMenu()"
+          class="block px-3 py-2 bg-sky-600 text-white rounded hover:bg-sky-700 transition-colors text-center">
+          Registrarse
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Sección Hero/Bienvenida -->
+<section class="bg-gradient-to-br from-sky-50 via-white to-blue-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+        Gestiona tu Criadero de
+        <span class="text-sky-600">Canarios</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        La herramienta más completa para criadores de canarios. Controla parejas, registra genealogías
+        y accede al nomenclador oficial FOCI en una sola plataforma.
+      </p>
+
+      <!-- CTAs principales -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <a routerLink="/auth/sign-up"
+          class="bg-sky-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-sky-700 transition-colors shadow-lg btn-primary">
+          Comenzar Gratis
+        </a>
+        <button (click)="scrollToSection('features')"
+          class="border border-sky-600 text-sky-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-sky-50 transition-colors">
+          Ver Funcionalidades
+        </button>
+      </div>
+
+      <!-- Hero Image/Illustration -->
+      <div class="relative">
+        <div class="bg-white rounded-xl shadow-2xl p-6 max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card simulada de canario -->
+            <div
+              class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-4 border border-yellow-200 stats-card">
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <span class="text-sm font-medium text-gray-700">Canario #2024001</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">Amarillo Intenso</h3>
+              <p class="text-sm text-gray-600">Línea: Gloster Corona</p>
+              <p class="text-sm text-gray-600">Estado: Activo</p>
+            </div>
+
+            <!-- Card simulada de pareja -->
+            <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-lg p-4 border border-pink-200 stats-card">
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-3 h-3 bg-pink-400 rounded-full"></div>
+                <span class="text-sm font-medium text-gray-700">Pareja Nido #12</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">Reproducción 2025</h3>
+              <p class="text-sm text-gray-600">Huevos: 4 fértiles</p>
+              <p class="text-sm text-gray-600">Estado: Incubando</p>
+            </div>
+
+            <!-- Card simulada de estadísticas -->
+            <div
+              class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200 stats-card">
+              <div class="flex items-center space-x-2 mb-3">
+                <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                <span class="text-sm font-medium text-gray-700">Estadísticas</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">Temporada 2025</h3>
+              <p class="text-sm text-gray-600">45 Canarios</p>
+              <p class="text-sm text-gray-600">12 Parejas activas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Funcionalidades -->
+<section id="features" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Todo lo que necesitas para tu criadero
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Herramientas profesionales diseñadas específicamente para criadores de canarios
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let feature of features; let i = index"
+        class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 feature-card"
+        [class.fade-in]="true" [class.fade-in-delay-1]="i % 3 === 1" [class.fade-in-delay-2]="i % 3 === 2">
+        <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-sky-600 feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="feature.icon"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ feature.title }}</h3>
+        <p class="text-gray-600">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Planes -->
+<section id="plans" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Elige el plan perfecto para ti
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Comienza gratis y escala según crezca tu criadero
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div *ngFor="let plan of plans; let i = index"
+        [class]="plan.popular ? 'relative bg-white border-2 border-sky-500 rounded-2xl shadow-xl plan-card' : 'bg-white border border-gray-200 rounded-2xl shadow-lg plan-card'"
+        [class.fade-in]="true" [class.fade-in-delay-1]="i === 1">
+
+        <!-- Badge Popular -->
+        <div *ngIf="plan.popular" class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span class="popular-badge text-white px-4 py-1 rounded-full text-sm font-medium">
+            ⭐ Más Popular
+          </span>
+        </div>
+
+        <div class="p-8">
+          <!-- Header del plan -->
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ plan.name }}</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-bold text-gray-900">{{ plan.price }}</span>
+              <span class="text-gray-600">{{ plan.period }}</span>
+            </div>
+          </div>
+
+          <!-- Características -->
+          <div class="mb-8">
+            <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+              ✅ Incluye:
+            </h4>
+            <ul class="space-y-3">
+              <li *ngFor="let feature of plan.features" class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{{ feature }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Limitaciones (si las hay) -->
+          <div *ngIf="plan.limitations.length > 0" class="mb-8">
+            <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+              ❌ No incluye:
+            </h4>
+            <ul class="space-y-3">
+              <li *ngFor="let limitation of plan.limitations" class="flex items-start">
+                <svg class="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span class="text-gray-500">{{ limitation }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Botón CTA -->
+          <a [routerLink]="plan.buttonLink"
+            [class]="plan.popular ?
+               'w-full bg-sky-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-sky-700 transition-colors block text-center' :
+               'w-full border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors block text-center'">
+            {{ plan.buttonText }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Garantía y beneficios adicionales -->
+    <div class="text-center mt-12">
+      <div class="guarantee-box rounded-lg p-6 max-w-3xl mx-auto">
+        <div class="flex items-center justify-center space-x-4 text-blue-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span class="font-semibold">7 días de prueba gratuita en el Plan Premium</span>
+        </div>
+        <p class="text-blue-700 text-sm mt-2">
+          Sin compromisos. Cancela en cualquier momento. Tus datos siempre están seguros.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Testimonios -->
+<section id="testimonials" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Lo que dicen nuestros usuarios
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Más de 1,000 criadores confían en nuestra plataforma
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let testimonial of testimonials; let i = index"
+        class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg testimonial-card fade-in"
+        [class.fade-in-delay-1]="i === 1" [class.fade-in-delay-2]="i === 2">
+        <!-- Estrellas -->
+        <div class="flex space-x-1 mb-4">
+          <svg *ngFor="let star of [1,2,3,4,5]" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+            </path>
+          </svg>
+        </div>
+
+        <!-- Contenido -->
+        <blockquote class="text-gray-700 mb-6 testimonial-content">
+          "{{ testimonial.content }}"
+        </blockquote>
+
+        <!-- Autor -->
+        <div class="border-t border-gray-200 pt-4">
+          <p class="font-semibold text-gray-900">{{ testimonial.name }}</p>
+          <p class="text-sm text-gray-600">{{ testimonial.role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección CTA Final -->
+<section class="py-20 bg-gradient-to-r from-sky-600 to-blue-700">
+  <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+      ¿Listo para transformar tu criadero?
+    </h2>
+    <p class="text-xl text-sky-100 mb-8">
+      Únete a miles de criadores que ya están utilizando la mejor herramienta de gestión para canarios
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a routerLink="/auth/sign-up"
+        class="bg-white text-sky-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg">
+        Comenzar Ahora - Es Gratis
+      </a>
+      <a routerLink="/auth/sign-in"
+        class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-sky-600 transition-colors">
+        Ya tengo cuenta
+      </a>
+    </div>
+
+    <div class="mt-8 text-sky-100 text-sm">
+      ✓ Sin tarjeta de crédito requerida ✓ Configuración en 2 minutos ✓ Soporte en español
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo y descripción -->
+      <div class="md:col-span-2">
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="assets/img/gorrioniconoamarillo.png" alt="Mis Canarios Logo" class="h-8 w-8">
+          <span class="text-xl font-bold text-white">Mis Canarios</span>
+        </div>
+        <p class="text-gray-400 mb-4 max-w-md">
+          La plataforma más completa para la gestión profesional de criaderos de canarios.
+          Desarrollada por criadores, para criadores.
+        </p>
+
+        <!-- Redes sociales -->
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors social-link">
+            <span class="sr-only">Facebook</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+              </path>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors social-link">
+            <span class="sr-only">Instagram</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.328-1.297C4.243 14.794 3.8 13.643 3.8 12.346c0-1.297.443-2.448 1.321-3.328.878-.88 2.031-1.32 3.328-1.32 1.297 0 2.448.44 3.328 1.32.88.88 1.32 2.031 1.32 3.328 0 1.297-.44 2.448-1.32 3.328-.88.88-2.031 1.32-3.328 1.32z">
+              </path>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors social-link">
+            <span class="sr-only">YouTube</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Enlaces útiles -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Producto</h3>
+        <ul class="space-y-2">
+          <li><button (click)="scrollToSection('features')"
+              class="hover:text-white transition-colors">Funcionalidades</button></li>
+          <li><button (click)="scrollToSection('plans')" class="hover:text-white transition-colors">Planes y
+              Precios</button></li>
+          <li><a href="#" class="hover:text-white transition-colors">Actualizaciones</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Roadmap</a></li>
+        </ul>
+      </div>
+
+      <!-- Soporte -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Soporte</h3>
+        <ul class="space-y-2">
+          <li><a routerLink="/contact" class="hover:text-white transition-colors">Contacto</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Centro de Ayuda</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Tutoriales</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Estado del Servicio</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom footer -->
+    <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="text-gray-400 text-sm">
+        © 2025 Mis Canarios. Todos los derechos reservados.
+      </div>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Términos de Servicio</a>
+        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Política de Privacidad</a>
+        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>

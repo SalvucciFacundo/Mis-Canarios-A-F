@@ -4,6 +4,10 @@ import { SUBSCRIPTION_ROUTES } from './subscription/subscription.routes';
 
 export const routes: Routes = [
   {
+    path: '',
+    loadComponent: () => import('./landing/landing.component').then(m => m.LandingComponent)
+  },
+  {
     path: 'auth/sign-in',
     canActivate: [publicGuard()],
     loadComponent: () => import('./auth/pages/sign-in/sign-in.component').then(m => m.SignInComponent)
@@ -59,8 +63,11 @@ export const routes: Routes = [
     path: 'subscription',
     children: SUBSCRIPTION_ROUTES,
   },
-
   {
-    path: '**', redirectTo: '/birds'
+    path: 'dashboard',
+    redirectTo: '/birds'
+  },
+  {
+    path: '**', redirectTo: '/'
   }
 ];
