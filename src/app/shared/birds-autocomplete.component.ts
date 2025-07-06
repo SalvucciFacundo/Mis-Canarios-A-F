@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, EventEmitter, Input, Output, signal, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, computed, EventEmitter, Input, OnChanges, OnInit, Output, signal, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-birds-autocomplete',
@@ -14,6 +14,7 @@ export class BirdsAutocompleteComponent implements OnInit, OnChanges {
   @Input() displayFn: (item: any) => string = (item) => item?.[this.valueKey] ?? '';
   @Input() hasError = false;
   @Input() selectedValue: string | null = null; // Nuevo input para valor inicial
+  @Input() disabled = false;
   @Output() selectedChange = new EventEmitter<string>();
   @Output() blurChange = new EventEmitter<void>();
 
@@ -39,6 +40,7 @@ export class BirdsAutocompleteComponent implements OnInit, OnChanges {
 
 
   onInput(event: Event) {
+    if (this.disabled) return;
     const target = event.target as HTMLInputElement | null;
     const value = target?.value ?? '';
     this.input.set(value);
@@ -49,6 +51,7 @@ export class BirdsAutocompleteComponent implements OnInit, OnChanges {
 
 
   onSelect(item: any) {
+    if (this.disabled) return;
     this.selected.set(item[this.valueKey]);
     this.input.set(this.displayFn(item));
     this.lastValidSelection.set(this.displayFn(item));

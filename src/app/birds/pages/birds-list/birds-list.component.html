@@ -98,7 +98,8 @@
         <p class="text-sm text-yellow-700 mb-3">
           Solo puedes ver <strong>{{ visibleBirds().length }}</strong> canarios de tus <strong>{{ (visibleBirds().length
             + hiddenBirdsCount()) }}</strong> registros totales.
-          <strong>{{ hiddenBirdsCount() }}</strong> canarios están ocultos.
+          <strong>{{ hiddenBirdsCount() }}</strong> canarios están ocultos por límites de tu plan.
+          <br><span class="font-medium">🔒 Tranquilo: Tus datos no se pierden, solo están ocultos temporalmente.</span>
         </p>
         <div class="flex flex-col sm:flex-row gap-2">
           <button (click)="upgradePlan()"
@@ -111,8 +112,45 @@
           </button>
           <div class="text-xs text-yellow-600 flex items-center gap-1">
             <span>💰</span>
-            <span>Desde $5,000 ARS/mes - Acceso completo</span>
+            <span>Plan Gratuito: 30 canarios máx. | Premium: hasta 1,500/mes</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+<!-- Banner de búsqueda con coincidencias ocultas -->
+@if (search() && hiddenSearchMatches() > 0) {
+<div class="max-w-7xl mx-auto px-4 mt-2">
+  <div class="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-3 shadow-sm">
+    <div class="flex items-start gap-3">
+      <div class="flex-shrink-0">
+        <svg class="w-4 h-4 text-orange-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+      <div class="flex-1">
+        <h4 class="text-sm font-semibold text-orange-800 mb-1">
+          🔍 Búsqueda limitada por tu plan
+        </h4>
+        <p class="text-sm text-orange-700">
+          Se encontraron <strong>{{ hiddenSearchMatches() }}</strong> coincidencias adicionales en tus registros
+          ocultos.
+          Tu búsqueda de "<strong>{{ search() }}</strong>" solo muestra resultados de los primeros {{
+          visibleBirds().length }} registros.
+        </p>
+        <div class="mt-2">
+          <button (click)="upgradePlan()"
+            class="inline-flex items-center gap-1 bg-orange-600 hover:bg-orange-700 text-white px-3 py-1.5 rounded text-xs font-medium transition-colors">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6">
+              </path>
+            </svg>
+            Ver todos los resultados (Premium)
+          </button>
         </div>
       </div>
     </div>
@@ -126,14 +164,18 @@
   <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 shadow-sm">
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
+        @if (userStats().planType === 'trial') {
+        <span class="text-xs font-medium text-green-700 uppercase tracking-wide">
+          Plan Gratuito con Prueba Premium (7 días)
+        </span>
+        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
+          🚀 Acceso Premium Temporal
+        </span>
+        } @else {
         <span class="text-xs font-medium text-blue-700 uppercase tracking-wide">
           Plan Actual: {{ userStats().planType || 'Gratuito' }}
         </span>
-        @if (userStats().planType === 'trial') {
-        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
-          🚀 Prueba Premium Activa
-        </span>
-        } @else if (userStats().planType === 'free') {
+        @if (userStats().planType === 'free') {
         <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full font-medium">
           Limitado
         </span>
@@ -141,6 +183,7 @@
         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
           ⭐ Premium
         </span>
+        }
         }
       </div>
       <button (click)="upgradePlan()" class="text-blue-600 hover:text-blue-800 text-xs font-medium underline">
@@ -264,7 +307,7 @@
 
         <!-- Botón de editar con validación de límites -->
         @if (canEditBird(i + 1) | async) {
-        <a [routerLink]="['/birds/birds-edit', bird.id]"
+        <button type="button" (click)="router.navigate(['/birds/birds-edit', bird.id])"
           class="inline-flex items-center text-xs font-medium text-gray-600 hover:text-gray-700 transition-colors">
           <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -272,20 +315,22 @@
             </path>
           </svg>
           Editar
-        </a>
+        </button>
         } @else {
-        <button (click)="upgradePlan()"
-          class="inline-flex items-center text-xs font-medium text-gray-400 cursor-not-allowed border border-gray-200 rounded px-2 py-1"
+        <button type="button" (click)="showEditNotAllowedToast()" disabled
+          class="inline-flex items-center text-xs font-medium text-gray-400 cursor-not-allowed border border-gray-200 rounded px-2 py-1 gap-1"
           title="Actualiza tu plan para editar este registro">
-          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 15v2m-6 0h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
-            </path>
+          <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+              clip-rule="evenodd" />
           </svg>
-          🔒 Editar
+          <span>Editar</span>
         </button>
         }
 
+        <!-- Botón de eliminar con validación de límites -->
+        @if (canEditBird(i + 1) | async) {
         <button (click)="eliminarCanario(bird, i)"
           class="inline-flex items-center text-xs font-medium text-red-600 hover:text-red-700 transition-colors border border-red-200 hover:border-red-300 rounded px-2 py-1">
           <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,6 +340,18 @@
           </svg>
           Eliminar
         </button>
+        } @else {
+        <button type="button" (click)="showEditNotAllowedToast()" disabled
+          class="inline-flex items-center text-xs font-medium text-gray-400 cursor-not-allowed border border-gray-200 rounded px-2 py-1 gap-1"
+          title="Actualiza tu plan para eliminar este registro">
+          <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 6 0z"
+              clip-rule="evenodd" />
+          </svg>
+          <span>Eliminar</span>
+        </button>
+        }
       </div>
     </div>
   </div>

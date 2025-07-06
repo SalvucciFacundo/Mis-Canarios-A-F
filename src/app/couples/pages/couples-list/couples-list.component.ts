@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, effect, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { firstValueFrom, map, Observable, take } from 'rxjs';
 import { AuthService } from '../../../auth/services/auth.service';
@@ -19,13 +19,109 @@ export class CouplesListComponent implements OnInit {
   public couplesStore = inject(CouplesStoreService);
   private authService = inject(AuthService);
   private toastService = inject(ToastService);
-  private router = inject(Router);
+  public router = inject(Router);
   private userLimitsService = inject(UserLimitsService);
 
   // Señales para el sistema de límites
   userStats = signal<any>(null);
   visibleCouples = signal<any[]>([]);
   hiddenCouplesCount = signal(0);
+
+  // Computed para parejas filtradas que incluye búsqueda y límites de visibilidad
+  filteredCouples = computed(() => {
+    const term = this.search().toLowerCase().trim();
+    const couplesToFilter = this.visibleCouples(); // Usar visibleCouples (limita por plan)
+
+    if (!term) {
+      return couplesToFilter; // Si no hay búsqueda, devolver todas las visibles
+    }
+
+    return couplesToFilter.filter(couple => {
+      // Buscar por código de nido
+      if (couple.nestCode?.toLowerCase().includes(term)) {
+        return true;
+      }
+
+      const coupleDetails = this.getCoupleDetails(couple)();
+      const maleInfo = coupleDetails.male;
+      const femaleInfo = coupleDetails.female;
+
+      // Buscar por anillo del macho o hembra
+      if (maleInfo?.ringNumber?.toString().includes(term) ||
+        femaleInfo?.ringNumber?.toString().includes(term)) {
+        return true;
+      }
+
+      // Buscar por línea del macho o hembra
+      if (maleInfo?.line?.toLowerCase().includes(term) ||
+        femaleInfo?.line?.toLowerCase().includes(term)) {
+        return true;
+      }
+
+      // Buscar por observaciones
+      if (couple.observations?.toLowerCase().includes(term) ||
+        couple.postureObservations?.toLowerCase().includes(term)) {
+        return true;
+      }
+
+      return false;
+    });
+  });
+
+  // Signal para detectar registros ocultos que coinciden con la búsqueda
+  hiddenSearchMatches = computed(() => {
+    const term = this.search().toLowerCase().trim();
+    if (!term) return 0;
+
+    const allCouplesOfSeason = this.couplesStore.filteredCouples() || []; // Todas las parejas de la temporada
+    const visibleCouples = this.visibleCouples();
+    const hiddenCouples = allCouplesOfSeason.slice(visibleCouples.length);
+
+    return hiddenCouples.filter(couple => {
+      // Buscar por código de nido
+      if (couple.nestCode?.toLowerCase().includes(term)) {
+        return true;
+      }
+
+      const coupleDetails = this.getCoupleDetails(couple)();
+      const maleInfo = coupleDetails.male;
+      const femaleInfo = coupleDetails.female;
+
+      // Buscar por anillo del macho o hembra
+      if (maleInfo?.ringNumber?.toString().includes(term) ||
+        femaleInfo?.ringNumber?.toString().includes(term)) {
+        return true;
+      }
+
+      // Buscar por línea del macho o hembra
+      if (maleInfo?.line?.toLowerCase().includes(term) ||
+        femaleInfo?.line?.toLowerCase().includes(term)) {
+        return true;
+      }
+
+      // Buscar por observaciones
+      if (couple.observations?.toLowerCase().includes(term) ||
+        couple.postureObservations?.toLowerCase().includes(term)) {
+        return true;
+      }
+
+      return false;
+    }).length;
+  });
+
+  constructor() {
+    // Efecto para recargar límites cuando cambie la temporada o las parejas
+    effect(() => {
+      // Reaccionar a cambios en la lista de parejas o temporada seleccionada
+      this.couplesStore.filteredCouples();
+      this.selectedSeason();
+
+      // Reaplicar límites cuando cambien estos valores
+      if (this.userStats()) {
+        this.applyVisibilityLimits();
+      }
+    });
+  }
 
   ngOnInit() {
     // Limpiar cualquier error previo al cargar el componente
@@ -45,18 +141,18 @@ export class CouplesListComponent implements OnInit {
 
   private applyVisibilityLimits() {
     const stats = this.userStats();
-    const allCouples = this.couplesStore.couplesList() || [];
+    const allCouplesOfSeason = this.couplesStore.filteredCouples() || []; // Solo de la temporada seleccionada
 
     if (!stats) {
-      this.visibleCouples.set(allCouples);
+      this.visibleCouples.set(allCouplesOfSeason);
       this.hiddenCouplesCount.set(0);
       return;
     }
 
     // Aplicar límites de visibilidad
     const maxVisible = stats.visibleRecords?.couples || 10; // Plan gratuito por defecto
-    const visible = allCouples.slice(0, maxVisible);
-    const hidden = Math.max(0, allCouples.length - maxVisible);
+    const visible = allCouplesOfSeason.slice(0, maxVisible);
+    const hidden = Math.max(0, allCouplesOfSeason.length - maxVisible);
 
     this.visibleCouples.set(visible);
     this.hiddenCouplesCount.set(hidden);
@@ -80,7 +176,7 @@ export class CouplesListComponent implements OnInit {
     if (!stats) return 'Cargando...';
 
     switch (stats.planType) {
-      case 'free': return 'Requiere Plan Premium';
+      case 'free': return 'Límite: 10 parejas máx';
       case 'trial': return 'Solo durante prueba';
       default: return 'Disponible';
     }
@@ -92,8 +188,8 @@ export class CouplesListComponent implements OnInit {
   }
 
   // Getters para el template
-  get filteredCouples() {
-    return this.couplesStore.filteredCouples;
+  get search() {
+    return this.couplesStore.search;
   }
 
   get isLoading() {
@@ -122,6 +218,10 @@ export class CouplesListComponent implements OnInit {
     this.couplesStore.setSelectedSeason(season);
   }
 
+  onSearchChange(searchTerm: string) {
+    this.couplesStore.setSearch(searchTerm);
+  }
+
   getCoupleDetails(couple: Couples) {
     return this.couplesStore.getCoupleDetails(couple);
   }
@@ -129,38 +229,18 @@ export class CouplesListComponent implements OnInit {
   trackByCouple(index: number, couple: Couples): string {
     return couple.id;
   }
-  // Eliminar pareja con confirmación y validación de límites
+  // Eliminar pareja con confirmación
   async confirmDeleteCouple(couple: Couples, index: number) {
-    // Verificar permisos de eliminación
-    this.userLimitsService.checkRecordAccess('couple', index + 1).subscribe(access => {
-      if (!access.deletable) {
-        this.toastService.error(
-          access.reason || 'No tienes permisos para eliminar este registro con tu plan actual.',
-          'Acción no permitida'
-        );
+    const coupleDetails = this.getCoupleDetails(couple)();
+    const maleInfo = coupleDetails.male ? `N° ${coupleDetails.male.ringNumber}` : 'Sin anillo';
+    const femaleInfo = coupleDetails.female ? `N° ${coupleDetails.female.ringNumber}` : 'Sin anillo';
 
-        if (access.suggestion) {
-          this.toastService.confirm(
-            access.suggestion,
-            () => this.upgradePlan(),
-            undefined,
-            'Actualizar Plan'
-          );
-        }
-        return;
-      }
-
-      const coupleDetails = this.getCoupleDetails(couple)();
-      const maleInfo = coupleDetails.male ? `N° ${coupleDetails.male.ringNumber}` : 'Sin anillo';
-      const femaleInfo = coupleDetails.female ? `N° ${coupleDetails.female.ringNumber}` : 'Sin anillo';
-
-      this.toastService.confirm(
-        `¿Eliminar pareja del Nido ${couple.nestCode}?\nMacho: ${maleInfo} | Hembra: ${femaleInfo}`,
-        () => this.deleteCouple(couple),
-        undefined,
-        'Confirmar Eliminación'
-      );
-    });
+    this.toastService.confirm(
+      `¿Eliminar pareja del Nido ${couple.nestCode}?\nMacho: ${maleInfo} | Hembra: ${femaleInfo}`,
+      () => this.deleteCouple(couple),
+      undefined,
+      'Confirmar Eliminación'
+    );
   }
 
   // Navegar a agregar nueva pareja con validación de límites
@@ -217,4 +297,11 @@ export class CouplesListComponent implements OnInit {
 
   // Usar función de utilidad importada
   convertFirestoreDate = convertFirestoreDate;
+
+  showEditNotAllowedToast() {
+    this.toastService.error(
+      'No tienes permiso para editar este registro con tu plan actual. Actualiza tu suscripción para acceder a la edición.',
+      'Acción no permitida'
+    );
+  }
 }

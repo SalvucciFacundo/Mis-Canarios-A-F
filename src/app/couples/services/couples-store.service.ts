@@ -1,14 +1,13 @@
-import { Injectable, inject, signal, computed } from '@angular/core';
+import { Injectable, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { CouplesService } from './couples.service';
-import { BirdsStoreService } from '../../birds/services/birds-store.service';
+import { of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { AuthService } from '../../auth/services/auth.service';
+import { BirdsStoreService } from '../../birds/services/birds-store.service';
 import { ToastService } from '../../shared/services/toast.service';
 import { UserLimitsService } from '../../shared/services/user-limits.service';
 import { Couples } from '../interface/couples.interface';
-import { Birds } from '../../birds/interface/birds.interface';
-import { map, switchMap, catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { CouplesService } from './couples.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +23,13 @@ export class CouplesStoreService {
   private _isLoading = signal(false);
   private _loadError = signal<string | null>(null);
   private _selectedSeason = signal<string>(new Date().getFullYear().toString());
+  private _search = signal<string>('');
 
   // Señales públicas
   readonly isLoading = this._isLoading.asReadonly();
   readonly loadError = this._loadError.asReadonly();
   readonly selectedSeason = this._selectedSeason.asReadonly();
+  readonly search = this._search.asReadonly();
 
   // Lista de parejas reactiva
   readonly couplesList = toSignal(
@@ -75,11 +76,48 @@ export class CouplesStoreService {
     { initialValue: [] as Couples[] }
   );
 
-  // Parejas filtradas por temporada
+  // Parejas filtradas por temporada y búsqueda
   readonly filteredCouples = computed(() => {
     const couples = this.couplesList() as Couples[];
     const season = this.selectedSeason();
-    const filtered = couples.filter((couple: Couples) => couple.season === season);
+    const searchTerm = this.search().toLowerCase().trim();
+    const birds = this.birdsStore.birdsList() || [];
+
+    // Filtrar por temporada
+    let filtered = couples.filter((couple: Couples) => couple.season === season);
+
+    // Aplicar búsqueda si hay término
+    if (searchTerm) {
+      filtered = filtered.filter((couple: Couples) => {
+        // Buscar por código de nido
+        if (couple.nestCode?.toLowerCase().includes(searchTerm)) {
+          return true;
+        }
+
+        // Buscar por anillo del macho o hembra
+        const male = birds.find(bird => bird.id === couple.maleId);
+        const female = birds.find(bird => bird.id === couple.femaleId);
+
+        if (male?.ringNumber?.toString().includes(searchTerm) ||
+          female?.ringNumber?.toString().includes(searchTerm)) {
+          return true;
+        }
+
+        // Buscar por línea del macho o hembra
+        if (male?.line?.toLowerCase().includes(searchTerm) ||
+          female?.line?.toLowerCase().includes(searchTerm)) {
+          return true;
+        }
+
+        // Buscar por observaciones
+        if (couple.observations?.toLowerCase().includes(searchTerm) ||
+          couple.postureObservations?.toLowerCase().includes(searchTerm)) {
+          return true;
+        }
+
+        return false;
+      });
+    }
 
     // Ordenar de la más vieja a la más nueva por fecha de creación
     return filtered.sort((a, b) => {
@@ -269,6 +307,11 @@ export class CouplesStoreService {
   // Métodos para cambiar temporada
   setSelectedSeason(season: string) {
     this._selectedSeason.set(season);
+  }
+
+  // Método para cambiar búsqueda
+  setSearch(searchTerm: string) {
+    this._search.set(searchTerm);
   }
 
   // Métodos de gestión

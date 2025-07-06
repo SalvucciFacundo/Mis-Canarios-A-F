@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, HostListener, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, effect, HostListener, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { ToastService } from '../../../shared/services/toast.service';
@@ -17,7 +17,7 @@ export class BirdsListComponent implements OnInit {
   mostrarInactivos = signal(false);
   scrollY = signal(0);
   private toastService = inject(ToastService);
-  private router = inject(Router);
+  public router: Router = inject(Router);
   private userLimitsService = inject(UserLimitsService);
 
   // Señales para el sistema de límites
@@ -25,7 +25,16 @@ export class BirdsListComponent implements OnInit {
   visibleBirds = signal<any[]>([]);
   hiddenBirdsCount = signal(0);
 
-  constructor(public birdsStore: BirdsStoreService) { }
+  constructor(public birdsStore: BirdsStoreService) {
+    // Nuevo effect reactivo: aplica límites cada vez que cambian canarios o stats
+    effect(() => {
+      const stats = this.userStats();
+      const allBirds = this.birds();
+      if (stats && allBirds) {
+        this.applyVisibilityLimits();
+      }
+    });
+  }
 
   ngOnInit() {
     // Cargar estadísticas del usuario y aplicar límites
@@ -34,7 +43,9 @@ export class BirdsListComponent implements OnInit {
 
   private loadUserLimits() {
     // Obtener estadísticas del usuario
+    console.log('🔍 [DEBUG] Cargando límites de usuario...');
     this.userLimitsService.getUserStats().subscribe(stats => {
+      console.log('🔍 [DEBUG] Stats del usuario:', stats);
       this.userStats.set(stats);
       this.applyVisibilityLimits();
     });
@@ -66,8 +77,12 @@ export class BirdsListComponent implements OnInit {
 
   // Verificar si puede editar un canario específico
   canEditBird(birdIndex: number): Observable<boolean> {
+    console.log(`🔍 [DEBUG] Verificando canEditBird para índice: ${birdIndex}`);
     return this.userLimitsService.checkRecordAccess('bird', birdIndex).pipe(
-      map(access => access.editable)
+      map(access => {
+        console.log(`🔍 [DEBUG] Access para bird ${birdIndex}:`, access);
+        return access.editable;
+      })
     );
   }
 
@@ -77,7 +92,7 @@ export class BirdsListComponent implements OnInit {
     if (!stats) return 'Cargando...';
 
     switch (stats.planType) {
-      case 'free': return 'Requiere Plan Premium';
+      case 'free': return 'Límite: 30 canarios máx';
       case 'trial': return 'Solo durante prueba';
       default: return 'Disponible';
     }
@@ -107,6 +122,24 @@ export class BirdsListComponent implements OnInit {
 
       return visible && coincideBusqueda;
     });
+  });
+
+  // Signal para detectar registros ocultos que coinciden con la búsqueda
+  hiddenSearchMatches = computed(() => {
+    const term = this.search().toLowerCase().trim();
+    if (!term) return 0;
+
+    const allBirds = this.birds() || [];
+    const visibleBirds = this.visibleBirds();
+    const hiddenBirds = allBirds.slice(visibleBirds.length);
+
+    return hiddenBirds.filter(bird => {
+      const coincideBusqueda =
+        bird.line?.toLowerCase().includes(term) ||
+        bird.origin?.toLowerCase().includes(term) ||
+        bird.ringNumber?.toString().includes(term);
+      return coincideBusqueda;
+    }).length;
   });
 
   onToggleMostrarInactivos(event: Event) {
@@ -160,37 +193,17 @@ export class BirdsListComponent implements OnInit {
     const email = this.birdsStore.userEmail();
     if (!email || !bird.id) return;
 
-    // Verificar permisos de eliminación
-    this.userLimitsService.checkRecordAccess('bird', index + 1).subscribe(access => {
-      if (!access.deletable) {
-        this.toastService.error(
-          access.reason || 'No tienes permisos para eliminar este registro con tu plan actual.',
-          'Acción no permitida'
-        );
-
-        if (access.suggestion) {
-          this.toastService.confirm(
-            access.suggestion,
-            () => this.upgradePlan(),
-            undefined,
-            'Actualizar Plan'
-          );
-        }
-        return;
-      }
-
-      // Mostrar confirmación
-      this.toastService.confirm(
-        `¿Estás seguro de que deseas eliminar el canario ${bird.ringNumber || 'sin anillo'}? Esta acción no se puede deshacer.`,
-        async () => {
-          await this.birdsStore.eliminarCanario(email, bird.id);
-          // Recargar límites después de eliminar
-          this.loadUserLimits();
-        },
-        undefined,
-        'Confirmar eliminación'
-      );
-    });
+    // Mostrar confirmación
+    this.toastService.confirm(
+      `¿Estás seguro de que deseas eliminar el canario ${bird.ringNumber || 'sin anillo'}? Esta acción no se puede deshacer.`,
+      async () => {
+        await this.birdsStore.eliminarCanario(email, bird.id);
+        // Recargar límites después de eliminar
+        this.loadUserLimits();
+      },
+      undefined,
+      'Confirmar eliminación'
+    );
   }
 
   // Navegar a agregar nuevo canario con validación de límites
@@ -213,6 +226,13 @@ export class BirdsListComponent implements OnInit {
         );
       }
     });
+  }
+
+  showEditNotAllowedToast() {
+    this.toastService.error(
+      'No tienes permiso para editar este registro con tu plan actual. Actualiza tu suscripción para acceder a la edición.',
+      'Acción no permitida'
+    );
   }
 }
 

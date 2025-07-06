@@ -1,15 +1,16 @@
-import { Component, inject, OnInit, signal, effect, computed } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CouplesStoreService } from '../../services/couples-store.service';
+import { Component, computed, effect, inject, OnInit, signal } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../../auth/services/auth.service';
+import { Birds } from '../../../birds/interface/birds.interface';
 import { BirdsStoreService } from '../../../birds/services/birds-store.service';
+import { BirdsAutocompleteComponent } from '../../../shared/birds-autocomplete.component';
 import { LoadingService } from '../../../shared/services/loading.service';
 import { ToastService } from '../../../shared/services/toast.service';
+import { UserLimitsService } from '../../../shared/services/user-limits.service';
 import { Couples } from '../../interface/couples.interface';
-import { Birds } from '../../../birds/interface/birds.interface';
-import { BirdsAutocompleteComponent } from '../../../shared/birds-autocomplete.component';
-import { AuthService } from '../../../auth/services/auth.service';
+import { CouplesStoreService } from '../../services/couples-store.service';
 
 @Component({
   selector: 'app-couples-edit',
@@ -55,6 +56,10 @@ export class CouplesEditComponent implements OnInit {
   private loadingService = inject(LoadingService);
   private toast = inject(ToastService);
   private authService = inject(AuthService);
+  private userLimitsService = inject(UserLimitsService);
+
+  // Signal para controlar permisos de edición
+  canEdit = signal<boolean>(false);
 
   ngOnInit(): void {
     this.coupleForm = this.fb.group({
@@ -66,7 +71,22 @@ export class CouplesEditComponent implements OnInit {
     });
     this.coupleId = this.route.snapshot.paramMap.get('id');
     if (this.coupleId) {
+      // Proteger edición según permisos
+      this.userLimitsService.checkRecordAccess('couple', 1).subscribe(access => {
+        if (!access.editable) {
+          this.canEdit.set(false);
+          this.toast.error('No tienes permiso para editar esta pareja con tu plan actual.');
+          this.router.navigate(['/couples/couples-list']);
+        } else {
+          this.canEdit.set(true);
+        }
+      });
       this.loadCouple(this.coupleId);
+    } else {
+      // Si es creación, solo permitir si tiene permiso
+      this.userLimitsService.canEditRecord('couple').subscribe(canEdit => {
+        this.canEdit.set(!!canEdit);
+      });
     }
     this.loadBirds();
   }
@@ -131,7 +151,7 @@ export class CouplesEditComponent implements OnInit {
   onFemaleBlur() { }
 
   async onSubmit() {
-    if (this.coupleForm.invalid || !this.coupleId) return;
+    if (!this.canEdit() || this.coupleForm.invalid || !this.coupleId) return;
     this.loading = true;
     const email = this.userEmailSignal();
     console.log('[CouplesEdit] onSubmit email:', email);

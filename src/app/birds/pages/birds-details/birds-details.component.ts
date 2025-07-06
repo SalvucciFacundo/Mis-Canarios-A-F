@@ -1,11 +1,10 @@
-import { Component, computed, signal, inject, OnInit, OnDestroy } from '@angular/core';
-import { Birds } from '../../interface/birds.interface';
+import { CommonModule } from '@angular/common';
+import { Component, computed, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BirdsRegisterService } from '../../services/birds-register.service';
+import { firstValueFrom, Subscription } from 'rxjs';
 import { AuthService } from '../../../auth/services/auth.service';
 import { ToastService } from '../../../shared/services/toast.service';
-import { firstValueFrom, Subscription } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { UserLimitsService } from '../../../shared/services/user-limits.service';
 import { BirdsStoreService } from '../../services/birds-store.service';
 
 @Component({
@@ -19,7 +18,12 @@ export class BirdsDetailsComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private authService = inject(AuthService);
   private toastService = inject(ToastService);
+  private userLimitsService = inject(UserLimitsService);
   private routeSubscription?: Subscription;
+  private permissionsSubscription?: Subscription;
+
+  // Signal para los permisos de edición
+  private canEditSignal = signal<boolean>(false);
 
   constructor(private route: ActivatedRoute, public birdsStore: BirdsStoreService) {
   }
@@ -32,17 +36,29 @@ export class BirdsDetailsComponent implements OnInit, OnDestroy {
         this.id.set(paramId);
       }
     });
+
+    // Suscribirse a los permisos de edición
+    this.permissionsSubscription = this.userLimitsService.canEditRecord('bird').subscribe(canEdit => {
+      this.canEditSignal.set(canEdit);
+      console.log('🔒 [BirdsDetails] canEdit updated:', canEdit);
+    });
   }
 
   ngOnDestroy() {
-    // Limpiar la suscripción
+    // Limpiar las suscripciones
     this.routeSubscription?.unsubscribe();
+    this.permissionsSubscription?.unsubscribe();
   }
 
   readonly bird = computed(() => {
     const birds = this.birdsStore.birdsList();
     const id = this.id();
     return birds.find(b => b.id === id);
+  });
+
+  // Computed para verificar permisos de edición
+  readonly canEdit = computed(() => {
+    return this.canEditSignal();
   });
 
   // Métodos para obtener información de padre y madre
@@ -75,7 +91,15 @@ export class BirdsDetailsComponent implements OnInit, OnDestroy {
   }
 
   // Navegar a editar
-  editBird() {
+  async editBird() {
+    // Verificar permisos usando Observable
+    const canEdit = await firstValueFrom(this.userLimitsService.canEditRecord('bird'));
+
+    if (!canEdit) {
+      this.toastService.warning('Plan Free: solo puedes ver los canarios. Actualiza a Premium para editar.');
+      return;
+    }
+
     const id = this.id();
     if (id) {
       this.router.navigate(['/birds/birds-edit', id]);
@@ -84,6 +108,14 @@ export class BirdsDetailsComponent implements OnInit, OnDestroy {
 
   // Eliminar canario con confirmación
   async deleteBird() {
+    // Verificar permisos usando Observable
+    const canEdit = await firstValueFrom(this.userLimitsService.canEditRecord('bird'));
+
+    if (!canEdit) {
+      this.toastService.warning('Plan Free: solo puedes ver los canarios. Actualiza a Premium para eliminar.');
+      return;
+    }
+
     const currentBird = this.bird();
     if (!currentBird) return;
 
@@ -141,5 +173,15 @@ Esta acción no se puede deshacer.`;
     if (mother?.id) {
       this.router.navigate(['/birds/birds-details', mother.id]);
     }
+  }
+
+  // Mostrar toast cuando no se puede editar
+  showEditNotAllowedToast() {
+    this.toastService.warning('Plan Free: solo puedes ver los canarios. Actualiza a Premium para editar.');
+  }
+
+  // Mostrar toast cuando no se puede eliminar
+  showDeleteNotAllowedToast() {
+    this.toastService.warning('Plan Free: solo puedes ver los canarios. Actualiza a Premium para eliminar.');
   }
 }

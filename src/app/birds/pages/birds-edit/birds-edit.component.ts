@@ -1,15 +1,12 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../../auth/services/auth.service';
-import { BirdsRegisterService } from '../../services/birds-register.service';
-import { firstValueFrom, map } from 'rxjs';
-import { doc, Firestore, updateDoc } from '@angular/fire/firestore';
-import { BirdsFormComponent } from '../../utils/birds-form.component';
-import { BirdsStoreService } from '../../services/birds-store.service';
 import { CommonModule } from '@angular/common';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingService } from '../../../shared/services/loading.service';
 import { ToastService } from '../../../shared/services/toast.service';
+import { UserLimitsService } from '../../../shared/services/user-limits.service';
+import { BirdsStoreService } from '../../services/birds-store.service';
+import { BirdsFormComponent } from '../../utils/birds-form.component';
 @Component({
     selector: 'app-birds-edit',
     imports: [ReactiveFormsModule, CommonModule, BirdsFormComponent],
@@ -22,6 +19,7 @@ export class BirdsEditComponent implements OnInit {
     private store = inject(BirdsStoreService);
     private loadingService = inject(LoadingService);
     private toastService = inject(ToastService);
+    private userLimitsService = inject(UserLimitsService);
 
     birdId = signal<string | null>(null);
     birdDataSignal = computed(() => {
@@ -37,6 +35,15 @@ export class BirdsEditComponent implements OnInit {
         this.route.paramMap.subscribe(params => {
             const id = params.get('id');
             this.birdId.set(id);
+            if (id) {
+                // Proteger edición según permisos
+                this.userLimitsService.checkRecordAccess('bird', 1).subscribe(access => {
+                    if (!access.editable) {
+                        this.toastService.error('No tienes permiso para editar este canario con tu plan actual.');
+                        this.router.navigate(['/birds/birds-list']);
+                    }
+                });
+            }
         });
     }
 

@@ -99,16 +99,16 @@ export class UserLimitsService {
     free: {
       plan_type: 'free' as const,
       monthly_limits: {
-        birds_create: 30,
-        couples_create: 10
+        birds_create: 30,    // FREE puede crear hasta 30 canarios (total, no mensual)
+        couples_create: 10   // FREE puede crear hasta 10 parejas (total, no mensual)
       },
       visibility_limits: {
-        birds_view: 30,
-        couples_view: 10
+        birds_view: 30,      // Solo puede ver 30 canarios
+        couples_view: 10     // Solo puede ver 10 parejas
       },
       edit_permissions: {
-        can_edit: false,
-        can_delete: false,
+        can_edit: false,     // No puede editar
+        can_delete: false,   // No puede eliminar
         birds_edit: 0,
         couples_edit: 0
       }
@@ -171,34 +171,22 @@ export class UserLimitsService {
    */
 
   private getCurrentPlanConfiguration(): Observable<PlanConfiguration> {
-    return combineLatest([
-      this.subscriptionService.getUserSubscription(),
-      this.detectTrialStatus()
-    ]).pipe(
-      map(([subscription, isInTrial]) => {
-        // Si está en prueba de 7 días
-        if (isInTrial) {
-          return {
-            ...this.PLAN_CONFIGURATIONS.trial,
-            trial_expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
-          };
-        }
+    console.log('🔍 [DEBUG] Obteniendo configuración del plan...');
+    return this.subscriptionService.userSubscription$.pipe(
+      map(subscription => {
+        console.log('🔍 [DEBUG] Suscripción del usuario:', subscription);
+        const planType = subscription?.planType || 'free';
+        console.log('🔍 [DEBUG] Tipo de plan detectado:', planType);
 
-        // Si no tiene suscripción activa
-        if (!subscription) {
-          return this.PLAN_CONFIGURATIONS.free;
-        }
-
-        // Mapear plan de suscripción a configuración
-        // Aquí asumo que subscription.planType existe en el objeto devuelto por el backend
-        const planType = (subscription as any)?.planType || 'free';
         switch (planType) {
           case 'monthly':
             return this.PLAN_CONFIGURATIONS.monthly;
-          case 'semiannual':
-          case 'annual':
+          case 'trial':
+            return this.PLAN_CONFIGURATIONS.trial;
+          case 'unlimited':
             return this.PLAN_CONFIGURATIONS.unlimited;
           default:
+            console.log('🔍 [DEBUG] Usando configuración FREE por defecto');
             return this.PLAN_CONFIGURATIONS.free;
         }
       })
@@ -207,7 +195,6 @@ export class UserLimitsService {
 
   private detectTrialStatus(): Observable<boolean> {
     const user = this.authService.currentUser();
-
     if (!user?.uid) return of(false);
 
     // Verificar si es usuario nuevo (menos de 7 días desde registro)
@@ -217,7 +204,7 @@ export class UserLimitsService {
     const daysSinceRegistration = (Date.now() - userCreated.getTime()) / (1000 * 60 * 60 * 24);
 
     // Si es nuevo Y no tiene suscripción activa = está en prueba
-    return this.subscriptionService.getUserSubscription().pipe(
+    return this.subscriptionService.userSubscription$.pipe(
       map(subscription => {
         const hasActivePaidSubscription = subscription &&
           (subscription as any)?.planType &&
@@ -231,7 +218,17 @@ export class UserLimitsService {
   private getUserStatsFromBackend(): Observable<UserStats> {
     const currentUser = this.authService.currentUser();
     if (!currentUser) {
-      throw new Error('Usuario no autenticado');
+      // Antes: throw new Error('Usuario no autenticado');
+      // Ahora: devolver un observable de error para evitar romper el flujo reactivo
+      return of({
+        birds_created_this_month: 0,
+        couples_created_this_month: 0,
+        total_birds: 0,
+        total_couples: 0,
+        last_updated: new Date().toISOString(),
+        subscription_start: undefined,
+        subscription_end: undefined
+      });
     }
 
     const mockStats: UserStats = {
@@ -280,11 +277,10 @@ export class UserLimitsService {
   }
 
   checkRecordAccess(recordType: 'bird' | 'couple', recordIndex: number): Observable<RecordAccess> {
-    return combineLatest([
-      this.getCurrentPlanConfiguration(),
-      this.getUserStatsFromBackend()
-    ]).pipe(
-      map(([config, stats]) => {
+    console.log(`🔍 [DEBUG] Verificando acceso para ${recordType} índice ${recordIndex}`);
+    return this.getCurrentPlanConfiguration().pipe(
+      map(config => {
+        console.log(`🔍 [DEBUG] Configuración del plan:`, config);
         const viewLimit = recordType === 'bird'
           ? config.visibility_limits.birds_view
           : config.visibility_limits.couples_view;
@@ -296,7 +292,7 @@ export class UserLimitsService {
         const visible = viewLimit === -1 || recordIndex <= viewLimit;
 
         if (config.plan_type === 'free') {
-          return {
+          const result = {
             visible,
             editable: false,
             deletable: false,
@@ -304,12 +300,14 @@ export class UserLimitsService {
             reason: visible ? 'free_plan_read_only' : 'exceeds_free_limit',
             suggestion: visible ? 'Actualiza tu plan para editar registros' : 'Este registro no es visible en tu plan gratuito'
           };
+          console.log(`🔍 [DEBUG] Plan FREE - Resultado:`, result);
+          return result;
         }
 
         const editable = config.edit_permissions.can_edit && (editLimit === -1 || recordIndex <= editLimit);
         const deletable = config.edit_permissions.can_delete && visible;
 
-        return {
+        const result = {
           visible,
           editable,
           deletable,
@@ -317,6 +315,8 @@ export class UserLimitsService {
           reason: visible ? (editable ? 'full_access' : 'view_only') : 'not_visible',
           suggestion: !visible ? 'Este registro excede tu límite actual' : undefined
         };
+        console.log(`🔍 [DEBUG] Plan ${config.plan_type} - Resultado:`, result);
+        return result;
       })
     );
   }

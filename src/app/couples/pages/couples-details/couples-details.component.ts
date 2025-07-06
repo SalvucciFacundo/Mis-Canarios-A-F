@@ -1,15 +1,16 @@
-import { Component, inject, signal, computed, OnInit, OnDestroy, ChangeDetectorRef, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ChangeDetectorRef, Component, computed, effect, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CouplesStoreService } from '../../services/couples-store.service';
-import { BirdsStoreService } from '../../../birds/services/birds-store.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 import { AuthService } from '../../../auth/services/auth.service';
-import { ToastService } from '../../../shared/services/toast.service';
-import { Couples } from '../../interface/couples.interface';
 import { Birds } from '../../../birds/interface/birds.interface';
-import { Timestamp } from 'firebase/firestore';
-import { convertFirestoreDate, formatDateForInput, daysBetween } from '../../../shared/utils/date.utils';
+import { BirdsStoreService } from '../../../birds/services/birds-store.service';
+import { ToastService } from '../../../shared/services/toast.service';
+import { UserLimitsService } from '../../../shared/services/user-limits.service';
+import { convertFirestoreDate, formatDateForInput } from '../../../shared/utils/date.utils';
+import { Couples } from '../../interface/couples.interface';
+import { CouplesStoreService } from '../../services/couples-store.service';
 
 @Component({
   selector: 'app-couples-details',
@@ -24,6 +25,7 @@ export class CouplesDetailsComponent implements OnInit, OnDestroy {
   private birdsStore = inject(BirdsStoreService);
   private authService = inject(AuthService);
   private toastService = inject(ToastService);
+  private userLimitsService = inject(UserLimitsService);
   private fb = inject(FormBuilder);
   private cdr = inject(ChangeDetectorRef);
 
@@ -141,6 +143,11 @@ export class CouplesDetailsComponent implements OnInit, OnDestroy {
       .sort((a, b) => b.postureNumber - a.postureNumber);
 
     return result;
+  });
+
+  // Computed para verificar permisos de edición
+  readonly canEdit = computed(() => {
+    return this.userLimitsService.canEditRecord('couple');
   });
 
   // Estado de acordeones para cada postura
@@ -619,7 +626,15 @@ export class CouplesDetailsComponent implements OnInit, OnDestroy {
   }
 
   // Navegar a editar
-  editCouple() {
+  async editCouple() {
+    // Verificar permisos usando Observable
+    const canEdit = await firstValueFrom(this.userLimitsService.canEditRecord('couple'));
+
+    if (!canEdit) {
+      this.toastService.warning('Plan Free: solo puedes ver las parejas. Actualiza a Premium para editar.');
+      return;
+    }
+
     const id = this.coupleId();
     if (id) {
       this.router.navigate(['/couples/couples-edit', id]);
@@ -627,7 +642,15 @@ export class CouplesDetailsComponent implements OnInit, OnDestroy {
   }
 
   // Eliminar pareja con confirmación
-  deleteCouple() {
+  async deleteCouple() {
+    // Verificar permisos usando Observable
+    const canEdit = await firstValueFrom(this.userLimitsService.canEditRecord('couple'));
+
+    if (!canEdit) {
+      this.toastService.warning('Plan Free: solo puedes ver las parejas. Actualiza a Premium para eliminar.');
+      return;
+    }
+
     const currentCouple = this.couple();
     if (!currentCouple) return;
 
@@ -657,6 +680,16 @@ Esta acción no se puede deshacer.`;
         }
       }
     );
+  }
+
+  // Mostrar toast cuando no se puede editar
+  showEditNotAllowedToast() {
+    this.toastService.warning('Plan Free: solo puedes ver las parejas. Actualiza a Premium para editar.');
+  }
+
+  // Mostrar toast cuando no se puede eliminar
+  showDeleteNotAllowedToast() {
+    this.toastService.warning('Plan Free: solo puedes ver las parejas. Actualiza a Premium para eliminar.');
   }
 
   // Migrar parejas existentes para asignar currentPostureNumber si no lo tienen

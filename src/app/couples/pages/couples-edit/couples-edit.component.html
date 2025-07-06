@@ -60,6 +60,15 @@
 
     <!-- Formulario -->
     <form [formGroup]="coupleForm" (ngSubmit)="onSubmit()" class="p-6 space-y-6">
+      <div *ngIf="!canEdit()"
+        class="flex items-center mb-4 text-yellow-700 bg-yellow-100 border border-yellow-300 rounded px-4 py-2">
+        <svg class="w-5 h-5 mr-2 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 15v2m0 4a2 2 0 002-2H10a2 2 0 002 2zm6-6V7a6 6 0 10-12 0v8a2 2 0 002 2h8a2 2 0 002-2z" />
+        </svg>
+        <span>Solo lectura: tu plan actual no permite editar esta pareja.</span>
+      </div>
       <!-- Primera fila: Temporada y Nido -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Temporada -->
@@ -68,7 +77,8 @@
               class="text-red-500">*</span></label>
           <select formControlName="season"
             class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
-            [class.border-red-500]="coupleForm.get('season')?.invalid && coupleForm.get('season')?.touched">
+            [class.border-red-500]="coupleForm.get('season')?.invalid && coupleForm.get('season')?.touched"
+            [disabled]="!canEdit()">
             <option value="">Seleccionar temporada</option>
             <option *ngFor="let year of availableSeasons()" [value]="year">{{ year }}</option>
           </select>
@@ -83,7 +93,8 @@
               class="text-red-500">*</span></label>
           <input type="text" formControlName="nestCode" placeholder="Ej: N001, NIDO-A, etc."
             class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
-            [class.border-red-500]="coupleForm.get('nestCode')?.invalid && coupleForm.get('nestCode')?.touched">
+            [class.border-red-500]="coupleForm.get('nestCode')?.invalid && coupleForm.get('nestCode')?.touched"
+            [disabled]="!canEdit()">
           <div *ngIf="coupleForm.get('nestCode')?.invalid && coupleForm.get('nestCode')?.touched"
             class="text-red-600 text-xs mt-1">
             El código de nido es requerido
@@ -100,7 +111,7 @@
           </div>
           <app-birds-autocomplete [items]="availableMales()" label="" [displayFn]="displayBirdFn"
             [hasError]="(coupleForm.get('maleId')?.invalid && coupleForm.get('maleId')?.touched) ?? false"
-            (selectedChange)="onMaleSelected($event)" (blurChange)="onMaleBlur()">
+            (selectedChange)="onMaleSelected($event)" (blurChange)="onMaleBlur()" [disabled]="!canEdit()">
           </app-birds-autocomplete>
           <div *ngIf="coupleForm.get('maleId')?.invalid && coupleForm.get('maleId')?.touched"
             class="text-red-600 text-xs mt-1">
@@ -115,7 +126,7 @@
           </div>
           <app-birds-autocomplete [items]="availableFemales()" label="" [displayFn]="displayBirdFn"
             [hasError]="(coupleForm.get('femaleId')?.invalid && coupleForm.get('femaleId')?.touched) ?? false"
-            (selectedChange)="onFemaleSelected($event)" (blurChange)="onFemaleBlur()">
+            (selectedChange)="onFemaleSelected($event)" (blurChange)="onFemaleBlur()" [disabled]="!canEdit()">
           </app-birds-autocomplete>
           <div *ngIf="coupleForm.get('femaleId')?.invalid && coupleForm.get('femaleId')?.touched"
             class="text-red-600 text-xs mt-1">
@@ -127,7 +138,8 @@
       <div>
         <label class="block text-sm font-semibold text-gray-800 mb-1">Observaciones</label>
         <textarea formControlName="observations" rows="2" placeholder="Notas adicionales sobre la pareja"
-          class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
+          class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400"
+          [disabled]="!canEdit()"></textarea>
       </div>
       <!-- Botón Guardar -->
       <div class="flex justify-end gap-4">
@@ -135,8 +147,13 @@
           class="px-6 py-2 bg-white hover:bg-gray-100 text-gray-700 font-medium rounded-md shadow border border-gray-300 transition-all">
           Cancelar
         </button>
-        <button type="submit" [disabled]="coupleForm.invalid || loading"
-          class="px-6 py-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-md shadow disabled:opacity-60 disabled:cursor-not-allowed transition-all">
+        <button type="submit" [disabled]="!canEdit() || coupleForm.invalid || loading"
+          class="px-6 py-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-md shadow disabled:opacity-60 disabled:cursor-not-allowed transition-all flex items-center">
+          <svg *ngIf="!canEdit()" class="w-5 h-5 mr-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+              clip-rule="evenodd" />
+          </svg>
           Guardar Cambios
         </button>
       </div>
