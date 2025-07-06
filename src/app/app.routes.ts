@@ -18,6 +18,11 @@ export const routes: Routes = [
     loadComponent: () => import('./auth/pages/sign-up/sign-up.component').then(m => m.SignUpComponent)
   },
   {
+    path: 'auth/forgot-password',
+    canActivate: [publicGuard()],
+    loadComponent: () => import('./auth/pages/forgot-password/forgot-password.component').then(m => m.ForgotPasswordComponent)
+  },
+  {
     path: 'auth/email-verification',
     canActivate: [privateGuard()],
     loadComponent: () => import('./shared/layout.component').then(m => m.LayoutComponent),

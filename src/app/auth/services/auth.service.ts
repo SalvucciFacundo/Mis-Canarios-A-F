@@ -1,5 +1,5 @@
 import { inject, Injectable, Injector, runInInjectionContext, signal } from '@angular/core';
-import { Auth, authState, createUserWithEmailAndPassword, reload, sendEmailVerification, signInWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
+import { Auth, authState, createUserWithEmailAndPassword, reload, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
 import { doc, Firestore, getDoc, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ToastService } from '../../shared/services/toast.service';
@@ -249,6 +249,20 @@ export class AuthService {
     } catch (error: any) {
       console.error('Error al actualizar perfil:', error);
       this.toastService.error('Error al actualizar el perfil');
+      throw error;
+    }
+  }
+
+  /**
+   * Envía un email para resetear la contraseña del usuario
+   * @param email - Email del usuario
+   */
+  async resetPassword(email: string): Promise<void> {
+    try {
+      await sendPasswordResetEmail(this._auth, email);
+      console.log('[AuthService] Email de recuperación enviado a:', email);
+    } catch (error: any) {
+      console.error('Error al enviar email de recuperación:', error);
       throw error;
     }
   }
