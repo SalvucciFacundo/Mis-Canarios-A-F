@@ -1,8 +1,8 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Nomenclator } from '../interface/nomenclator.interface';
-import { NomenclatorService } from './nomenclator.service';
 import { firstValueFrom } from 'rxjs';
 import { LoadingService } from '../../shared/services/loading.service';
+import { Nomenclator } from '../interface/nomenclator.interface';
+import { NomenclatorService } from './nomenclator.service';
 
 @Injectable({
   providedIn: 'root'
@@ -169,6 +169,21 @@ export class NomenclatorStoreService {
 
   remove(id: string) {
     this._lineas.update(all => all.filter(l => l.id !== id));
+  }
+
+  // Métodos de carga masiva y eliminación masiva eliminados para evitar operaciones directas sobre Firebase.
+
+  /**
+   * Carga todas las líneas de los nomencladores de assets según la federación y las expone en el store.
+   * Si se pasan varias federaciones, concatena los resultados.
+   */
+  async loadAllFromAssets(federaciones: string[]) {
+    let allLineas: Nomenclator[] = [];
+    for (const fed of federaciones) {
+      const lineas = await this.service.getLineasByFederacionFromAssets(fed);
+      allLineas = allLineas.concat(lineas.map(l => ({ ...l, federation: fed as 'FOCI' | 'FAC' | 'FOA' })));
+    }
+    this._lineas.set(allLineas);
   }
 
 

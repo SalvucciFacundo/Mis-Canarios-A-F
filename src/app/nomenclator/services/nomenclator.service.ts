@@ -1,8 +1,8 @@
-import { addDoc, collection, collectionData, CollectionReference, deleteDoc, doc, DocumentReference, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { addDoc, collection, collectionData, CollectionReference, deleteDoc, doc, DocumentReference, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
 import { firstValueFrom, map, Observable } from 'rxjs';
 import { Nomenclator } from '../interface/nomenclator.interface';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -50,35 +50,35 @@ export class NomenclatorService {
     return deleteDoc(doc(this.firestore, 'lineas', id));
   }
 
-  // async cargarDesdeJsonYEnviarAFirebase(path = 'assets/nomenclador2025FOCI.json'): Promise<void> {
-  //   const lineas: Nomenclator[] = await firstValueFrom(this.http.get<Nomenclator[]>(path));
-
-  //   const inserciones = lineas.map(linea =>
-  //     addDoc(this.collectionRef, linea)
-  //   );
-
-  //   await Promise.all(inserciones);
-  //   console.log(`✅ Se cargaron ${inserciones.length} líneas a Firebase desde ${path}`);
-  // }
-  async cargarDesdeJsonYEnviarAFirebase(path = 'assets/nomenclador2025FOCI.json', federacion: string): Promise<void> {
-    const rawLineas: Omit<Nomenclator, 'federacion'>[] = await firstValueFrom(
-      this.http.get<Omit<Nomenclator, 'federacion'>[]>(path)
-    );
-
-    const lineasConFederacion: Nomenclator[] = rawLineas.map(l => ({
-      ...l,
-      federacion
-    }));
-
-    const batch = lineasConFederacion.map(linea =>
-      addDoc(this.collectionRef, linea)
-    );
-
-    await Promise.all(batch);
-
-    console.log(`✅ Cargadas ${batch.length} líneas con federación "${federacion}" desde ${path}`);
+  /**
+   * Devuelve un array de objetos desde un JSON en assets.
+   * @param path Ruta al JSON en assets
+   */
+  getJsonFromAssets(path: string) {
+    return this.http.get<any[]>(path);
   }
 
-
+  /**
+   * Obtiene las líneas de nomenclador desde un JSON de assets según la federación.
+   * @param federacion 'FOCI' | 'FAC' | 'FOA'
+   */
+  async getLineasByFederacionFromAssets(federacion: string): Promise<Nomenclator[]> {
+    let path = '';
+    switch (federacion.toUpperCase()) {
+      case 'FOCI':
+        path = 'assets/Nomenclador FOCI.json';
+        break;
+      case 'FOA':
+        path = 'assets/Nomenclador FOA.json';
+        break;
+      case 'FAC':
+        path = 'assets/Nomenclador FAC.json';
+        break;
+      default:
+        throw new Error('Federación no soportada');
+    }
+    return await firstValueFrom(this.http.get<Nomenclator[]>(path));
+  }
 
 }
+// Métodos de carga masiva y eliminación masiva eliminados para evitar operaciones directas sobre Firebase.

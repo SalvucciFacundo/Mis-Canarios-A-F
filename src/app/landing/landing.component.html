@@ -16,9 +16,6 @@
         <button (click)="scrollToSection('plans')" class="text-gray-700 hover:text-sky-600 transition-colors">
           Planes
         </button>
-        <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-sky-600 transition-colors">
-          Testimonios
-        </button>
         <a routerLink="/auth/sign-in" class="text-gray-700 hover:text-sky-600 transition-colors">
           Iniciar Sesión
         </a>
@@ -52,10 +49,6 @@
           class="block w-full text-left px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 rounded transition-colors">
           Planes
         </button>
-        <button (click)="scrollToSection('testimonials'); closeMobileMenu()"
-          class="block w-full text-left px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 rounded transition-colors">
-          Testimonios
-        </button>
         <a routerLink="/auth/sign-in" (click)="closeMobileMenu()"
           class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 rounded transition-colors">
           Iniciar Sesión
@@ -79,7 +72,7 @@
       </h1>
       <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
         La herramienta más completa para criadores de canarios. Controla parejas, registra genealogías
-        y accede al nomenclador oficial FOCI en una sola plataforma.
+        y accede a los nomencladores oficiales en una sola plataforma.
       </p>
 
       <!-- CTAs principales -->
@@ -103,10 +96,9 @@
               class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-4 border border-yellow-200 stats-card">
               <div class="flex items-center space-x-2 mb-3">
                 <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <span class="text-sm font-medium text-gray-700">Canario #2024001</span>
+                <span class="text-sm font-medium text-gray-700">Canario #001</span>
               </div>
               <h3 class="font-semibold text-gray-900 mb-2">Amarillo Intenso</h3>
-              <p class="text-sm text-gray-600">Línea: Gloster Corona</p>
               <p class="text-sm text-gray-600">Estado: Activo</p>
             </div>
 
@@ -116,7 +108,7 @@
                 <div class="w-3 h-3 bg-pink-400 rounded-full"></div>
                 <span class="text-sm font-medium text-gray-700">Pareja Nido #12</span>
               </div>
-              <h3 class="font-semibold text-gray-900 mb-2">Reproducción 2025</h3>
+              <h3 class="font-semibold text-gray-900 mb-2">Temporada 2025</h3>
               <p class="text-sm text-gray-600">Huevos: 4 fértiles</p>
               <p class="text-sm text-gray-600">Estado: Incubando</p>
             </div>
@@ -252,7 +244,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          <span class="font-semibold">7 días de prueba gratuita en el Plan Premium</span>
+          <span class="font-semibold">7 días de prueba gratuita con Plan Premium al registrarte</span>
         </div>
         <p class="text-blue-700 text-sm mt-2">
           Sin compromisos. Cancela en cualquier momento. Tus datos siempre están seguros.
@@ -262,45 +254,6 @@
   </div>
 </section>
 
-<!-- Sección de Testimonios -->
-<section id="testimonials" class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Lo que dicen nuestros usuarios
-      </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Más de 1,000 criadores confían en nuestra plataforma
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div *ngFor="let testimonial of testimonials; let i = index"
-        class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg testimonial-card fade-in"
-        [class.fade-in-delay-1]="i === 1" [class.fade-in-delay-2]="i === 2">
-        <!-- Estrellas -->
-        <div class="flex space-x-1 mb-4">
-          <svg *ngFor="let star of [1,2,3,4,5]" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-            </path>
-          </svg>
-        </div>
-
-        <!-- Contenido -->
-        <blockquote class="text-gray-700 mb-6 testimonial-content">
-          "{{ testimonial.content }}"
-        </blockquote>
-
-        <!-- Autor -->
-        <div class="border-t border-gray-200 pt-4">
-          <p class="font-semibold text-gray-900">{{ testimonial.name }}</p>
-          <p class="text-sm text-gray-600">{{ testimonial.role }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Sección CTA Final -->
 <section class="py-20 bg-gradient-to-r from-sky-600 to-blue-700">
@@ -401,7 +354,7 @@
     <!-- Bottom footer -->
     <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
       <div class="text-gray-400 text-sm">
-        © 2025 Mis Canarios. Todos los derechos reservados.
+        © 2025 Mis Canarios. Todos los derechos reservados. FDS Software.
       </div>
       <div class="flex space-x-6 mt-4 md:mt-0">
         <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Términos de Servicio</a>

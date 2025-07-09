@@ -1,0 +1,9237 @@
+[
+ {
+  "codigo": "CO001",
+  "nombre": "BLANCO"
+
+ },
+ {
+  "codigo": "CO002",
+  "nombre": "BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO003",
+  "nombre": "AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO004",
+  "nombre": "AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO005",
+  "nombre": "AMARILLO MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO006",
+  "nombre": "AMARILLO MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO007",
+  "nombre": "AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO008",
+  "nombre": "AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO009",
+  "nombre": "AMARILLO MARFIL MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO010",
+  "nombre": "AMARILLO MARFIL MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+
+ {
+  "codigo": "CO011",
+  "nombre": "ALBINO"
+
+ },
+ {
+  "codigo": "CO012",
+  "nombre": "ALBINO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO013",
+  "nombre": "LUTINO INTENSO"
+
+ },
+ {
+  "codigo": "CO014",
+  "nombre": "LUTINO NEVADO"
+
+ },
+ {
+  "codigo": "CO015",
+  "nombre": "LUTINO MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO016",
+  "nombre": "LUTINO MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO017",
+  "nombre": "LUTINO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO018",
+  "nombre": "LUTINO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO019",
+  "nombre": "LUTINO MARFIL MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO020",
+  "nombre": "LUTINO MARFIL MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+
+ {
+  "codigo": "CO021",
+  "nombre": "AMARILLO ALAS BLANCAS INTENSO"
+
+ },
+ {
+  "codigo": "CO022",
+  "nombre": "AMARILLO ALAS BLANCAS NEVADO"
+
+ },
+ {
+  "codigo": "CO023",
+  "nombre": "AMARILLO ALAS BLANCAS  MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO024",
+  "nombre": "AMARILLO ALAS BLANCAS  MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO025",
+  "nombre": "AMARILLO ALAS BLANCAS MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO026",
+  "nombre": "AMARILLO ALAS BLANCAS MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO027",
+  "nombre": "AMARILLO ALAS BLANCAS MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO028",
+  "nombre": "AMARILLO ALAS BLANCAS  MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO029",
+  "nombre": "LUTINO ALAS BLANCAS INTENSO"
+
+ },
+ {
+  "codigo": "CO030",
+  "nombre": "LUTINO ALAS BLANCAS NEVADO"
+
+ },
+ {
+  "codigo": "CO031",
+  "nombre": "LUTINO ALAS BLANCAS  MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO032",
+  "nombre": "LUTINO ALAS BLANCAS  MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO033",
+  "nombre": "LUTINO ALAS BLANCAS MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO034",
+  "nombre": "LUTINO ALAS BLANCAS MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO035",
+  "nombre": "LUTINO ALAS BLANCAS  MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO036",
+  "nombre": "LUTINO ALAS BLANCAS  MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO037",
+  "nombre": "AMARILLO INTENSO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO038",
+  "nombre": "AMARILLO NEVADO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO039",
+  "nombre": "LUTINO INTENSO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO040",
+  "nombre": "LUTINO NEVADO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO041",
+  "nombre": "ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO042",
+  "nombre": "ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO043",
+  "nombre": "ROJO MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO044",
+  "nombre": "ROJO MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO045",
+  "nombre": "ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO046",
+  "nombre": "ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO047",
+  "nombre": "ROJO MARFIL MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO048",
+  "nombre": "ROJO MARFIL MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO049",
+  "nombre": "RUBINO INTENSO"
+
+ },
+ {
+  "codigo": "CO050",
+  "nombre": "RUBINO NEVADO"
+
+ },
+ {
+  "codigo": "CO051",
+  "nombre": "RUBINO MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO052",
+  "nombre": "RUBINO MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO053",
+  "nombre": "RUBINO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO054",
+  "nombre": "RUBINO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO055",
+  "nombre": "RUBINO MARFIL MOSAICO MACHO ALAS PIGMENTADAS"
+
+ },
+ {
+  "codigo": "CO056",
+  "nombre": "RUBINO MARFIL MOSAICO HEMBRA ALAS PIGMENTADAS"
+
+ },
+
+ {
+  "codigo": "CO057",
+  "nombre": "ROJO INTENSO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO058",
+  "nombre": "ROJO NEVADO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO059",
+  "nombre": "ROJO MOSAICO MACHO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO060",
+  "nombre": "ROJO MOSAICO HEMBRA ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO061",
+  "nombre": "ROJO MARFIL INTENSO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO062",
+  "nombre": "ROJO MARFIL NEVADO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO063",
+  "nombre": "ROJO MARFIL MOSAICO MACHO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO064",
+  "nombre": "ROJO MARFIL MOSAICO HEMBRA ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO065",
+  "nombre": "RUBINO INTENSO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO066",
+  "nombre": "RUBINO NEVADO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO067",
+  "nombre": "RUBINO MOSAICO MACHO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO068",
+  "nombre": "RUBINO MOSAICO HEMBRA ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO069",
+  "nombre": "RUBINO MARFIL INTENSO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO070",
+  "nombre": "RUBINO MARFIL NEVADO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO071",
+  "nombre": "RUBINO MARFIL MOSAICO MACHO ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO072",
+  "nombre": "RUBINO MARFIL MOSAICO HEMBRA ALAS BLANCAS"
+
+ },
+ {
+  "codigo": "CO073",
+  "nombre": "URUCUM ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO074",
+  "nombre": "URUCUM ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO075",
+  "nombre": "URUCUM RUBINO INTENSO"
+
+ },
+ {
+  "codigo": "CO076",
+  "nombre": "URUCUM RUBINO NEVADO"
+
+ },
+ {
+  "codigo": "CO077",
+  "nombre": "NEGRO BLANCO"
+
+ },
+ {
+  "codigo": "CO078",
+  "nombre": "NEGRO BLANCO  DOMINANTE"
+
+ },
+ {
+  "codigo": "CO079",
+  "nombre": "NEGRO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO080",
+  "nombre": "NEGRO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO081",
+  "nombre": "NEGRO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO082",
+  "nombre": "NEGRO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO083",
+  "nombre": "NEGRO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO084",
+  "nombre": "NEGRO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO085",
+  "nombre": "NEGRO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO086",
+  "nombre": "NEGRO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO087",
+  "nombre": "ÁGATA BLANCO"
+
+ },
+ {
+  "codigo": "CO088",
+  "nombre": "ÁGATA BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO089",
+  "nombre": "ÁGATA AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO090",
+  "nombre": "ÁGATA AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO091",
+  "nombre": "ÁGATA AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO092",
+  "nombre": "ÁGATA AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO093",
+  "nombre": "ÁGATA AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO094",
+  "nombre": "ÁGATA AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO095",
+  "nombre": "ÁGATA AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO096",
+  "nombre": "ÁGATA AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO097",
+  "nombre": "CANELA BLANCO"
+
+ },
+ {
+  "codigo": "CO098",
+  "nombre": "CANELA BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO099",
+  "nombre": "CANELA AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO100",
+  "nombre": "CANELA AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO101",
+  "nombre": "CANELA AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO102",
+  "nombre": "CANELA AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO103",
+  "nombre": "CANELA AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO104",
+  "nombre": "CANELA AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO105",
+  "nombre": "CANELA AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO106",
+  "nombre": "CANELA AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO107",
+  "nombre": "ISABEL BLANCO"
+
+ },
+ {
+  "codigo": "CO108",
+  "nombre": "ISABEL BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO109",
+  "nombre": "ISABEL AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO110",
+  "nombre": "ISABEL AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO111",
+  "nombre": "ISABEL AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO112",
+  "nombre": "ISABEL AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO113",
+  "nombre": "ISABEL AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO114",
+  "nombre": "ISABEL AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO115",
+  "nombre": "ISABEL AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO116",
+  "nombre": "ISABEL AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO117",
+  "nombre": "NEGRO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO118",
+  "nombre": "NEGRO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO119",
+  "nombre": "NEGRO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO120",
+  "nombre": "NEGRO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO121",
+  "nombre": "NEGRO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO122",
+  "nombre": "NEGRO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO123",
+  "nombre": "NEGRO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO124",
+  "nombre": "NEGRO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO125",
+  "nombre": "ÁGATA ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO126",
+  "nombre": "ÁGATA ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO127",
+  "nombre": "ÁGATA ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO128",
+  "nombre": "ÁGATA ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO129",
+  "nombre": "ÁGATA ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO130",
+  "nombre": "ÁGATA ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO131",
+  "nombre": "ÁGATA ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO132",
+  "nombre": "ÁGATA ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO133",
+  "nombre": "CANELA ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO134",
+  "nombre": "CANELA ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO135",
+  "nombre": "CANELA ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO136",
+  "nombre": "CANELA ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO137",
+  "nombre": "CANELA ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO138",
+  "nombre": "CANELA ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO139",
+  "nombre": "CANELA ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO140",
+  "nombre": "CANELA ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO141",
+  "nombre": "ISABEL ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO142",
+  "nombre": "ISABEL ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO143",
+  "nombre": "ISABEL ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO144",
+  "nombre": "ISABEL ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO145",
+  "nombre": "ISABEL ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO146",
+  "nombre": "ISABEL ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO147",
+  "nombre": "ISABEL ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO148",
+  "nombre": "ISABEL ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO149",
+  "nombre": "ÁGATA AMARILLO PICO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO150",
+  "nombre": "ÁGATA AMARILLO PICO AMARILLO NEVADO"
+
+ },
+
+ {
+  "codigo": "CO151",
+  "nombre": "ISABEL AMARILLO PICO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO152",
+  "nombre": "ISABEL AMARILLO PICO AMARILLO NEVADO"
+
+ },
+
+ {
+  "codigo": "CO153",
+  "nombre": "ÁGATA URUCUM ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO154",
+  "nombre": "ÁGATA URUCUM ROJO NEVADO"
+
+ },
+
+ {
+  "codigo": "CO155",
+  "nombre": "ISABEL URUCUM ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO156",
+  "nombre": "ISABEL URUCUM ROJO NEVADO"
+
+ },
+
+ {
+  "codigo": "CO157",
+  "nombre": "NEGRO PASTEL BLANCO"
+
+ },
+ {
+  "codigo": "CO158",
+  "nombre": "NEGRO PASTEL BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO159",
+  "nombre": "NEGRO PASTEL AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO160",
+  "nombre": "NEGRO PASTEL AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO161",
+  "nombre": "NEGRO PASTEL AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO162",
+  "nombre": "NEGRO PASTEL AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO163",
+  "nombre": "NEGRO PASTEL AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO164",
+  "nombre": "NEGRO PASTEL AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO165",
+  "nombre": "NEGRO PASTEL AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO166",
+  "nombre": "NEGRO PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO167",
+  "nombre": "ÁGATA PASTEL BLANCO"
+
+ },
+ {
+  "codigo": "CO168",
+  "nombre": "ÁGATA PASTEL BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO169",
+  "nombre": "ÁGATA PASTEL AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO170",
+  "nombre": "ÁGATA PASTEL AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO171",
+  "nombre": "ÁGATA PASTEL AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO172",
+  "nombre": "ÁGATA PASTEL AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO173",
+  "nombre": "ÁGATA PASTEL AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO174",
+  "nombre": "ÁGATA PASTEL AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO175",
+  "nombre": "ÁGATA PASTEL AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO176",
+  "nombre": "ÁGATA PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO177",
+  "nombre": "CANELA PASTEL BLANCO"
+
+ },
+ {
+  "codigo": "CO178",
+  "nombre": "CANELA PASTEL BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO179",
+  "nombre": "CANELA PASTEL AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO180",
+  "nombre": "CANELA PASTEL AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO181",
+  "nombre": "CANELA PASTEL AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO182",
+  "nombre": "CANELA PASTEL AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO183",
+  "nombre": "CANELA PASTEL AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO184",
+  "nombre": "CANELA PASTEL AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO185",
+  "nombre": "CANELA PASTEL AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO186",
+  "nombre": "CANELA PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO187",
+  "nombre": "ISABEL PASTEL BLANCO"
+
+ },
+ {
+  "codigo": "CO188",
+  "nombre": "ISABEL PASTEL BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO189",
+  "nombre": "ISABEL PASTEL AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO190",
+  "nombre": "ISABEL PASTEL AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO191",
+  "nombre": "ISABEL PASTEL AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO192",
+  "nombre": "ISABEL PASTEL AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO193",
+  "nombre": "ISABEL PASTEL AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO194",
+  "nombre": "ISABEL PASTEL AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO195",
+  "nombre": "ISABEL PASTEL AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO196",
+  "nombre": "ISABEL PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO197",
+  "nombre": "NEGRO PASTEL ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO198",
+  "nombre": "NEGRO PASTEL ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO199",
+  "nombre": "NEGRO PASTEL ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO200",
+  "nombre": "NEGRO PASTEL ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO201",
+  "nombre": "NEGRO PASTEL ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO202",
+  "nombre": "NEGRO PASTEL ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO203",
+  "nombre": "NEGRO PASTEL ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO204",
+  "nombre": "NEGRO PASTEL ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO205",
+  "nombre": "ÁGATA PASTEL ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO206",
+  "nombre": "ÁGATA PASTEL ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO207",
+  "nombre": "ÁGATA PASTEL ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO208",
+  "nombre": "ÁGATA PASTEL ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO209",
+  "nombre": "ÁGATA PASTEL ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO210",
+  "nombre": "ÁGATA PASTEL ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO211",
+  "nombre": "ÁGATA PASTEL ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO212",
+  "nombre": "ÁGATA PASTEL ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO213",
+  "nombre": "CANELA PASTEL ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO214",
+  "nombre": "CANELA PASTEL ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO215",
+  "nombre": "CANELA PASTEL ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO216",
+  "nombre": "CANELA PASTEL ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO217",
+  "nombre": "CANELA PASTEL ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO218",
+  "nombre": "CANELA PASTEL ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO219",
+  "nombre": "CANELA PASTEL ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO220",
+  "nombre": "CANELA PASTEL ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO221",
+  "nombre": "ISABEL PASTEL ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO222",
+  "nombre": "ISABEL PASTEL ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO223",
+  "nombre": "ISABEL PASTEL ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO224",
+  "nombre": "ISABEL PASTEL ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO225",
+  "nombre": "ISABEL PASTEL ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO226",
+  "nombre": "ISABEL PASTEL ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO227",
+  "nombre": "ISABEL PASTEL ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO228",
+  "nombre": "ISABEL PASTEL ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO229",
+  "nombre": "NEGRO OPALO BLANCO"
+
+ },
+ {
+  "codigo": "CO230",
+  "nombre": "NEGRO OPALO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO231",
+  "nombre": "NEGRO OPALO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO232",
+  "nombre": "NEGRO OPALO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO233",
+  "nombre": "NEGRO OPALO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO234",
+  "nombre": "NEGRO OPALO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO235",
+  "nombre": "NEGRO OPALO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO236",
+  "nombre": "NEGRO OPALO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO237",
+  "nombre": "NEGRO OPALO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO238",
+  "nombre": "NEGRO OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO239",
+  "nombre": "ÁGATA OPALO BLANCO"
+
+ },
+ {
+  "codigo": "CO240",
+  "nombre": "ÁGATA OPALO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO241",
+  "nombre": "ÁGATA OPALO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO242",
+  "nombre": "ÁGATA OPALO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO243",
+  "nombre": "ÁGATA OPALO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO244",
+  "nombre": "ÁGATA OPALO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO245",
+  "nombre": "ÁGATA OPALO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO246",
+  "nombre": "ÁGATA OPALO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO247",
+  "nombre": "ÁGATA OPALO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO248",
+  "nombre": "ÁGATA OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO249",
+  "nombre": "CANELA OPALO BLANCO"
+
+ },
+ {
+  "codigo": "CO250",
+  "nombre": "CANELA OPALO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO251",
+  "nombre": "CANELA OPALO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO252",
+  "nombre": "CANELA OPALO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO253",
+  "nombre": "CANELA OPALO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO254",
+  "nombre": "CANELA OPALO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO255",
+  "nombre": "CANELA OPALO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO256",
+  "nombre": "CANELA OPALO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO257",
+  "nombre": "CANELA OPALO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO258",
+  "nombre": "CANELA OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO259",
+  "nombre": "ISABEL OPALO BLANCO"
+
+ },
+ {
+  "codigo": "CO260",
+  "nombre": "ISABEL OPALO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO261",
+  "nombre": "ISABEL OPALO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO262",
+  "nombre": "ISABEL OPALO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO263",
+  "nombre": "ISABEL OPALO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO264",
+  "nombre": "ISABEL OPALO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO265",
+  "nombre": "ISABEL OPALO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO266",
+  "nombre": "ISABEL OPALO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO267",
+  "nombre": "ISABEL OPALO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO268",
+  "nombre": "ISABEL OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO269",
+  "nombre": "NEGRO OPALO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO270",
+  "nombre": "NEGRO OPALO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO271",
+  "nombre": "NEGRO OPALO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO272",
+  "nombre": "NEGRO OPALO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO273",
+  "nombre": "NEGRO OPALO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO274",
+  "nombre": "NEGRO OPALO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO275",
+  "nombre": "NEGRO OPALO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO276",
+  "nombre": "NEGRO OPALO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO277",
+  "nombre": "ÁGATA OPALO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO278",
+  "nombre": "ÁGATA OPALO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO279",
+  "nombre": "ÁGATA OPALO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO280",
+  "nombre": "ÁGATA OPALO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO281",
+  "nombre": "ÁGATA OPALO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO282",
+  "nombre": "ÁGATA OPALO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO283",
+  "nombre": "ÁGATA OPALO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO284",
+  "nombre": "ÁGATA OPALO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO285",
+  "nombre": "CANELA OPALO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO286",
+  "nombre": "CANELA OPALO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO287",
+  "nombre": "CANELA OPALO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO288",
+  "nombre": "CANELA OPALO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO289",
+  "nombre": "CANELA OPALO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO290",
+  "nombre": "CANELA OPALO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO291",
+  "nombre": "CANELA OPALO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO292",
+  "nombre": "CANELA OPALO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO293",
+  "nombre": "ISABEL OPALO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO294",
+  "nombre": "ISABEL OPALO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO295",
+  "nombre": "ISABEL OPALO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO296",
+  "nombre": "ISABEL OPALO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO297",
+  "nombre": "ISABEL OPALO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO298",
+  "nombre": "ISABEL OPALO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO299",
+  "nombre": "ISABEL OPALO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO300",
+  "nombre": "ISABEL OPALO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO301",
+  "nombre": "FEO ALBINO MACHO"
+
+ },
+ {
+  "codigo": "CO302",
+  "nombre": "FEO ALBINO DOMINANTE MACHO"
+
+ },
+ {
+  "codigo": "CO303",
+  "nombre": "FEO LUTINO INTENSO MACHO"
+
+ },
+ {
+  "codigo": "CO304",
+  "nombre": "FEO LUTINO NEVADO MACHO"
+
+ },
+ {
+  "codigo": "CO305",
+  "nombre": "FEO LUTINO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO306",
+  "nombre": "FEO LUTINO MARFIL INTENSO MACHO"
+
+ },
+ {
+  "codigo": "CO307",
+  "nombre": "FEO LUTINO MARFIL NEVADO MACHO"
+
+ },
+ {
+  "codigo": "CO308",
+  "nombre": "FEO LUTINO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO309",
+  "nombre": "FEO ALBINO HEMBRA"
+
+ },
+ {
+  "codigo": "CO310",
+  "nombre": "FEO ALBINO DOMINANTE HEMBRA"
+
+ },
+ {
+  "codigo": "CO311",
+  "nombre": "FEO LUTINO INTENSO HEMBRA"
+
+ },
+ {
+  "codigo": "CO312",
+  "nombre": "FEO LUTINO NEVADO HEMBRA"
+
+ },
+ {
+  "codigo": "CO313",
+  "nombre": "FEO LUTINO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO314",
+  "nombre": "FEO LUTINO MARFIL INTENSO HEMBRA"
+
+ },
+ {
+  "codigo": "CO315",
+  "nombre": "FEO LUTINO MARFIL NEVADO HEMBRA"
+
+ },
+ {
+  "codigo": "CO316",
+  "nombre": "FEO LUTINO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO317",
+  "nombre": "FEO RUBINO INTENSO MACHO"
+
+ },
+ {
+  "codigo": "CO318",
+  "nombre": "FEO RUBINO NEVADO MACHO"
+
+ },
+ {
+  "codigo": "CO319",
+  "nombre": "FEO RUBINO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO320",
+  "nombre": "FEO RUBINO MARFIL INTENSO MACHO"
+
+ },
+ {
+  "codigo": "CO321",
+  "nombre": "FEO RUBINO MARFIL NEVADO MACHO"
+
+ },
+ {
+  "codigo": "CO322",
+  "nombre": "FEO RUBINO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO323",
+  "nombre": "FEO RUBINO INTENSO HEMBRA"
+
+ },
+ {
+  "codigo": "CO324",
+  "nombre": "FEO RUBINO NEVADO HEMBRA"
+
+ },
+ {
+  "codigo": "CO325",
+  "nombre": "FEO RUBINO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO326",
+  "nombre": "FEO RUBINO MARFIL INTENSO HEMBRA"
+
+ },
+ {
+  "codigo": "CO327",
+  "nombre": "FEO RUBINO MARFIL NEVADO HEMBRA"
+
+ },
+ {
+  "codigo": "CO328",
+  "nombre": "FEO RUBINO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO329",
+  "nombre": "SATINÉ BLANCO"
+
+ },
+ {
+  "codigo": "CO330",
+  "nombre": "SATINÉ BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO331",
+  "nombre": "SATINÉ AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO332",
+  "nombre": "SATINÉ AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO333",
+  "nombre": "SATINÉ AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO334",
+  "nombre": "SATINÉ AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO335",
+  "nombre": "SATINÉ AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO336",
+  "nombre": "SATINÉ AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO337",
+  "nombre": "SATINÉ AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO338",
+  "nombre": "SATINÉ AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO339",
+  "nombre": "SATINÉ ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO340",
+  "nombre": "SATINÉ ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO341",
+  "nombre": "SATINÉ ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO342",
+  "nombre": "SATINÉ ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO343",
+  "nombre": "SATINÉ ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO344",
+  "nombre": "SATINÉ ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO345",
+  "nombre": "SATINÉ ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO346",
+  "nombre": "SATINÉ ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO347",
+  "nombre": "ALAS GRISES BLANCO"
+
+ },
+ {
+  "codigo": "CO348",
+  "nombre": "ALAS GRISES BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO349",
+  "nombre": "ALAS GRISES AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO350",
+  "nombre": "ALAS GRISES AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO351",
+  "nombre": "ALAS GRISES AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO352",
+  "nombre": "ALAS GRISES AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO353",
+  "nombre": "ALAS GRISES AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO354",
+  "nombre": "ALAS GRISES AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO355",
+  "nombre": "ALAS GRISES AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO356",
+  "nombre": "ALAS GRISES AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO357",
+  "nombre": "ALAS GRISES ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO358",
+  "nombre": "ALAS GRISES ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO359",
+  "nombre": "ALAS GRISES ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO360",
+  "nombre": "ALAS GRISES ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO361",
+  "nombre": "ALAS GRISES ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO362",
+  "nombre": "ALAS GRISES ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO363",
+  "nombre": "ALAS GRISES ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO364",
+  "nombre": "ALAS GRISES ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO365",
+  "nombre": "NEGRO TOPACIO BLANCO"
+
+ },
+ {
+  "codigo": "CO366",
+  "nombre": "NEGRO TOPACIO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO367",
+  "nombre": "NEGRO TOPACIO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO368",
+  "nombre": "NEGRO TOPACIO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO369",
+  "nombre": "NEGRO TOPACIO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO370",
+  "nombre": "NEGRO TOPACIO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO371",
+  "nombre": "NEGRO TOPACIO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO372",
+  "nombre": "NEGRO TOPACIO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO373",
+  "nombre": "NEGRO TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO374",
+  "nombre": "NEGRO TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO375",
+  "nombre": "ÁGATA TOPACIO BLANCO"
+
+ },
+ {
+  "codigo": "CO376",
+  "nombre": "ÁGATA TOPACIO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO377",
+  "nombre": "ÁGATA TOPACIO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO378",
+  "nombre": "ÁGATA TOPACIO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO379",
+  "nombre": "ÁGATA TOPACIO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO380",
+  "nombre": "ÁGATA TOPACIO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO381",
+  "nombre": "ÁGATA TOPACIO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO382",
+  "nombre": "ÁGATA TOPACIO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO383",
+  "nombre": "ÁGATA TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO384",
+  "nombre": "ÁGATA TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO385",
+  "nombre": "CANELA TOPACIO BLANCO"
+
+ },
+ {
+  "codigo": "CO386",
+  "nombre": "CANELA TOPACIO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO387",
+  "nombre": "CANELA TOPACIO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO388",
+  "nombre": "CANELA TOPACIO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO389",
+  "nombre": "CANELA TOPACIO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO390",
+  "nombre": "CANELA TOPACIO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO391",
+  "nombre": "CANELA TOPACIO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO392",
+  "nombre": "CANELA TOPACIO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO393",
+  "nombre": "CANELA TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO394",
+  "nombre": "CANELA TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO395",
+  "nombre": "ISABEL TOPACIO BLANCO"
+
+ },
+ {
+  "codigo": "CO396",
+  "nombre": "ISABEL TOPACIO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO397",
+  "nombre": "ISABEL TOPACIO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO398",
+  "nombre": "ISABEL TOPACIO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO399",
+  "nombre": "ISABEL TOPACIO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO400",
+  "nombre": "ISABEL TOPACIO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO401",
+  "nombre": "ISABEL TOPACIO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO402",
+  "nombre": "ISABEL TOPACIO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO403",
+  "nombre": "ISABEL TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO404",
+  "nombre": "ISABEL TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO405",
+  "nombre": "NEGRO TOPACIO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO406",
+  "nombre": "NEGRO TOPACIO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO407",
+  "nombre": "NEGRO TOPACIO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO408",
+  "nombre": "NEGRO TOPACIO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO409",
+  "nombre": "NEGRO TOPACIO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO410",
+  "nombre": "NEGRO TOPACIO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO411",
+  "nombre": "NEGRO TOPACIO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO412",
+  "nombre": "NEGRO TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO413",
+  "nombre": "ÁGATA TOPACIO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO414",
+  "nombre": "ÁGATA TOPACIO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO415",
+  "nombre": "ÁGATA TOPACIO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO416",
+  "nombre": "ÁGATA TOPACIO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO417",
+  "nombre": "ÁGATA TOPACIO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO418",
+  "nombre": "ÁGATA TOPACIO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO419",
+  "nombre": "ÁGATA TOPACIO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO420",
+  "nombre": "ÁGATA TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO421",
+  "nombre": "CANELA TOPACIO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO422",
+  "nombre": "CANELA TOPACIO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO423",
+  "nombre": "CANELA TOPACIO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO424",
+  "nombre": "CANELA TOPACIO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO425",
+  "nombre": "CANELA TOPACIO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO426",
+  "nombre": "CANELA TOPACIO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO427",
+  "nombre": "CANELA TOPACIO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO428",
+  "nombre": "CANELA TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO429",
+  "nombre": "ISABEL TOPACIO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO430",
+  "nombre": "ISABEL TOPACIO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO431",
+  "nombre": "ISABEL TOPACIO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO432",
+  "nombre": "ISABEL TOPACIO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO433",
+  "nombre": "ISABEL TOPACIO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO434",
+  "nombre": "ISABEL TOPACIO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO435",
+  "nombre": "ISABEL TOPACIO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO436",
+  "nombre": "ISABEL TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO437",
+  "nombre": "NEGRO EUMO BLANCO"
+
+ },
+ {
+  "codigo": "CO438",
+  "nombre": "NEGRO EUMO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO439",
+  "nombre": "NEGRO EUMO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO440",
+  "nombre": "NEGRO EUMO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO441",
+  "nombre": "NEGRO EUMO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO442",
+  "nombre": "NEGRO EUMO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO443",
+  "nombre": "NEGRO EUMO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO444",
+  "nombre": "NEGRO EUMO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO445",
+  "nombre": "NEGRO EUMO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO446",
+  "nombre": "NEGRO EUMO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO447",
+  "nombre": "ÁGATA EUMO BLANCO"
+
+ },
+ {
+  "codigo": "CO448",
+  "nombre": "ÁGATA EUMO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO449",
+  "nombre": "ÁGATA EUMO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO450",
+  "nombre": "ÁGATA EUMO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO451",
+  "nombre": "ÁGATA EUMO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO452",
+  "nombre": "ÁGATA EUMO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO453",
+  "nombre": "ÁGATA EUMO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO454",
+  "nombre": "ÁGATA EUMO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO455",
+  "nombre": "ÁGATA EUMO AMA. MARFIL MOS. MACHO"
+
+ },
+ {
+  "codigo": "CO456",
+  "nombre": "ÁGATA EUMO AMA. MARFIL MOS. HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO457",
+  "nombre": "CANELA EUMO BLANCO"
+
+ },
+ {
+  "codigo": "CO458",
+  "nombre": "CANELA EUMO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO459",
+  "nombre": "CANELA EUMO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO460",
+  "nombre": "CANELA EUMO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO461",
+  "nombre": "CANELA EUMO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO462",
+  "nombre": "CANELA EUMO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO463",
+  "nombre": "CANELA EUMO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO464",
+  "nombre": "CANELA EUMO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO465",
+  "nombre": "CANELA EUMO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO466",
+  "nombre": "CANELA EUMO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO467",
+  "nombre": "NEGRO EUMO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO468",
+  "nombre": "NEGRO EUMO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO469",
+  "nombre": "NEGRO EUMO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO470",
+  "nombre": "NEGRO EUMO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO471",
+  "nombre": "NEGRO EUMO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO472",
+  "nombre": "NEGRO EUMO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO473",
+  "nombre": "NEGRO EUMO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO474",
+  "nombre": "NEGRO EUMO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO475",
+  "nombre": "ÁGATA EUMO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO476",
+  "nombre": "ÁGATA EUMO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO477",
+  "nombre": "ÁGATA EUMO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO478",
+  "nombre": "ÁGATA EUMO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO479",
+  "nombre": "ÁGATA EUMO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO480",
+  "nombre": "ÁGATA EUMO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO481",
+  "nombre": "ÁGATA EUMO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO482",
+  "nombre": "ÁGATA EUMO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO483",
+  "nombre": "CANELA EUMO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO484",
+  "nombre": "CANELA EUMO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO485",
+  "nombre": "CANELA EUMO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO486",
+  "nombre": "CANELA EUMO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO487",
+  "nombre": "CANELA EUMO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO488",
+  "nombre": "CANELA EUMO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO489",
+  "nombre": "CANELA EUMO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO490",
+  "nombre": "CANELA EUMO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO491",
+  "nombre": "NEGRO ONIX BLANCO"
+
+ },
+ {
+  "codigo": "CO492",
+  "nombre": "NEGRO ONIX BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO493",
+  "nombre": "NEGRO ONIX AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO494",
+  "nombre": "NEGRO ONIX AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO495",
+  "nombre": "NEGRO ONIX AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO496",
+  "nombre": "NEGRO ONIX AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO497",
+  "nombre": "NEGRO ONIX AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO498",
+  "nombre": "NEGRO ONIX AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO499",
+  "nombre": "NEGRO ONIX AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO500",
+  "nombre": "NEGRO ONIX AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO501",
+  "nombre": "ÁGATA ONIX BLANCO"
+
+ },
+ {
+  "codigo": "CO502",
+  "nombre": "ÁGATA ONIX BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO503",
+  "nombre": "ÁGATA ONIX AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO504",
+  "nombre": "ÁGATA ONIX AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO505",
+  "nombre": "ÁGATA ONIX AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO506",
+  "nombre": "ÁGATA ONIX AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO507",
+  "nombre": "ÁGATA ONIX AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO508",
+  "nombre": "ÁGATA ONIX AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO509",
+  "nombre": "ÁGATA ONIX AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO510",
+  "nombre": "ÁGATA ONIX AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO511",
+  "nombre": "CANELA ONIX BLANCO"
+
+ },
+ {
+  "codigo": "CO512",
+  "nombre": "CANELA ONIX BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO513",
+  "nombre": "CANELA ONIX AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO514",
+  "nombre": "CANELA ONIX AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO515",
+  "nombre": "CANELA ONIX AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO516",
+  "nombre": "CANELA ONIX AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO517",
+  "nombre": "CANELA ONIX AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO518",
+  "nombre": "CANELA ONIX AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO519",
+  "nombre": "CANELA ONIX AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO520",
+  "nombre": "CANELA ONIX AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO521",
+  "nombre": "NEGRO ONIX ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO522",
+  "nombre": "NEGRO ONIX ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO523",
+  "nombre": "NEGRO ONIX ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO524",
+  "nombre": "NEGRO ONIX ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO525",
+  "nombre": "NEGRO ONIX ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO526",
+  "nombre": "NEGRO ONIX ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO527",
+  "nombre": "NEGRO ONIX ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO528",
+  "nombre": "NEGRO ONIX ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO529",
+  "nombre": "ÁGATA ONIX ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO530",
+  "nombre": "ÁGATA ONIX ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO531",
+  "nombre": "ÁGATA ONIX ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO532",
+  "nombre": "ÁGATA ONIX ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO533",
+  "nombre": "ÁGATA ONIX ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO534",
+  "nombre": "ÁGATA ONIX ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO535",
+  "nombre": "ÁGATA ONIX ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO536",
+  "nombre": "ÁGATA ONIX ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO537",
+  "nombre": "CANELA ONIX ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO538",
+  "nombre": "CANELA ONIX ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO539",
+  "nombre": "CANELA ONIX ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO540",
+  "nombre": "CANELA ONIX ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO541",
+  "nombre": "CANELA ONIX ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO542",
+  "nombre": "CANELA ONIX ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO543",
+  "nombre": "CANELA ONIX ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO544",
+  "nombre": "CANELA ONIX ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO545",
+  "nombre": "NEGRO COBALTO BLANCO"
+
+ },
+ {
+  "codigo": "CO546",
+  "nombre": "NEGRO COBALTO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO547",
+  "nombre": "NEGRO COBALTO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO548",
+  "nombre": "NEGRO COBALTO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO549",
+  "nombre": "NEGRO COBALTO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO550",
+  "nombre": "NEGRO COBALTO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO551",
+  "nombre": "NEGRO COBALTO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO552",
+  "nombre": "NEGRO COBALTO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO553",
+  "nombre": "NEGRO COBALTO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO554",
+  "nombre": "NEGRO COBALTO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO555",
+  "nombre": "ÁGATA COBALTO BLANCO"
+
+ },
+ {
+  "codigo": "CO556",
+  "nombre": "ÁGATA COBALTO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO557",
+  "nombre": "ÁGATA COBALTO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO558",
+  "nombre": "ÁGATA COBALTO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO559",
+  "nombre": "ÁGATA COBALTO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO560",
+  "nombre": "ÁGATA COBALTO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO561",
+  "nombre": "ÁGATA COBALTO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO562",
+  "nombre": "ÁGATA COBALTO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO563",
+  "nombre": "ÁGATA COBALTO AMA. MARFIL MOS. MACHO"
+
+ },
+ {
+  "codigo": "CO564",
+  "nombre": "ÁGATA COBALTO AMA. MARFIL MOS. HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO565",
+  "nombre": "CANELA COBALTO BLANCO"
+
+ },
+ {
+  "codigo": "CO566",
+  "nombre": "CANELA COBALTO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO567",
+  "nombre": "CANELA COBALTO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO568",
+  "nombre": "CANELA COBALTO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO569",
+  "nombre": "CANELA COBALTO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO570",
+  "nombre": "CANELA COBALTO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO571",
+  "nombre": "CANELA COBALTO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO572",
+  "nombre": "CANELA COBALTO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO573",
+  "nombre": "CANELA COBALTO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO574",
+  "nombre": "CANELA COBALTO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO575",
+  "nombre": "ISABEL COBALTO BLANCO"
+
+ },
+ {
+  "codigo": "CO576",
+  "nombre": "ISABEL COBALTO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO577",
+  "nombre": "ISABEL COBALTO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO578",
+  "nombre": "ISABEL COBALTO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO579",
+  "nombre": "ISABEL COBALTO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO580",
+  "nombre": "ISABEL COBALTO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO581",
+  "nombre": "ISABEL COBALTO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO582",
+  "nombre": "ISABEL COBALTO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO583",
+  "nombre": "ISABEL COBALTO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO584",
+  "nombre": "ISABEL COBALTO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO585",
+  "nombre": "NEGRO COBALTO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO586",
+  "nombre": "NEGRO COBALTO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO587",
+  "nombre": "NEGRO COBALTO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO588",
+  "nombre": "NEGRO COBALTO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO589",
+  "nombre": "NEGRO COBALTO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO590",
+  "nombre": "NEGRO COBALTO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO591",
+  "nombre": "NEGRO COBALTO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO592",
+  "nombre": "NEGRO COBALTO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO593",
+  "nombre": "ÁGATA COBALTO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO594",
+  "nombre": "ÁGATA COBALTO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO595",
+  "nombre": "ÁGATA COBALTO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO596",
+  "nombre": "ÁGATA COBALTO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO597",
+  "nombre": "ÁGATA COBALTO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO598",
+  "nombre": "ÁGATA COBALTO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO599",
+  "nombre": "ÁGATA COBALTO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO600",
+  "nombre": "ÁGATA COBALTO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO601",
+  "nombre": "CANELA COBALTO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO602",
+  "nombre": "CANELA COBALTO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO603",
+  "nombre": "CANELA COBALTO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO604",
+  "nombre": "CANELA COBALTO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO605",
+  "nombre": "CANELA COBALTO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO606",
+  "nombre": "CANELA COBALTO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO607",
+  "nombre": "CANELA COBALTO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO608",
+  "nombre": "CANELA COBALTO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO609",
+  "nombre": "ISABEL COBALTO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO610",
+  "nombre": "ISABEL COBALTO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO611",
+  "nombre": "ISABEL COBALTO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO612",
+  "nombre": "ISABEL COBALTO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO613",
+  "nombre": "ISABEL COBALTO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO614",
+  "nombre": "ISABEL COBALTO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO615",
+  "nombre": "ISABEL COBALTO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO616",
+  "nombre": "ISABEL COBALTO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO617",
+  "nombre": "NEGRO JASPE SD BLANCO"
+
+ },
+ {
+  "codigo": "CO618",
+  "nombre": "NEGRO JASPE SD BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO619",
+  "nombre": "NEGRO JASPE SD AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO620",
+  "nombre": "NEGRO JASPE SD AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO621",
+  "nombre": "NEGRO JASPE SD AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO622",
+  "nombre": "NEGRO JASPE SD AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO623",
+  "nombre": "NEGRO JASPE SD AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO624",
+  "nombre": "NEGRO JASPE SD AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO625",
+  "nombre": "NEGRO JASPE SD AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO626",
+  "nombre": "NEGRO JASPE SD AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO627",
+  "nombre": "ÁGATA JASPE SD BLANCO"
+
+ },
+ {
+  "codigo": "CO628",
+  "nombre": "ÁGATA JASPE SD BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO629",
+  "nombre": "ÁGATA JASPE SD AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO630",
+  "nombre": "ÁGATA JASPE SD AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO631",
+  "nombre": "ÁGATA JASPE SD AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO632",
+  "nombre": "ÁGATA JASPE SD AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO633",
+  "nombre": "ÁGATA JASPE SD AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO634",
+  "nombre": "ÁGATA JASPE SD AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO635",
+  "nombre": "ÁGATA JASPE SD AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO636",
+  "nombre": "ÁGATA JASPE SD AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO637",
+  "nombre": "CANELA JASPE SD BLANCO"
+
+ },
+ {
+  "codigo": "CO638",
+  "nombre": "CANELA JASPE SD BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO639",
+  "nombre": "CANELA JASPE SD AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO640",
+  "nombre": "CANELA JASPE SD AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO641",
+  "nombre": "CANELA JASPE SD AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO642",
+  "nombre": "CANELA JASPE SD AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO643",
+  "nombre": "CANELA JASPE SD AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO644",
+  "nombre": "CANELA JASPE SD AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO645",
+  "nombre": "CANELA JASPE SD AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO646",
+  "nombre": "CANELA JASPE SD AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO647",
+  "nombre": "ISABEL JASPE SD BLANCO"
+
+ },
+ {
+  "codigo": "CO648",
+  "nombre": "ISABEL JASPE SD BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO649",
+  "nombre": "ISABEL JASPE SD AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO650",
+  "nombre": "ISABEL JASPE SD AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO651",
+  "nombre": "ISABEL JASPE SD AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO652",
+  "nombre": "ISABEL JASPE SD AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO653",
+  "nombre": "ISABEL JASPE SD AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO654",
+  "nombre": "ISABEL JASPE SD AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO655",
+  "nombre": "ISABEL JASPE SD AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO656",
+  "nombre": "ISABEL JASPE SD AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO657",
+  "nombre": "NEGRO JASPE SD ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO658",
+  "nombre": "NEGRO JASPE SD ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO659",
+  "nombre": "NEGRO JASPE SD ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO660",
+  "nombre": "NEGRO JASPE SD ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO661",
+  "nombre": "NEGRO JASPE SD ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO662",
+  "nombre": "NEGRO JASPE SD ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO663",
+  "nombre": "NEGRO JASPE SD ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO664",
+  "nombre": "NEGRO JASPE SD ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO665",
+  "nombre": "ÁGATA JASPE SD ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO666",
+  "nombre": "ÁGATA JASPE SD ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO667",
+  "nombre": "ÁGATA JASPE SD ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO668",
+  "nombre": "ÁGATA JASPE SD ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO669",
+  "nombre": "ÁGATA JASPE SD ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO670",
+  "nombre": "ÁGATA JASPE SD ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO671",
+  "nombre": "ÁGATA JASPE SD ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO672",
+  "nombre": "ÁGATA JASPE SD ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO673",
+  "nombre": "CANELA JASPE SD ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO674",
+  "nombre": "CANELA JASPE SD ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO675",
+  "nombre": "CANELA JASPE SD ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO676",
+  "nombre": "CANELA JASPE SD ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO677",
+  "nombre": "CANELA JASPE SD ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO678",
+  "nombre": "CANELA JASPE SD ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO679",
+  "nombre": "CANELA JASPE SD ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO680",
+  "nombre": "CANELA JASPE SD ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO681",
+  "nombre": "ISABEL JASPE SD ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO682",
+  "nombre": "ISABEL JASPE SD ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO683",
+  "nombre": "ISABEL JASPE SD ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO684",
+  "nombre": "ISABEL JASPE SD ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO685",
+  "nombre": "ISABEL JASPE SD ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO686",
+  "nombre": "ISABEL JASPE SD ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO687",
+  "nombre": "ISABEL JASPE SD ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO688",
+  "nombre": "ISABEL JASPE SD ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO689",
+  "nombre": "NEGRO MOGNO BLANCO"
+
+ },
+ {
+  "codigo": "CO690",
+  "nombre": "NEGRO MOGNO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO691",
+  "nombre": "NEGRO MOGNO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO692",
+  "nombre": "NEGRO MOGNO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO693",
+  "nombre": "NEGRO MOGNO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO694",
+  "nombre": "NEGRO MOGNO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO695",
+  "nombre": "NEGRO MOGNO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO696",
+  "nombre": "NEGRO MOGNO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO697",
+  "nombre": "NEGRO MOGNO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO698",
+  "nombre": "NEGRO MOGNO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO699",
+  "nombre": "ÁGATA MOGNO BLANCO"
+
+ },
+ {
+  "codigo": "CO700",
+  "nombre": "ÁGATA MOGNO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO701",
+  "nombre": "ÁGATA MOGNO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO702",
+  "nombre": "ÁGATA MOGNO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO703",
+  "nombre": "ÁGATA MOGNO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO704",
+  "nombre": "ÁGATA MOGNO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO705",
+  "nombre": "ÁGATA MOGNO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO706",
+  "nombre": "ÁGATA MOGNO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO707",
+  "nombre": "ÁGATA MOGNO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO708",
+  "nombre": "ÁGATA MOGNO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO709",
+  "nombre": "CANELA MOGNO BLANCO"
+
+ },
+ {
+  "codigo": "CO710",
+  "nombre": "CANELA MOGNO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO711",
+  "nombre": "CANELA MOGNO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO712",
+  "nombre": "CANELA MOGNO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO713",
+  "nombre": "CANELA MOGNO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO714",
+  "nombre": "CANELA MOGNO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO715",
+  "nombre": "CANELA MOGNO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO716",
+  "nombre": "CANELA MOGNO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO717",
+  "nombre": "CANELA MOGNO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO718",
+  "nombre": "CANELA MOGNO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO719",
+  "nombre": "NEGRO MOGNO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO720",
+  "nombre": "NEGRO MOGNO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO721",
+  "nombre": "NEGRO MOGNO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO722",
+  "nombre": "NEGRO MOGNO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO723",
+  "nombre": "NEGRO MOGNO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO724",
+  "nombre": "NEGRO MOGNO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO725",
+  "nombre": "NEGRO MOGNO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO726",
+  "nombre": "NEGRO MOGNO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO727",
+  "nombre": "ÁGATA MOGNO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO728",
+  "nombre": "ÁGATA MOGNO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO729",
+  "nombre": "ÁGATA MOGNO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO730",
+  "nombre": "ÁGATA MOGNO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO731",
+  "nombre": "ÁGATA MOGNO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO732",
+  "nombre": "ÁGATA MOGNO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO733",
+  "nombre": "ÁGATA MOGNO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO734",
+  "nombre": "ÁGATA MOGNO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO735",
+  "nombre": "CANELA MOGNO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO736",
+  "nombre": "CANELA MOGNO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO737",
+  "nombre": "CANELA MOGNO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO738",
+  "nombre": "CANELA MOGNO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO739",
+  "nombre": "CANELA MOGNO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO740",
+  "nombre": "CANELA MOGNO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO741",
+  "nombre": "CANELA MOGNO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO742",
+  "nombre": "CANELA MOGNO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO743",
+  "nombre": "AMARILLO MOSAICO MACHO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO744",
+  "nombre": "AMARILLO MOSAICO HEMBRA PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO745",
+  "nombre": "AMARILLO MARFIL INTENSO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO746",
+  "nombre": "AMARILLO MARFIL NEVADO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO747",
+  "nombre": "AMARILLO MARFIL MOSAICO MACHO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO748",
+  "nombre": "AMARILLO MARFIL MOSAICO HEMBRA PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO749",
+  "nombre": "LUTINO MOSAICO MACHO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO750",
+  "nombre": "LUTINO MOSAICO HEMBRA PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO751",
+  "nombre": "LUTINO MARFIL INTENSO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO752",
+  "nombre": "LUTINO MARFIL NEVADO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO753",
+  "nombre": "LUTINO MARFIL MOSAICO MACHO PICO AMARILLO"
+
+ },
+ {
+  "codigo": "CO754",
+  "nombre": "LUTINO MARFIL MOSAICO HEMBRA PICO AMARILLO"
+
+ },
+
+ {
+  "codigo": "CO755",
+  "nombre": "ÚRUCUM MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO756",
+  "nombre": "ÚRUCUM MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO757",
+  "nombre": "ÚRUCUM MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO758",
+  "nombre": "ÚRUCUM MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO759",
+  "nombre": "ÚRUCUM MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO760",
+  "nombre": "ÚRUCUM MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO761",
+  "nombre": "ÚRUCUM RUBINO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO762",
+  "nombre": "ÚRUCUM RUBINO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO763",
+  "nombre": "ÚRUCUM RUBINO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO764",
+  "nombre": "ÚRUCUM RUBINO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO765",
+  "nombre": "ÚRUCUM RUBINO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO766",
+  "nombre": "ÚRUCUM RUBINO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO767",
+  "nombre": "SATINÉ MAX BLANCO"
+
+ },
+ {
+  "codigo": "CO768",
+  "nombre": "SATINÉ MAX BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO769",
+  "nombre": "SATINÉ MAX AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO770",
+  "nombre": "SATINÉ MAX AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO771",
+  "nombre": "SATINÉ MAX AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO772",
+  "nombre": "SATINÉ MAX AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO773",
+  "nombre": "SATINÉ MAX AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO774",
+  "nombre": "SATINÉ MAX AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO775",
+  "nombre": "SATINÉ MAX AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO776",
+  "nombre": "SATINÉ MAX AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO777",
+  "nombre": "SATINÉ MAX ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO778",
+  "nombre": "SATINÉ MAX ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO779",
+  "nombre": "SATINÉ MAX ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO780",
+  "nombre": "SATINÉ MAX ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO781",
+  "nombre": "SATINÉ MAX ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO782",
+  "nombre": "SATINÉ MAX ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO783",
+  "nombre": "SATINÉ MAX ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO784",
+  "nombre": "SATINÉ MAX ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO785",
+  "nombre": "ISABEL ONIX BLANCO"
+
+ },
+ {
+  "codigo": "CO786",
+  "nombre": "ISABEL ONIX BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO787",
+  "nombre": "ISABEL ONIX AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO788",
+  "nombre": "ISABEL ONIX AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO789",
+  "nombre": "ISABEL ONIX AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO790",
+  "nombre": "ISABEL ONIX AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO791",
+  "nombre": "ISABEL ONIX AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO792",
+  "nombre": "ISABEL ONIX AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO793",
+  "nombre": "ISABEL ONIX AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO794",
+  "nombre": "ISABEL ONIX AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO795",
+  "nombre": "ISABEL ONIX ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO796",
+  "nombre": "ISABEL ONIX ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO797",
+  "nombre": "ISABEL ONIX ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO798",
+  "nombre": "ISABEL ONIX ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO799",
+  "nombre": "ISABEL ONIX ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO800",
+  "nombre": "ISABEL ONIX ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO801",
+  "nombre": "ISABEL ONIX ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO802",
+  "nombre": "ISABEL ONIX ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO803",
+  "nombre": "ISABEL MOGNO BLANCO"
+
+ },
+ {
+  "codigo": "CO804",
+  "nombre": "ISABEL MOGNO BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO805",
+  "nombre": "ISABEL MOGNO AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO806",
+  "nombre": "ISABEL MOGNO AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO807",
+  "nombre": "ISABEL MOGNO AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO808",
+  "nombre": "ISABEL MOGNO AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO809",
+  "nombre": "ISABEL MOGNO AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO810",
+  "nombre": "ISABEL MOGNO AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO811",
+  "nombre": "ISABEL MOGNO AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO812",
+  "nombre": "ISABEL MOGNO AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO813",
+  "nombre": "ISABEL MOGNO ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO814",
+  "nombre": "ISABEL MOGNO ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO815",
+  "nombre": "ISABEL MOGNO ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO816",
+  "nombre": "ISABEL MOGNO ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO817",
+  "nombre": "ISABEL MOGNO ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO818",
+  "nombre": "ISABEL MOGNO ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO819",
+  "nombre": "ISABEL MOGNO ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO820",
+  "nombre": "ISABEL MOGNO ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO821",
+  "nombre": "NEGRO MATE BLANCO"
+
+ },
+ {
+  "codigo": "CO822",
+  "nombre": "NEGRO MATE BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO823",
+  "nombre": "NEGRO MATE AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO824",
+  "nombre": "NEGRO MATE AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO825",
+  "nombre": "NEGRO MATE AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO826",
+  "nombre": "NEGRO MATE AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO827",
+  "nombre": "NEGRO MATE AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO828",
+  "nombre": "NEGRO MATE AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO829",
+  "nombre": "NEGRO MATE AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO830",
+  "nombre": "NEGRO MATE AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO831",
+  "nombre": "NEGRO MATE ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO832",
+  "nombre": "NEGRO MATE ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO833",
+  "nombre": "NEGRO MATE ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO834",
+  "nombre": "NEGRO MATE ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO835",
+  "nombre": "NEGRO MATE ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO836",
+  "nombre": "NEGRO MATE ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO837",
+  "nombre": "NEGRO MATE ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO838",
+  "nombre": "NEGRO MATE ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO839",
+  "nombre": "CANELA MATE BLANCO"
+
+ },
+ {
+  "codigo": "CO840",
+  "nombre": "CANELA MATE BLANCO DOMINANTE"
+
+ },
+ {
+  "codigo": "CO841",
+  "nombre": "CANELA MATE AMARILLO INTENSO"
+
+ },
+ {
+  "codigo": "CO842",
+  "nombre": "CANELA MATE AMARILLO NEVADO"
+
+ },
+ {
+  "codigo": "CO843",
+  "nombre": "CANELA MATE AMARILLO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO844",
+  "nombre": "CANELA MATE AMARILLO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO845",
+  "nombre": "CANELA MATE AMARILLO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO846",
+  "nombre": "CANELA MATE AMARILLO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO847",
+  "nombre": "CANELA MATE AMARILLO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO848",
+  "nombre": "CANELA MATE AMARILLO MARFIL MOSAICO HEMBRA"
+
+ },
+
+ {
+  "codigo": "CO849",
+  "nombre": "CANELA MATE ROJO INTENSO"
+
+ },
+ {
+  "codigo": "CO850",
+  "nombre": "CANELA MATE ROJO NEVADO"
+
+ },
+ {
+  "codigo": "CO851",
+  "nombre": "CANELA MATE ROJO MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO852",
+  "nombre": "CANELA MATE ROJO MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CO853",
+  "nombre": "CANELA MATE ROJO MARFIL INTENSO"
+
+ },
+ {
+  "codigo": "CO854",
+  "nombre": "CANELA MATE ROJO MARFIL NEVADO"
+
+ },
+ {
+  "codigo": "CO855",
+  "nombre": "CANELA MATE ROJO MARFIL MOSAICO MACHO"
+
+ },
+ {
+  "codigo": "CO856",
+  "nombre": "CANELA MATE ROJO MARFIL MOSAICO HEMBRA"
+
+ },
+ {
+  "codigo": "CP1",
+  "nombre": "RIZ PAR FDO BL LIP"
+ },
+ {
+  "codigo": "CP2",
+  "nombre": "RIZ PAR FDO BL MEL"
+ },
+ {
+  "codigo": "CP3",
+  "nombre": "RIZ PAR FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP4",
+  "nombre": "RIZ PAR FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP5",
+  "nombre": "RIZ PAR FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP6",
+  "nombre": "RIZ PAR FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP7",
+  "nombre": "RIZ PAR FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP8",
+  "nombre": "RIZ PAR FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP9",
+  "nombre": "RIZ PAR FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP10",
+  "nombre": "RIZ PAR FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP11",
+  "nombre": "RIZ PAR FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP12",
+  "nombre": "RIZ PAR FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP13",
+  "nombre": "RIZ PAR FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP14",
+  "nombre": "RIZ PAR FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP15",
+  "nombre": "RIZ PAR FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP16",
+  "nombre": "RIZ PAR FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP17",
+  "nombre": "RIZ PAR FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP18",
+  "nombre": "RIZ PAR FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP19",
+  "nombre": "RIZ PAR FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP20",
+  "nombre": "RIZ PAR FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP21",
+  "nombre": "RIZ PAR FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP22",
+  "nombre": "RIZ PAR FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP23",
+  "nombre": "RIZ PAR FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP24",
+  "nombre": "RIZ PAR FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP25",
+  "nombre": "RIZ PAR FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP26",
+  "nombre": "RIZ PAR FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP27",
+  "nombre": "RIZ PAR FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP28",
+  "nombre": "RIZ PAR FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP29",
+  "nombre": "RIZ PAR FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP30",
+  "nombre": "RIZ PAR FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP31",
+  "nombre": "RIZ PAR FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP32",
+  "nombre": "RIZ PAR FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP33",
+  "nombre": "RIZ PAR FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP34",
+  "nombre": "RIZ PAR FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP35",
+  "nombre": "RIZ PAR FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP36",
+  "nombre": "AGI FDO BL LIP"
+ },
+ {
+  "codigo": "CP37",
+  "nombre": "AGI FDO BL MEL"
+ },
+ {
+  "codigo": "CP38",
+  "nombre": "AGI FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP39",
+  "nombre": "AGI FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP40",
+  "nombre": "AGI FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP41",
+  "nombre": "AGI FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP42",
+  "nombre": "AGI FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP43",
+  "nombre": "AGI FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP44",
+  "nombre": "AGI FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP45",
+  "nombre": "AGI FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP46",
+  "nombre": "AGI FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP47",
+  "nombre": "AGI FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP48",
+  "nombre": "AGI FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP49",
+  "nombre": "AGI FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP50",
+  "nombre": "AGI FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP51",
+  "nombre": "AGI FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP52",
+  "nombre": "AGI FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP53",
+  "nombre": "AGI FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP54",
+  "nombre": "AGI FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP55",
+  "nombre": "AGI FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP56",
+  "nombre": "AGI FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP57",
+  "nombre": "AGI FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP58",
+  "nombre": "AGI FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP59",
+  "nombre": "AGI FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP60",
+  "nombre": "AGI FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP61",
+  "nombre": "AGI FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP62",
+  "nombre": "AGI FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP63",
+  "nombre": "AGI FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP64",
+  "nombre": "AGI FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP65",
+  "nombre": "AGI FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP66",
+  "nombre": "AGI FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP67",
+  "nombre": "AGI FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP68",
+  "nombre": "AGI FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP69",
+  "nombre": "AGI FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP70",
+  "nombre": "AGI FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP71",
+  "nombre": "PAD SIN COPETE FDO BL LIP"
+ },
+ {
+  "codigo": "CP72",
+  "nombre": "PAD SIN COPETE FDO BL MEL"
+ },
+ {
+  "codigo": "CP73",
+  "nombre": "PAD SIN COPETE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP74",
+  "nombre": "PAD SIN COPETE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP75",
+  "nombre": "PAD SIN COPETE FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP76",
+  "nombre": "PAD SIN COPETE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP77",
+  "nombre": "PAD SIN COPETE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP78",
+  "nombre": "PAD SIN COPETE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP79",
+  "nombre": "PAD SIN COPETE FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP80",
+  "nombre": "PAD SIN COPETE FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP81",
+  "nombre": "PAD SIN COPETE FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP82",
+  "nombre": "PAD SIN COPETE FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP83",
+  "nombre": "PAD SIN COPETE FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP84",
+  "nombre": "PAD SIN COPETE FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP85",
+  "nombre": "PAD SIN COPETE FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP86",
+  "nombre": "PAD SIN COPETE FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP87",
+  "nombre": "PAD SIN COPETE FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP88",
+  "nombre": "PAD SIN COPETE FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP89",
+  "nombre": "PAD SIN COPETE FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP90",
+  "nombre": "PAD SIN COPETE FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP91",
+  "nombre": "PAD SIN COPETE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP92",
+  "nombre": "PAD SIN COPETE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP93",
+  "nombre": "PAD SIN COPETE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP94",
+  "nombre": "PAD SIN COPETE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP95",
+  "nombre": "PAD SIN COPETE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP96",
+  "nombre": "PAD SIN COPETE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP97",
+  "nombre": "PAD SIN COPETE FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP98",
+  "nombre": "PAD SIN COPETE FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP99",
+  "nombre": "PAD SIN COPETE FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP100",
+  "nombre": "PAD SIN COPETE FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP101",
+  "nombre": "PAD SIN COPETE FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP102",
+  "nombre": "PAD SIN COPETE FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP103",
+  "nombre": "PAD SIN COPETE FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP104",
+  "nombre": "PAD SIN COPETE FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP105",
+  "nombre": "PAD SIN COPETE FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP106",
+  "nombre": "PAD CON COPETE FDO BL LIP"
+ },
+ {
+  "codigo": "CP107",
+  "nombre": "PAD CON COPETE FDO BL MEL"
+ },
+ {
+  "codigo": "CP108",
+  "nombre": "PAD CON COPETE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP109",
+  "nombre": "PAD CON COPETE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP110",
+  "nombre": "PAD CON COPETE FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP111",
+  "nombre": "PAD CON COPETE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP112",
+  "nombre": "PAD CON COPETE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP113",
+  "nombre": "PAD CON COPETE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP114",
+  "nombre": "PAD CON COPETE FDO AM NE LIP"
+ },
+ {
+  "codigo": "CP115",
+  "nombre": "PAD CON COPETE FDO AM NE MEL"
+ },
+ {
+  "codigo": "CP116",
+  "nombre": "PAD CON COPETE FDO AM NE OVE LIP"
+ },
+ {
+  "codigo": "CP117",
+  "nombre": "PAD CON COPETE FDO AM NE OVE MEL"
+ },
+ {
+  "codigo": "CP118",
+  "nombre": "PAD CON COPETE FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP119",
+  "nombre": "PAD CON COPETE FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP120",
+  "nombre": "PAD CON COPETE FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP121",
+  "nombre": "PAD CON COPETE FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP122",
+  "nombre": "PAD CON COPETE FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP123",
+  "nombre": "PAD CON COPETE FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP124",
+  "nombre": "PAD CON COPETE FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP125",
+  "nombre": "PAD CON COPETE FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP126",
+  "nombre": "PAD CON COPETE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP127",
+  "nombre": "PAD CON COPETE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP128",
+  "nombre": "PAD CON COPETE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP129",
+  "nombre": "PAD CON COPETE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP130",
+  "nombre": "PAD CON COPETE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP131",
+  "nombre": "PAD CON COPETE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP132",
+  "nombre": "PAD CON COPETE FDO CAN AM NE MEL"
+ },
+ {
+  "codigo": "CP133",
+  "nombre": "PAD CON COPETE FDO CAN AM NE OVE LIP"
+ },
+ {
+  "codigo": "CP134",
+  "nombre": "PAD CON COPETE FDO CAN AM NE OVE MEL"
+ },
+ {
+  "codigo": "CP135",
+  "nombre": "PAD CON COPETE FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP136",
+  "nombre": "PAD CON COPETE FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP137",
+  "nombre": "PAD CON COPETE FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP138",
+  "nombre": "PAD CON COPETE FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP139",
+  "nombre": "PAD CON COPETE FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP140",
+  "nombre": "PAD CON COPETE FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP141",
+  "nombre": "MEL TENER FDO BL LIP"
+ },
+ {
+  "codigo": "CP142",
+  "nombre": "MEL TENER FDO BL MEL"
+ },
+ {
+  "codigo": "CP143",
+  "nombre": "MEL TENER FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP144",
+  "nombre": "MEL TENER FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP145",
+  "nombre": "MEL TENER FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP146",
+  "nombre": "MEL TENER FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP147",
+  "nombre": "MEL TENER FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP148",
+  "nombre": "MEL TENER FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP149",
+  "nombre": "MEL TENER FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP150",
+  "nombre": "MEL TENER FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP151",
+  "nombre": "MEL TENER FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP152",
+  "nombre": "MEL TENER FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP153",
+  "nombre": "MEL TENER FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP154",
+  "nombre": "MEL TENER FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP155",
+  "nombre": "MEL TENER FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP156",
+  "nombre": "MEL TENER FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP157",
+  "nombre": "MEL TENER FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP158",
+  "nombre": "MEL TENER FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP159",
+  "nombre": "MEL TENER FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP160",
+  "nombre": "MEL TENER FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP161",
+  "nombre": "MEL TENER FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP162",
+  "nombre": "RIZ DEL NORTE FDO BL LIP"
+ },
+ {
+  "codigo": "CP163",
+  "nombre": "RIZ DEL NORTE FDO BL MEL"
+ },
+ {
+  "codigo": "CP164",
+  "nombre": "RIZ DEL NORTE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP165",
+  "nombre": "RIZ DEL NORTE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP166",
+  "nombre": "RIZ DEL NORTE FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP167",
+  "nombre": "RIZ DEL NORTE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP168",
+  "nombre": "RIZ DEL NORTE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP169",
+  "nombre": "RIZ DEL NORTE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP170",
+  "nombre": "RIZ DEL NORTE FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP171",
+  "nombre": "RIZ DEL NORTE FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP172",
+  "nombre": "RIZ DEL NORTE FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP173",
+  "nombre": "RIZ DEL NORTE FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP174",
+  "nombre": "RIZ DEL NORTE FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP175",
+  "nombre": "RIZ DEL NORTE FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP176",
+  "nombre": "RIZ DEL NORTE FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP177",
+  "nombre": "RIZ DEL NORTE FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP178",
+  "nombre": "RIZ DEL NORTE FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP179",
+  "nombre": "RIZ DEL NORTE FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP180",
+  "nombre": "RIZ DEL NORTE FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP181",
+  "nombre": "RIZ DEL NORTE FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP182",
+  "nombre": "RIZ DEL NORTE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP183",
+  "nombre": "RIZ DEL NORTE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP184",
+  "nombre": "RIZ DEL NORTE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP185",
+  "nombre": "RIZ DEL NORTE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP186",
+  "nombre": "RIZ DEL NORTE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP187",
+  "nombre": "RIZ DEL NORTE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP188",
+  "nombre": "RIZ DEL NORTE FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP189",
+  "nombre": "RIZ DEL NORTE FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP190",
+  "nombre": "RIZ DEL NORTE FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP191",
+  "nombre": "RIZ DEL NORTE FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP192",
+  "nombre": "RIZ DEL NORTE FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP193",
+  "nombre": "RIZ DEL NORTE FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP194",
+  "nombre": "RIZ DEL NORTE FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP195",
+  "nombre": "RIZ DEL NORTE FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP196",
+  "nombre": "RIZ DEL NORTE FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP197",
+  "nombre": "RIZ DEL SUR FDO BL LIP"
+ },
+ {
+  "codigo": "CP198",
+  "nombre": "RIZ DEL SUR FDO BL MEL"
+ },
+ {
+  "codigo": "CP199",
+  "nombre": "RIZ DEL SUR FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP200",
+  "nombre": "RIZ DEL SUR FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP201",
+  "nombre": "RIZ DEL SUR FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP202",
+  "nombre": "RIZ DEL SUR FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP203",
+  "nombre": "RIZ DEL SUR FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP204",
+  "nombre": "RIZ DEL SUR FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP205",
+  "nombre": "RIZ DEL SUR FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP206",
+  "nombre": "RIZ DEL SUR FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP207",
+  "nombre": "RIZ DEL SUR FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP208",
+  "nombre": "RIZ DEL SUR FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP209",
+  "nombre": "RIZ DEL SUR FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP210",
+  "nombre": "RIZ DEL SUR FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP211",
+  "nombre": "RIZ DEL SUR FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP212",
+  "nombre": "RIZ DEL SUR FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP213",
+  "nombre": "RIZ DEL SUR FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP214",
+  "nombre": "RIZ DEL SUR FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP215",
+  "nombre": "RIZ DEL SUR FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP216",
+  "nombre": "RIZ DEL SUR FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP217",
+  "nombre": "RIZ DEL SUR FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP218",
+  "nombre": "RIZ DEL SUR FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP219",
+  "nombre": "RIZ DEL SUR FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP220",
+  "nombre": "RIZ DEL SUR FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP221",
+  "nombre": "RIZ DEL SUR FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP222",
+  "nombre": "RIZ DEL SUR FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP223",
+  "nombre": "RIZ DEL SUR FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP224",
+  "nombre": "RIZ DEL SUR FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP225",
+  "nombre": "RIZ DEL SUR FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP226",
+  "nombre": "RIZ DEL SUR FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP227",
+  "nombre": "RIZ DEL SUR FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP228",
+  "nombre": "RIZ DEL SUR FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP229",
+  "nombre": "RIZ DEL SUR FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP230",
+  "nombre": "RIZ DEL SUR FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP231",
+  "nombre": "RIZ DEL SUR FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP232",
+  "nombre": "RIZ SUI FDO BL LIP"
+ },
+ {
+  "codigo": "CP233",
+  "nombre": "RIZ SUI FDO BL MEL"
+ },
+ {
+  "codigo": "CP234",
+  "nombre": "RIZ SUI FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP235",
+  "nombre": "RIZ SUI FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP236",
+  "nombre": "RIZ SUI FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP237",
+  "nombre": "RIZ SUI FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP238",
+  "nombre": "RIZ SUI FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP239",
+  "nombre": "RIZ SUI FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP240",
+  "nombre": "RIZ SUI FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP241",
+  "nombre": "RIZ SUI FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP242",
+  "nombre": "RIZ SUI FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP243",
+  "nombre": "RIZ SUI FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP244",
+  "nombre": "RIZ SUI FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP245",
+  "nombre": "RIZ SUI FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP246",
+  "nombre": "RIZ SUI FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP247",
+  "nombre": "RIZ SUI FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP248",
+  "nombre": "RIZ SUI FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP249",
+  "nombre": "RIZ SUI FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP250",
+  "nombre": "RIZ SUI FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP251",
+  "nombre": "RIZ SUI FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP252",
+  "nombre": "RIZ SUI FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP253",
+  "nombre": "GIB ITAL FDO BL LIP"
+ },
+ {
+  "codigo": "CP254",
+  "nombre": "GIB ITAL FDO BL MEL"
+ },
+ {
+  "codigo": "CP255",
+  "nombre": "GIB ITAL FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP256",
+  "nombre": "GIB ITAL FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP257",
+  "nombre": "GIB ITAL FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP258",
+  "nombre": "GIB ITAL FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP259",
+  "nombre": "GIB ITAL FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP260",
+  "nombre": "GIB ITAL FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP261",
+  "nombre": "GIB ITAL FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP262",
+  "nombre": "GIB ITAL FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP263",
+  "nombre": "GIB ITAL FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP264",
+  "nombre": "GIB ITAL FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP265",
+  "nombre": "GIB ITAL FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP266",
+  "nombre": "GIB ITAL FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP267",
+  "nombre": "GIB ITAL FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP268",
+  "nombre": "GIB ITAL FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP269",
+  "nombre": "GIB ITAL FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP270",
+  "nombre": "GIB ITAL FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP271",
+  "nombre": "GIB ITAL FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP272",
+  "nombre": "GIB ITAL FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP273",
+  "nombre": "GIB ITAL FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP274",
+  "nombre": "GIBO ESP FDO BL LIP"
+ },
+ {
+  "codigo": "CP275",
+  "nombre": "GIBO ESP FDO BL MEL"
+ },
+ {
+  "codigo": "CP276",
+  "nombre": "GIBO ESP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP277",
+  "nombre": "GIBO ESP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP278",
+  "nombre": "GIBO ESP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP279",
+  "nombre": "GIBO ESP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP280",
+  "nombre": "GIBO ESP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP281",
+  "nombre": "GIBO ESP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP282",
+  "nombre": "GIBO ESP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP283",
+  "nombre": "GIBO ESP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP284",
+  "nombre": "GIBO ESP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP285",
+  "nombre": "GIBO ESP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP286",
+  "nombre": "GIBO ESP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP287",
+  "nombre": "GIBO ESP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP288",
+  "nombre": "GIBO ESP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP289",
+  "nombre": "GIBO ESP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP290",
+  "nombre": "GIBO ESP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP291",
+  "nombre": "GIBO ESP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP292",
+  "nombre": "GIBO ESP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP293",
+  "nombre": "GIBO ESP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP294",
+  "nombre": "GIBO ESP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP295",
+  "nombre": "FIO SIN COPETE FDO BL LIP"
+ },
+ {
+  "codigo": "CP296",
+  "nombre": "FIO SIN COPETE FDO BL MEL"
+ },
+ {
+  "codigo": "CP297",
+  "nombre": "FIO SIN COPETE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP298",
+  "nombre": "FIO SIN COPETE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP299",
+  "nombre": "FIO SIN COPETE FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP300",
+  "nombre": "FIO SIN COPETE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP301",
+  "nombre": "FIO SIN COPETE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP302",
+  "nombre": "FIO SIN COPETE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP303",
+  "nombre": "FIO SIN COPETE FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP304",
+  "nombre": "FIO SIN COPETE FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP305",
+  "nombre": "FIO SIN COPETE FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP306",
+  "nombre": "FIO SIN COPETE FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP307",
+  "nombre": "FIO SIN COPETE FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP308",
+  "nombre": "FIO SIN COPETE FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP309",
+  "nombre": "FIO SIN COPETE FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP310",
+  "nombre": "FIO SIN COPETE FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP311",
+  "nombre": "FIO SIN COPETE FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP312",
+  "nombre": "FIO SIN COPETE FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP313",
+  "nombre": "FIO SIN COPETE FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP314",
+  "nombre": "FIO SIN COPETE FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP315",
+  "nombre": "FIO SIN COPETE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP316",
+  "nombre": "FIO SIN COPETE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP317",
+  "nombre": "FIO SIN COPETE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP318",
+  "nombre": "FIO SIN COPETE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP319",
+  "nombre": "FIO SIN COPETE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP320",
+  "nombre": "FIO SIN COPETE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP321",
+  "nombre": "FIO SIN COPETE FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP322",
+  "nombre": "FIO SIN COPETE FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP323",
+  "nombre": "FIO SIN COPETE FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP324",
+  "nombre": "FIO SIN COPETE FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP325",
+  "nombre": "FIO SIN COPETE FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP326",
+  "nombre": "FIO SIN COPETE FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP327",
+  "nombre": "FIO SIN COPETE FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP328",
+  "nombre": "FIO SIN COPETE FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP329",
+  "nombre": "FIO SIN COPETE FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP330",
+  "nombre": "FIO CON COPETE FDO BL LIP"
+ },
+ {
+  "codigo": "CP331",
+  "nombre": "FIO CON COPETE FDO BL MEL"
+ },
+ {
+  "codigo": "CP332",
+  "nombre": "FIO CON COPETE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP333",
+  "nombre": "FIO CON COPETE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP334",
+  "nombre": "FIO CON COPETE FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP335",
+  "nombre": "FIO CON COPETE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP336",
+  "nombre": "FIO CON COPETE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP337",
+  "nombre": "FIO CON COPETE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP338",
+  "nombre": "FIO CON COPETE FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP339",
+  "nombre": "FIO CON COPETE FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP340",
+  "nombre": "FIO CON COPETE FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP341",
+  "nombre": "FIO CON COPETE FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP342",
+  "nombre": "FIO CON COPETE FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP343",
+  "nombre": "FIO CON COPETE FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP344",
+  "nombre": "FIO CON COPETE FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP345",
+  "nombre": "FIO CON COPETE FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP346",
+  "nombre": "FIO CON COPETE FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP347",
+  "nombre": "FIO CON COPETE FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP348",
+  "nombre": "FIO CON COPETE FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP349",
+  "nombre": "FIO CON COPETE FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP350",
+  "nombre": "FIO CON COPETE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP351",
+  "nombre": "FIO CON COPETE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP352",
+  "nombre": "FIO CON COPETE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP353",
+  "nombre": "FIO CON COPETE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP354",
+  "nombre": "FIO CON COPETE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP355",
+  "nombre": "FIO CON COPETE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP356",
+  "nombre": "FIO CON COPETE FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP357",
+  "nombre": "FIO CON COPETE FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP358",
+  "nombre": "FIO CON COPETE FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP359",
+  "nombre": "FIO CON COPETE FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP360",
+  "nombre": "FIO CON COPETE FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP361",
+  "nombre": "FIO CON COPETE FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP362",
+  "nombre": "FIO CON COPETE FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP363",
+  "nombre": "FIO CON COPETE FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP364",
+  "nombre": "FIO CON COPETE FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP365",
+  "nombre": "MEHRIN FDO BL LIP"
+ },
+ {
+  "codigo": "CP366",
+  "nombre": "MEHRIN FDO BL MEL"
+ },
+ {
+  "codigo": "CP367",
+  "nombre": "MEHRIN FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP368",
+  "nombre": "MEHRIN FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP369",
+  "nombre": "MEHRIN FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP370",
+  "nombre": "MEHRIN FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP371",
+  "nombre": "MEHRIN FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP372",
+  "nombre": "MEHRIN FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP373",
+  "nombre": "MEHRIN FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP374",
+  "nombre": "MEHRIN FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP375",
+  "nombre": "MEHRIN FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP376",
+  "nombre": "MEHRIN FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP377",
+  "nombre": "MEHRIN FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP378",
+  "nombre": "MEHRIN FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP379",
+  "nombre": "MEHRIN FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP380",
+  "nombre": "MEHRIN FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP381",
+  "nombre": "MEHRIN FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP382",
+  "nombre": "MEHRIN FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP383",
+  "nombre": "MEHRIN FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP384",
+  "nombre": "MEHRIN FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP385",
+  "nombre": "MEHRIN FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP386",
+  "nombre": "MEHRIN FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP387",
+  "nombre": "MEHRIN FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP388",
+  "nombre": "MEHRIN FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP389",
+  "nombre": "MEHRIN FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP390",
+  "nombre": "MEHRIN FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP391",
+  "nombre": "MEHRIN FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP392",
+  "nombre": "MEHRIN FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP393",
+  "nombre": "MEHRIN FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP394",
+  "nombre": "MEHRIN FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP395",
+  "nombre": "MEHRIN FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP396",
+  "nombre": "MEHRIN FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP397",
+  "nombre": "MEHRIN FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP398",
+  "nombre": "MEHRIN FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP399",
+  "nombre": "MEHRIN FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP400",
+  "nombre": "GIRAL SEV FDO BL LIP"
+ },
+ {
+  "codigo": "CP401",
+  "nombre": "GIRAL SEV FDO BL MEL"
+ },
+ {
+  "codigo": "CP402",
+  "nombre": "GIRAL SEV FDO  BL OVE LIP"
+ },
+ {
+  "codigo": "CP403",
+  "nombre": "GIRAL SEV FDO  BL OVE MEL"
+ },
+ {
+  "codigo": "CP404",
+  "nombre": "GIRAL SEV FDO  AM INT LIP"
+ },
+ {
+  "codigo": "CP405",
+  "nombre": "GIRAL SEV FDO AM  INT MEL"
+ },
+ {
+  "codigo": "CP406",
+  "nombre": "GIRAL SEV FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP407",
+  "nombre": "GIRAL SEV FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP408",
+  "nombre": "GIRAL SEV FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP409",
+  "nombre": "GIRAL SEV FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP410",
+  "nombre": "GIRAL SEV FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP411",
+  "nombre": "GIRAL SEV FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP412",
+  "nombre": "GIRAL SEV FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP413",
+  "nombre": "GIRAL SEV FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP414",
+  "nombre": "GIRAL SEV FDO RO INT OV LIP"
+ },
+ {
+  "codigo": "CP415",
+  "nombre": "GIRAL SEV FDO RO INT OV MEL"
+ },
+ {
+  "codigo": "CP416",
+  "nombre": "GIRAL SEV FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP417",
+  "nombre": "GIRAL SEV FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP418",
+  "nombre": "GIRAL SEV FDO RO NEV OV LIP"
+ },
+ {
+  "codigo": "CP419",
+  "nombre": "GIRAL SEV FDO RO NEV OV MEL"
+ },
+ {
+  "codigo": "CP420",
+  "nombre": "GIRAL SEV FDO CAN NEV BL MEL"
+ },
+ {
+  "codigo": "CP421",
+  "nombre": "GIRAL SEV FDO CAN NEV  BL OVE LIP"
+ },
+ {
+  "codigo": "CP422",
+  "nombre": "GIRAL SEV FDO CAN NEV  BL OVE MEL"
+ },
+ {
+  "codigo": "CP423",
+  "nombre": "GIRAL SEV FDO CAN NEV AM  INT MEL"
+ },
+ {
+  "codigo": "CP424",
+  "nombre": "GIRAL SEV FDO CAN NEV AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP425",
+  "nombre": "GIRAL SEV FDO CAN NEV AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP426",
+  "nombre": "GIRAL SEV FDO CAN NEV AM NEV MEL"
+ },
+ {
+  "codigo": "CP427",
+  "nombre": "GIRAL SEV FDO CAN NEV AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP428",
+  "nombre": "GIRAL SEV FDO CAN NEV AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP429",
+  "nombre": "GIRAL SEV FDO CAN NEV RO INT MEL"
+ },
+ {
+  "codigo": "CP430",
+  "nombre": "GIRAL SEV FDO CAN NEV RO INT OV LIP"
+ },
+ {
+  "codigo": "CP431",
+  "nombre": "GIRAL SEV FDO CAN NEV RO INT OV MEL"
+ },
+ {
+  "codigo": "CP432",
+  "nombre": "GIRAL SEV FDO CAN NEV RO NEV MEL"
+ },
+ {
+  "codigo": "CP433",
+  "nombre": "GIRAL SEV FDO CAN NEV RO NEV OV LIP"
+ },
+ {
+  "codigo": "CP434",
+  "nombre": "GIRAL SEV FDO CAN NEV RO NEV OV MEL"
+ },
+ {
+  "codigo": "CP435",
+  "nombre": "BOS BEL FDO BL LIP"
+ },
+ {
+  "codigo": "CP436",
+  "nombre": "BOS BEL FDO BL MEL"
+ },
+ {
+  "codigo": "CP437",
+  "nombre": "BOS BEL FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP438",
+  "nombre": "BOS BEL FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP439",
+  "nombre": "BOS BEL FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP440",
+  "nombre": "BOS BEL FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP441",
+  "nombre": "BOS BEL FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP442",
+  "nombre": "BOS BEL FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP443",
+  "nombre": "BOS BEL FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP444",
+  "nombre": "BOS BEL FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP445",
+  "nombre": "BOS BEL FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP446",
+  "nombre": "BOS BEL FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP447",
+  "nombre": "BOS BEL FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP448",
+  "nombre": "BOS BEL FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP449",
+  "nombre": "BOS BEL FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP450",
+  "nombre": "BOS BEL FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP451",
+  "nombre": "BOS BEL FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP452",
+  "nombre": "BOS BEL FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP453",
+  "nombre": "BOS BEL FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP454",
+  "nombre": "BOS BEL FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP455",
+  "nombre": "BOS BEL FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP456",
+  "nombre": "SCOT FAN FDO BL LIP"
+ },
+ {
+  "codigo": "CP457",
+  "nombre": "SCOT FAN FDO BL MEL"
+ },
+ {
+  "codigo": "CP458",
+  "nombre": "SCOT FAN FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP459",
+  "nombre": "SCOT FAN FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP460",
+  "nombre": "SCOT FAN FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP461",
+  "nombre": "SCOT FAN FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP462",
+  "nombre": "SCOT FAN FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP463",
+  "nombre": "SCOT FAN FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP464",
+  "nombre": "SCOT FAN FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP465",
+  "nombre": "SCOT FAN FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP466",
+  "nombre": "SCOT FAN FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP467",
+  "nombre": "SCOT FAN FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP468",
+  "nombre": "SCOT FAN FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP469",
+  "nombre": "SCOT FAN FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP470",
+  "nombre": "SCOT FAN FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP471",
+  "nombre": "SCOT FAN FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP472",
+  "nombre": "SCOT FAN FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP473",
+  "nombre": "SCOT FAN FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP474",
+  "nombre": "SCOT FAN FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP475",
+  "nombre": "SCOT FAN FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP476",
+  "nombre": "SCOT FAN FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP477",
+  "nombre": "MÜNCHE FDO BL LIP"
+ },
+ {
+  "codigo": "CP478",
+  "nombre": "MÜNCHE FDO BL MEL"
+ },
+ {
+  "codigo": "CP479",
+  "nombre": "MÜNCHE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP480",
+  "nombre": "MÜNCHE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP481",
+  "nombre": "MÜNCHE FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP482",
+  "nombre": "MÜNCHE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP483",
+  "nombre": "MÜNCHE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP484",
+  "nombre": "MÜNCHE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP485",
+  "nombre": "MÜNCHE FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP486",
+  "nombre": "MÜNCHE FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP487",
+  "nombre": "MÜNCHE FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP488",
+  "nombre": "MÜNCHE FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP489",
+  "nombre": "MÜNCHE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP490",
+  "nombre": "MÜNCHE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP491",
+  "nombre": "MÜNCHE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP492",
+  "nombre": "MÜNCHE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP493",
+  "nombre": "MÜNCHE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP494",
+  "nombre": "MÜNCHE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP495",
+  "nombre": "MÜNCHE FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP496",
+  "nombre": "MÜNCHE FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP497",
+  "nombre": "MÜNCHE FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP498",
+  "nombre": "HOS JAP FDO BL LIP"
+ },
+ {
+  "codigo": "CP499",
+  "nombre": "HOS JAP FDO BL MEL"
+ },
+ {
+  "codigo": "CP500",
+  "nombre": "HOS JAP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP501",
+  "nombre": "HOS JAP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP502",
+  "nombre": "HOS JAP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP503",
+  "nombre": "HOS JAP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP504",
+  "nombre": "HOS JAP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP505",
+  "nombre": "HOS JAP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP506",
+  "nombre": "HOS JAP FDO AN NEV LIP"
+ },
+ {
+  "codigo": "CP507",
+  "nombre": "HOS JAP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP508",
+  "nombre": "HOS JAP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP509",
+  "nombre": "HOS JAP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP510",
+  "nombre": "HOS JAP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP511",
+  "nombre": "HOS JAP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP512",
+  "nombre": "HOS JAP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP513",
+  "nombre": "HOS JAP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP514",
+  "nombre": "HOS JAP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP515",
+  "nombre": "HOS JAP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP516",
+  "nombre": "HOS JAP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP517",
+  "nombre": "HOS JAP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP518",
+  "nombre": "HOS JAP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP519",
+  "nombre": "HOS JAP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP520",
+  "nombre": "HOS JAP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP521",
+  "nombre": "HOS JAP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP522",
+  "nombre": "HOS JAP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP523",
+  "nombre": "HOS JAP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP524",
+  "nombre": "HOS JAP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP525",
+  "nombre": "HOS JAP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP526",
+  "nombre": "HOS JAP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP527",
+  "nombre": "HOS JAP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP528",
+  "nombre": "HOS JAP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP529",
+  "nombre": "HOS JAP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP530",
+  "nombre": "HOS JAP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP531",
+  "nombre": "HOS JAP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP532",
+  "nombre": "HOS JAP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP533",
+  "nombre": "BOR FDO BL LIP"
+ },
+ {
+  "codigo": "CP534",
+  "nombre": "BOR FDO BL MEL"
+ },
+ {
+  "codigo": "CP535",
+  "nombre": "BOR FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP536",
+  "nombre": "BOR FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP537",
+  "nombre": "BOR FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP538",
+  "nombre": "BOR FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP539",
+  "nombre": "BOR FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP540",
+  "nombre": "BOR FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP541",
+  "nombre": "BOR FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP542",
+  "nombre": "BOR FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP543",
+  "nombre": "BOR FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP544",
+  "nombre": "BOR FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP545",
+  "nombre": "BOR FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP546",
+  "nombre": "BOR FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP547",
+  "nombre": "BOR FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP548",
+  "nombre": "BOR FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP549",
+  "nombre": "BOR FDO CAN AM INT OVE INT"
+ },
+ {
+  "codigo": "CP550",
+  "nombre": "BOR FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP551",
+  "nombre": "BOR FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP552",
+  "nombre": "BOR FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP553",
+  "nombre": "BOR FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP554",
+  "nombre": "NORW FDO BL LIP"
+ },
+ {
+  "codigo": "CP555",
+  "nombre": "NORW FDO BL MEL"
+ },
+ {
+  "codigo": "CP556",
+  "nombre": "NORW FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP557",
+  "nombre": "NORW FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP558",
+  "nombre": "NORW FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP559",
+  "nombre": "NORW FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP560",
+  "nombre": "NORW FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP561",
+  "nombre": "NORW FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP562",
+  "nombre": "NORW FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP563",
+  "nombre": "NORW FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP564",
+  "nombre": "NORW FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP565",
+  "nombre": "NORW FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP566",
+  "nombre": "NORW FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP567",
+  "nombre": "NORW FDO RO IN MEL"
+ },
+ {
+  "codigo": "CP568",
+  "nombre": "NORW FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP569",
+  "nombre": "NORW FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP570",
+  "nombre": "NORW FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP571",
+  "nombre": "NORW FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP572",
+  "nombre": "NORW FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP573",
+  "nombre": "NORW FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP574",
+  "nombre": "NORW FDO CAN BL LIP"
+ },
+ {
+  "codigo": "CP575",
+  "nombre": "NORW FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP576",
+  "nombre": "NORW FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP577",
+  "nombre": "NORW FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP578",
+  "nombre": "NORW FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP579",
+  "nombre": "NORW FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP580",
+  "nombre": "NORW FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP581",
+  "nombre": "NORW FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP582",
+  "nombre": "NORW FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP583",
+  "nombre": "NORW FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP584",
+  "nombre": "NORW FDO CAN RO IN MEL"
+ },
+ {
+  "codigo": "CP585",
+  "nombre": "NORW FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP586",
+  "nombre": "NORW FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP587",
+  "nombre": "NORW FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP588",
+  "nombre": "NORW FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP589",
+  "nombre": "NORW FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP590",
+  "nombre": "YORK FDO BL LIP"
+ },
+ {
+  "codigo": "CP591",
+  "nombre": "YORK FDO BL MEL"
+ },
+ {
+  "codigo": "CP592",
+  "nombre": "YORK FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP593",
+  "nombre": "YORK FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP594",
+  "nombre": "YORK FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP595",
+  "nombre": "YORK FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP596",
+  "nombre": "YORK FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP597",
+  "nombre": "YORK FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP598",
+  "nombre": "YORK FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP599",
+  "nombre": "YORK FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP600",
+  "nombre": "YORK FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP601",
+  "nombre": "YORK FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP602",
+  "nombre": "YORK FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP603",
+  "nombre": "YORK FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP604",
+  "nombre": "YORK FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP605",
+  "nombre": "YORK FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP606",
+  "nombre": "YORK FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP607",
+  "nombre": "YORK FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP608",
+  "nombre": "YORK FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP609",
+  "nombre": "YORK FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP610",
+  "nombre": "YORK FDOCAN BL MEL"
+ },
+ {
+  "codigo": "CP611",
+  "nombre": "YORK FDOCAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP612",
+  "nombre": "YORK FDOCAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP613",
+  "nombre": "YORK FDOCAN AM INT MEL"
+ },
+ {
+  "codigo": "CP614",
+  "nombre": "YORK FDOCAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP615",
+  "nombre": "YORK FDOCAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP616",
+  "nombre": "YORK FDOCAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP617",
+  "nombre": "YORK FDOCAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP618",
+  "nombre": "YORK FDOCAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP619",
+  "nombre": "YORK FDOCAN RO INT MEL"
+ },
+ {
+  "codigo": "CP620",
+  "nombre": "YORK FDOCAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP621",
+  "nombre": "YORK FDOCAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP622",
+  "nombre": "YORK FDOCAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP623",
+  "nombre": "YORK FDOCAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP624",
+  "nombre": "YORK FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP625",
+  "nombre": "LLARG ESP FDO BL LIP"
+ },
+ {
+  "codigo": "CP626",
+  "nombre": "LLARG ESP FDO BL MEL"
+ },
+ {
+  "codigo": "CP627",
+  "nombre": "LLARG ESP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP628",
+  "nombre": "LLARG ESP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP629",
+  "nombre": "LLARG ESP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP630",
+  "nombre": "LLARG ESP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP631",
+  "nombre": "LLARG ESP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP632",
+  "nombre": "LLARG ESP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP633",
+  "nombre": "LLARG ESP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP634",
+  "nombre": "LLARG ESP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP635",
+  "nombre": "LLARG ESP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP636",
+  "nombre": "LLARG ESP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP637",
+  "nombre": "LLARG ESP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP638",
+  "nombre": "LLARG ESP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP639",
+  "nombre": "LLARG ESP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP640",
+  "nombre": "LLARG ESP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP641",
+  "nombre": "LLARG ESP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP642",
+  "nombre": "LLARG ESP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP643",
+  "nombre": "LLARG ESP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP644",
+  "nombre": "LLARG ESP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP645",
+  "nombre": "LLARG ESP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP646",
+  "nombre": "LLARG ESP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP647",
+  "nombre": "LLARG ESP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP648",
+  "nombre": "LLARG ESP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP649",
+  "nombre": "LLARG ESP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP650",
+  "nombre": "LLARG ESP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP651",
+  "nombre": "LLARG ESP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP652",
+  "nombre": "LLARG ESP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP653",
+  "nombre": "LLARG ESP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP654",
+  "nombre": "LLARG ESP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP655",
+  "nombre": "LLARG ESP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP656",
+  "nombre": "LLARG ESP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP657",
+  "nombre": "LLARG ESP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP658",
+  "nombre": "LLARG ESP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP659",
+  "nombre": "LLARG ESP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP660",
+  "nombre": "BER FDO BL LIP"
+ },
+ {
+  "codigo": "CP661",
+  "nombre": "BER FDO BL MEL"
+ },
+ {
+  "codigo": "CP662",
+  "nombre": "BER FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP663",
+  "nombre": "BER FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP664",
+  "nombre": "BER FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP665",
+  "nombre": "BER FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP666",
+  "nombre": "BER FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP667",
+  "nombre": "BER FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP668",
+  "nombre": "BER FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP669",
+  "nombre": "BER FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP670",
+  "nombre": "BER FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP671",
+  "nombre": "BER FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP672",
+  "nombre": "BER FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP673",
+  "nombre": "BER FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP674",
+  "nombre": "BER FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP675",
+  "nombre": "BER FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP676",
+  "nombre": "BER FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP677",
+  "nombre": "BER FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP678",
+  "nombre": "BER FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP679",
+  "nombre": "BER FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP680",
+  "nombre": "BER FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP681",
+  "nombre": "FIFE FAN FDO BL LIP"
+ },
+ {
+  "codigo": "CP682",
+  "nombre": "FIFE FAN FDO BL MEL"
+ },
+ {
+  "codigo": "CP683",
+  "nombre": "FIFE FAN FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP684",
+  "nombre": "FIFE FAN FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP685",
+  "nombre": "FIFE FAN FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP686",
+  "nombre": "FIFE FAN FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP687",
+  "nombre": "FIFE FAN FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP688",
+  "nombre": "FIFE FAN FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP689",
+  "nombre": "FIFE FAN FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP690",
+  "nombre": "FIFE FAN FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP691",
+  "nombre": "FIFE FAN FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP692",
+  "nombre": "FIFE FAN FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP693",
+  "nombre": "FIFE FAN FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP694",
+  "nombre": "FIFE FAN FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP695",
+  "nombre": "FIFE FAN FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP696",
+  "nombre": "FIFE FAN FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP697",
+  "nombre": "FIFE FAN FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP698",
+  "nombre": "FIFE FAN FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP699",
+  "nombre": "FIFE FAN FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP700",
+  "nombre": "FIFE FAN FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP701",
+  "nombre": "FIFE FAN FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP702",
+  "nombre": "RZA ESP FDO BL LIP"
+ },
+ {
+  "codigo": "CP703",
+  "nombre": "RZA ESP FDO BL MEL"
+ },
+ {
+  "codigo": "CP704",
+  "nombre": "RZA ESP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP705",
+  "nombre": "RZA ESP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP706",
+  "nombre": "RZA ESP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP707",
+  "nombre": "RZA ESP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP708",
+  "nombre": "RZA ESP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP709",
+  "nombre": "RZA ESP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP710",
+  "nombre": "RZA ESP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP711",
+  "nombre": "RZA ESP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP712",
+  "nombre": "RZA ESP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP713",
+  "nombre": "RZA ESP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP714",
+  "nombre": "RZA ESP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP715",
+  "nombre": "RZA ESP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP716",
+  "nombre": "RZA ESP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP717",
+  "nombre": "RZA ESP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP718",
+  "nombre": "RZA ESP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP719",
+  "nombre": "RZA ESP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP720",
+  "nombre": "RZA ESP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP721",
+  "nombre": "RZA ESP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP722",
+  "nombre": "RZA ESP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP723",
+  "nombre": "RZA ESP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP724",
+  "nombre": "RZA ESP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP725",
+  "nombre": "RZA ESP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP726",
+  "nombre": "RZA ESP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP727",
+  "nombre": "RZA ESP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP728",
+  "nombre": "RZA ESP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP729",
+  "nombre": "RZA ESP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP730",
+  "nombre": "RZA ESP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP731",
+  "nombre": "RZA ESP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP732",
+  "nombre": "RZA ESP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP733",
+  "nombre": "RZA ESP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP734",
+  "nombre": "RZA ESP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP735",
+  "nombre": "RZA ESP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP736",
+  "nombre": "RZA ESP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP737",
+  "nombre": "IRISH FAN FDO BL LIP"
+ },
+ {
+  "codigo": "CP738",
+  "nombre": "IRISH FAN FDO BL MEL"
+ },
+ {
+  "codigo": "CP739",
+  "nombre": "IRISH FAN FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP740",
+  "nombre": "IRISH FAN FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP741",
+  "nombre": "IRISH FAN FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP742",
+  "nombre": "IRISH FAN FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP743",
+  "nombre": "IRISH FAN FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP744",
+  "nombre": "IRISH FAN FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP745",
+  "nombre": "IRISH FAN FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP746",
+  "nombre": "IRISH FAN FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP747",
+  "nombre": "IRISH FAN FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP748",
+  "nombre": "IRISH FAN FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP749",
+  "nombre": "IRISH FAN FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP750",
+  "nombre": "IRISH FAN FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP751",
+  "nombre": "IRISH FAN FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP752",
+  "nombre": "IRISH FAN FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP753",
+  "nombre": "IRISH FAN FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP754",
+  "nombre": "IRISH FAN FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP755",
+  "nombre": "IRISH FAN FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP756",
+  "nombre": "IRISH FAN FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP757",
+  "nombre": "IRISH FAN FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP758",
+  "nombre": "LIZ CUPULA PERF FDO BL"
+ },
+ {
+  "codigo": "CP759",
+  "nombre": "LIZ CUPULA PERF FDO AM INT"
+ },
+ {
+  "codigo": "CP760",
+  "nombre": "LIZ CUPULA PERF FDO AM NEV"
+ },
+ {
+  "codigo": "CP761",
+  "nombre": "LIZ CUPULA PERF FDO RO INT"
+ },
+ {
+  "codigo": "CP762",
+  "nombre": "LIZ CUPULA PERF FDO RO NEV"
+ },
+ {
+  "codigo": "CP763",
+  "nombre": "LIZ SIN CUPULA FDO BL"
+ },
+ {
+  "codigo": "CP764",
+  "nombre": "LIZ SIN CUPULA FDO AM INT"
+ },
+ {
+  "codigo": "CP765",
+  "nombre": "LIZ SIN CUPULA FDO AM NEV"
+ },
+ {
+  "codigo": "CP766",
+  "nombre": "LIZ SIN CUPULA FDO RO INT"
+ },
+ {
+  "codigo": "CP767",
+  "nombre": "LIZ SIN CUPULA FDO RO NEV"
+ },
+ {
+  "codigo": "CP768",
+  "nombre": "LIZ CUPULA IMPERF FDO BL"
+ },
+ {
+  "codigo": "CP769",
+  "nombre": "LIZ CUPULA IMPERF FDO AM INT"
+ },
+ {
+  "codigo": "CP770",
+  "nombre": "LIZ CUPULA IMPERF FDO AM NEV"
+ },
+ {
+  "codigo": "CP771",
+  "nombre": "LIZ CUPULA IMPERF FDO RO INT"
+ },
+ {
+  "codigo": "CP772",
+  "nombre": "LIZ CUPULA IMPERF FDO RO NEV"
+ },
+ {
+  "codigo": "CP773",
+  "nombre": "LIZ CUPULA PERF FDO CANELA BLANCO"
+ },
+ {
+  "codigo": "CP774",
+  "nombre": "LIZ SIN CUPULA FDO CANELA BLANCO"
+ },
+ {
+  "codigo": "CP775",
+  "nombre": "LIZ CUPULA IMPERF FDO CANELA BLANCO"
+ },
+ {
+  "codigo": "CP776",
+  "nombre": "LIZ CUPULA PERF FDO CANELA AM INT"
+ },
+ {
+  "codigo": "CP777",
+  "nombre": "LIZ CUPULA PERF FDO CANELA AM NEV"
+ },
+ {
+  "codigo": "CP778",
+  "nombre": "LIZ CUPULA PERF FDO CANELA RO INT"
+ },
+ {
+  "codigo": "CP779",
+  "nombre": "LIZ CUPULA PERF FDO CANELA RO NEV"
+ },
+ {
+  "codigo": "CP780",
+  "nombre": "LIZ SIN CUPULA FDO CANELA AM INT"
+ },
+ {
+  "codigo": "CP781",
+  "nombre": "LIZ SIN CUPULA FDO CANELA AM NEV"
+ },
+ {
+  "codigo": "CP782",
+  "nombre": "LIZ SIN CUPULA FDO CANELA RO INT"
+ },
+ {
+  "codigo": "CP783",
+  "nombre": "LIZ SIN CUPULA FDO CANELA RO NEV"
+ },
+ {
+  "codigo": "CP784",
+  "nombre": "LIZ CUPULA IMPERF FDO CANELA AM INT"
+ },
+ {
+  "codigo": "CP785",
+  "nombre": "LIZ CUPULA IMPERF FDO CANELA AM NEV"
+ },
+ {
+  "codigo": "CP786",
+  "nombre": "LIZ CUPULA IMPERF FDO CANELA RO INT"
+ },
+ {
+  "codigo": "CP787",
+  "nombre": "LIZ CUPULA IMPERF FDO CANELA RO NEV"
+ },
+ {
+  "codigo": "CP788",
+  "nombre": "LONDON FANCY FOD BLANCO"
+ },
+ {
+  "codigo": "CP789",
+  "nombre": "LONDON FANCY FOD AMARILLO INT"
+ },
+ {
+  "codigo": "CP790",
+  "nombre": "LONDON FANCY FOD AMARILLO NEV"
+ },
+ {
+  "codigo": "CP791",
+  "nombre": "COP ALEM FDO BLANCO LIP"
+ },
+ {
+  "codigo": "CP792",
+  "nombre": "COP ALEM FDO BLANCO DOMINANTE LIP"
+ },
+ {
+  "codigo": "CP793",
+  "nombre": "COP ALEM FDO AMARILLO INTENSO LIP"
+ },
+ {
+  "codigo": "CP794",
+  "nombre": "COP ALEM FDO AMARILLO NEVADO LIP"
+ },
+ {
+  "codigo": "CP795",
+  "nombre": "COP ALEM FDO AMARILLO MOSAICO MACHO LIP"
+ },
+ {
+  "codigo": "CP796",
+  "nombre": "COP ALEM FDO AMARILLO MOSAICO HEMBRA LIP"
+ },
+ {
+  "codigo": "CP797",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL INTENSO LIP"
+ },
+ {
+  "codigo": "CP798",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL NEVADO LIP"
+ },
+ {
+  "codigo": "CP799",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL MOSAICO MACHO LIP"
+ },
+ {
+  "codigo": "CP800",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL MOSAICO HEMBRA LIP"
+ },
+ {
+  "codigo": "CP801",
+  "nombre": "COP ALEM FDO ROJO INTENSO LIP"
+ },
+ {
+  "codigo": "CP802",
+  "nombre": "COP ALEM FDO ROJO NEVADO LIP"
+ },
+ {
+  "codigo": "CP803",
+  "nombre": "COP ALEM FDO ROJO MOSAICO MACHO  LIP"
+ },
+ {
+  "codigo": "CP804",
+  "nombre": "COP ALEM FDO ROJO MOSAICO HEMBRA LIP"
+ },
+ {
+  "codigo": "CP805",
+  "nombre": "COP ALEM FDO ROJO MARFIL INTENSO LIP"
+ },
+ {
+  "codigo": "CP806",
+  "nombre": "COP ALEM FDO ROJO MARFIL NEVADO LIP"
+ },
+ {
+  "codigo": "CP807",
+  "nombre": "COP ALEM FDO ROJO MARFIL MOSAICO MACHO LIP"
+ },
+ {
+  "codigo": "CP808",
+  "nombre": "COP ALEM FDO ROJO MARFIL MOSAICO HEMBRA LIP"
+ },
+ {
+  "codigo": "CP809",
+  "nombre": "COP ALEM FDO BLANCO MELANICO"
+ },
+ {
+  "codigo": "CP810",
+  "nombre": "COP ALEM FDO BLANCO MELANICO DOMINANTE"
+ },
+ {
+  "codigo": "CP811",
+  "nombre": "COP ALEM FDO AM INT MELANICO"
+ },
+ {
+  "codigo": "CP812",
+  "nombre": "COP ALEM FDO AM NEV MELANICO"
+ },
+ {
+  "codigo": "CP813",
+  "nombre": "COP ALEM FDO AM MOSAICO  MACHO MELANICO"
+ },
+ {
+  "codigo": "CP814",
+  "nombre": "COP ALEM FDO AM MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP815",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL INTENSO MELANICO"
+ },
+ {
+  "codigo": "CP816",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL NEVADO MELANICO"
+ },
+ {
+  "codigo": "CP817",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL MOSAICO MACHO MELANICO"
+ },
+ {
+  "codigo": "CP818",
+  "nombre": "COP ALEM FDO AMARILLO MARFIL MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP819",
+  "nombre": "COP ALEM FDO ROJO INTENSO MELANICO"
+ },
+ {
+  "codigo": "CP820",
+  "nombre": "COP ALEM FDO ROJO NEVADO MELANICO"
+ },
+ {
+  "codigo": "CP821",
+  "nombre": "COP ALEM FDO ROJO MOSAICO MACHO MELANICO"
+ },
+ {
+  "codigo": "CP822",
+  "nombre": "COP ALEM FDO ROJO MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP823",
+  "nombre": "COP ALEM FDO ROJO MARFIL INTENSO MELANICO"
+ },
+ {
+  "codigo": "CP824",
+  "nombre": "COP ALEM FDO ROJO MARFIL NEVADO MELANICO"
+ },
+ {
+  "codigo": "CP825",
+  "nombre": "COP ALEM FDO ROJO MARFIL MOSAICO MACHO MELANICO"
+ },
+ {
+  "codigo": "CP826",
+  "nombre": "COP ALEM FDO ROJO MARFIL MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP827",
+  "nombre": "COP ALEM FDO CAN BLANCO MELANICO"
+ },
+ {
+  "codigo": "CP828",
+  "nombre": "COP ALEM FDO CAN BLANCO MELANICO DOMINANTE"
+ },
+ {
+  "codigo": "CP829",
+  "nombre": "COP ALEM FDO CAN AM INT MELANICO"
+ },
+ {
+  "codigo": "CP830",
+  "nombre": "COP ALEM FDO CAN AM NEV MELANICO"
+ },
+ {
+  "codigo": "CP831",
+  "nombre": "COP ALEM FDO CAN AM MOSAICO  MACHO MELANICO"
+ },
+ {
+  "codigo": "CP832",
+  "nombre": "COP ALEM FDO CAN AM MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP833",
+  "nombre": "COP ALEM FDO CAN AMARILLO MARFIL INTENSO MELANICO"
+ },
+ {
+  "codigo": "CP834",
+  "nombre": "COP ALEM FDO CAN AMARILLO MARFIL NEVADO MELANICO"
+ },
+ {
+  "codigo": "CP835",
+  "nombre": "COP ALEM FDO CAN AMARILLO MARFIL MOSAICO MACHO MELANICO"
+ },
+ {
+  "codigo": "CP836",
+  "nombre": "COP ALEM FDO CAN AMARILLO MARFIL MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP837",
+  "nombre": "COP ALEM FDO CAN ROJO INTENSO MELANICO"
+ },
+ {
+  "codigo": "CP838",
+  "nombre": "COP ALEM FDO CAN ROJO NEVADO MELANICO"
+ },
+ {
+  "codigo": "CP839",
+  "nombre": "COP ALEM FDO CAN ROJO MOSAICO MACHO MELANICO"
+ },
+ {
+  "codigo": "CP840",
+  "nombre": "COP ALEM FDO CAN ROJO MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP841",
+  "nombre": "COP ALEM FDO CAN ROJO MARFIL INTENSO MELANICO"
+ },
+ {
+  "codigo": "CP842",
+  "nombre": "COP ALEM FDO CAN ROJO MARFIL NEVADO MELANICO"
+ },
+ {
+  "codigo": "CP843",
+  "nombre": "COP ALEM FDO CAN ROJO MARFIL MOSAICO MACHO MELANICO"
+ },
+ {
+  "codigo": "CP844",
+  "nombre": "COP ALEM FDO CAN ROJO MARFIL MOSAICO HEMBRA MELANICO"
+ },
+ {
+  "codigo": "CP845",
+  "nombre": "GLOS CONSORTE FDO BL LIP"
+ },
+ {
+  "codigo": "CP846",
+  "nombre": "GLOS CONSORTE FDO BL MEL"
+ },
+ {
+  "codigo": "CP847",
+  "nombre": "GLOS CONSORTE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP848",
+  "nombre": "GLOS CONSORTE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP849",
+  "nombre": "GLOS CONSORTE FDO AM IN LIP"
+ },
+ {
+  "codigo": "CP850",
+  "nombre": "GLOS CONSORTE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP851",
+  "nombre": "GLOS CONSORTE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP852",
+  "nombre": "GLOS CONSORTE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP853",
+  "nombre": "GLOS CONSORTE FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP854",
+  "nombre": "GLOS CONSORTE FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP855",
+  "nombre": "GLOS CONSORTE FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP856",
+  "nombre": "GLOS CONSORTE FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP857",
+  "nombre": "GLOS CONSORTE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP858",
+  "nombre": "GLOS CONSORTE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP859",
+  "nombre": "GLOS CONSORTE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP860",
+  "nombre": "GLOS CONSORTE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP861",
+  "nombre": "GLOS CONSORTE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP862",
+  "nombre": "GLOS CONSORTE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP863",
+  "nombre": "GLOS CONSORTE FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP864",
+  "nombre": "GLOS CONSORTE FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP865",
+  "nombre": "GLOS CONSORTE FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP866",
+  "nombre": "GLOS CORONA FDO BL LIP"
+ },
+ {
+  "codigo": "CP867",
+  "nombre": "GLOS CORONA FDO BL MEL"
+ },
+ {
+  "codigo": "CP868",
+  "nombre": "GLOS CORONA FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP869",
+  "nombre": "GLOS CORONA FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP870",
+  "nombre": "GLOS CORONA FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP871",
+  "nombre": "GLOS CORONA FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP872",
+  "nombre": "GLOS CORONA FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP873",
+  "nombre": "GLOS CORONA FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP874",
+  "nombre": "GLOS CORONA FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP875",
+  "nombre": "GLOS CORONA FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP876",
+  "nombre": "GLOS CORONA FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP877",
+  "nombre": "GLOS CORONA FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP878",
+  "nombre": "GLOS CORONA FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP879",
+  "nombre": "GLOS CORONA FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP880",
+  "nombre": "GLOS CORONA FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP881",
+  "nombre": "GLOS CORONA FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP882",
+  "nombre": "GLOS CORONA FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP883",
+  "nombre": "GLOS CORONA FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP884",
+  "nombre": "GLOS CORONA FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP885",
+  "nombre": "GLOS CORONA FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP886",
+  "nombre": "GLOS CORONA FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP887",
+  "nombre": "LANCA CONSORTE FDO BL"
+ },
+ {
+  "codigo": "CP888",
+  "nombre": "LANCA CONSORTE FDO BL MEL"
+ },
+ {
+  "codigo": "CP889",
+  "nombre": "LANCA CONSORTE FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP890",
+  "nombre": "LANCA CONSORTE FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP891",
+  "nombre": "LANCA CONSORTE FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP892",
+  "nombre": "LANCA CONSORTE FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP893",
+  "nombre": "LANCA CONSORTE FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP894",
+  "nombre": "LANCA CONSORTE FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP895",
+  "nombre": "LANCA CONSORTE FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP896",
+  "nombre": "LANCA CONSORTE FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP897",
+  "nombre": "LANCA CONSORTE FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP898",
+  "nombre": "LANCA CONSORTE FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP899",
+  "nombre": "LANCA CONSORTE FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP900",
+  "nombre": "LANCA CONSORTE FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP901",
+  "nombre": "LANCA CONSORTE FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP902",
+  "nombre": "LANCA CONSORTE FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP903",
+  "nombre": "LANCA CONSORTE FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP904",
+  "nombre": "LANCA CONSORTE FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP905",
+  "nombre": "LANCA CONSORTE FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP906",
+  "nombre": "LANCA CONSORTE FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP907",
+  "nombre": "LANCA CONSORTE FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP908",
+  "nombre": "LANCA CORONA (COPY) FDO BL"
+ },
+ {
+  "codigo": "CP909",
+  "nombre": "LANCA CORONA (COPY) FDO BL MEL"
+ },
+ {
+  "codigo": "CP910",
+  "nombre": "LANCA CORONA (COPY) FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP911",
+  "nombre": "LANCA CORONA (COPY) FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP912",
+  "nombre": "LANCA CORONA (COPY) FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP913",
+  "nombre": "LANCA CORONA (COPY) FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP914",
+  "nombre": "LANCA CORONA (COPY) FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP915",
+  "nombre": "LANCA CORONA (COPY) FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP916",
+  "nombre": "LANCA CORONA (COPY) FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP917",
+  "nombre": "LANCA CORONA (COPY) FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP918",
+  "nombre": "LANCA CORONA (COPY) FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP919",
+  "nombre": "LANCA CORONA (COPY) FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP920",
+  "nombre": "LANCA CORONA (COPY) FDO CAN CAN BL MEL"
+ },
+ {
+  "codigo": "CP921",
+  "nombre": "LANCA CORONA (COPY) FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP922",
+  "nombre": "LANCA CORONA (COPY) FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP923",
+  "nombre": "LANCA CORONA (COPY) FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP924",
+  "nombre": "LANCA CORONA (COPY) FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP925",
+  "nombre": "LANCA CORONA (COPY) FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP926",
+  "nombre": "LANCA CORONA (COPY) FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP927",
+  "nombre": "LANCA CORONA (COPY) FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP928",
+  "nombre": "LANCA CORONA (COPY) FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP929",
+  "nombre": "CRE BRED (SIN CORONA) FDO BL MEL"
+ },
+ {
+  "codigo": "CP930",
+  "nombre": "CRE BRED (SIN CORONA) FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP931",
+  "nombre": "CRE BRED (SIN CORONA) FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP932",
+  "nombre": "CRE BRED (SIN CORONA) FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP933",
+  "nombre": "CRE BRED (SIN CORONA) FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP934",
+  "nombre": "CRE BRED (SIN CORONA) FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP935",
+  "nombre": "CRE BRED (SIN CORONA) FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP936",
+  "nombre": "CRE BRED (SIN CORONA) FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP937",
+  "nombre": "CRE BRED (SIN CORONA) FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP938",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP939",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP940",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP941",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP942",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP943",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP944",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP945",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP946",
+  "nombre": "CRE BRED (SIN CORONA) FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP947",
+  "nombre": "CRESTED (CORONA) FDO BL LIP"
+ },
+ {
+  "codigo": "CP948",
+  "nombre": "CRESTED (CORONA) FDO BL MEL"
+ },
+ {
+  "codigo": "CP949",
+  "nombre": "CRESTED (CORONA) FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP950",
+  "nombre": "CRESTED (CORONA) FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP951",
+  "nombre": "CRESTED (CORONA) FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP952",
+  "nombre": "CRESTED (CORONA) FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP953",
+  "nombre": "CRESTED (CORONA) FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP954",
+  "nombre": "CRESTED (CORONA) FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP955",
+  "nombre": "CRESTED (CORONA) FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP956",
+  "nombre": "CRESTED (CORONA) FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP957",
+  "nombre": "CRESTED (CORONA) FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP958",
+  "nombre": "CRESTED (CORONA) FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP959",
+  "nombre": "CRESTED (CORONA) FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP960",
+  "nombre": "CRESTED (CORONA) FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP961",
+  "nombre": "CRESTED (CORONA) FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP962",
+  "nombre": "CRESTED (CORONA) FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP963",
+  "nombre": "CRESTED (CORONA) FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP964",
+  "nombre": "CRESTED (CORONA) FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP965",
+  "nombre": "CRESTED (CORONA) FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP966",
+  "nombre": "CRESTED (CORONA) FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP967",
+  "nombre": "CRESTED (CORONA) FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP968",
+  "nombre": "RHEIN CONSORTE FDO BL"
+ },
+ {
+  "codigo": "CP969",
+  "nombre": "RHEIN CONSORTE FDO AM INT"
+ },
+ {
+  "codigo": "CP970",
+  "nombre": "RHEIN CONSORTE FDO AM NEV"
+ },
+ {
+  "codigo": "CP971",
+  "nombre": "RHEIN CONSORTE FDO RO INT"
+ },
+ {
+  "codigo": "CP972",
+  "nombre": "RHEIN CONSORTE FDO RO NEV"
+ },
+ {
+  "codigo": "CP973",
+  "nombre": "RHEIN CORONA BL"
+ },
+ {
+  "codigo": "CP974",
+  "nombre": "RHEIN CORONA AM INT"
+ },
+ {
+  "codigo": "CP975",
+  "nombre": "RHEIN CORONA AM NEV"
+ },
+ {
+  "codigo": "CP976",
+  "nombre": "RHEIN CORONA RO INT"
+ },
+ {
+  "codigo": "CP977",
+  "nombre": "RHEIN CORONA RO NEV"
+ },
+ {
+  "codigo": "CP978",
+  "nombre": "ARLEQUIN PORTUGUES SIN CASCO MACHO"
+ },
+ {
+  "codigo": "CP979",
+  "nombre": "ARLEQUIN PORTUGUES SIN CASCO HEMBRA"
+ },
+ {
+  "codigo": "CP980",
+  "nombre": "ARLEQUIN PORTUGUES CON CASCO MACHO"
+ },
+ {
+  "codigo": "CP981",
+  "nombre": "ARLEQUIN PORTUGUES CON CASCO HEMBRA"
+ },
+ {
+  "codigo": "CP982",
+  "nombre": "RASMI PERSA FDO BL LIP"
+ },
+ {
+  "codigo": "CP983",
+  "nombre": "RASMI PERSA FDO BL MEL"
+ },
+ {
+  "codigo": "CP984",
+  "nombre": "RASMI PERSA FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP985",
+  "nombre": "RASMI PERSA FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP986",
+  "nombre": "RASMI PERSA FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP987",
+  "nombre": "RASMI PERSA FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP988",
+  "nombre": "RASMI PERSA FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP989",
+  "nombre": "RASMI PERSA FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP990",
+  "nombre": "RASMI PERSA FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP991",
+  "nombre": "RASMI PERSA FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP992",
+  "nombre": "RASMI PERSA FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP993",
+  "nombre": "RASMI PERSA FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP994",
+  "nombre": "RASMI PERSA FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP995",
+  "nombre": "RASMI PERSA FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP996",
+  "nombre": "RASMI PERSA FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP997",
+  "nombre": "RASMI PERSA FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP998",
+  "nombre": "RASMI PERSA FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP999",
+  "nombre": "RASMI PERSA FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1000",
+  "nombre": "RASMI PERSA FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP1001",
+  "nombre": "RASMI PERSA FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1002",
+  "nombre": "RASMI PERSA FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1003",
+  "nombre": "SALENTINO SIN COP FDO BL LIP"
+ },
+ {
+  "codigo": "CP1004",
+  "nombre": "SALENTINO SIN COP FDO BL MEL"
+ },
+ {
+  "codigo": "CP1005",
+  "nombre": "SALENTINO SIN COP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP1006",
+  "nombre": "SALENTINO SIN COP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP1007",
+  "nombre": "SALENTINO SIN COP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP1008",
+  "nombre": "SALENTINO SIN COP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP1009",
+  "nombre": "SALENTINO SIN COP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1010",
+  "nombre": "SALENTINO SIN COP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1011",
+  "nombre": "SALENTINO SIN COP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP1012",
+  "nombre": "SALENTINO SIN COP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP1013",
+  "nombre": "SALENTINO SIN COP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1014",
+  "nombre": "SALENTINO SIN COP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1015",
+  "nombre": "SALENTINO SIN COP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP1016",
+  "nombre": "SALENTINO SIN COP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP1017",
+  "nombre": "SALENTINO SIN COP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1018",
+  "nombre": "SALENTINO SIN COP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1019",
+  "nombre": "SALENTINO SIN COP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP1020",
+  "nombre": "SALENTINO SIN COP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP1021",
+  "nombre": "SALENTINO SIN COP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1022",
+  "nombre": "SALENTINO SIN COP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1023",
+  "nombre": "SALENTINO SIN COP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP1024",
+  "nombre": "SALENTINO SIN COP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP1025",
+  "nombre": "SALENTINO SIN COP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP1026",
+  "nombre": "SALENTINO SIN COP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP1027",
+  "nombre": "SALENTINO SIN COP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1028",
+  "nombre": "SALENTINO SIN COP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1029",
+  "nombre": "SALENTINO SIN COP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP1030",
+  "nombre": "SALENTINO SIN COP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1031",
+  "nombre": "SALENTINO SIN COP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1032",
+  "nombre": "SALENTINO SIN COP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP1033",
+  "nombre": "SALENTINO SIN COP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1034",
+  "nombre": "SALENTINO SIN COP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1035",
+  "nombre": "SALENTINO SIN COP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP1036",
+  "nombre": "SALENTINO SIN COP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1037",
+  "nombre": "SALENTINO SIN COP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1038",
+  "nombre": "SALENTINO SIN COP FDO BL LIP"
+ },
+ {
+  "codigo": "CP1039",
+  "nombre": "SALENTINO SIN COP FDO BL MEL"
+ },
+ {
+  "codigo": "CP1040",
+  "nombre": "SALENTINO SIN COP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP1041",
+  "nombre": "SALENTINO SIN COP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP1042",
+  "nombre": "SALENTINO SIN COP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP1043",
+  "nombre": "SALENTINO SIN COP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP1044",
+  "nombre": "SALENTINO SIN COP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1045",
+  "nombre": "SALENTINO SIN COP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1046",
+  "nombre": "SALENTINO SIN COP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP1047",
+  "nombre": "SALENTINO SIN COP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP1048",
+  "nombre": "SALENTINO SIN COP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1049",
+  "nombre": "SALENTINO SIN COP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1050",
+  "nombre": "SALENTINO SIN COP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP1051",
+  "nombre": "SALENTINO SIN COP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP1052",
+  "nombre": "SALENTINO SIN COP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1053",
+  "nombre": "SALENTINO SIN COP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1054",
+  "nombre": "SALENTINO SIN COP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP1055",
+  "nombre": "SALENTINO SIN COP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP1056",
+  "nombre": "SALENTINO SIN COP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1057",
+  "nombre": "SALENTINO SIN COP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1058",
+  "nombre": "SALENTINO SIN COP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP1059",
+  "nombre": "SALENTINO SIN COP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP1060",
+  "nombre": "SALENTINO SIN COP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP1061",
+  "nombre": "SALENTINO SIN COP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP1062",
+  "nombre": "SALENTINO SIN COP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1063",
+  "nombre": "SALENTINO SIN COP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1064",
+  "nombre": "SALENTINO SIN COP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP1065",
+  "nombre": "SALENTINO SIN COP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1066",
+  "nombre": "SALENTINO SIN COP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1067",
+  "nombre": "SALENTINO SIN COP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP1068",
+  "nombre": "SALENTINO SIN COP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1069",
+  "nombre": "SALENTINO SIN COP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1070",
+  "nombre": "SALENTINO SIN COP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP1071",
+  "nombre": "SALENTINO SIN COP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1072",
+  "nombre": "SALENTINO SIN COP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1073",
+  "nombre": "BENACUS CON COP FDO BL LIP"
+ },
+ {
+  "codigo": "CP1074",
+  "nombre": "BENACUS CON COP FDO BL MEL"
+ },
+ {
+  "codigo": "CP1075",
+  "nombre": "BENACUS CON COP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP1076",
+  "nombre": "BENACUS CON COP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP1077",
+  "nombre": "BENACUS CON COP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP1078",
+  "nombre": "BENACUS CON COP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP1079",
+  "nombre": "BENACUS CON COP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1080",
+  "nombre": "BENACUS CON COP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1081",
+  "nombre": "BENACUS CON COP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP1082",
+  "nombre": "BENACUS CON COP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP1083",
+  "nombre": "BENACUS CON COP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1084",
+  "nombre": "BENACUS CON COP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1085",
+  "nombre": "BENACUS CON COP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP1086",
+  "nombre": "BENACUS CON COP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP1087",
+  "nombre": "BENACUS CON COP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1088",
+  "nombre": "BENACUS CON COP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1089",
+  "nombre": "BENACUS CON COP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP1090",
+  "nombre": "BENACUS CON COP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP1091",
+  "nombre": "BENACUS CON COP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1092",
+  "nombre": "BENACUS CON COP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1093",
+  "nombre": "BENACUS CON COP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP1094",
+  "nombre": "BENACUS CON COP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP1095",
+  "nombre": "BENACUS CON COP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP1096",
+  "nombre": "BENACUS CON COP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP1097",
+  "nombre": "BENACUS CON COP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1098",
+  "nombre": "BENACUS CON COP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1099",
+  "nombre": "BENACUS CON COP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP1100",
+  "nombre": "BENACUS CON COP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1101",
+  "nombre": "BENACUS CON COP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1102",
+  "nombre": "BENACUS CON COP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP1103",
+  "nombre": "BENACUS CON COP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1104",
+  "nombre": "BENACUS CON COP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1105",
+  "nombre": "BENACUS CON COP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP1106",
+  "nombre": "BENACUS CON COP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1107",
+  "nombre": "BENACUS CON COP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1108",
+  "nombre": "BENACUS SIN COP FDO BL LIP"
+ },
+ {
+  "codigo": "CP1109",
+  "nombre": "BENACUS SIN COP FDO BL MEL"
+ },
+ {
+  "codigo": "CP1110",
+  "nombre": "BENACUS SIN COP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP1111",
+  "nombre": "BENACUS SIN COP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP1112",
+  "nombre": "BENACUS SIN COP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP1113",
+  "nombre": "BENACUS SIN COP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP1114",
+  "nombre": "BENACUS SIN COP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1115",
+  "nombre": "BENACUS SIN COP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1116",
+  "nombre": "BENACUS SIN COP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP1117",
+  "nombre": "BENACUS SIN COP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP1118",
+  "nombre": "BENACUS SIN COP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1119",
+  "nombre": "BENACUS SIN COP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1120",
+  "nombre": "BENACUS SIN COP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP1121",
+  "nombre": "BENACUS SIN COP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP1122",
+  "nombre": "BENACUS SIN COP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1123",
+  "nombre": "BENACUS SIN COP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1124",
+  "nombre": "BENACUS SIN COP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP1125",
+  "nombre": "BENACUS SIN COP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP1126",
+  "nombre": "BENACUS SIN COP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1127",
+  "nombre": "BENACUS SIN COP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1128",
+  "nombre": "BENACUS SIN COP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP1129",
+  "nombre": "BENACUS SIN COP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP1130",
+  "nombre": "BENACUS SIN COP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP1131",
+  "nombre": "BENACUS SIN COP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP1132",
+  "nombre": "BENACUS SIN COP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1133",
+  "nombre": "BENACUS SIN COP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1134",
+  "nombre": "BENACUS SIN COP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP1135",
+  "nombre": "BENACUS SIN COP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1136",
+  "nombre": "BENACUS SIN COP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1137",
+  "nombre": "BENACUS SIN COP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP1138",
+  "nombre": "BENACUS SIN COP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1139",
+  "nombre": "BENACUS SIN COP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1140",
+  "nombre": "BENACUS SIN COP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP1141",
+  "nombre": "BENACUS SIN COP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1142",
+  "nombre": "BENACUS SIN COP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1143",
+  "nombre": "ROGETTO CON COP FDO BL LIP"
+ },
+ {
+  "codigo": "CP1144",
+  "nombre": "ROGETTO CON COP FDO BL MEL"
+ },
+ {
+  "codigo": "CP1145",
+  "nombre": "ROGETTO CON COP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP1146",
+  "nombre": "ROGETTO CON COP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP1147",
+  "nombre": "ROGETTO CON COP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP1148",
+  "nombre": "ROGETTO CON COP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP1149",
+  "nombre": "ROGETTO CON COP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1150",
+  "nombre": "ROGETTO CON COP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1151",
+  "nombre": "ROGETTO CON COP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP1152",
+  "nombre": "ROGETTO CON COP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP1153",
+  "nombre": "ROGETTO CON COP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1154",
+  "nombre": "ROGETTO CON COP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1155",
+  "nombre": "ROGETTO CON COP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP1156",
+  "nombre": "ROGETTO CON COP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP1157",
+  "nombre": "ROGETTO CON COP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1158",
+  "nombre": "ROGETTO CON COP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1159",
+  "nombre": "ROGETTO CON COP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP1160",
+  "nombre": "ROGETTO CON COP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP1161",
+  "nombre": "ROGETTO CON COP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1162",
+  "nombre": "ROGETTO CON COP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1163",
+  "nombre": "ROGETTO CON COP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP1164",
+  "nombre": "ROGETTO CON COP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP1165",
+  "nombre": "ROGETTO CON COP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP1166",
+  "nombre": "ROGETTO CON COP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP1167",
+  "nombre": "ROGETTO CON COP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1168",
+  "nombre": "ROGETTO CON COP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1169",
+  "nombre": "ROGETTO CON COP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP1170",
+  "nombre": "ROGETTO CON COP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1171",
+  "nombre": "ROGETTO CON COP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1172",
+  "nombre": "ROGETTO CON COP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP1173",
+  "nombre": "ROGETTO CON COP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1174",
+  "nombre": "ROGETTO CON COP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1175",
+  "nombre": "ROGETTO CON COP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP1176",
+  "nombre": "ROGETTO CON COP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1177",
+  "nombre": "ROGETTO CON COP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1178",
+  "nombre": "ROGETTO SIN COP FDO BL LIP"
+ },
+ {
+  "codigo": "CP1179",
+  "nombre": "ROGETTO SIN COP FDO BL MEL"
+ },
+ {
+  "codigo": "CP1180",
+  "nombre": "ROGETTO SIN COP FDO BL OVE LIP"
+ },
+ {
+  "codigo": "CP1181",
+  "nombre": "ROGETTO SIN COP FDO BL OVE MEL"
+ },
+ {
+  "codigo": "CP1182",
+  "nombre": "ROGETTO SIN COP FDO AM INT LIP"
+ },
+ {
+  "codigo": "CP1183",
+  "nombre": "ROGETTO SIN COP FDO AM INT MEL"
+ },
+ {
+  "codigo": "CP1184",
+  "nombre": "ROGETTO SIN COP FDO AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1185",
+  "nombre": "ROGETTO SIN COP FDO AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1186",
+  "nombre": "ROGETTO SIN COP FDO AM NEV LIP"
+ },
+ {
+  "codigo": "CP1187",
+  "nombre": "ROGETTO SIN COP FDO AM NEV MEL"
+ },
+ {
+  "codigo": "CP1188",
+  "nombre": "ROGETTO SIN COP FDO AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1189",
+  "nombre": "ROGETTO SIN COP FDO AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1190",
+  "nombre": "ROGETTO SIN COP FDO RO INT LIP"
+ },
+ {
+  "codigo": "CP1191",
+  "nombre": "ROGETTO SIN COP FDO RO INT MEL"
+ },
+ {
+  "codigo": "CP1192",
+  "nombre": "ROGETTO SIN COP FDO RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1193",
+  "nombre": "ROGETTO SIN COP FDO RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1194",
+  "nombre": "ROGETTO SIN COP FDO RO NEV LIP"
+ },
+ {
+  "codigo": "CP1195",
+  "nombre": "ROGETTO SIN COP FDO RO NEV MEL"
+ },
+ {
+  "codigo": "CP1196",
+  "nombre": "ROGETTO SIN COP FDO RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1197",
+  "nombre": "ROGETTO SIN COP FDO RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1198",
+  "nombre": "ROGETTO SIN COP FDO CAN BL MEL"
+ },
+ {
+  "codigo": "CP1199",
+  "nombre": "ROGETTO SIN COP FDO CAN BL OVE LIP"
+ },
+ {
+  "codigo": "CP1200",
+  "nombre": "ROGETTO SIN COP FDO CAN BL OVE MEL"
+ },
+ {
+  "codigo": "CP1201",
+  "nombre": "ROGETTO SIN COP FDO CAN AM INT MEL"
+ },
+ {
+  "codigo": "CP1202",
+  "nombre": "ROGETTO SIN COP FDO CAN AM INT OVE LIP"
+ },
+ {
+  "codigo": "CP1203",
+  "nombre": "ROGETTO SIN COP FDO CAN AM INT OVE MEL"
+ },
+ {
+  "codigo": "CP1204",
+  "nombre": "ROGETTO SIN COP FDO CAN AM NEV MEL"
+ },
+ {
+  "codigo": "CP1205",
+  "nombre": "ROGETTO SIN COP FDO CAN AM NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1206",
+  "nombre": "ROGETTO SIN COP FDO CAN AM NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1207",
+  "nombre": "ROGETTO SIN COP FDO CAN RO INT MEL"
+ },
+ {
+  "codigo": "CP1208",
+  "nombre": "ROGETTO SIN COP FDO CAN RO INT OVE LIP"
+ },
+ {
+  "codigo": "CP1209",
+  "nombre": "ROGETTO SIN COP FDO CAN RO INT OVE MEL"
+ },
+ {
+  "codigo": "CP1210",
+  "nombre": "ROGETTO SIN COP FDO CAN RO NEV MEL"
+ },
+ {
+  "codigo": "CP1211",
+  "nombre": "ROGETTO SIN COP FDO CAN RO NEV OVE LIP"
+ },
+ {
+  "codigo": "CP1212",
+  "nombre": "ROGETTO SIN COP FDO CAN RO NEV OVE MEL"
+ },
+ {
+  "codigo": "CP1213",
+  "nombre": "NUEVAS RAZAS EN ESTUDIO FDO BL"
+ },
+ {
+  "codigo": "CP1214",
+  "nombre": "NUEVAS RAZAS EN ESTUDIO FDO AM INT"
+ },
+ {
+  "codigo": "CP1215",
+  "nombre": "NUEVAS RAZAS EN ESTUDIO FDO AM NEV"
+ },
+ {
+  "codigo": "CP1216",
+  "nombre": "NUEVAS RAZAS EN ESTUDIO FDO RO INT"
+ },
+ {
+  "codigo": "CP1217",
+  "nombre": "NUEVAS RAZAS EN ESTUDIO FDO RO NEV"
+ }
+
+]

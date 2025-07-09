@@ -1,5 +1,5 @@
 import { CommonModule, NgClass } from '@angular/common';
-import { Component, computed, signal, OnInit } from '@angular/core';
+import { Component, computed, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NomenclatorStoreService } from '../../services/nomenclator-store.service';
 
@@ -47,7 +47,7 @@ export class NomenclatorListComponent implements OnInit {
   constructor(public store: NomenclatorStoreService) { }
 
   async ngOnInit() {
-    await this.store.loadAllOnce();
+    await this.store.loadAllFromAssets([this.federacionSeleccionada()]);
   }
 
   clearSearchTerm() {
@@ -58,6 +58,7 @@ export class NomenclatorListComponent implements OnInit {
   setFederacionSeleccionada(fed: 'FOCI' | 'FAC' | 'FOA') {
     this.federacionSeleccionada.set(fed);
     this.page.set(1);
+    this.store.loadAllFromAssets([fed]);
   }
 
   goToPage(page: number) {
@@ -69,4 +70,6 @@ export class NomenclatorListComponent implements OnInit {
   goToNextPage() {
     if (this.page() < this.totalPages()) this.page.set(this.page() + 1);
   }
+
+  // Métodos de carga masiva y eliminación masiva eliminados para evitar operaciones directas sobre Firebase.
 }

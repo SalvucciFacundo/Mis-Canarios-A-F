@@ -55,28 +55,42 @@ export class LandingComponent {
         '30 canarios máximo',
         '10 parejas máximo',
         'Nomenclador básico',
-        'Reportes limitados',
-        'Soporte por email'
+        'Reportes básicos',
       ],
       limitations: [
-        'Sin reportes avanzados',
-        'Sin exportación de datos',
-        'Sin respaldos automáticos'
+        'Sin ediciones avanzadas',
+        'Sin eliminaciones de datos',
       ],
       buttonText: 'Comenzar Gratis',
       buttonLink: '/auth/sign-up'
     },
     {
       name: 'Plan Premium',
-      price: '$9.99',
+      price: '$5000 ars',
       period: '/mes',
       popular: true,
       features: [
-        'Canarios ilimitados',
-        'Parejas ilimitadas',
-        'Nomenclador completo FOCI',
+        'Registros de Canarios limitados mensualmente',
+        'Registro de parejas limitadas limitados mensualmente',
         'Reportes avanzados y estadísticas',
-        'Exportación de datos (Excel, PDF)',
+        'Respaldos automáticos',
+        'Soporte prioritario',
+        'Múltiples temporadas',
+        'Análisis genético básico'
+      ],
+      limitations: [],
+      buttonText: 'Comenzar Prueba Gratis',
+      buttonLink: '/auth/sign-up'
+    },
+    {
+      name: 'Plan Premium ilimitado',
+      price: '$9000 ars',
+      period: '/mes',
+      popular: false,
+      features: [
+        'Registros de Canarios ilimitados',
+        'Registro de parejas ilimitadas',
+        'Reportes avanzados y estadísticas',
         'Respaldos automáticos',
         'Soporte prioritario',
         'Múltiples temporadas',
@@ -86,27 +100,7 @@ export class LandingComponent {
       buttonText: 'Comenzar Prueba Gratis',
       buttonLink: '/auth/sign-up'
     }
-  ];
 
-  testimonials = [
-    {
-      name: 'Carlos Rodríguez',
-      role: 'Criador Profesional',
-      content: 'Esta aplicación ha revolucionado la forma en que gestiono mi criadero. Los reportes son increíbles y me ayudan a tomar mejores decisiones.',
-      rating: 5
-    },
-    {
-      name: 'María González',
-      role: 'Criadora Aficionada',
-      content: 'Fácil de usar y muy completa. El nomenclador FOCI integrado es una característica excelente que ahorra mucho tiempo.',
-      rating: 5
-    },
-    {
-      name: 'José Martínez',
-      role: 'Club de Canaricultura',
-      content: 'Recomendamos esta herramienta a todos nuestros socios. La gestión de parejas y el seguimiento de nidadas es perfecto.',
-      rating: 5
-    }
   ];
 
   scrollToSection(sectionId: string) {
