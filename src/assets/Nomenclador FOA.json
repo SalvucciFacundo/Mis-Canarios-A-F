@@ -3541,5 +3541,10322 @@
  {
   "codigo": "D.859",
   "nombre": "FENOTIPOS Y MUTACIONES EN ESTUDIO"
+ },
+ {
+
+  "codigo":"E1 1",
+  "nombre": "ARLEQUIN PORTUGUES SIN COPETE MACHO"
+ },
+ {
+
+  "codigo":"E1 2",
+  "nombre": "ARLEQUIN PORTUGUES SIN COPETE HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 3",
+  "nombre": "ARLEQUIN PORTUGUES CON COPETE MACHO"
+ },
+ {
+
+
+  "codigo":"E1 4",
+  "nombre": "ARLEQUIN PORTUGUES CON COPETE HEMBRA"
+ },
+
+ {
+
+
+  "codigo":"E1 101",
+  "nombre": "IRISH FANCY FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 102",
+  "nombre": "IRISH FANCY FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 103",
+  "nombre": "IRISH FANCY FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 104",
+  "nombre": "IRISH FANCY FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 105",
+  "nombre": "IRISH FANCY FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 106",
+  "nombre": "IRISH FANCY FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 107",
+  "nombre": "IRISH FANCY FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 108",
+  "nombre": "IRISH FANCY FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 109",
+  "nombre": "IRISH FANCY FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 110",
+  "nombre": "IRISH FANCY FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 111",
+  "nombre": "IRISH FANCY FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 112",
+  "nombre": "IRISH FANCY FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 113",
+  "nombre": "IRISH FANCY FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 114",
+  "nombre": "IRISH FANCY FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 115",
+  "nombre": "IRISH FANCY FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 116",
+  "nombre": "IRISH FANCY FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 117",
+  "nombre": "IRISH FANCY FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 118",
+  "nombre": "IRISH FANCY FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 119",
+  "nombre": "IRISH FANCY FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 120",
+  "nombre": "IRISH FANCY FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 121",
+  "nombre": "IRISH FANCY FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+  "codigo":"E1 122",
+  "nombre": "IRISH FANCY FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 123",
+  "nombre": "IRISH FANCY FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 124",
+  "nombre": "IRISH FANCY FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 201",
+  "nombre": "LIZARD CUPULA PERF FDO BL"
+ },
+ {
+
+
+  "codigo":"E1 202",
+  "nombre": "LIZARD CUPULA PERF FDO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 203",
+  "nombre": "LIZARD CUPULA PERF FDO AM NEV"
+ },
+ {
+
+
+  "codigo":"E1 204",
+  "nombre": "LIZARD CUPULA PERF FDO RO INT"
+ },
+ {
+
+
+  "codigo":"E1 205",
+  "nombre": "LIZARD CUPULA PERF FDO RO NEV"
+ },
+ {
+
+
+  "codigo":"E1 206",
+  "nombre": "LIZARD CUPULA PERF FDO BRUNO BL"
+ },
+ {
+
+
+  "codigo":"E1 207",
+  "nombre": "LIZARD CUPULA PERF FDO BRUNO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 208",
+  "nombre": "LIZARD CUPULA PERF FDO BRUNO AM NEV"
+ },
+ {
+
+
+  "codigo":"E1 209",
+  "nombre": "LIZARD CUPULA PERF FDO BRUNO RO INT"
+ },
+ {
+
+
+  "codigo":"E1 210",
+  "nombre": "LIZARD CUPULA PERF FDO BRUNO RO NEV"
+ },
+ {
+
+
+  "codigo":"E1 211",
+  "nombre": "LIZARD SIN CUPULA FDO BL"
+ },
+ {
+
+
+  "codigo":"E1 212",
+  "nombre": "LIZARD SIN CUPULA FDO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 213",
+  "nombre": "LIZARD SIN CUPULA FDO AM NEV"
+ },
+ {
+
+
+  "codigo":"E1 214",
+  "nombre": "LIZARD SIN CUPULA FDO RO INT"
+ },
+ {
+
+
+  "codigo":"E1 215",
+  "nombre": "LIZARD SIN CUPULA FDO RO NEV"
+ },
+ {
+
+
+  "codigo":"E1 216",
+  "nombre": "LIZARD SIN CUPULA FDO BRUNO BL"
+ },
+ {
+
+
+  "codigo":"E1 217",
+  "nombre": "LIZARD SIN CUPULA FDO BRUNO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 218",
+  "nombre": "LIZARD SIN CUPULA FDO BRUNO AM NEV"
+ },
+ {
+
+
+  "codigo":"E1 219",
+  "nombre": "LIZARD SIN CUPULA FDO BRUNO RO INT"
+ },
+ {
+
+
+  "codigo":"E1 220",
+  "nombre": "LIZARD SIN CUPULA FDO BRUNO RO NEV"
+ },
+ {
+
+
+  "codigo":"E1 221",
+  "nombre": "LIZARD CUPULA IMPERF FDO BL"
+ },
+ {
+
+
+  "codigo":"E1 222",
+  "nombre": "LIZARD CUPULA IMPERF FDO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 223",
+  "nombre": "LIZARD CUPULA IMPERF FDO AM NEV"
+ },
+ {
+
+
+  "codigo":"E1 224",
+  "nombre": "LIZARD CUPULA IMPERF FDO RO INT"
+ },
+ {
+
+
+  "codigo":"E1 225",
+  "nombre": "LIZARD CUPULA IMPERF FDO RO NEV"
+ },
+ {
+
+
+  "codigo":"E1 226",
+  "nombre": "LIZARD CUPULA IMPERF FDO BRUNO BL"
+ },
+ {
+
+
+  "codigo":"E1 227",
+  "nombre": "LIZARD CUPULA IMPERF FDO BRUNO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 228",
+  "nombre": "LIZARD CUPULA IMPERF FDO BRUNO AM NEV"
+ },
+ {
+
+
+  "codigo":"E1 229",
+  "nombre": "LIZARD CUPULA IMPERF FDO BRUNO RO INT"
+ },
+ {
+
+
+  "codigo":"E1 230",
+  "nombre": "LIZARD CUPULA IMPERF FDO BRUNO RO NEV"
+ },
+
+ {
+
+
+  "codigo":"E1 301",
+  "nombre": "LONDON FANCY FDO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 302",
+  "nombre": "LONDON FANCY FDO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 303",
+  "nombre": "LONDON FANCY FDO AM NEV"
+ },
+ {
+
+
+  "codigo":"E1 304",
+  "nombre": "LONDON FANCY FDO BRUNO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 305",
+  "nombre": "LONDON FANCY FDO BRUNO AM INT"
+ },
+ {
+
+
+  "codigo":"E1 306",
+  "nombre": "LONDON FANCY FDO BRUNO AM NEV"
+ },
+
+ {
+
+
+  "codigo":"E1 401",
+  "nombre": "COPETE ALEMÁN FDO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 402",
+  "nombre": "COPETE ALEMÁN FDO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 403",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 404",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 405",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 406",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 407",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 408",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 409",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 410",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 411",
+  "nombre": "COPETE ALEMÁN FDO ALBINO"
+ },
+ {
+
+
+  "codigo":"E1 412",
+  "nombre": "COPETE ALEMÁN FDO ALBINO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 413",
+  "nombre": "COPETE ALEMÁN FDO LUTINO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 414",
+  "nombre": "COPETE ALEMÁN FDO LUTINO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 415",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 416",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 417",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 418",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 419",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 420",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 421",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO ALA BLANCA INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 422",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO ALA BLANCA NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 423",
+  "nombre": "COPETE ALEMÁN FDO MOSAICO AMARILLO ALA BLANCA MACHO"
+ },
+ {
+
+
+  "codigo":"E1 424",
+  "nombre": "COPETE ALEMÁN FDO MOSAICO AMARILLO ALA BLANCA HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 425",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO ALA BLANCA MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 426",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO ALA BLANCA MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 427",
+  "nombre": "COPETE ALEMÁN FDO MOSAICO AMARILLO MARFIL ALA BLANCA MACHO"
+ },
+ {
+
+
+  "codigo":"E1 428",
+  "nombre": "COPETE ALEMÁN FDO MOSAICO AMARILLO MARFIL ALA BLANCA HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 429",
+  "nombre": "COPETE ALEMÁN FDO LUTINO ALA BLANCA INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 430",
+  "nombre": "COPETE ALEMÁN FDO LUTINO ALA BLANCA NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 431",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MOSAICO ALA BLANCA MACHO"
+ },
+ {
+
+
+  "codigo":"E1 432",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MOSAICO ALA BLANCA MACHO"
+ },
+ {
+
+
+  "codigo":"E1 433",
+  "nombre": "COPETE ALEMÁN FDO LUTINO ALA BLANCA MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 434",
+  "nombre": "COPETE ALEMÁN FDO LUTINO ALA BLANCA MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 435",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MOSAICO MARFIL ALA BLANCA MACHO"
+ },
+ {
+
+
+  "codigo":"E1 436",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MOSAICO MARFIL ALA BLANCA MACHO"
+ },
+ {
+
+
+  "codigo":"E1 437",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO INTENSO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 438",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO NEVADO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 439",
+  "nombre": "COPETE ALEMÁN FDO LUTINO INTENSO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 440",
+  "nombre": "COPETE ALEMÁN FDO LUTINO NEVADO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 441",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MARFIL INTENSO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 442",
+  "nombre": "COPETE ALEMÁN FDO AMARILLO MARFIL NEVADO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 443",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MARFIL INTENSO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 444",
+  "nombre": "COPETE ALEMÁN FDO LUTINO MARFIL NEVADO PICO AMARILLO"
+ },
+ {
+
+
+  "codigo":"E1 445",
+  "nombre": "COPETE ALEMÁN FDO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 446",
+  "nombre": "COPETE ALEMÁN FDO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 447",
+  "nombre": "COPETE ALEMÁN FDO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 448",
+  "nombre": "COPETE ALEMÁN FDO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 449",
+  "nombre": "COPETE ALEMÁN FDO ROJO MOSAICO MACHO ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 450",
+  "nombre": "COPETE ALEMÁN FDO ROJO MOSAICO HEMBRA ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 451",
+  "nombre": "COPETE ALEMÁN FDO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 452",
+  "nombre": "COPETE ALEMÁN FDO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 453",
+  "nombre": "COPETE ALEMÁN FDO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 454",
+  "nombre": "COPETE ALEMÁN FDO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 455",
+  "nombre": "COPETE ALEMÁN FDO ROJO MARFIL MOSAICO MACHO ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 456",
+  "nombre": "COPETE ALEMÁN FDO ROJO MARFIL MOSAICO HEMBRA ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 457",
+  "nombre": "COPETE ALEMÁN FDO RUBINO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 458",
+  "nombre": "COPETE ALEMÁN FDO RUBINO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 459",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 460",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 461",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MOSAICO MACHO ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 462",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MOSAICO HEMBRA ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 463",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 464",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 465",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 466",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 467",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MARFIL MOSAICO MACHO ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 468",
+  "nombre": "COPETE ALEMÁN FDO RUBINO MARFIL MOSAICO HEMBRA ALAS PIGMENTADAS"
+ },
+ {
+
+
+  "codigo":"E1 469",
+  "nombre": "COPETE ALEMÁN FDO ROJO ALA BLANCA INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 470",
+  "nombre": "COPETE ALEMÁN FDO ROJO ALA BLANCA NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 471",
+  "nombre": "COPETE ALEMÁN FDO ROJO ALA BLANCA MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 472",
+  "nombre": "COPETE ALEMÁN FDO ROJO ALA BLANCA MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 473",
+  "nombre": "COPETE ALEMÁN FDO RUBINO ALA BLANCA INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 474",
+  "nombre": "COPETE ALEMÁN FDO RUBINO ALA BLANCA NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 475",
+  "nombre": "COPETE ALEMÁN FDO RUBINO ALA BLANCAL MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 476",
+  "nombre": "COPETE ALEMÁN FDO RUBINO ALA BLANCA MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 477",
+  "nombre": "COPETE ALEMÁN FDO URUCUM ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 478",
+  "nombre": "COPETE ALEMÁN FDO URUCUM ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 479",
+  "nombre": "COPETE ALEMÁN FDO URUCUM ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 480",
+  "nombre": "COPETE ALEMÁN FDO URUCUM ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 481",
+  "nombre": "COPETE ALEMÁN FDO URUCUM RUBINO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 482",
+  "nombre": "COPETE ALEMÁN FDO URUCUM RUBINO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 483",
+  "nombre": "COPETE ALEMÁN FDO URUCUM RUBINO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 484",
+  "nombre": "COPETE ALEMÁN FDO URUCUM RUBINO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 485",
+  "nombre": "COPETE ALEMÁN FDO NEGRO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 486",
+  "nombre": "COPETE ALEMÁN FDO NEGRO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 487",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 488",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 489",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 490",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 491",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 492",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 493",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 494",
+  "nombre": "COPETE ALEMÁN FDO NEGRO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 495",
+  "nombre": "COPETE ALEMÁN FDO BRUNO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 496",
+  "nombre": "COPETE ALEMÁN FDO BRUNO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 497",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 498",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 499",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 500",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 501",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 502",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 503",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 504",
+  "nombre": "COPETE ALEMÁN FDO BRUNO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 505",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 506",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 507",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 508",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 509",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 510",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 511",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 512",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 513",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 514",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 515",
+  "nombre": "COPETE ALEMÁN FDO ISABEL BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 516",
+  "nombre": "COPETE ALEMÁN FDO ISABEL BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 517",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 518",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 519",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 520",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 521",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 522",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 523",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 524",
+  "nombre": "COPETE ALEMÁN FDO ISABEL AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 525",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 526",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 527",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 528",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 529",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 530",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 531",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 532",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 533",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 534",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 535",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 536",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 537",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 538",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 539",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 540",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 541",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 542",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 543",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 544",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 545",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 546",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 547",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 548",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 549",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 550",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 551",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 552",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 553",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 554",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 555",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 556",
+  "nombre": "COPETE ALEMÁN FDO ISABEL ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 557",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 558",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 559",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 560",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 561",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 562",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 563",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 564",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 565",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 566",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 567",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 568",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 569",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 570",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 571",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 572",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 573",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 574",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 575",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 576",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 577",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 578",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 579",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 580",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 581",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 582",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 583",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 584",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 585",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 586",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 587",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 588",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 589",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 590",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 591",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 592",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 593",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 594",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 595",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 596",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 597",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 598",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 599",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 600",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 601",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 602",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 603",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 604",
+  "nombre": "COPETE ALEMÁN FDO NEGRO PASTEL ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 605",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 606",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 607",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 608",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 609",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 610",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 611",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 612",
+  "nombre": "COPETE ALEMÁN FDO BRUNO PASTEL ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 613",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 614",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 615",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 616",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 617",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 618",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 619",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 620",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA PASTEL ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 621",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 622",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 623",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 624",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 625",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 626",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 627",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 628",
+  "nombre": "COPETE ALEMÁN FDO ISABEL PASTEL ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 629",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 630",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 631",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 632",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1  633",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 634",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 635",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 636",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 637",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 638",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 639",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 640",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 641",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 642",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 643",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 644",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 645",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 646",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 647",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 648",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 649",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 650",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 651",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 652",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 653",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 654",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 655",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 656",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 657",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 658",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 659",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 660",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 661",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 662",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 663",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 664",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 665",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 666",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 667",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 668",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 669",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 670",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 671",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 672",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 673",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 674",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 675",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 676",
+  "nombre": "COPETE ALEMÁN FDO NEGRO OPALO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 677",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 678",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 679",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 680",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 681",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 682",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 683",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 684",
+  "nombre": "COPETE ALEMÁN FDO BRUNO OPALO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 685",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 686",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 687",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 688",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 689",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 690",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 691",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 692",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA OPALO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 693",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 694",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 695",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 696",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 697",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 698",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 699",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 700",
+  "nombre": "COPETE ALEMÁN FDO ISABEL OPALO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 701",
+  "nombre": "COPETE ALEMÁN FDO FEO ALBINO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 702",
+  "nombre": "COPETE ALEMÁN FDO FEO ALBINO DOMINANTE MACHO"
+ },
+ {
+
+
+  "codigo":"E1 703",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO INTENSO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 704",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO NEVADO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 705",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 706",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MARFIL INTENSO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 707",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MARFIL NEVADO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 708",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 709",
+  "nombre": "COPETE ALEMÁN FDO FEO ALBINO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 710",
+  "nombre": "COPETE ALEMÁN FDO FEO ALBINO DOMINANTE HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 711",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO INTENSO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 712",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO NEVADO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 713",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 714",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MARFIL INTENSO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 715",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MARFIL NEVADO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 716",
+  "nombre": "COPETE ALEMÁN FDO FEO LUTINO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 717",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO INTENSO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 718",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO NEVADO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 719",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 720",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MARFIL INTENSO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 721",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MARFIL NEVADO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 722",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 723",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO INTENSO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 724",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO NEVADO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 725",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 726",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MARFIL INTENSO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 727",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MARFIL NEVADO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 728",
+  "nombre": "COPETE ALEMÁN FDO FEO RUBINO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 729",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 730",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 731",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 732",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 733",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 734",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 735",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 736",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 737",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 738",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 739",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 740",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 741",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 742",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 743",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 744",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 745",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 746",
+  "nombre": "COPETE ALEMÁN FDO SATINÉ ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 747",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 748",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 749",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 750",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 751",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 752",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 753",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 754",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 755",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 756",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 757",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 758",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 759",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 760",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 761",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 762",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 763",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 764",
+  "nombre": "COPETE ALEMÁN FDO ALAS GRISES ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 765",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 766",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 767",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 768",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 769",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 770",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 771",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 772",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 773",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 774",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 775",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 776",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 777",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 778",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 779",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 780",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 781",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 782",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 783",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 784",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 785",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 786",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 787",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 788",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 789",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 790",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 791",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 792",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 793",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 794",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 795",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 796",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 797",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 798",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 799",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 800",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 801",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 802",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 803",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 804",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 805",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 806",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 807",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 808",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 809",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 810",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 811",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 812",
+  "nombre": "COPETE ALEMÁN FDO NEGRO TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 813",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 814",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 815",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 816",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 817",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 818",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 819",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 820",
+  "nombre": "COPETE ALEMÁN FDO BRUNO TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 821",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 822",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 823",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 824",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 825",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 826",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 827",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 828",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 829",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 830",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 831",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 832",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 833",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 834",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 835",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 836",
+  "nombre": "COPETE ALEMÁN FDO ISABEL TOPACIO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 837",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 838",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 839",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 840",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 841",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 842",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 843",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 844",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 845",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 846",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 847",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 848",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 849",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 850",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 851",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 852",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 853",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 854",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 855",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 856",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 857",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 858",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 859",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 860",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 861",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 862",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 863",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 864",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 865",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO MARFIL MOSAICO"
+ },
+ {
+
+
+  "codigo":"E1 866",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO AMARILLO MARFIL MOSAICO"
+ },
+ {
+
+
+  "codigo":"E1 867",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 868",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 869",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 870",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 871",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 872",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 873",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 874",
+  "nombre": "COPETE ALEMÁN FDO NEGRO EUMO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 875",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 876",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 877",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 878",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 879",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 880",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 881",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 882",
+  "nombre": "COPETE ALEMÁN FDO BRUNO EUMO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 883",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 884",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 885",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 886",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 887",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 888",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 889",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 890",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA EUMO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 891",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 892",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 893",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 894",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 895",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 896",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 897",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 898",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 899",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 900",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 901",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 902",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 903",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 904",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 905",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 906",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 907",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 908",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 909",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 910",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 911",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 912",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 913",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 914",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 915",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 916",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 917",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 918",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 919",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 920",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 921",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 922",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 923",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 924",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 925",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 926",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 927",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 928",
+  "nombre": "COPETE ALEMÁN FDO NEGRO ONIX ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 929",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 930",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 931",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 932",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 933",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 934",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 935",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 936",
+  "nombre": "COPETE ALEMÁN FDO BRUNO ONIX ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 937",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 938",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 939",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 940",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 941",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 942",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 943",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 944",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA ONIX ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 945",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 946",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 947",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 948",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 949",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 950",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 951",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 952",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 953",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 954",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 955",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 956",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 957",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 958",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 959",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 960",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 961",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 962",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 963",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 964",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 965",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 966",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 967",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 968",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 969",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 970",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 971",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 972",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 973",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO MARFIL MOSAICO"
+ },
+ {
+
+
+  "codigo":"E1 974",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO AMARILLO MARFIL MOSAICO"
+ },
+ {
+
+
+  "codigo":"E1 975",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 976",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 977",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 978",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 979",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 980",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 981",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 982",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 983",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 984",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 985",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 986",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 987",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 988",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 989",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 990",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 991",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 992",
+  "nombre": "COPETE ALEMÁN FDO NEGRO COBALTO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 993",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 994",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 995",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 996",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 997",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 998",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 999",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1000",
+  "nombre": "COPETE ALEMÁN FDO BRUNO COBALTO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1001",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1002",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1003",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1004",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1005",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1006",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1007",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1008",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA COBALTO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1009",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1010",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1011",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1012",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1013",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1014",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1015",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1016",
+  "nombre": "COPETE ALEMÁN FDO ISABEL COBALTO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1017",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1018",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1019",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1020",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1021",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1022",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1023",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1024",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1025",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1026",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1027",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1028",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1029",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1030",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1031",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1032",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1033",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1034",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1035",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1036",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1037",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1038",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1039",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1040",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1041",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1042",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1043",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1044",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1045",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1046",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1047",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1048",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1049",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1050",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1051",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1052",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1053",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1054",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1055",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1056",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1057",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1058",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1059",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1060",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1061",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1062",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE SD ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1063",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1064",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1065",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1066",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1067",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1068",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1069",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1070",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE SD ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1071",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD INT ROJO"
+ },
+ {
+
+
+  "codigo":"E1 1072",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD NEV ROJO"
+ },
+ {
+
+
+  "codigo":"E1 1073",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD MOSAICO ROJO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1074",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD MOSAICO ROJO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1075",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD INT ROJO MARFIL"
+ },
+ {
+
+
+  "codigo":"E1 1076",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD NEV ROJO MARFIL"
+ },
+ {
+
+
+  "codigo":"E1 1077",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD MOSAICO ROJO MARFIL MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1078",
+  "nombre": "COPETE ALEMÁN FDO ISABEL JASPE SD MOSAICO ROJO MARFIL HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1079",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1080",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1081",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1082",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1083",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1084",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1085",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1086",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE SD AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1087",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1088",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1089",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1090",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1091",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1092",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1093",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1094",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1095",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1096",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1097",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1098",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1099",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1100",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1101",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1102",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1103",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1104",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1105",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1106",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1107",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1108",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1109",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1110",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1111",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1112",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1113",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1114",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1115",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1116",
+  "nombre": "COPETE ALEMÁN FDO NEGRO JASPE DD ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1117",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1118",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1119",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1120",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1121",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1122",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1123",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1124",
+  "nombre": "COPETE ALEMÁN FDO BRUNO JASPE DD ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1125",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1126",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1127",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1128",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1129",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1130",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1131",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1132",
+  "nombre": "COPETE ALEMÁN FDO ÁGATA JASPE DD ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1133",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1134",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO BLANCO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1135",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1136",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1137",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1138",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1139",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1140",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1141",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1142",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1143",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1144",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1145",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1146",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1147",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1148",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1149",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1150",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1151",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1152",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1153",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO BLANCO"
+ },
+ {
+
+
+  "codigo":"E1 1154",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO DOMINANTE"
+ },
+ {
+
+
+  "codigo":"E1 1155",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO AMARILLO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1156",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO AMARILLO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1157",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO AMARILLO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1158",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO AMARILLO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1159",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO AMARILLO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1160",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO AMARILLO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1161",
+  "nombre": "COPETE ALEMÁN FDO AGATA AMARILLO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1162",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO AMARILLO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1163",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1164",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1165",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1166",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1167",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1168",
+  "nombre": "COPETE ALEMÁN FDO NEGRO MOGNO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1169",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1170",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1171",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1172",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1173",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1174",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO MARFIL NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1175",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO MARFIL MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1176",
+  "nombre": "COPETE ALEMÁN FDO BRUNO MOGNO ROJO MARFIL MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1177",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO ROJO INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1178",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO ROJO NEVADO"
+ },
+ {
+
+
+  "codigo":"E1 1179",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO ROJO MOSAICO MACHO"
+ },
+ {
+
+
+  "codigo":"E1 1180",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO ROJO MOSAICO HEMBRA"
+ },
+ {
+
+
+  "codigo":"E1 1181",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO ROJO MARFIL INTENSO"
+ },
+ {
+
+
+  "codigo":"E1 1182",
+  "nombre": "COPETE ALEMÁN FDO AGATA MOGNO ROJO MARFIL NEVADO"
+ },
+
+ {
+
+
+  "codigo":"E1 2000",
+  "nombre": "GLOSTER CONSORTE FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2001",
+  "nombre": "GLOSTER CONSORTE FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2002",
+  "nombre": "GLOSTER CONSORTE FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2003",
+  "nombre": "GLOSTER CONSORTE FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2004",
+  "nombre": "GLOSTER CONSORTE FDO AM IN LIP"
+ },
+ {
+
+
+  "codigo":"E1 2005",
+  "nombre": "GLOSTER CONSORTE FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2006",
+  "nombre": "GLOSTER CONSORTE FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2007",
+  "nombre": "GLOSTER CONSORTE FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2008",
+  "nombre": "GLOSTER CONSORTE FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2009",
+  "nombre": "GLOSTER CONSORTE FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2010",
+  "nombre": "GLOSTER CONSORTE FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2011",
+  "nombre": "GLOSTER CONSORTE FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2012",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2013",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2014",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2015",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2016",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2017",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2018",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2019",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2020",
+  "nombre": "GLOSTER CONSORTE FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2021",
+  "nombre": "GLOSTER CONSORTE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2022",
+  "nombre": "GLOSTER CONSORTE FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2023",
+  "nombre": "GLOSTER CONSORTE FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2024",
+  "nombre": "GLOSTER CORONA FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2025",
+  "nombre": "GLOSTER CORONA FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2026",
+  "nombre": "GLOSTER CORONA FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2027",
+  "nombre": "GLOSTER CORONA FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2028",
+  "nombre": "GLOSTER CORONA FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2029",
+  "nombre": "GLOSTER CORONA FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2030",
+  "nombre": "GLOSTER CORONA FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2031",
+  "nombre": "GLOSTER CORONA FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2032",
+  "nombre": "GLOSTER CORONA FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2033",
+  "nombre": "GLOSTER CORONA FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2034",
+  "nombre": "GLOSTER CORONA FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2035",
+  "nombre": "GLOSTER CORONA FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2036",
+  "nombre": "GLOSTER CORONA FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2037",
+  "nombre": "GLOSTER CORONA FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2038",
+  "nombre": "GLOSTER CORONA FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2039",
+  "nombre": "GLOSTER CORONA FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2040",
+  "nombre": "GLOSTER CORONA FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2041",
+  "nombre": "GLOSTER CORONA FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2042",
+  "nombre": "GLOSTER CORONA FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2043",
+  "nombre": "GLOSTER CORONA FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2044",
+  "nombre": "GLOSTER CORONA FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2045",
+  "nombre": "GLOSTER CORONA FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2046",
+  "nombre": "GLOSTER CORONA FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+  "codigo":"E1 2047",
+  "nombre": "GLOSTER CORONA FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+  "codigo":"E1 2100",
+  "nombre": "CREST BRED (SIN CORONA) FDO BL LIP"
+ },
+ {
+
+  "codigo":"E1 2101",
+  "nombre": "CREST BRED (SIN CORONA) FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2102",
+  "nombre": "CREST BRED (SIN CORONA) FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2103",
+  "nombre": "CREST BRED (SIN CORONA) FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2104",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2105",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2106",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2107",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2108",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2109",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2110",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2111",
+  "nombre": "CREST BRED (SIN CORONA) FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2112",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2113",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2114",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2115",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2116",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2117",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2118",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2119",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2120",
+  "nombre": "CREST BRED (SIN CORONA) FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2121",
+  "nombre": "CREST BRED (SIN CORONA) FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2122",
+  "nombre": "CREST BRED (SIN CORONA) FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2123",
+  "nombre": "CREST BRED (SIN CORONA) FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2124",
+  "nombre": "CRESTED (CORONA) FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2125",
+  "nombre": "CRESTED (CORONA) FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2126",
+  "nombre": "CRESTED (CORONA) FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2127",
+  "nombre": "CRESTED (CORONA) FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2128",
+  "nombre": "CRESTED (CORONA) FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2129",
+  "nombre": "CRESTED (CORONA) FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2130",
+  "nombre": "CRESTED (CORONA) FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2131",
+  "nombre": "CRESTED (CORONA) FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2132",
+  "nombre": "CRESTED (CORONA) FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2133",
+  "nombre": "CRESTED (CORONA) FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2134",
+  "nombre": "CRESTED (CORONA) FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2135",
+  "nombre": "CRESTED (CORONA) FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2136",
+  "nombre": "CRESTED (CORONA) FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2137",
+  "nombre": "CRESTED (CORONA) FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2138",
+  "nombre": "CRESTED (CORONA) FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2139",
+  "nombre": "CRESTED (CORONA) FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2140",
+  "nombre": "CRESTED (CORONA) FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2141",
+  "nombre": "CRESTED (CORONA) FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2142",
+  "nombre": "CRESTED (CORONA) FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2143",
+  "nombre": "CRESTED (CORONA) FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2144",
+  "nombre": "CRESTED (CORONA) FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2145",
+  "nombre": "CRESTED (CORONA) FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2146",
+  "nombre": "CRESTED (CORONA) FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2147",
+  "nombre": "CRESTED (CORONA) FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2200",
+  "nombre": "RASMI PERSA FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2201",
+  "nombre": "RASMI PERSA FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2202",
+  "nombre": "RASMI PERSA FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2203",
+  "nombre": "RASMI PERSA FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2204",
+  "nombre": "RASMI PERSA FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2205",
+  "nombre": "RASMI PERSA FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2206",
+  "nombre": "RASMI PERSA FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2207",
+  "nombre": "RASMI PERSA FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2208",
+  "nombre": "RASMI PERSA FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2209",
+  "nombre": "RASMI PERSA FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2210",
+  "nombre": "RASMI PERSA FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2211",
+  "nombre": "RASMI PERSA FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2212",
+  "nombre": "RASMI PERSA FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2213",
+  "nombre": "RASMI PERSA FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2214",
+  "nombre": "RASMI PERSA FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2215",
+  "nombre": "RASMI PERSA FDO AM BRUNO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2216",
+  "nombre": "RASMI PERSA FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2217",
+  "nombre": "RASMI PERSA FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2218",
+  "nombre": "RASMI PERSA FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2219",
+  "nombre": "RASMI PERSA FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2220",
+  "nombre": "RASMI PERSA FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2221",
+  "nombre": "RASMI PERSA FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2222",
+  "nombre": "RASMI PERSA FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2223",
+  "nombre": "RASMI PERSA FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2300",
+  "nombre": "NORWICH FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2301",
+  "nombre": "NORWICH FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2302",
+  "nombre": "NORWICH FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2303",
+  "nombre": "NORWICH FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2304",
+  "nombre": "NORWICH FDO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2305",
+  "nombre": "NORWICH FDO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2306",
+  "nombre": "NORWICH FDO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2307",
+  "nombre": "NORWICH FDO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2308",
+  "nombre": "NORWICH FDO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2309",
+  "nombre": "NORWICH FDO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2310",
+  "nombre": "NORWICH FDO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2311",
+  "nombre": "NORWICH FDO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2312",
+  "nombre": "NORWICH FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2313",
+  "nombre": "NORWICH FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2314",
+  "nombre": "NORWICH FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2315",
+  "nombre": "NORWICH FDO BRUNO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2316",
+  "nombre": "NORWICH FDO BRUNO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2317",
+  "nombre": "NORWICH FDO BRUNO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2318",
+  "nombre": "NORWICH FDO BRUNO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2319",
+  "nombre": "NORWICH FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2320",
+  "nombre": "NORWICH FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2321",
+  "nombre": "NORWICH FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2322",
+  "nombre": "NORWICH FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2323",
+  "nombre": "NORWICH FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2400",
+  "nombre": "BORDER FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2401",
+  "nombre": "BORDER FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2402",
+  "nombre": "BORDER FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2403",
+  "nombre": "BORDER FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2404",
+  "nombre": "BORDER FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2405",
+  "nombre": "BORDER FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2406",
+  "nombre": "BORDER FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2407",
+  "nombre": "BORDER FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2408",
+  "nombre": "BORDER FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2409",
+  "nombre": "BORDER FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2410",
+  "nombre": "BORDER FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2411",
+  "nombre": "BORDER FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2412",
+  "nombre": "BORDER FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2413",
+  "nombre": "BORDER FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2414",
+  "nombre": "BORDER FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2415",
+  "nombre": "BORDER FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2416",
+  "nombre": "BORDER FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2417",
+  "nombre": "BORDER FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2418",
+  "nombre": "BORDER FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2419",
+  "nombre": "BORDER FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2420",
+  "nombre": "BORDER FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2421",
+  "nombre": "BORDER FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2422",
+  "nombre": "BORDER FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2423",
+  "nombre": "BORDER FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2500",
+  "nombre": "FIFE FANCY FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2501",
+  "nombre": "FIFE FANCY FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2502",
+  "nombre": "FIFE FANCY FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2503",
+  "nombre": "FIFE FANCY FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2504",
+  "nombre": "FIFE FANCY FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2505",
+  "nombre": "FIFE FANCY FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2506",
+  "nombre": "FIFE FANCY FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2507",
+  "nombre": "FIFE FANCY FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2508",
+  "nombre": "FIFE FANCY FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2509",
+  "nombre": "FIFE FANCY FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2510",
+  "nombre": "FIFE FANCY FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2511",
+  "nombre": "FIFE FANCY FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2512",
+  "nombre": "FIFE FANCY FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2513",
+  "nombre": "FIFE FANCY FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2514",
+  "nombre": "FIFE FANCY FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2515",
+  "nombre": "FIFE FANCY FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2516",
+  "nombre": "FIFE FANCY FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2517",
+  "nombre": "FIFE FANCY FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2518",
+  "nombre": "FIFE FANCY FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2519",
+  "nombre": "FIFE FANCY FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2520",
+  "nombre": "FIFE FANCY FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2521",
+  "nombre": "FIFE FANCY FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2522",
+  "nombre": "FIFE FANCY FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2523",
+  "nombre": "FIFE FANCY FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2600",
+  "nombre": "HOSSO JAPONES FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2601",
+  "nombre": "HOSSO JAPONES FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2602",
+  "nombre": "HOSSO JAPONES FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2603",
+  "nombre": "HOSSO JAPONES FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2604",
+  "nombre": "HOSSO JAPONES FDO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2605",
+  "nombre": "HOSSO JAPONES FDO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2606",
+  "nombre": "HOSSO JAPONES FDO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2607",
+  "nombre": "HOSSO JAPONES FDO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2608",
+  "nombre": "HOSSO JAPONES FDO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2609",
+  "nombre": "HOSSO JAPONES FDO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2610",
+  "nombre": "HOSSO JAPONES FDO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2611",
+  "nombre": "HOSSO JAPONES FDO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2612",
+  "nombre": "HOSSO JAPONES FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2613",
+  "nombre": "HOSSO JAPONES FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2614",
+  "nombre": "HOSSO JAPONES FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2615",
+  "nombre": "HOSSO JAPONES FDO BRUNO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2616",
+  "nombre": "HOSSO JAPONES FDO BRUNO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2617",
+  "nombre": "HOSSO JAPONES FDO BRUNO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2618",
+  "nombre": "HOSSO JAPONES FDO BRUNO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2619",
+  "nombre": "HOSSO JAPONES FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2620",
+  "nombre": "HOSSO JAPONES FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2621",
+  "nombre": "HOSSO JAPONES FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2622",
+  "nombre": "HOSSO JAPONES FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2623",
+  "nombre": "HOSSO JAPONES FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2700",
+  "nombre": "RAZA ESPAÑOLA FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2701",
+  "nombre": "RAZA ESPAÑOLA FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2702",
+  "nombre": "RAZA ESPAÑOLA FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2703",
+  "nombre": "RAZA ESPAÑOLA FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2704",
+  "nombre": "RAZA ESPAÑOLA FDO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2705",
+  "nombre": "RAZA ESPAÑOLA FDO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2706",
+  "nombre": "RAZA ESPAÑOLA FDO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2707",
+  "nombre": "RAZA ESPAÑOLA FDO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2708",
+  "nombre": "RAZA ESPAÑOLA FDO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2709",
+  "nombre": "RAZA ESPAÑOLA FDO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2710",
+  "nombre": "RAZA ESPAÑOLA FDO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2711",
+  "nombre": "RAZA ESPAÑOLA FDO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2712",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2713",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2714",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2715",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2716",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2717",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2718",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2719",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2720",
+  "nombre": "RAZA ESPAÑOLA FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2721",
+  "nombre": "RAZA ESPAÑOLA FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2722",
+  "nombre": "RAZA ESPAÑOLA FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2723",
+  "nombre": "RAZA ESPAÑOLA FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2800",
+  "nombre": "SCOTCH FANCY FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2801",
+  "nombre": "SCOTCH FANCY FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2802",
+  "nombre": "SCOTCH FANCY FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2803",
+  "nombre": "SCOTCH FANCY FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2804",
+  "nombre": "SCOTCH FANCY FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2805",
+  "nombre": "SCOTCH FANCY FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2806",
+  "nombre": "SCOTCH FANCY FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2807",
+  "nombre": "SCOTCH FANCY FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2808",
+  "nombre": "SCOTCH FANCY FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2809",
+  "nombre": "SCOTCH FANCY FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2810",
+  "nombre": "SCOTCH FANCY FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2811",
+  "nombre": "SCOTCH FANCY FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2812",
+  "nombre": "SCOTCH FANCY FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2813",
+  "nombre": "SCOTCH FANCY FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2814",
+  "nombre": "SCOTCH FANCY FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2815",
+  "nombre": "SCOTCH FANCY FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2816",
+  "nombre": "SCOTCH FANCY FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2817",
+  "nombre": "SCOTCH FANCY FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2818",
+  "nombre": "SCOTCH FANCY FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2819",
+  "nombre": "SCOTCH FANCY FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2820",
+  "nombre": "SCOTCH FANCY FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2821",
+  "nombre": "SCOTCH FANCY FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2822",
+  "nombre": "SCOTCH FANCY FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2823",
+  "nombre": "SCOTCH FANCY FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 2900",
+  "nombre": "BERNOIS FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 2901",
+  "nombre": "BERNOIS FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2902",
+  "nombre": "BERNOIS FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2903",
+  "nombre": "BERNOIS FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2904",
+  "nombre": "BERNOIS FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 2905",
+  "nombre": "BERNOIS FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2906",
+  "nombre": "BERNOIS FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2907",
+  "nombre": "BERNOIS FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2908",
+  "nombre": "BERNOIS FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 2909",
+  "nombre": "BERNOIS FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2910",
+  "nombre": "BERNOIS FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2911",
+  "nombre": "BERNOIS FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2912",
+  "nombre": "BERNOIS FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 2913",
+  "nombre": "BERNOIS FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2914",
+  "nombre": "BERNOIS FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2915",
+  "nombre": "BERNOIS FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 2916",
+  "nombre": "BERNOIS FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2917",
+  "nombre": "BERNOIS FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2918",
+  "nombre": "BERNOIS FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 2919",
+  "nombre": "BERNOIS FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 2920",
+  "nombre": "BERNOIS FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 2921",
+  "nombre": "BERNOIS FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2922",
+  "nombre": "BERNOIS FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 2923",
+  "nombre": "BERNOIS FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 3000",
+  "nombre": "BOSSU BELGA FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 3001",
+  "nombre": "BOSSU BELGA FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3002",
+  "nombre": "BOSSU BELGA FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3003",
+  "nombre": "BOSSU BELGA FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3004",
+  "nombre": "BOSSU BELGA FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3005",
+  "nombre": "BOSSU BELGA FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3006",
+  "nombre": "BOSSU BELGA FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3007",
+  "nombre": "BOSSU BELGA FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3008",
+  "nombre": "BOSSU BELGA FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3009",
+  "nombre": "BOSSU BELGA FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3010",
+  "nombre": "BOSSU BELGA FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3011",
+  "nombre": "BOSSU BELGA FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3012",
+  "nombre": "BOSSU BELGA FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3013",
+  "nombre": "BOSSU BELGA FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3014",
+  "nombre": "BOSSU BELGA FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3015",
+  "nombre": "BOSSU BELGA FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3016",
+  "nombre": "BOSSU BELGA FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3017",
+  "nombre": "BOSSU BELGA FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3018",
+  "nombre": "BOSSU BELGA FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3019",
+  "nombre": "BOSSU BELGA FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3020",
+  "nombre": "BOSSU BELGA FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3021",
+  "nombre": "BOSSU BELGA FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3022",
+  "nombre": "BOSSU BELGA FDO OTRAS MUTACIONES AM INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3023",
+  "nombre": "BOSSU BELGA FDO OTRAS MUTACIONES AM NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 3100",
+  "nombre": "LLARGUET ESPAÑOL FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 3101",
+  "nombre": "LLARGUET ESPAÑOL FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3102",
+  "nombre": "LLARGUET ESPAÑOL FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3103",
+  "nombre": "LLARGUET ESPAÑOL FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3104",
+  "nombre": "LLARGUET ESPAÑOL FDO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3105",
+  "nombre": "LLARGUET ESPAÑOL FDO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3106",
+  "nombre": "LLARGUET ESPAÑOL FDO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3107",
+  "nombre": "LLARGUET ESPAÑOL FDO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3108",
+  "nombre": "LLARGUET ESPAÑOL FDO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3109",
+  "nombre": "LLARGUET ESPAÑOL FDO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3110",
+  "nombre": "LLARGUET ESPAÑOL FDO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3111",
+  "nombre": "LLARGUET ESPAÑOL FDO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3112",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3113",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3114",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3115",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3116",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3117",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3118",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3119",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3120",
+  "nombre": "LLARGUET ESPAÑOL FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3121",
+  "nombre": "LLARGUET ESPAÑOL FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3122",
+  "nombre": "LLARGUET ESPAÑOL FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3123",
+  "nombre": "LLARGUET ESPAÑOL FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo":"E1 3200",
+  "nombre": "LANCASHIRE CONSORTE FDO BL"
+ },
+ {
+
+
+  "codigo":"E1 3201",
+  "nombre": "LANCASHIRE CONSORTE FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3202",
+  "nombre": "LANCASHIRE CONSORTE FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3203",
+  "nombre": "LANCASHIRE CONSORTE FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3204",
+  "nombre": "LANCASHIRE CONSORTE FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3205",
+  "nombre": "LANCASHIRE CONSORTE FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3206",
+  "nombre": "LANCASHIRE CONSORTE FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3207",
+  "nombre": "LANCASHIRE CONSORTE FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3208",
+  "nombre": "LANCASHIRE CONSORTE FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3209",
+  "nombre": "LANCASHIRE CONSORTE FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3210",
+  "nombre": "LANCASHIRE CONSORTE FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3211",
+  "nombre": "LANCASHIRE CONSORTE FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3212",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO BL"
+ },
+ {
+
+
+  "codigo":"E1 3213",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3214",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3215",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3216",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3217",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3218",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3219",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3220",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3221",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3222",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3223",
+  "nombre": "LANCASHIRE CORONA (COPY) FDO AM NEV OVE MEL"
+ },
+
+ {
+
+
+  "codigo":"E1 3300",
+  "nombre": "MÜNCHENER FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 3301",
+  "nombre": "MÜNCHENER FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3302",
+  "nombre": "MÜNCHENER FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3303",
+  "nombre": "MÜNCHENER FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3304",
+  "nombre": "MÜNCHENER FDO AM INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3305",
+  "nombre": "MÜNCHENER FDO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3306",
+  "nombre": "MÜNCHENER FDO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3307",
+  "nombre": "MÜNCHENER FDO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3308",
+  "nombre": "MÜNCHENER FDO AM NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3309",
+  "nombre": "MÜNCHENER FDO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3310",
+  "nombre": "MÜNCHENER FDO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3311",
+  "nombre": "MÜNCHENER FDO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3312",
+  "nombre": "MÜNCHENER FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3313",
+  "nombre": "MÜNCHENER FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3314",
+  "nombre": "MÜNCHENER FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3315",
+  "nombre": "MÜNCHENER FDO BRUNO AM INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3316",
+  "nombre": "MÜNCHENER FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3317",
+  "nombre": "MÜNCHENER FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3318",
+  "nombre": "MÜNCHENER FDO BRUNO AM NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3319",
+  "nombre": "MÜNCHENER FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3320",
+  "nombre": "MÜNCHENER FDO BRUNO AM NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3321",
+  "nombre": "MÜNCHENER FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3322",
+  "nombre": "MÜNCHENER FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3323",
+  "nombre": "MÜNCHENER FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 3400",
+  "nombre": "REHILÄNDER CONSORTE FDO BL"
+ },
+ {
+
+
+  "codigo":"E1 3401",
+  "nombre": "REHILÄNDER CONSORTE FDO INT"
+ },
+ {
+
+
+  "codigo":"E1 3402",
+  "nombre": "REHILÄNDER CONSORTE FDO NEV"
+ },
+ {
+
+
+  "codigo":"E1 3403",
+  "nombre": "REHILÄNDER CORONA BL"
+ },
+ {
+
+
+  "codigo":"E1 3404",
+  "nombre": "REHILÄNDER CORONA INT"
+ },
+ {
+
+
+  "codigo":"E1 3405",
+  "nombre": "REHILÄNDER CORONA NEV"
+ },
+
+ {
+
+  "codigo":"E1 3500",
+  "nombre": "YORKSHIRE FDO BL LIP"
+ },
+ {
+
+  "codigo":"E1 3501",
+  "nombre": "YORKSHIRE FDO BL MEL"
+ },
+ {
+
+  "codigo":"E1 3502",
+  "nombre": "YORKSHIRE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo":"E1 3503",
+  "nombre": "YORKSHIRE FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3504",
+  "nombre": "YORKSHIRE FDO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3505",
+  "nombre": "YORKSHIRE FDO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3506",
+  "nombre": "YORKSHIRE FDO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3507",
+  "nombre": "YORKSHIRE FDO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3508",
+  "nombre": "YORKSHIRE FDO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3509",
+  "nombre": "YORKSHIRE FDO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3510",
+  "nombre": "YORKSHIRE FDO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3511",
+  "nombre": "YORKSHIRE FDO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3512",
+  "nombre": "YORKSHIRE FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3513",
+  "nombre": "YORKSHIRE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3514",
+  "nombre": "YORKSHIRE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3515",
+  "nombre": "YORKSHIRE FDO BRUNO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3516",
+  "nombre": "YORKSHIRE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3517",
+  "nombre": "YORKSHIRE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3518",
+  "nombre": "YORKSHIRE FDO BRUNO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3519",
+  "nombre": "YORKSHIRE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3520",
+  "nombre": "YORKSHIRE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3521",
+  "nombre": "YORKSHIRE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3522",
+  "nombre": "YORKSHIRE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3523",
+  "nombre": "YORKSHIRE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 3600",
+  "nombre": "SALENTINO SIN COPETE FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 3601",
+  "nombre": "SALENTINO SIN COPETE FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3602",
+  "nombre": "SALENTINO SIN COPETE FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3603",
+  "nombre": "SALENTNO SIN COPETE FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3604",
+  "nombre": "SALENTINO SIN COPETE FDO RO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3605",
+  "nombre": "SALENTINO SIN COPETE FDO RO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3606",
+  "nombre": "SALENTINO SIN COPETE FDO RO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3607",
+  "nombre": "SALENTINO SIN COPETE FDO RO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3608",
+  "nombre": "SALENTINO SIN COPETE FDO RO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3609",
+  "nombre": "SALENTINO SIN COPETE FDO RO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3610",
+  "nombre": "SALENTINO SIN COPETE FDO RO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3611",
+  "nombre": "SALENTINO SIN COPETE FDO RO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3612",
+  "nombre": "SALENTINO SIN COPETE FDO RO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3613",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3614",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3615",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3616",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO RO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3617",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO RO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3618",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO RO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3619",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO RO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3620",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO RO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3621",
+  "nombre": "SALENTINO SIN COPETE FDO BRUNO RO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3622",
+  "nombre": "SALENTINO SIN COPETE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3623",
+  "nombre": "SALENTINO SIN COPETE FDO OTRAS MUTACIONES RO INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3624",
+  "nombre": "SALENTINO SIN COPETE FDO OTRAS MUTACIONES RO NEV TODOS"
+ },
+ {
+
+
+  "codigo":"E1   3625",
+  "nombre": "SALENTINO CON COPETE FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1   3626",
+  "nombre": "SALENTINO CON COPETE FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3627",
+  "nombre": "SALENTINO CON COPETE FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3628",
+  "nombre": "SALENTINO CON COPETE FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3629",
+  "nombre": "SALENTINO CON COPETE FDO RO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 3630",
+  "nombre": "SALENTINO CON COPETE FDO RO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3631",
+  "nombre": "SALENTINO CON COPETE FDO RO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3632",
+  "nombre": "SALENTINO CON COPETE FDO RO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3633",
+  "nombre": "SALENTINO CON COPETE FDO RO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 3634",
+  "nombre": "SALENTINO CON COPETE FDO RO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3635",
+  "nombre": "SALENTINO CON COPETE FDO RO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3636",
+  "nombre": "SALENTINO CON COPETE FDO RO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3637",
+  "nombre": "SALENTINO CON COPETE FDO RO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3638",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 3639",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3640",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3641",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO RO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 3642",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO RO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3643",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO RO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3644",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO RO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 3645",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO RO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 3646",
+  "nombre": "SALENTINO CON COPETE FDO BRUNO RO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 3647",
+  "nombre": "SALENTINO CON COPETE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3648",
+  "nombre": "SALENTINO CON COPETE FDO OTRAS MUTACIONES RO INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 3649",
+  "nombre": "SALENTINO CON COPETE FDO OTRAS MUTACIONES RO NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 1",
+
+  "nombre": "GIBBER ITALICUS FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 2",
+
+  "nombre": "GIBBER ITALICUS FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 3",
+
+  "nombre": "GIBBER ITALICUS FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 4",
+
+  "nombre": "GIBBER ITALICUS FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 5",
+
+  "nombre": "GIBBER ITALICUS FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 6",
+
+  "nombre": "GIBBER ITALICUS FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 7",
+
+  "nombre": "GIBBER ITALICUS FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 8",
+
+  "nombre": "GIBBER ITALICUS FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 9",
+
+  "nombre": "GIBBER ITALICUS FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 10",
+
+  "nombre": "GIBBER ITALICUS FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 11",
+
+  "nombre": "GIBBER ITALICUS FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 12",
+
+  "nombre": "GIBBER ITALICUS FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 13",
+
+  "nombre": "GIBBER ITALICUS FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 14",
+
+  "nombre": "GIBBER ITALICUS FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 15",
+
+  "nombre": "GIBBER ITALICUS FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 16",
+
+  "nombre": "GIBBER ITALICUS FDO OTRAS MUTACIONES INT TODOS"
+ },
+
+ {
+
+  "codigo": "E2 100",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 101",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 102",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 103",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 104",
+
+  "nombre": "GIBOSO ESPAÑOL FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 105",
+
+  "nombre": "GIBOSO ESPAÑOL FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 106",
+
+  "nombre": "GIBOSO ESPAÑOL FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 107",
+
+  "nombre": "GIBOSO ESPAÑOL FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 108",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 109",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 110",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 111",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 112",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 113",
+
+  "nombre": "GIBOSO ESPAÑOL FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 114",
+
+  "nombre": "GIBOSO ESPAÑOL FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 115",
+
+  "nombre": "GIBOSO ESPAÑOL FDO OTRAS MUTACIONES INT TODOS"
+ },
+
+ {
+
+  "codigo": "E2 200",
+
+  "nombre": "RIZADO DEL SUR FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 201",
+
+  "nombre": "RIZADO DEL SUR FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 202",
+
+  "nombre": "RIZADO DEL SUR FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 203",
+
+  "nombre": "RIZADO DEL SUR FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 204",
+
+  "nombre": "RIZADO DEL SUR FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 205",
+
+  "nombre": "RIZADO DEL SUR FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 206",
+
+  "nombre": "RIZADO DEL SUR FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 207",
+
+  "nombre": "RIZADO DEL SUR FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 208",
+
+  "nombre": "RIZADO DEL SUR FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 209",
+
+  "nombre": "RIZADO DEL SUR FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 210",
+
+  "nombre": "RIZADO DEL SUR FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 211",
+
+  "nombre": "RIZADO DEL SUR FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 212",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 213",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 214",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 215",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 216",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 217",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 218",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 219",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 220",
+
+  "nombre": "RIZADO DEL SUR FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 221",
+
+  "nombre": "RIZADO DEL SUR FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 222",
+
+  "nombre": "RIZADO DEL SUR FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 223",
+
+  "nombre": "RIZADO DEL SUR FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 300",
+
+  "nombre": "RIZADO SUIZO FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 301",
+
+  "nombre": "RIZADO SUIZO FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 302",
+
+  "nombre": "RIZADO SUIZO FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 303",
+
+  "nombre": "RIZADO SUIZO FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 304",
+
+  "nombre": "RIZADO SUIZO FDO AM INT LIP"
+ },
+ {
+
+  "codigo": "E2 305",
+
+  "nombre": "RIZADO SUIZO FDO AM INT MEL"
+ },
+ {
+
+  "codigo": "E2 306",
+
+  "nombre": "RIZADO SUIZO FDO AM INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 307",
+
+  "nombre": "RIZADO SUIZO FDO AM INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 308",
+
+  "nombre": "RIZADO SUIZO FDO AM NEV LIP"
+ },
+ {
+
+  "codigo": "E2 309",
+
+  "nombre": "RIZADO SUIZO FDO AM NEV MEL"
+ },
+ {
+
+  "codigo": "E2 310",
+
+  "nombre": "RIZADO SUIZO FDO AM NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 311",
+
+  "nombre": "RIZADO SUIZO FDO AM NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 312",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 313",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 314",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 315",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO AM INT MEL"
+ },
+ {
+
+  "codigo": "E2 316",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO AM INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 317",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO AM INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 318",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO AM NEV MEL"
+ },
+ {
+
+  "codigo": "E2 319",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO AM NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 320",
+
+  "nombre": "RIZADO SUIZO FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 321",
+
+  "nombre": "RIZADO SUIZO FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 322",
+
+  "nombre": "RIZADO SUIZO FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 323",
+
+  "nombre": "RIZADO SUIZO FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 400",
+
+  "nombre": "MELADO TENERIFEÑO FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 401",
+
+  "nombre": "MELADO TENERIFEÑO FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 402",
+
+  "nombre": "MELADO TENERIFEÑO FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 403",
+
+  "nombre": "MELADO TENERIFEÑO FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 404",
+
+  "nombre": "MELADO TENERIFEÑO FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 405",
+
+  "nombre": "MELADO TENERIFEÑO FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 406",
+
+  "nombre": "MELADO TENERIFEÑO FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 407",
+
+  "nombre": "MELADO TENERIFEÑO FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 408",
+
+  "nombre": "MELADO TENERIFEÑO FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 409",
+
+  "nombre": "MELADO TENERIFEÑO FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 410",
+
+  "nombre": "MELADO TENERIFEÑO FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 411",
+
+  "nombre": "MELADO TENERIFEÑO FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 412",
+
+  "nombre": "MELADO TENERIFEÑO FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 413",
+
+  "nombre": "MELADO TENERIFEÑO FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 414",
+
+  "nombre": "MELADO TENERIFEÑO FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 415",
+
+  "nombre": "MELADO TENERIFEÑO FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 500",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 501",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 502",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 503",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 504",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 505",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 506",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 507",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 508",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 509",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 510",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 511",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 512",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 513",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 514",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 515",
+
+  "nombre": "GIRALDILLO SEVILLANO FDO OTRAS MUTACIONES INT TODOS"
+ },
+
+ {
+
+  "codigo": "E2 600",
+
+  "nombre": "BENACUS SIN COPETE FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 601",
+
+  "nombre": "BENACUS SIN COPETE FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 602",
+
+  "nombre": "BENACUS SIN COPETE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 603",
+
+  "nombre": "BENACUS SIN COPETE FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 604",
+
+  "nombre": "BENACUS SIN COPETE FDO IN LIP"
+ },
+ {
+
+  "codigo": "E2 605",
+
+  "nombre": "BENACUS SIN COPETE FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 606",
+
+  "nombre": "BENACUS SIN COPETE FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 607",
+
+  "nombre": "BENACUS SIN COPETE FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 608",
+
+  "nombre": "BENACUS SIN COPETE FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 609",
+
+  "nombre": "BENACUS SIN COPETE FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 610",
+
+  "nombre": "BENACUS SIN COPETE FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 611",
+
+  "nombre": "BENACUS SIN COPETE FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 612",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 613",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 614",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 615",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 616",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 617",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 618",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 619",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 620",
+
+  "nombre": "BENACUS SIN COPETE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 621",
+
+  "nombre": "BENACUS SIN COPETE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 622",
+
+  "nombre": "BENACUS SIN COPETE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 623",
+
+  "nombre": "BENACUS SIN COPETE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+ {
+
+  "codigo": "E2 624",
+
+  "nombre": "BENACUS CON COPETE FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 625",
+
+  "nombre": "BENACUS CON COPETE FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 626",
+
+  "nombre": "BENACUS CON COPETE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 627",
+
+  "nombre": "BENACUS CON COPETE FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 628",
+
+  "nombre": "BENACUS CON COPETE FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 629",
+
+  "nombre": "BENACUS CON COPETE FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 630",
+
+  "nombre": "BENACUS CON COPETE FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 631",
+
+  "nombre": "BENACUS CON COPETE FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 632",
+
+  "nombre": "BENACUS CON COPETE FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 633",
+
+  "nombre": "BENACUS CON COPETE FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 634",
+
+  "nombre": "BENACUS CON COPETE FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 636",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 637",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 638",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 639",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 640",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 641",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 642",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 643",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 644",
+
+  "nombre": "BENACUS CON COPETE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 645",
+
+  "nombre": "BENACUS CON COPETE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 646",
+
+  "nombre": "BENACUS CON COPETE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 647",
+
+  "nombre": "BENACUS CON COPETE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 700",
+
+  "nombre": "RIZADO PARISINO FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 701",
+
+  "nombre": "RIZADO PARISINO FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 702",
+
+  "nombre": "RIZADO PARISINO FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 703",
+
+  "nombre": "RIZADO PARISINO FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 704",
+
+  "nombre": "RIZADO PARISINO FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 705",
+
+  "nombre": "RIZADO PARISINO FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 706",
+
+  "nombre": "RIZADO PARISINO FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 707",
+
+  "nombre": "RIZADO PARISINO FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 708",
+
+  "nombre": "RIZADO PARISINO FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 709",
+
+  "nombre": "RIZADO PARISINO FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 710",
+
+  "nombre": "RIZADO PARISINO FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 711",
+
+  "nombre": "RIZADO PARISINO FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 712",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 713",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 714",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 715",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 716",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 717",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 718",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 719",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 720",
+
+  "nombre": "RIZADO PARISINO FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 721",
+
+  "nombre": "RIZADO PARISINO FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 722",
+
+  "nombre": "RIZADO PARISINO FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 723",
+
+  "nombre": "RIZADO PARISINO FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 800",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 801",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 802",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 803",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 804",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 805",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 806",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 807",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 808",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 809",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 810",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 811",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 812",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 813",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 814",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 815",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 816",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 817",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 818",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 819",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 820",
+
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 821",
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+
+  "codigo":"E1 822",
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+
+  "codigo":"E1 823",
+  "nombre": "RIZADO GIGANTE ITALIANO (AGI) FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 900",
+
+  "nombre": "PADOVANO SIN COPETE FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 901",
+
+  "nombre": "PADOVANO SIN COPETE FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 902",
+
+  "nombre": "PADOVANO SIN COPETE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 903",
+
+  "nombre": "PADOVANO SIN COPETE FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 904",
+
+  "nombre": "PADOVANO SIN COPETE FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 905",
+
+  "nombre": "PADOVANO SIN COPETE FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 906",
+
+  "nombre": "PADOVANO SIN COPETE FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 907",
+
+  "nombre": "PADOVANO SIN COPETE FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 908",
+
+  "nombre": "PADOVANO SIN COPETE FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 909",
+
+  "nombre": "PADOVANO SIN COPETE FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 910",
+
+  "nombre": "PADOVANO SIN COPETE FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 911",
+
+  "nombre": "PADOVANO SIN COPETE FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 912",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 913",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 914",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 915",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 916",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 917",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 918",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 919",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 920",
+
+  "nombre": "PADOVANO SIN COPETE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 921",
+
+  "nombre": "PADOVANO SIN COPETE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 922",
+
+  "nombre": "PADOVANO SIN COPETE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 923",
+
+  "nombre": "PADOVANO SIN COPETE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+ {
+
+  "codigo": "E2 924",
+
+  "nombre": "PADOVANO CON COPETE FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 925",
+
+  "nombre": "PADOVANO CON COPETE FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 926",
+
+  "nombre": "PADOVANO CON COPETE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 927",
+
+  "nombre": "PADOVANO CON COPETE FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 928",
+
+  "nombre": "PADOVANO CON COPETE FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 929",
+
+  "nombre": "PADOVANO CON COPETE FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 930",
+
+  "nombre": "PADOVANO CON COPETE FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 931",
+
+  "nombre": "PADOVANO CON COPETE FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 932",
+
+  "nombre": "PADOVANO CON COPETE FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 933",
+
+  "nombre": "PADOVANO CON COPETE FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 934",
+
+  "nombre": "PADOVANO CON COPETE FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 935",
+
+  "nombre": "PADOVANO CON COPETE FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 936",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 937",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 938",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 939",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 940",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 941",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 942",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 943",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 944",
+
+  "nombre": "PADOVANO CON COPETE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 945",
+
+  "nombre": "PADOVANO CON COPETE OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 946",
+
+  "nombre": "PADOVANO CON COPETE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 947",
+
+  "nombre": "PADOVANO CON COPETE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 1000",
+
+  "nombre": "RIZADO DEL NORTE FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 1001",
+
+  "nombre": "RIZADO DEL NORTE FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1002",
+
+  "nombre": "RIZADO DEL NORTE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1003",
+
+  "nombre": "RIZADO DEL NORTE FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1004",
+
+  "nombre": "RIZADO DEL NORTE FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 1005",
+
+  "nombre": "RIZADO DEL NORTE FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1006",
+
+  "nombre": "RIZADO DEL NORTE FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1007",
+
+  "nombre": "RIZADO DEL NORTE FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1008",
+
+  "nombre": "RIZADO DEL NORTE FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 1009",
+
+  "nombre": "RIZADO DEL NORTE FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1010",
+
+  "nombre": "RIZADO DEL NORTE FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1011",
+
+  "nombre": "RIZADO DEL NORTE FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1012",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1013",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1014",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1015",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1016",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1017",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1018",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1019",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1020",
+
+  "nombre": "RIZADO DEL NORTE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1021",
+
+  "nombre": "RIZADO DEL NORTE FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 1022",
+
+  "nombre": "RIZADO DEL NORTE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 1023",
+
+  "nombre": "RIZADO DEL NORTE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 1100",
+
+  "nombre": "FIORINO SIN COPETE FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 1101",
+
+  "nombre": "FIORINO SIN COPETE FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1102",
+
+  "nombre": "FIORINO SIN COPETE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1103",
+
+  "nombre": "FIORINO SIN COPETE FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1104",
+
+  "nombre": "FIORINO SIN COPETE FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 1105",
+
+  "nombre": "FIORINO SIN COPETE FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1106",
+
+  "nombre": "FIORINO SIN COPETE FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1107",
+
+  "nombre": "FIORINO SIN COPETE FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1108",
+
+  "nombre": "FIORINO SIN COPETE FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 1109",
+
+  "nombre": "FIORINO SIN COPETE FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1110",
+
+  "nombre": "FIORINO SIN COPETE FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1111",
+
+  "nombre": "FIORINO SIN COPETE FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1112",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1113",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1114",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1115",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1116",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1117",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1118",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1119",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1120",
+
+  "nombre": "FIORINO SIN COPETE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1121",
+
+  "nombre": "FIORINO SIN COPETE OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 1122",
+
+  "nombre": "FIORINO SIN COPETE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 1123",
+
+  "nombre": "FIORINO SIN COPETE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+ {
+
+  "codigo": "E2 1124",
+
+  "nombre": "FIORINO CON COPETE FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 1125",
+
+  "nombre": "FIORINO CON COPETE FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1126",
+
+  "nombre": "FIORINO CON COPETE FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1127",
+
+  "nombre": "FIORINO CON COPETE FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1128",
+
+  "nombre": "FIORINO CON COPETE FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 1129",
+
+  "nombre": "FIORINO CON COPETE FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1130",
+
+  "nombre": "FIORINO CON COPETE FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1131",
+
+  "nombre": "FIORINO CON COPETE FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1132",
+
+  "nombre": "FIORINO CON COPETE FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 1133",
+
+  "nombre": "FIORINO CON COPETE FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1134",
+
+  "nombre": "FIORINO CON COPETE FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1135",
+
+  "nombre": "FIORINO CON COPETE FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1136",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1137",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1138",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1139",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1140",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1141",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1142",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1143",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1144",
+
+  "nombre": "FIORINO CON COPETE FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1145",
+
+  "nombre": "FIORINO CON COPETE OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 1146",
+
+  "nombre": "FIORINO CON COPETE FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 1147",
+
+  "nombre": "FIORINO CON COPETE FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 1200",
+
+  "nombre": "MEHRINGER FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 1201",
+
+  "nombre": "MEHRINGER FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1202",
+
+  "nombre": "MEHRINGER FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1203",
+
+  "nombre": "MEHRINGER FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1204",
+
+  "nombre": "MEHRINGER FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 1205",
+
+  "nombre": "MEHRINGER FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1206",
+
+  "nombre": "MEHRINGER FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1207",
+
+  "nombre": "MEHRINGER FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1208",
+
+  "nombre": "MEHRINGER FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 1209",
+
+  "nombre": "MEHRINGER FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1210",
+
+  "nombre": "MEHRINGER FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1211",
+
+  "nombre": "MEHRINGER FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1212",
+
+  "nombre": "MEHRINGER FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1213",
+
+  "nombre": "MEHRINGER FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1214",
+
+  "nombre": "MEHRINGER FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1215",
+
+  "nombre": "MEHRINGER FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1216",
+
+  "nombre": "MEHRINGER FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1217",
+
+  "nombre": "MEHRINGER FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1218",
+
+  "nombre": "MEHRINGER FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1219",
+
+  "nombre": "MEHRINGER FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1220",
+
+  "nombre": "MEHRINGER FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1221",
+
+  "nombre": "MEHRINGER OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 1222",
+
+  "nombre": "MEHRINGER FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 1223",
+
+  "nombre": "MEHRINGER FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+  "codigo": "E2 1300",
+
+  "nombre": "ROGETTO FDO BL LIP"
+ },
+ {
+
+  "codigo": "E2 1301",
+
+  "nombre": "ROGETTO FDO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1302",
+
+  "nombre": "ROGETTO FDO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1303",
+
+  "nombre": "ROGETTO FDO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1304",
+
+  "nombre": "ROGETTO FDO INT LIP"
+ },
+ {
+
+  "codigo": "E2 1305",
+
+  "nombre": "ROGETTO FDO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1306",
+
+  "nombre": "ROGETTO FDO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1307",
+
+  "nombre": "ROGETTO FDO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1308",
+
+  "nombre": "ROGETTO FDO NEV LIP"
+ },
+ {
+
+  "codigo": "E2 1309",
+
+  "nombre": "ROGETTO FDO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1310",
+
+  "nombre": "ROGETTO FDO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1311",
+
+  "nombre": "ROGETTO FDO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1312",
+
+  "nombre": "ROGETTO FDO BRUNO BL MEL"
+ },
+ {
+
+  "codigo": "E2 1313",
+
+  "nombre": "ROGETTO FDO BRUNO BL OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1314",
+
+  "nombre": "ROGETTO FDO BRUNO BL OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1315",
+
+  "nombre": "ROGETTO FDO BRUNO INT MEL"
+ },
+ {
+
+  "codigo": "E2 1316",
+
+  "nombre": "ROGETTO FDO BRUNO INT OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1317",
+
+  "nombre": "ROGETTO FDO BRUNO INT OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1318",
+
+  "nombre": "ROGETTO FDO BRUNO NEV MEL"
+ },
+ {
+
+  "codigo": "E2 1319",
+
+  "nombre": "ROGETTO FDO BRUNO NEV OVE LIP"
+ },
+ {
+
+  "codigo": "E2 1320",
+
+  "nombre": "ROGETTO FDO BRUNO NEV OVE MEL"
+ },
+ {
+
+  "codigo": "E2 1321",
+
+  "nombre": "ROGETTO FDO OTRAS MUTACIONES BLANCO TODOS"
+ },
+ {
+
+  "codigo": "E2 1322",
+
+  "nombre": "ROGETTO FDO OTRAS MUTACIONES INT TODOS"
+ },
+ {
+
+  "codigo": "E2 1323",
+
+  "nombre": "ROGETTO FDO OTRAS MUTACIONES NEV TODOS"
+ },
+
+ {
+
+
+  "codigo":"E1 5000",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 5001",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 5002",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 5003",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 5004",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 5005",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 5006",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 5007",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 5008",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 5009",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 5010",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 5011",
+  "nombre": "RAZA EN ESTUDIO SIN CORONA FDO NEV OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 5012",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO BL LIP"
+ },
+ {
+
+
+  "codigo":"E1 5013",
+  "nombre": "RAZA EN ESTUDIO CON CORONAA FDO BL MEL"
+ },
+ {
+
+
+  "codigo":"E1 5014",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO BL OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 5015",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO BL OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 5016",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO INT LIP"
+ },
+ {
+
+
+  "codigo":"E1 5017",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO INT MEL"
+ },
+ {
+
+
+  "codigo":"E1 5018",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO INT OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 5019",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO INT OVE MEL"
+ },
+ {
+
+
+  "codigo":"E1 5020",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO NEV LIP"
+ },
+ {
+
+
+  "codigo":"E1 5021",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO NEV MEL"
+ },
+ {
+
+
+  "codigo":"E1 5022",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO NEV OVE LIP"
+ },
+ {
+
+
+  "codigo":"E1 5023",
+  "nombre": "RAZA EN ESTUDIO CON CORONA FDO NEV OVE MEL"
+ },
+
+ {
+
+  "codigo": "E2 5000",
+
+  "nombre": "RAZA EN ESTUDIO SIN COPETE DE PLUMA RIZADA FDO BL"
+ },
+ {
+
+  "codigo": "E2 5001",
+
+  "nombre": "RAZA EN ESTUDIO SIN COPETE DE PLUMA RIZADA FDO INT"
+ },
+ {
+
+  "codigo": "E2 5002",
+
+  "nombre": "RAZA EN ESTUDIO SIN COPETE DE PLUMA RIZADA FDO NEV"
+ },
+ {
+
+  "codigo": "E2 5003",
+
+  "nombre": "RAZA EN ESTUDIO CON COPETE DE PLUMA RIZADA FDO BL"
+ },
+ {
+
+  "codigo": "E2 5004",
+
+  "nombre": "RAZA EN ESTUDIO CON COPETE DE PLUMA RIZADA FDO INT"
+ },
+ {
+
+  "codigo": "E2 5005",
+
+  "nombre": "RAZA EN ESTUDIO CON COPETE DE PLUMA RIZADA FDO NEV"
  }
+
 ]
