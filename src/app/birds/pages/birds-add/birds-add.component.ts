@@ -1,5 +1,5 @@
 import { Component, signal, inject, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BirdsStoreService } from '../../services/birds-store.service';
 import { CouplesStoreService } from '../../../couples/services/couples-store.service';

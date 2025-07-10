@@ -73,6 +73,9 @@
               class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
               [class.border-red-300]="birdForm.get('origin')?.invalid && birdForm.get('origin')?.touched"
               placeholder="Ej: Criador López, Tienda ABC..." />
+            <div *ngIf="getFieldError(birdForm.get('origin'), 'origin')" class="text-xs text-red-600 mt-1">
+              {{ getFieldError(birdForm.get('origin'), 'origin') }}
+            </div>
           </div>
 
           <!-- Temporada -->
@@ -84,6 +87,9 @@
               class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
               [class.border-red-300]="birdForm.get('season')?.invalid && birdForm.get('season')?.touched"
               placeholder="Ej. 2025" (input)="limitarLongitud($event, 4)" />
+            <div *ngIf="getFieldError(birdForm.get('season'), 'season')" class="text-xs text-red-600 mt-1">
+              {{ getFieldError(birdForm.get('season'), 'season') }}
+            </div>
           </div>
 
           <!-- Color de anillo -->
@@ -103,6 +109,9 @@
               <option value="azul">Azul</option>
               <option value="naranja">Naranja</option>
             </select>
+            <div *ngIf="getFieldError(birdForm.get('ringColor'), 'ringColor')" class="text-xs text-red-600 mt-1">
+              {{ getFieldError(birdForm.get('ringColor'), 'ringColor') }}
+            </div>
           </div>
 
           <!-- Número de anillo -->
@@ -114,6 +123,9 @@
               class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
               [class.border-red-300]="birdForm.get('ringNumber')?.invalid && birdForm.get('ringNumber')?.touched"
               placeholder="Ej.123" (input)="limitarLongitud($event, 4)" />
+            <div *ngIf="getFieldError(birdForm.get('ringNumber'), 'ringNumber')" class="text-xs text-red-600 mt-1">
+              {{ getFieldError(birdForm.get('ringNumber'), 'ringNumber') }}
+            </div>
           </div>
 
           <!-- Línea -->
@@ -134,6 +146,9 @@
               class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
               [class.border-red-300]="birdForm.get('posture')?.invalid && birdForm.get('posture')?.touched"
               placeholder="Ej. 1" (input)="limitarLongitud($event, 4)" />
+            <div *ngIf="getFieldError(birdForm.get('posture'), 'posture')" class="text-xs text-red-600 mt-1">
+              {{ getFieldError(birdForm.get('posture'), 'posture') }}
+            </div>
           </div>
         </div>
       </div>
@@ -164,6 +179,9 @@
               <option value="hembra">Hembra</option>
               <option value="desconocido">Desconocido</option>
             </select>
+            <div *ngIf="getFieldError(birdForm.get('gender'), 'gender')" class="text-xs text-red-600 mt-1">
+              {{ getFieldError(birdForm.get('gender'), 'gender') }}
+            </div>
           </div>
 
           <!-- Estado -->
@@ -181,6 +199,9 @@
               <option value="vendido">Vendido</option>
               <option value="muerto">Muerto</option>
             </select>
+            <div *ngIf="getFieldError(birdForm.get('state'), 'state')" class="text-xs text-red-600 mt-1">
+              {{ getFieldError(birdForm.get('state'), 'state') }}
+            </div>
           </div>
 
           <!-- Observación del estado -->

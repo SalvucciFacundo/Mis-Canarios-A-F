@@ -34,11 +34,12 @@
   <div class="bg-white shadow-md rounded-lg">
     <div class="p-6">
       <ul class="divide-y divide-gray-200">
-        @for (linea of paginatedLineas(); track linea.code) {
+        @for (linea of paginatedLineas(); track linea.code ?? linea.codigo) {
         <li class="py-4 flex items-center justify-between">
           <div>
-            <div class="font-semibold text-gray-800 text-lg">{{ linea.name }}</div>
-            <div class="text-sm text-gray-500">Código: <span class="font-mono">{{ linea.code }}</span> · Federación:
+            <div class="font-semibold text-gray-800 text-lg">{{ linea.name ?? linea.nombre }}</div>
+            <div class="text-sm text-gray-500">Código: <span class="font-mono">{{ linea.code ?? linea.codigo }}</span> ·
+              Federación:
               <span class="font-semibold">{{ linea.federation }}</span>
             </div>
           </div>

@@ -24,9 +24,9 @@
     class="border rounded-md shadow max-h-60 overflow-y-auto mt-1">
     <li *ngFor="let linea of lineasFiltradas()" (mousedown)="seleccionarLinea(linea)"
       class="px-4 py-2 cursor-pointer hover:bg-sky-100">
-      <div class="font-semibold text-sm text-gray-800">{{ linea.code }}</div>
+      <div class="font-semibold text-sm text-gray-800">{{ linea.code ?? linea.codigo }}</div>
       <div class="text-xs text-gray-500">
-        {{ linea.name }} · {{ linea.federation }}
+        {{ linea.name ?? linea.nombre }}
       </div>
     </li>
   </ul>

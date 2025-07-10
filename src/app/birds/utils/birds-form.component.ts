@@ -7,6 +7,7 @@ import { Birds } from '../interface/birds.interface';
 import { BirdsAutocompleteComponent } from '../../shared/birds-autocomplete.component';
 import { LineaAutocompleteComponent } from '../../shared/linea-autocomplete.component';
 import { LoadingService } from '../../shared/services/loading.service';
+import { getFieldError } from './field-error.util';
 
 @Component({
   selector: 'app-birds-form',
@@ -32,7 +33,7 @@ export class BirdsFormComponent implements OnInit, OnChanges {
       ringNumber: ['', Validators.pattern(/^\d{1,4}$/)],
       gender: ['genero', [Validators.required, Validators.pattern(/^(?!genero$).+/)]],
       line: [''],
-      state: ['seleccione', [Validators.required, Validators.pattern(/^(?!seleccione$).+/)]],
+      state: ['criadero', [Validators.required, Validators.pattern(/^(?!seleccione$).+/)]],
       stateObservation: [''],
       father: [''],
       mother: [''],
@@ -274,5 +275,7 @@ export class BirdsFormComponent implements OnInit, OnChanges {
     this.birdForm.get('stateObservation')?.markAsUntouched();
     this.birdForm.get('observations')?.markAsUntouched();
   }
+
+  getFieldError = getFieldError;
 
 }

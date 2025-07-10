@@ -54,93 +54,36 @@ export class NomenclatorStoreService {
 
   searchByCodigoONombre(term: string, federaciones: string[]): Nomenclator[] {
     const searchTerm = this.clean(term.trim());
-    // Ordenar por código ascendente, partiendo desde D001 en adelante
-    const sortByCodigoDesdeD001 = (a: Nomenclator, b: Nomenclator) => {
-      const codeA = a.code ?? '';
-      const codeB = b.code ?? '';
-      // Si ambos empiezan por D, comparar normalmente
-      if (codeA.startsWith('D') && codeB.startsWith('D')) {
+    // Ordenar por código base según federación
+    const getSortBase = () => {
+      if (federaciones[0] === 'FOCI') return 'D001';
+      if (federaciones[0] === 'FOA') return 'D.001';
+      if (federaciones[0] === 'FAC') return 'CO001';
+      return '';
+    };
+    const sortBase = getSortBase();
+    const sortByCodigo = (a: Nomenclator, b: Nomenclator) => {
+      const codeA = a.code ?? a.codigo ?? '';
+      const codeB = b.code ?? b.codigo ?? '';
+      if (codeA.startsWith(sortBase[0]) && codeB.startsWith(sortBase[0])) {
         return codeA.localeCompare(codeB);
       }
-      // Si solo uno empieza por D, ese va primero
-      if (codeA.startsWith('D')) return -1;
-      if (codeB.startsWith('D')) return 1;
-      // Si ninguno empieza por D, comparar normalmente
+      if (codeA.startsWith(sortBase[0])) return -1;
+      if (codeB.startsWith(sortBase[0])) return 1;
       return codeA.localeCompare(codeB);
     };
-
-    if (!searchTerm) {
-      return this.getByFederaciones(federaciones)
-        .slice()
-        .sort(sortByCodigoDesdeD001);
-    }
-
-    // Dividir el término de búsqueda en palabras individuales
+    let lineasFiltradas = this.getByFederaciones(federaciones);
+    if (!searchTerm) return lineasFiltradas.slice().sort(sortByCodigo);
     const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
-
-    return this.getByFederaciones(federaciones)
-      .map(linea => {
-        const cleanCode = this.clean(linea.code ?? '');
-        const cleanName = this.clean(linea.name ?? '');
-        const fullText = `${cleanCode} ${cleanName}`;
-
-        // Calcular puntuación de relevancia
-        let score = 0;
-
-        // Bonificación si coincide exactamente con el código
-        if (cleanCode === searchTerm) {
-          score += 1000;
-        }
-
-        // Bonificación si coincide exactamente con el nombre
-        if (cleanName === searchTerm) {
-          score += 900;
-        }
-
-        // Bonificación si el código contiene el término completo
-        if (cleanCode.includes(searchTerm)) {
-          score += 800;
-        }
-
-        // Bonificación si el nombre contiene el término completo
-        if (cleanName.includes(searchTerm)) {
-          score += 700;
-        }
-
-        // Bonificación si el texto completo contiene el término
-        if (fullText.includes(searchTerm)) {
-          score += 600;
-        }
-
-        // Puntuación por palabras individuales
-        searchWords.forEach(word => {
-          if (cleanCode.includes(word)) {
-            score += 50;
-          }
-          if (cleanName.includes(word)) {
-            score += 40;
-          }
-
-          // Bonificación extra si la palabra está al inicio
-          if (cleanCode.startsWith(word)) {
-            score += 30;
-          }
-          if (cleanName.startsWith(word)) {
-            score += 25;
-          }
-        });
-
-        // Solo retornar si hay alguna coincidencia
-        const hasMatch = searchWords.every(word =>
-          cleanCode.includes(word) || cleanName.includes(word)
-        ) || cleanCode.includes(searchTerm) || cleanName.includes(searchTerm);
-
-        return { linea, score: hasMatch ? score : 0 };
-      })
-      .filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score) // Ordenar por relevancia (mayor a menor)
-      .map(item => item.linea)
-      .sort(sortByCodigoDesdeD001);
+    return lineasFiltradas.filter(linea => {
+      const cleanCode = this.clean(linea.code ?? linea.codigo ?? '');
+      const cleanName = this.clean(linea.name ?? linea.nombre ?? '');
+      return (
+        cleanCode.includes(searchTerm) ||
+        cleanName.includes(searchTerm) ||
+        searchWords.every(word => cleanCode.includes(word) || cleanName.includes(word))
+      );
+    }).sort(sortByCodigo);
   }
 
 

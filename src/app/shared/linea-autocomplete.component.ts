@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, EventEmitter, inject, Input, OnChanges, OnInit, Output, signal, SimpleChanges } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Nomenclator } from '../nomenclator/interface/nomenclator.interface';
-import { NomenclatorStoreService } from '../nomenclator/services/nomenclator-store.service';
+import { NomenclatorService } from '../nomenclator/services/nomenclator.service';
 
 @Component({
   selector: 'app-linea-autocomplete',
@@ -11,10 +11,10 @@ import { NomenclatorStoreService } from '../nomenclator/services/nomenclator-sto
 })
 export class LineaAutocompleteComponent implements OnInit, OnChanges {
   @Input() initialValue: string | null = null;
-  @Output() selected = new EventEmitter<Nomenclator>();
+  @Output() selected = new EventEmitter<string>();
   showOptions = signal(false);
 
-  private store = inject(NomenclatorStoreService);
+  private nomenclatorService = inject(NomenclatorService);
   private fb = inject(FormBuilder);
 
   form = this.fb.group({
@@ -26,26 +26,41 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
   federacionSeleccionada = signal<'FOCI' | 'FAC' | 'FOA'>('FOCI');
   searchTerm = signal('');
 
+  lineas: Nomenclator[] = [];
+
   lineasFiltradas = computed(() => {
-    // Ordenar por código ascendente, priorizando los que empiezan por D
-    const sortByCodigoDesdeD001 = (a: Nomenclator, b: Nomenclator) => {
-      const codeA = a.code ?? '';
-      const codeB = b.code ?? '';
-      if (codeA.startsWith('D') && codeB.startsWith('D')) {
+    // Ordenar por código ascendente, partiendo desde el código base de cada federación
+    const getSortBase = () => {
+      if (this.federacionSeleccionada() === 'FOCI') return 'D001';
+      if (this.federacionSeleccionada() === 'FOA') return 'D.001';
+      if (this.federacionSeleccionada() === 'FAC') return 'CO001';
+      return '';
+    };
+    const sortBase = getSortBase();
+    const sortByCodigo = (a: Nomenclator, b: Nomenclator) => {
+      const codeA = (a.code ?? a.codigo ?? '');
+      const codeB = (b.code ?? b.codigo ?? '');
+      // Si ambos empiezan por el código base, comparar normalmente
+      if (codeA.startsWith(sortBase[0]) && codeB.startsWith(sortBase[0])) {
         return codeA.localeCompare(codeB);
       }
-      if (codeA.startsWith('D')) return -1;
-      if (codeB.startsWith('D')) return 1;
+      // El que empieza por el código base va primero
+      if (codeA.startsWith(sortBase[0])) return -1;
+      if (codeB.startsWith(sortBase[0])) return 1;
       return codeA.localeCompare(codeB);
     };
-    return this.store.searchByCodigoONombre(
-      this.searchTerm()?.trim() ?? '',
-      [this.federacionSeleccionada()]
-    ).slice().sort(sortByCodigoDesdeD001);
+    const term = this.searchTerm()?.trim().toLowerCase() ?? '';
+    let lineasFiltradas = this.lineas;
+    if (!term) return lineasFiltradas.slice().sort(sortByCodigo);
+    return lineasFiltradas.filter(l => {
+      const code = (l.code ?? l.codigo ?? '').toLowerCase();
+      const name = (l.name ?? l.nombre ?? '').toLowerCase();
+      return code.includes(term) || name.includes(term);
+    }).sort(sortByCodigo);
   });
 
   async ngOnInit() {
-    await this.store.loadAllOnce(); // ⏳ esperá que termine
+    await this.loadLineasByFederacion(this.federacionSeleccionada());
 
     // Suscribirse a cambios en el formulario
     this.form.get('search')!.valueChanges.subscribe(value => {
@@ -53,18 +68,14 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
       this.showOptions.set(true);
     });
 
-    this.form.get('federacion')!.valueChanges.subscribe(value => {
+    this.form.get('federacion')!.valueChanges.subscribe(async value => {
       this.federacionSeleccionada.set(value);
+      await this.loadLineasByFederacion(value);
+      this.form.get('search')?.setValue(''); // Reiniciar input al cambiar federación
     });
 
     // Cargar valor inicial si existe
     this.loadInitialValue();
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['initialValue'] && this.store.lineas().length > 0) {
-      this.loadInitialValue();
-    }
   }
 
   private loadInitialValue() {
@@ -73,15 +84,22 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
     }
   }
 
+  async loadLineasByFederacion(federacion: 'FOCI' | 'FAC' | 'FOA') {
+    this.lineas = [];
+    // Forzar refresco inmediato del autocompletado
+    await Promise.resolve();
+    this.lineas = await this.nomenclatorService.getLineasByFederacionFromAssets(federacion);
+  }
+
   seleccionarLinea(linea: Nomenclator) {
-    this.selected.emit(linea);
-    this.form.get('search')?.setValue(linea.name ?? '');
+    // Mostrar solo el nombre en el input
+    this.form.get('search')?.setValue(linea.name ?? linea.nombre ?? '');
+    this.selected.emit(linea.name ?? linea.nombre ?? '');
     this.showOptions.set(false); // 👈 cerrar el listado
   }
 
   onFederacionChange(event: Event, fed: string) {
     const checkbox = event.target as HTMLInputElement;
-    // Since federacionSeleccionada is a string, just set the value directly
     if (checkbox.checked) {
       this.form.get('federacion')?.setValue(fed as 'FOCI' | 'FAC' | 'FOA');
     }
@@ -89,5 +107,11 @@ export class LineaAutocompleteComponent implements OnInit, OnChanges {
 
   cerrarConDelay() {
     setTimeout(() => this.showOptions.set(false), 200);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['initialValue'] && this.lineas.length > 0) {
+      this.loadInitialValue();
+    }
   }
 }
