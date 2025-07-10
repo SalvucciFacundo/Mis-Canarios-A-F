@@ -23,7 +23,7 @@ const adminRoutes: Routes = [
       { path: 'nomenclators', component: AdminNomenclatorListComponent },
       { path: 'birds', component: AdminBirdsListComponent },
       { path: 'couples', component: AdminCouplesListComponent },
-      { path: 'roles', component: AdminRolesListComponent, canActivate: [permisoGuard], data: { permiso: 'admin.roles.manage' } },
+      { path: 'roles', component: AdminRolesListComponent },
     ]
   },
   { path: '**', redirectTo: 'dashboard' }
