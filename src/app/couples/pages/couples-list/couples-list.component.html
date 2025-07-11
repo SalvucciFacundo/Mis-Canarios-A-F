@@ -98,7 +98,28 @@
 </div>
 
 <!-- Empty State -->
-<div *ngIf="!isLoading() && !loadError() && filteredCouples().length === 0" class="mt-12 text-center">
+@if (!isLoading() && !loadError() && filteredCouples().length === 0) {
+<!-- Banner informativo del plan actual arriba del estado vacío -->
+@if (showLimitsBanner() && userStats() && userStats().planType === 'free') {
+<div class="max-w-7xl mx-auto px-4 mt-2">
+  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 shadow-sm">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-medium text-blue-700 uppercase tracking-wide">
+          Plan Actual: {{ userStats().planType || 'Gratuito' }}
+        </span>
+        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full font-medium">
+          Limitado
+        </span>
+      </div>
+      <button (click)="upgradePlan()" class="text-blue-600 hover:text-blue-800 text-xs font-medium underline">
+        Gestionar Suscripción
+      </button>
+    </div>
+  </div>
+</div>
+}
+<div class="mt-12 text-center">
   <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
       d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l5.5-3.5L19 21z">
@@ -116,41 +137,6 @@
       </svg>
       Nueva Pareja
     </a>
-  </div>
-</div>
-
-<!-- Banner informativo del plan actual -->
-@if (userStats()) {
-<div class="max-w-7xl mx-auto px-4 mt-2">
-  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 shadow-sm">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        @if (userStats().planType === 'trial') {
-        <span class="text-xs font-medium text-green-700 uppercase tracking-wide">
-          Plan Gratuito con Prueba Premium (7 días)
-        </span>
-        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
-          🚀 Acceso Premium Temporal
-        </span>
-        } @else {
-        <span class="text-xs font-medium text-blue-700 uppercase tracking-wide">
-          Plan Actual: {{ userStats().planType || 'Gratuito' }}
-        </span>
-        @if (userStats().planType === 'free') {
-        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full font-medium">
-          Limitado
-        </span>
-        } @else {
-        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-          ⭐ Premium
-        </span>
-        }
-        }
-      </div>
-      <button (click)="upgradePlan()" class="text-blue-600 hover:text-blue-800 text-xs font-medium underline">
-        Gestionar Suscripción
-      </button>
-    </div>
   </div>
 </div>
 }

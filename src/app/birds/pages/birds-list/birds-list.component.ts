@@ -5,6 +5,7 @@ import { map, Observable } from 'rxjs';
 import { ToastService } from '../../../shared/services/toast.service';
 import { UserLimitsService } from '../../../shared/services/user-limits.service';
 import { BirdsStoreService } from '../../services/birds-store.service';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-birds-list',
@@ -19,6 +20,7 @@ export class BirdsListComponent implements OnInit {
   private toastService = inject(ToastService);
   public router: Router = inject(Router);
   private userLimitsService = inject(UserLimitsService);
+  private authService = inject(AuthService);
 
   // Señales para el sistema de límites
   userStats = signal<any>(null);
@@ -90,7 +92,10 @@ export class BirdsListComponent implements OnInit {
   getPlanRequirement(): string {
     const stats = this.userStats();
     if (!stats) return 'Cargando...';
-
+    // Si el usuario es admin o family, no mostrar banner de límites
+    if (stats.planType === 'admin' || stats.planType === 'family' || stats.planType === 'unlimited') {
+      return 'Sin límites';
+    }
     switch (stats.planType) {
       case 'free': return 'Límite: 30 canarios máx';
       case 'trial': return 'Solo durante prueba';
@@ -154,8 +159,6 @@ export class BirdsListComponent implements OnInit {
   get canariosInactivos() {
     return this.birds()?.filter(b => b.state === 'vendido' || b.state === 'muerto')?.length ?? 0;
   }
-
-
 
   get search() {
     return this.birdsStore.search;
@@ -234,6 +237,17 @@ export class BirdsListComponent implements OnInit {
       'Acción no permitida'
     );
   }
+
+  showLimitsBanner = computed(() => {
+    const stats = this.userStats();
+    const user = this.authService.currentUser();
+    // Si aún no hay datos, nunca mostrar el banner
+    if (!stats || !user) return false;
+    // Si el usuario es admin o family, nunca mostrar el banner
+    const isUnlimitedRole = user.role === 'admin' || user.role === 'family';
+    // Si el plan es free y el usuario no es ilimitado, mostrar banner
+    return stats.planType === 'free' && !isUnlimitedRole;
+  });
 }
 
 /*async ngOnInit() {

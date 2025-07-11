@@ -198,9 +198,10 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
     // Suscribirse a cambios de autenticación y refrescar la suscripción
     this.authSubscription = authState(this.auth).subscribe(user => {
       if (user) {
-        this.subscriptionService.refreshUserSubscription();
+        this.onLoginSuccess(); // Evento crítico: login
         this.loadSubscriptionHistory();
       } else {
+        this.onLogout(); // Evento crítico: logout
         this.currentView.set('plans');
         this.subscriptionHistory.set([]);
       }
@@ -227,10 +228,10 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
     if (planId === 'free') {
       return;
     }
-
     this.subscriptionService.createCheckoutPreference(planId).subscribe({
       next: (url: string) => {
         window.location.href = url;
+        this.onPaymentSuccess(); // Evento crítico: pago exitoso
       },
       error: (error) => {
         console.error('Error creating subscription:', error);
@@ -243,9 +244,24 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
     });
   }
 
-  refreshSubscription() {
-    this.subscriptionService.refreshUserSubscription();
-    this.loadSubscriptionHistory();
+  // Método para cambio de plan (upgrade/downgrade)
+  changePlan(planId: string) {
+    // ...lógica de cambio de plan...
+    this.onPlanChanged(); // Evento crítico: cambio de plan
+  }
+
+  // Métodos de eventos críticos
+  onLoginSuccess() {
+    this.subscriptionService.onLoginSuccess();
+  }
+  onLogout() {
+    this.subscriptionService.onLogout();
+  }
+  onPlanChanged() {
+    this.subscriptionService.onPlanChanged();
+  }
+  onPaymentSuccess() {
+    this.subscriptionService.onPaymentSuccess();
   }
 
   // Métodos auxiliares para el template
@@ -275,6 +291,16 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
   }
 
   getCurrentPlanLimits() {
+    // Si el usuario es admin o family, sin límites
+    const currentUser = (this.subscriptionService as any)._authState?.currentUser?.();
+    if (currentUser && (currentUser.role === 'admin' || currentUser.role === 'family')) {
+      return {
+        dailyBirds: 'unlimited' as 'unlimited',
+        dailyCouples: 'unlimited' as 'unlimited',
+        permanentBirds: 'unlimited' as 'unlimited',
+        permanentCouples: 'unlimited' as 'unlimited'
+      };
+    }
     const currentSub = this.subscriptionService.userSubscription();
     if (!currentSub) {
       // Retornar límites del plan gratuito por defecto
@@ -285,7 +311,6 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
         permanentCouples: 10   // Cupo total de 10 parejas
       };
     }
-
     const currentPlan = this.plans.find(p => p.id === currentSub.plan);
     return currentPlan?.limits || {
       dailyBirds: 0,
@@ -308,5 +333,17 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
 
     const progress = ((now - start) / (end - start)) * 100;
     return Math.round(progress);
+  }
+
+  getCurrentPlanId(): string {
+    const currentUser = (this.subscriptionService as any)._authState?.currentUser?.();
+    if (currentUser && currentUser.role === 'admin') {
+      return 'admin';
+    }
+    if (currentUser && currentUser.role === 'family') {
+      return 'family';
+    }
+    const currentSub = this.subscriptionService.userSubscription();
+    return currentSub?.plan || 'free';
   }
 }

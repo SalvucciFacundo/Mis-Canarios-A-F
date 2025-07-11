@@ -109,6 +109,15 @@ export class CouplesListComponent implements OnInit {
     }).length;
   });
 
+  // Computed para mostrar u ocultar el banner de límites
+  showLimitsBanner = computed(() => {
+    const stats = this.userStats();
+    const user = this.authService.currentUser();
+    if (!stats || !user) return false;
+    const isUnlimitedRole = user.role === 'admin' || user.role === 'family';
+    return stats.planType === 'free' && !isUnlimitedRole;
+  });
+
   constructor() {
     // Efecto para recargar límites cuando cambie la temporada o las parejas
     effect(() => {
@@ -174,7 +183,10 @@ export class CouplesListComponent implements OnInit {
   getPlanRequirement(): string {
     const stats = this.userStats();
     if (!stats) return 'Cargando...';
-
+    // Si el usuario es admin o family, no mostrar banner de límites
+    if (stats.planType === 'admin' || stats.planType === 'family' || stats.planType === 'unlimited') {
+      return 'Sin límites';
+    }
     switch (stats.planType) {
       case 'free': return 'Límite: 10 parejas máx';
       case 'trial': return 'Solo durante prueba';

@@ -1,6 +1,8 @@
 import { Component, inject, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserLimitsService } from '../../services/user-limits.service';
+import { BirdsStoreService } from '../../../birds/services/birds-store.service';
+import { CouplesStoreService } from '../../../couples/services/couples-store.service';
 
 @Component({
   selector: 'app-user-limits-indicator',
@@ -40,8 +42,11 @@ import { UserLimitsService } from '../../services/user-limits.service';
                 'text-green-200': getTotalPercentage() < 80,
                 'text-orange-200': getTotalPercentage() >= 80 && getTotalPercentage() < 100,
                 'text-red-200': getTotalPercentage() >= 100
-              }">{{ usage.birds_create + usage.couples_create }}</span>
-              <span class="text-indigo-100 font-medium text-xs">/{{ limits.birds_create + limits.couples_create }}</span>
+              }">{{ realBirdsCreated + realCouplesCreated }}</span>
+              <span class="text-indigo-100 font-medium text-xs">/
+                <ng-container *ngIf="isUnlimited; else limiteNormal">sin límites</ng-container>
+                <ng-template #limiteNormal>{{ limits.birds_create + limits.couples_create }}</ng-template>
+              </span>
             </div>
           </div>
 
@@ -51,8 +56,11 @@ import { UserLimitsService } from '../../services/user-limits.service';
               'text-green-200': getTotalPercentage() < 80,
               'text-orange-200': getTotalPercentage() >= 80 && getTotalPercentage() < 100,
               'text-red-200': getTotalPercentage() >= 100
-            }">{{ usage.birds_create + usage.couples_create }}</span>
-            <span class="text-indigo-100 font-medium text-xs">/{{ limits.birds_create + limits.couples_create }}</span>
+            }">{{ realBirdsCreated + realCouplesCreated }}</span>
+            <span class="text-indigo-100 font-medium text-xs">/
+              <ng-container *ngIf="isUnlimited; else limiteNormalMobile">sin límites</ng-container>
+              <ng-template #limiteNormalMobile>{{ limits.birds_create + limits.couples_create }}</ng-template>
+            </span>
           </div>
 
           <!-- Flecha dropdown -->
@@ -97,21 +105,29 @@ import { UserLimitsService } from '../../services/user-limits.service';
               'text-orange-500': getBirdsPercentage() >= 80 && getBirdsPercentage() < 100,
               'text-red-600': getBirdsPercentage() >= 100
             }">
-              {{ usage.birds_create }}
-              <span class="text-sm text-gray-500 font-normal">/{{ limits.birds_create }}</span>
+              {{ realBirdsCreated }}
+              <span class="text-sm text-gray-500 font-normal">/
+                <ng-container *ngIf="isUnlimited; else limiteBirds">sin límites</ng-container>
+                <ng-template #limiteBirds>{{ limits.birds_create }}</ng-template>
+              </span>
             </div>
             <div class="text-xs text-gray-700 font-semibold mb-3 uppercase tracking-wide">Canarios Creados</div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 shadow-inner">
-              <div class="h-2.5 rounded-full transition-all duration-500 shadow-sm"
-                   [style.width.%]="getBirdsPercentage()"
-                   [ngClass]="{
-                     'bg-gradient-to-r from-green-400 to-green-500': getBirdsPercentage() < 80,
-                     'bg-gradient-to-r from-orange-400 to-orange-500': getBirdsPercentage() >= 80 && getBirdsPercentage() < 100,
-                     'bg-gradient-to-r from-red-400 to-red-500': getBirdsPercentage() >= 100
-                   }">
+            <ng-container *ngIf="!isUnlimited">
+              <div class="w-full bg-gray-200 rounded-full h-2.5 shadow-inner">
+                <div class="h-2.5 rounded-full transition-all duration-500 shadow-sm"
+                     [style.width.%]="getBirdsPercentage()"
+                     [ngClass]="{
+                       'bg-gradient-to-r from-green-400 to-green-500': getBirdsPercentage() < 80,
+                       'bg-gradient-to-r from-orange-400 to-orange-500': getBirdsPercentage() >= 80 && getBirdsPercentage() < 100,
+                       'bg-gradient-to-r from-red-400 to-red-500': getBirdsPercentage() >= 100
+                     }">
+                </div>
               </div>
-            </div>
-            <div class="text-xs text-gray-600 mt-1 font-medium">{{ getBirdsPercentage() }}%</div>
+              <div class="text-xs text-gray-600 mt-1 font-medium">{{ getBirdsPercentage() }}%</div>
+            </ng-container>
+            <ng-container *ngIf="isUnlimited">
+              <div class="text-xs text-gray-400 mt-2">Sin límite de creación</div>
+            </ng-container>
           </div>
 
           <!-- Parejas -->
@@ -121,60 +137,70 @@ import { UserLimitsService } from '../../services/user-limits.service';
               'text-orange-500': getCouplesPercentage() >= 80 && getCouplesPercentage() < 100,
               'text-red-600': getCouplesPercentage() >= 100
             }">
-              {{ usage.couples_create }}
-              <span class="text-sm text-gray-500 font-normal">/{{ limits.couples_create }}</span>
+              {{ realCouplesCreated }}
+              <span class="text-sm text-gray-500 font-normal">/
+                <ng-container *ngIf="isUnlimited; else limiteCouples">sin límites</ng-container>
+                <ng-template #limiteCouples>{{ limits.couples_create }}</ng-template>
+              </span>
             </div>
             <div class="text-xs text-gray-700 font-semibold mb-3 uppercase tracking-wide">Parejas Creadas</div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 shadow-inner">
-              <div class="h-2.5 rounded-full transition-all duration-500 shadow-sm"
-                   [style.width.%]="getCouplesPercentage()"
-                   [ngClass]="{
-                     'bg-gradient-to-r from-green-400 to-green-500': getCouplesPercentage() < 80,
-                     'bg-gradient-to-r from-orange-400 to-orange-500': getCouplesPercentage() >= 80 && getCouplesPercentage() < 100,
-                     'bg-gradient-to-r from-red-400 to-red-500': getCouplesPercentage() >= 100
-                   }">
+            <ng-container *ngIf="!isUnlimited">
+              <div class="w-full bg-gray-200 rounded-full h-2.5 shadow-inner">
+                <div class="h-2.5 rounded-full transition-all duration-500 shadow-sm"
+                     [style.width.%]="getCouplesPercentage()"
+                     [ngClass]="{
+                       'bg-gradient-to-r from-green-400 to-green-500': getCouplesPercentage() < 80,
+                       'bg-gradient-to-r from-orange-400 to-orange-500': getCouplesPercentage() >= 80 && getCouplesPercentage() < 100,
+                       'bg-gradient-to-r from-red-400 to-red-500': getCouplesPercentage() >= 100
+                     }">
+                </div>
               </div>
-            </div>
-            <div class="text-xs text-gray-600 mt-1 font-medium">{{ getCouplesPercentage() }}%</div>
+              <div class="text-xs text-gray-600 mt-1 font-medium">{{ getCouplesPercentage() }}%</div>
+            </ng-container>
+            <ng-container *ngIf="isUnlimited">
+              <div class="text-xs text-gray-400 mt-2">Sin límite de creación</div>
+            </ng-container>
           </div>
         </div>
 
         <!-- Alertas -->
-        <div *ngIf="hasWarnings()" class="mb-3">
-          <div *ngIf="limitsService.isNearLimit('birds_create') && !limitsService.hasReachedLimit('birds_create')"
-               class="flex items-center gap-2 p-2 bg-orange-50 text-orange-800 rounded text-xs mb-2">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.728-.833-2.498 0L4.316 15.5c-.77.833.192 2.5 1.732 2.5z">
-              </path>
-            </svg>
-            Te quedan {{ limitsService.getRemainingOperations('birds_create') }} canarios
-          </div>
+        <ng-container *ngIf="!isUnlimited">
+          <div *ngIf="hasWarnings()" class="mb-3">
+            <div *ngIf="limitsService.isNearLimit('birds_create') && !limitsService.hasReachedLimit('birds_create')"
+                 class="flex items-center gap-2 p-2 bg-orange-50 text-orange-800 rounded text-xs mb-2">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.728-.833-2.498 0L4.316 15.5c-.77.833.192 2.5 1.732 2.5z">
+                </path>
+              </svg>
+              Te quedan {{ limitsService.getRemainingOperations('birds_create') }} canarios
+            </div>
 
-          <div *ngIf="limitsService.hasReachedLimit('birds_create')"
-               class="flex items-center gap-2 p-2 bg-red-50 text-red-800 rounded text-xs">
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L18.364 5.636M5.636 18.364l12.728-12.728">
-              </path>
-            </svg>
-            Límite de canarios alcanzado
+            <div *ngIf="limitsService.hasReachedLimit('birds_create')"
+                 class="flex items-center gap-2 p-2 bg-red-50 text-red-800 rounded text-xs">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L18.364 5.636M5.636 18.364l12.728-12.728">
+                </path>
+              </svg>
+              Límite de canarios alcanzado
+            </div>
           </div>
-        </div>
+        </ng-container>
 
         <!-- Detalles adicionales -->
         <div class="border-t border-gray-100 pt-3">
           <div class="grid grid-cols-3 gap-2 text-xs text-gray-600">
             <div class="text-center">
-              <div class="font-medium text-gray-700">{{ usage.birds_update }}</div>
+              <div class="font-medium text-gray-700">{{ realBirdsEdited }}</div>
               <div>Editados</div>
             </div>
             <div class="text-center">
-              <div class="font-medium text-gray-700">{{ usage.birds_delete }}</div>
+              <div class="font-medium text-gray-700">{{ realBirdsDeleted }}</div>
               <div>Eliminados</div>
             </div>
             <div class="text-center">
-              <div class="font-medium text-gray-700">{{ usage.couples_update }}</div>
+              <div class="font-medium text-gray-700">{{ realCouplesEdited }}</div>
               <div>Parejas Edit.</div>
             </div>
           </div>
@@ -249,16 +275,50 @@ import { UserLimitsService } from '../../services/user-limits.service';
 })
 export class UserLimitsIndicatorComponent {
   public limitsService = inject(UserLimitsService);
+  public birdsStore = inject(BirdsStoreService);
+  public couplesStore = inject(CouplesStoreService);
 
   public isDropdownOpen = signal(false);
+
+  // Contadores reales
+  get realBirdsCreated() {
+    return this.birdsStore.birdsList().length;
+  }
+  get realCouplesCreated() {
+    return this.couplesStore.couplesList().length;
+  }
+
+  // Editados y eliminados reales
+  get realBirdsEdited() {
+    // Sumar los canarios que tengan un campo 'modificationDate' distinto a 'creationDate'
+    const birds = this.birdsStore.birdsList();
+    return birds.filter(b => b.modificationDate && b.modificationDate !== b.creationDate).length;
+  }
+  get realBirdsDeleted() {
+    // Si tienes un registro de eliminados, aquí deberías consultarlo. Si no, mostrar 0.
+    return 0;
+  }
+  get realCouplesEdited() {
+    const couples = this.couplesStore.couplesList();
+    return couples.filter(c => c.modificationDate && c.modificationDate !== c.creationDate).length;
+  }
+  get realCouplesDeleted() {
+    // Si tienes un registro de eliminados, aquí deberías consultarlo. Si no, mostrar 0.
+    return 0;
+  }
 
   get usage() {
     return this.limitsService.getDailyUsage();
   }
 
   get limits() {
-    return this.limitsService.getLimits();
+    // Si el usuario es ilimitado, mostrar 'sin límites' en la UI
+    const l = this.limitsService.getLimits();
+    this.isUnlimited = l.birds_create === 0 && l.couples_create === 0;
+    return l;
   }
+
+  isUnlimited = false;
 
   get today(): string {
     return new Date().toLocaleDateString('es-ES', {
@@ -293,9 +353,10 @@ export class UserLimitsIndicatorComponent {
   }
 
   getTotalPercentage(): number {
-    const totalUsed = this.usage.birds_create + this.usage.couples_create;
+    // Usar los contadores reales para la izquierda
+    const totalUsed = this.realBirdsCreated + this.realCouplesCreated;
     const totalLimit = this.limits.birds_create + this.limits.couples_create;
-    return Math.round((totalUsed / totalLimit) * 100);
+    return totalLimit === 0 ? 0 : Math.round((totalUsed / totalLimit) * 100);
   }
 
   hasNearLimits(): boolean {

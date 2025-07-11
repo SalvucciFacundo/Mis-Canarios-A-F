@@ -20,12 +20,12 @@ export class SubscriptionService {
   readonly loading = computed(() => this._loading());
   readonly error = computed(() => this._error());
 
+  // En el constructor, solo usar cache (no forzar backend)
   constructor(private http: HttpClient, private auth: Auth) {
-    // Cargar automáticamente la suscripción al iniciar sesión
     effect(() => {
       getCurrentUserSafe(this.auth).then(user => {
         if (user && user.uid) {
-          this.refreshUserSubscription();
+          this.refreshUserSubscription(); // cache
         } else {
           this._userSubscription.set(null);
         }
@@ -35,20 +35,30 @@ export class SubscriptionService {
 
   /**
    * Refresca la suscripción del usuario desde el backend y actualiza el signal.
+   * Solo se debe llamar en eventos críticos (login, logout, cambio de plan, pago exitoso).
    */
-  refreshUserSubscription(): void {
-    console.log('🔍 [DEBUG] refreshUserSubscription llamado');
+  refreshUserSubscription(forceBackend: boolean = false): void {
+    if (!forceBackend) {
+      // Intentar cargar desde cache local primero
+      const cached = localStorage.getItem('userSubscription');
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached);
+          this._userSubscription.set(parsed);
+          this._loading.set(false);
+          return;
+        } catch (e) {
+          // Si falla el cache, continuar con backend
+        }
+      }
+    }
     this._loading.set(true);
     this._error.set(null);
-
-    // MOCK DESHABILITADO: Usando datos reales de Firestore
-    // Los mocks están comentados para usar suscripciones reales con Mercado Pago
-
-    // Código original activado para usar datos reales
     getCurrentUserSafe(this.auth).then(user => {
       if (!user || !user.uid) {
         this._userSubscription.set(null);
         this._loading.set(false);
+        localStorage.removeItem('userSubscription');
         return;
       }
       this.http.get(`/api/getUserSubscription?uid=${user.uid}`, {
@@ -61,18 +71,23 @@ export class SubscriptionService {
             if (parsedResponse && typeof parsedResponse === 'object' && 'hasSubscription' in parsedResponse) {
               const result = parsedResponse.hasSubscription ? parsedResponse.subscription : null;
               this._userSubscription.set(result);
+              // Guardar en cache local
+              localStorage.setItem('userSubscription', JSON.stringify(result));
             } else {
               this._userSubscription.set(null);
+              localStorage.removeItem('userSubscription');
             }
           } catch (e) {
             this._error.set(e);
             this._userSubscription.set(null);
+            localStorage.removeItem('userSubscription');
           }
           this._loading.set(false);
         },
         error: error => {
           this._error.set(error);
           this._userSubscription.set(null);
+          localStorage.removeItem('userSubscription');
           this._loading.set(false);
         }
       });
@@ -169,5 +184,24 @@ export class SubscriptionService {
       if (!subscription || subscription.status !== 'active') return false;
       return subscription.plan !== 'free';
     }));
+  }
+
+  // En eventos críticos:
+  // 1. Login
+  onLoginSuccess() {
+    this.refreshUserSubscription(true); // fuerza backend
+  }
+  // 2. Logout
+  onLogout() {
+    this._userSubscription.set(null);
+    localStorage.removeItem('userSubscription');
+  }
+  // 3. Cambio de plan (upgrade/downgrade)
+  onPlanChanged() {
+    this.refreshUserSubscription(true); // fuerza backend
+  }
+  // 4. Pago exitoso
+  onPaymentSuccess() {
+    this.refreshUserSubscription(true); // fuerza backend
   }
 }

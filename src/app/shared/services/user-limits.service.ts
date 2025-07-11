@@ -171,13 +171,14 @@ export class UserLimitsService {
    */
 
   private getCurrentPlanConfiguration(): Observable<PlanConfiguration> {
-    console.log('🔍 [DEBUG] Obteniendo configuración del plan...');
+    const user = this.authService.currentUser();
+    // Si el usuario es admin o family, siempre retorna unlimited
+    if (user && (user.role === 'admin' || user.role === 'family')) {
+      return of(this.PLAN_CONFIGURATIONS.unlimited);
+    }
     return this.subscriptionService.userSubscription$.pipe(
       map(subscription => {
-        console.log('🔍 [DEBUG] Suscripción del usuario:', subscription);
         const planType = subscription?.planType || 'free';
-        console.log('🔍 [DEBUG] Tipo de plan detectado:', planType);
-
         switch (planType) {
           case 'monthly':
             return this.PLAN_CONFIGURATIONS.monthly;
@@ -186,7 +187,6 @@ export class UserLimitsService {
           case 'unlimited':
             return this.PLAN_CONFIGURATIONS.unlimited;
           default:
-            console.log('🔍 [DEBUG] Usando configuración FREE por defecto');
             return this.PLAN_CONFIGURATIONS.free;
         }
       })
@@ -433,17 +433,35 @@ export class UserLimitsService {
    */
 
   getLimits(): UserLimits {
+    const user = this.authService.currentUser();
+    // Para roles ilimitados, mostrar 'sin límites' en la UI
+    if (user && (user.role === 'admin' || user.role === 'family' || user.role === 'subscriber:unlimited')) {
+      // Usar 0 como valor de límite y manejar el texto en el componente para mostrar 'sin límites'
+      return {
+        birds_create: 0,
+        birds_view: 0,
+        birds_edit: 0,
+        birds_update: 0,
+        birds_delete: 0,
+        couples_create: 0,
+        couples_view: 0,
+        couples_edit: 0,
+        couples_update: 0,
+        couples_delete: 0
+      };
+    }
+
     return {
       birds_create: 30,
       birds_view: 30,
       birds_edit: 0,
-      birds_update: 0,   // Plan gratuito no puede actualizar
-      birds_delete: 0,   // Plan gratuito no puede eliminar
+      birds_update: 0,
+      birds_delete: 0,
       couples_create: 10,
       couples_view: 10,
       couples_edit: 0,
-      couples_update: 0, // Plan gratuito no puede actualizar
-      couples_delete: 0  // Plan gratuito no puede eliminar
+      couples_update: 0,
+      couples_delete: 0
     };
   }
 

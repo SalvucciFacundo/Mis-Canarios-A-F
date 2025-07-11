@@ -80,7 +80,7 @@
 </section>
 
 <!-- Banner de información de límites -->
-@if (hiddenBirdsCount() > 0) {
+@if (showLimitsBanner() && hiddenBirdsCount() > 0) {
 <div class="max-w-7xl mx-auto px-4 mt-4">
   <div class="bg-gradient-to-r from-yellow-50 to-amber-50 border border-yellow-200 rounded-lg p-4 shadow-sm">
     <div class="flex items-start gap-3">
@@ -153,42 +153,6 @@
           </button>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-}
-
-<!-- Banner informativo del plan actual -->
-@if (userStats()) {
-<div class="max-w-7xl mx-auto px-4 mt-2">
-  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 shadow-sm">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        @if (userStats().planType === 'trial') {
-        <span class="text-xs font-medium text-green-700 uppercase tracking-wide">
-          Plan Gratuito con Prueba Premium (7 días)
-        </span>
-        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
-          🚀 Acceso Premium Temporal
-        </span>
-        } @else {
-        <span class="text-xs font-medium text-blue-700 uppercase tracking-wide">
-          Plan Actual: {{ userStats().planType || 'Gratuito' }}
-        </span>
-        @if (userStats().planType === 'free') {
-        <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full font-medium">
-          Limitado
-        </span>
-        } @else {
-        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-          ⭐ Premium
-        </span>
-        }
-        }
-      </div>
-      <button (click)="upgradePlan()" class="text-blue-600 hover:text-blue-800 text-xs font-medium underline">
-        Gestionar Suscripción
-      </button>
     </div>
   </div>
 </div>
