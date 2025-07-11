@@ -202,9 +202,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this._loadingService.hidePageTransition();
   }
 
-  // Devuelve true si el usuario tiene el rol 'subscriber'
+  // Devuelve true si el usuario tiene el rol de suscriptor o trial
   isSubscriber(): boolean {
     const user = this.currentUser();
-    return !!user && user.role === 'subscriber';
+    return !!user && (
+      user.role === 'subscriber:monthly' ||
+      user.role === 'subscriber:unlimited' ||
+      user.role === 'trial'
+    );
   }
 }

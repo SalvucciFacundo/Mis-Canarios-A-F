@@ -121,4 +121,19 @@ export class RolesStoreService {
         }
         await this.getAllRoles();
     }
+
+    /**
+     * Crea un rol con un ID lógico específico.
+     */
+    async addRoleWithId(id: string, data: { name: string; permisos: string[] }): Promise<void> {
+        this.loading.set(true);
+        try {
+            const db = getFirestore();
+            const ref = doc(db, 'roles', id);
+            await setDoc(ref, data);
+            await this.getAllRoles();
+        } finally {
+            this.loading.set(false);
+        }
+    }
 }

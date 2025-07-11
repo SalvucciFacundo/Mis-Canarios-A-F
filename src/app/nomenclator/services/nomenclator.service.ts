@@ -1,54 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, CollectionReference, deleteDoc, doc, DocumentReference, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
-import { firstValueFrom, map, Observable } from 'rxjs';
+// import { addDoc, collection, collectionData, CollectionReference, deleteDoc, doc, DocumentReference, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
+import { firstValueFrom } from 'rxjs';
 import { Nomenclator } from '../interface/nomenclator.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NomenclatorService {
+  // collectionRef: CollectionReference<Nomenclator>;
 
-  collectionRef: CollectionReference<Nomenclator>;
-
-  constructor(private firestore: Firestore, private http: HttpClient) {
-    this.collectionRef = collection(this.firestore, 'lineas') as CollectionReference<Nomenclator>;
+  constructor(
+    // private firestore: Firestore,
+    private http: HttpClient
+  ) {
+    // this.collectionRef = collection(this.firestore, 'lineas') as CollectionReference<Nomenclator>;
   }
 
-  // getAll(): Observable<Nomenclator[]> {
-  //   return collectionData(this.collectionRef, { idField: 'id' }) as Observable<Nomenclator[]>;
-  // }
-  getAll() {
-    const colRef = collection(this.firestore, 'lineas');
-    return collectionData(colRef, { idField: 'id' }).pipe(
-      map((docs: any[]) =>
-        docs.map(doc => ({
-          id: doc.id,
-          code: doc.codigo,
-          name: doc.nombre,
-          federation: doc.federacion
-        }) as Nomenclator)
-      )
-    );
-  }
-
-
-  getByFederacion(federacion: string): Observable<Nomenclator[]> {
-    const q = query(this.collectionRef, where('federacion', '==', federacion));
-    return collectionData(q, { idField: 'id' }) as Observable<Nomenclator[]>;
-  }
-
-  create(linea: Omit<Nomenclator, 'id'>): Promise<DocumentReference> {
-    return addDoc(this.collectionRef, linea);
-  }
-
-  update(id: string, data: Partial<Nomenclator>): Promise<void> {
-    return updateDoc(doc(this.firestore, 'lineas', id), data);
-  }
-
-  delete(id: string): Promise<void> {
-    return deleteDoc(doc(this.firestore, 'lineas', id));
-  }
+  // Métodos Firestore eliminados/comentados:
+  // getAll() { ... }
+  // getByFederacion(federacion: string) { ... }
+  // create(linea: Omit<Nomenclator, 'id'>) { ... }
+  // update(id: string, data: Partial<Nomenclator>) { ... }
+  // delete(id: string) { ... }
 
   /**
    * Devuelve un array de objetos desde un JSON en assets.
@@ -79,6 +53,5 @@ export class NomenclatorService {
     }
     return await firstValueFrom(this.http.get<Nomenclator[]>(path));
   }
-
 }
-// Métodos de carga masiva y eliminación masiva eliminados para evitar operaciones directas sobre Firebase.
+// Métodos de acceso a Firestore eliminados. El sistema de nomencladores solo usa JSON de assets.

@@ -1,5 +1,4 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
 import { LoadingService } from '../../shared/services/loading.service';
 import { Nomenclator } from '../interface/nomenclator.interface';
 import { NomenclatorService } from './nomenclator.service';
@@ -18,8 +17,7 @@ export class NomenclatorStoreService {
     if (this._lineas().length === 0) {
       await this.loadingService.showContentTransition('Cargando nomencladores...', 1000);
       try {
-        const lineas = await firstValueFrom(this.service.getAll());
-        this._lineas.set(lineas);
+        await this.loadAllFromAssets(['FOCI', 'FAC', 'FOA']);
       } finally {
         this.loadingService.hidePageTransition();
       }

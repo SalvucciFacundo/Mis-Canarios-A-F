@@ -183,6 +183,23 @@ exports.subscriptionWebhook = functions.https.onRequest(async (req, res) => {
       transactionId: payment.id
     });
 
+    // Determinar el rol según el plan
+    let newRole = null;
+    if (planId === 'monthly') {
+      newRole = 'subscriber:monthly';
+    } else if (planId === 'unlimited') {
+      newRole = 'subscriber:unlimited';
+    }
+
+    // Actualizar el rol del usuario si corresponde
+    if (newRole) {
+      await admin.firestore().doc(`users/${uid}`).set({
+        role: newRole,
+        updatedAt: admin.firestore.Timestamp.now()
+      }, { merge: true });
+      console.log(`Rol actualizado a ${newRole} para el usuario ${uid}`);
+    }
+
     console.log('🎉 Subscription and history created successfully');
     res.status(200).send('OK');
   } catch (error) {

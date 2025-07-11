@@ -250,8 +250,8 @@ export class SubscriptionComponent implements OnInit, OnDestroy {
 
   // Métodos auxiliares para el template
   goBack() {
-    // Navegar de vuelta al dashboard o página principal
-    this.router.navigate(['/']);
+    // Navegar de vuelta a la sección principal de la app (birds)
+    this.router.navigate(['/birds']);
   }
 
   getReadablePlanName(planId: string): string {

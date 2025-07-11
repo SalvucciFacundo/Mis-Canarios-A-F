@@ -19,11 +19,12 @@ export class AdminRolesListComponent {
     roles = computed(() => this.rolesStore.roles());
 
     editRole = signal<Role | null>(null);
-    newRole = signal<Partial<Role>>({ name: '', permisos: [] });
+    newRole = signal<{ id: string; name: string; permisos: string[] }>({ id: '', name: '', permisos: [] });
 
     allPermisos: string[] = [
         'admin.dashboard', 'admin.users.view', 'admin.users.edit', 'admin.roles.manage',
-        'birds.view', 'birds.edit', 'nomenclators.view', 'nomenclators.edit', 'couples.view', 'couples.edit'
+        'birds.view', 'birds.edit', 'nomenclators.view', 'nomenclators.edit', 'couples.view', 'couples.edit',
+        'subscriber.limits' // Agregado el permiso de límites de suscripción
     ];
 
     constructor(private rolesStore: RolesStoreService, private toast: ToastService) {
@@ -68,19 +69,17 @@ export class AdminRolesListComponent {
 
     async addRole() {
         const newRole = this.newRole();
-        if (newRole.name && newRole.permisos) {
+        if (newRole.id && newRole.name && newRole.permisos) {
             try {
-                const ok = await this.rolesStore.addRoleIfNotExists({ name: newRole.name, permisos: newRole.permisos });
-                if (ok) {
-                    this.newRole.set({ name: '', permisos: [] });
-                    await this.loadRoles();
-                } else {
-                    // Mostrar error si ya existe
-                    this.toast?.error?.('Ya existe un rol con ese nombre');
-                }
+                // Crear el documento con ID lógico
+                await this.rolesStore.addRoleWithId(newRole.id, { name: newRole.name, permisos: newRole.permisos });
+                this.newRole.set({ id: '', name: '', permisos: [] });
+                await this.loadRoles();
             } catch (e: any) {
-                console.error('Error al crear rol:', e);
+                this.toast?.error?.('Error al crear rol: ' + (e.message || ''));
             }
+        } else {
+            this.toast?.error?.('Debes completar el ID, nombre y al menos un permiso');
         }
     }
 
@@ -102,6 +101,54 @@ export class AdminRolesListComponent {
         }
     }
 
+    // Poblar roles base con IDs lógicos
+    async poblarRolesBaseConIdLogico() {
+        const baseRoles = [
+            {
+                id: 'user',
+                name: 'user',
+                permisos: [
+                    'site.navegar',
+                    'birds.view',
+                    'nomenclators.view',
+                    'couples.view'
+                ]
+            },
+            {
+                id: 'subscriber',
+                name: 'subscriber',
+                permisos: [
+                    'site.navegar',
+                    'birds.view',
+                    'nomenclators.view',
+                    'couples.view',
+                    'subscriber.limits'
+                ]
+            },
+            {
+                id: 'admin',
+                name: 'admin',
+                permisos: [
+                    'site.navegar',
+                    'admin.dashboard',
+                    'admin.users.view',
+                    'admin.users.edit',
+                    'admin.roles.manage',
+                    'birds.view',
+                    'birds.edit',
+                    'nomenclators.view',
+                    'nomenclators.edit',
+                    'couples.view',
+                    'couples.edit'
+                ]
+            }
+        ];
+        for (const role of baseRoles) {
+            await this.rolesStore.addRoleWithId(role.id, { name: role.name, permisos: role.permisos });
+        }
+        await this.loadRoles();
+    }
+
     // Manejo de cambios en el nombre del rol en edición (para signals)
     onEditRoleNameChange(name: string) {
         const role = this.editRole();
@@ -112,5 +159,11 @@ export class AdminRolesListComponent {
     onNewRoleNameChange(name: string) {
         const role = this.newRole();
         this.newRole.set({ ...role, name });
+    }
+
+    // Manejo de cambios en el ID del nuevo rol (para signals)
+    onNewRoleIdChange(id: string) {
+        const role = this.newRole();
+        this.newRole.set({ ...role, id });
     }
 }
